@@ -174,9 +174,8 @@ const Index = () => {
             </p>
             <p>
               <span className="gradient-gold font-display text-2xl italic">"AI-First"</span> is about something bigger
-              than adoption rates for any particular product. It is about public officers having access to the best
-              tools available — so that the quality of their thinking, the speed of their work, and the scope of what
-              they can achieve is genuinely elevated.
+              than adoption rates for any particular product. It is a mindset change. Instead of asking what AI tools
+              are available — I ask how can AI augment my thinking, speed up my work and help solve problems.
             </p>
             <div className="bg-surface-elevated border border-border rounded-lg p-6 md:p-8 mt-8">
               <h4 className="font-display text-2xl text-foreground mb-6">True AI Diffusion Means</h4>
