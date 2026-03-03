@@ -7,34 +7,64 @@ const PlaybookCTA = () => {
 
   const handleDownloadPDF = async () => {
     setIsGenerating(true);
+
+    const hiddenEls = document.querySelectorAll<HTMLElement>('[data-pdf-hide]');
+    const originalDisplay = new Map<HTMLElement, string>();
+    const previousScrollY = window.scrollY;
+
     try {
       const html2canvas = (await import("html2canvas")).default;
       const { jsPDF } = await import("jspdf");
 
-      // Hide elements that shouldn't appear in PDF
-      const hiddenEls = document.querySelectorAll<HTMLElement>(
-        '[data-pdf-hide]'
-      );
-      hiddenEls.forEach((el) => (el.style.display = "none"));
-
-      const content = document.getElementById("playbook-root");
-      if (!content) return;
-
-      const canvas = await html2canvas(content, {
-        scale: 1.5,
-        useCORS: true,
-        logging: false,
-        backgroundColor: null,
-        windowWidth: 1200,
+      hiddenEls.forEach((el) => {
+        originalDisplay.set(el, el.style.display);
+        el.style.display = "none";
       });
 
-      hiddenEls.forEach((el) => (el.style.display = ""));
+      window.scrollTo({ top: 0, behavior: "auto" });
 
-      const imgWidth = 210; // A4 width in mm
-      const pageHeight = 297; // A4 height in mm
+      const content = document.getElementById("playbook-root");
+      if (!content) {
+        throw new Error("Playbook root element not found");
+      }
+
+      const contentBg = getComputedStyle(content).backgroundColor;
+      const pdfBackground = contentBg === "rgba(0, 0, 0, 0)" ? "#08122e" : contentBg;
+
+      const canvas = await html2canvas(content, {
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        backgroundColor: pdfBackground,
+        windowWidth: content.scrollWidth,
+        windowHeight: content.scrollHeight,
+        scrollX: 0,
+        scrollY: 0,
+        onclone: (clonedDoc) => {
+          const clonedRoot = clonedDoc.getElementById("playbook-root");
+          if (!clonedRoot) return;
+
+          clonedRoot.querySelectorAll<HTMLElement>("*").forEach((el) => {
+            const style = clonedDoc.defaultView?.getComputedStyle(el);
+            if (!style) return;
+
+            if (style.position === "fixed" || style.position === "sticky") {
+              el.style.display = "none";
+            }
+
+            el.style.animation = "none";
+            el.style.transition = "none";
+            if (style.transform !== "none") {
+              el.style.transform = "none";
+            }
+          });
+        },
+      });
+
+      const imgWidth = 210;
+      const pageHeight = 297;
       const pdf = new jsPDF("p", "mm", "a4");
 
-      // Calculate how many pixels correspond to one PDF page
       const pxPerMm = canvas.width / imgWidth;
       const pageHeightPx = Math.floor(pageHeight * pxPerMm);
       const totalPages = Math.ceil(canvas.height / pageHeightPx);
@@ -42,31 +72,31 @@ const PlaybookCTA = () => {
       for (let page = 0; page < totalPages; page++) {
         if (page > 0) pdf.addPage();
 
-        // Slice a page-sized chunk from the full canvas
-        const sliceHeight = Math.min(pageHeightPx, canvas.height - page * pageHeightPx);
+        const sourceY = page * pageHeightPx;
+        const sliceHeight = Math.min(pageHeightPx, canvas.height - sourceY);
+
         const pageCanvas = document.createElement("canvas");
         pageCanvas.width = canvas.width;
         pageCanvas.height = sliceHeight;
+
         const ctx = pageCanvas.getContext("2d");
         if (!ctx) continue;
 
-        ctx.drawImage(
-          canvas,
-          0, page * pageHeightPx,       // source x, y
-          canvas.width, sliceHeight,     // source width, height
-          0, 0,                          // dest x, y
-          canvas.width, sliceHeight      // dest width, height
-        );
+        ctx.drawImage(canvas, 0, sourceY, canvas.width, sliceHeight, 0, 0, canvas.width, sliceHeight);
 
-        const pageImgData = pageCanvas.toDataURL("image/jpeg", 0.85);
-        const sliceHeightMm = (sliceHeight / pxPerMm);
-        pdf.addImage(pageImgData, "JPEG", 0, 0, imgWidth, sliceHeightMm);
+        const pageImgData = pageCanvas.toDataURL("image/png");
+        const sliceHeightMm = Math.min(pageHeight, sliceHeight / pxPerMm);
+        pdf.addImage(pageImgData, "PNG", 0, 0, imgWidth, sliceHeightMm, undefined, "FAST");
       }
 
       pdf.save("AI-First-Playbook.pdf");
     } catch (err) {
       console.error("PDF generation failed:", err);
     } finally {
+      hiddenEls.forEach((el) => {
+        el.style.display = originalDisplay.get(el) ?? "";
+      });
+      window.scrollTo({ top: previousScrollY, behavior: "auto" });
       setIsGenerating(false);
     }
   };
