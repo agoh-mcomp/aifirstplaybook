@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Sun, Moon } from "lucide-react";
 
 const chapters = [
   { id: "ch-1", num: "01", title: "Why Now" },
@@ -14,6 +15,17 @@ const chapters = [
 const StickyChapterNav = () => {
   const [activeId, setActiveId] = useState<string | null>(null);
   const [visible, setVisible] = useState(false);
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    document.documentElement.classList.add("dark");
+  }, []);
+
+  const toggleTheme = () => {
+    const next = !isDark;
+    setIsDark(next);
+    document.documentElement.classList.toggle("dark", next);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,6 +85,14 @@ const StickyChapterNav = () => {
               </button>
             );
           })}
+          <span className="w-px h-5 bg-border ml-auto shrink-0" />
+          <button
+            onClick={toggleTheme}
+            className="shrink-0 p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+            aria-label="Toggle theme"
+          >
+            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
         </div>
       </div>
     </motion.nav>
