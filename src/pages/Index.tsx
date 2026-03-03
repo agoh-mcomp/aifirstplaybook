@@ -10,10 +10,12 @@ import EnablersGrid from "@/components/EnablersGrid";
 import TableOfContents from "@/components/TableOfContents";
 import PilotTimeline from "@/components/PilotTimeline";
 import SuccessMetrics from "@/components/SuccessMetrics";
+import StickyChapterNav from "@/components/StickyChapterNav";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <StickyChapterNav />
       <PlaybookHero />
       <TableOfContents />
 
