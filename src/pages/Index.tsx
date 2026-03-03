@@ -259,6 +259,12 @@ const Index = () => {
             href="#"
           />
           <ResourceDownload
+            title="Discovery Survey Results"
+            description="View aggregated findings from the AI-First discovery survey — key pain points, workflow gaps, and prioritised AI opportunities."
+            type="dashboard"
+            href="https://go.gov.sg/aifirstdiscovery"
+          />
+          <ResourceDownload
             title="Sprint Readiness Checklist"
             description="Everything your agency needs to prepare before kicking off a 90-day AI-First sprint."
             type="toolkit"
