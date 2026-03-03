@@ -32,21 +32,35 @@ const PlaybookCTA = () => {
 
       const imgWidth = 210; // A4 width in mm
       const pageHeight = 297; // A4 height in mm
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
       const pdf = new jsPDF("p", "mm", "a4");
 
-      let heightLeft = imgHeight;
-      let position = 0;
-      const imgData = canvas.toDataURL("image/jpeg", 0.85);
+      // Calculate how many pixels correspond to one PDF page
+      const pxPerMm = canvas.width / imgWidth;
+      const pageHeightPx = Math.floor(pageHeight * pxPerMm);
+      const totalPages = Math.ceil(canvas.height / pageHeightPx);
 
-      pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
+      for (let page = 0; page < totalPages; page++) {
+        if (page > 0) pdf.addPage();
 
-      while (heightLeft > 0) {
-        position = position - pageHeight;
-        pdf.addPage();
-        pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
+        // Slice a page-sized chunk from the full canvas
+        const sliceHeight = Math.min(pageHeightPx, canvas.height - page * pageHeightPx);
+        const pageCanvas = document.createElement("canvas");
+        pageCanvas.width = canvas.width;
+        pageCanvas.height = sliceHeight;
+        const ctx = pageCanvas.getContext("2d");
+        if (!ctx) continue;
+
+        ctx.drawImage(
+          canvas,
+          0, page * pageHeightPx,       // source x, y
+          canvas.width, sliceHeight,     // source width, height
+          0, 0,                          // dest x, y
+          canvas.width, sliceHeight      // dest width, height
+        );
+
+        const pageImgData = pageCanvas.toDataURL("image/jpeg", 0.85);
+        const sliceHeightMm = (sliceHeight / pxPerMm);
+        pdf.addImage(pageImgData, "JPEG", 0, 0, imgWidth, sliceHeightMm);
       }
 
       pdf.save("AI-First-Playbook.pdf");
