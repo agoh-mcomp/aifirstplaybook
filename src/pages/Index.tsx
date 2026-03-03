@@ -276,7 +276,7 @@ const Index = () => {
             </p>
             <p>
               We ran three monthly sprints over 90 days, structured so teams had a real problem to tackle, access to AI
-              tools and expert support, and protected time to experiment. Leaders — including Bernard Toh himself —
+              tools and expert support, and protected time to experiment. Leaders — including Bernard himself —
               participated directly.
             </p>
             <div className="bg-surface-elevated border border-border rounded-lg p-6 md:p-8 mt-8">
