@@ -390,7 +390,7 @@ interface PaletteSwitcherProps {
 
 const PaletteSwitcher = ({ isDark }: PaletteSwitcherProps) => {
   const [open, setOpen] = useState(false);
-  const [activeId, setActiveId] = useState("navy-coral");
+  const [activeId, setActiveId] = useState("indigo-violet");
   const buttonRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ top: 0, right: 0 });
