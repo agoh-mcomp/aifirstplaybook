@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Sun, Moon, ChevronLeft, ChevronRight } from "lucide-react";
+import PaletteSwitcher from "./PaletteSwitcher";
 
 const chapters = [
   { id: "ch-1", num: "01", title: "Why Now" },
@@ -29,10 +30,8 @@ const StickyChapterNav = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show nav only after scrolling past the hero (~90vh)
       setVisible(window.scrollY > window.innerHeight * 0.85);
 
-      // Find which chapter is currently in view
       let current: string | null = null;
       for (const ch of chapters) {
         const el = document.getElementById(ch.id);
@@ -115,6 +114,7 @@ const StickyChapterNav = () => {
             <ChevronRight className="w-4 h-4" />
           </button>
           <span className="w-px h-5 bg-border shrink-0" />
+          <PaletteSwitcher isDark={isDark} />
           <button
             onClick={toggleTheme}
             className="shrink-0 p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
