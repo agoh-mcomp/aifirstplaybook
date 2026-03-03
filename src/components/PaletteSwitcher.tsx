@@ -239,6 +239,141 @@ const palettes: ColorPalette[] = [
       },
     },
   },
+  {
+    id: "midnight-electric",
+    name: "Midnight Electric",
+    preview: ["hsl(240,25%,8%)", "hsl(210,100%,60%)", "hsl(230,20%,96%)"],
+    vars: {
+      light: {
+        "--coral": "210 100% 50%", "--coral-dim": "215 70% 38%", "--coral-glow": "205 100% 62%",
+        "--chapter-line": "210 70% 48%", "--ring": "210 100% 50%",
+        "--background": "230 20% 97%", "--foreground": "230 25% 12%",
+        "--card": "228 18% 94%", "--card-foreground": "230 25% 12%",
+        "--primary": "230 35% 22%", "--primary-foreground": "230 20% 97%",
+        "--secondary": "228 16% 91%", "--secondary-foreground": "230 25% 18%",
+        "--muted": "228 12% 90%", "--muted-foreground": "230 12% 42%",
+        "--surface-elevated": "228 16% 93%", "--border": "228 12% 86%",
+      },
+      dark: {
+        "--coral": "210 100% 60%", "--coral-dim": "215 70% 45%", "--coral-glow": "205 100% 70%",
+        "--chapter-line": "210 60% 32%", "--ring": "210 100% 58%",
+        "--background": "240 25% 8%", "--foreground": "225 15% 95%",
+        "--card": "238 24% 13%", "--card-foreground": "225 15% 95%",
+        "--primary": "225 15% 93%", "--primary-foreground": "238 24% 13%",
+        "--secondary": "238 20% 18%", "--secondary-foreground": "225 15% 95%",
+        "--muted": "238 20% 18%", "--muted-foreground": "230 12% 58%",
+        "--surface-elevated": "238 24% 11%", "--border": "0 0% 100% / 10%",
+      },
+    },
+  },
+  {
+    id: "forest-sage",
+    name: "Forest & Sage",
+    preview: ["hsl(150,25%,10%)", "hsl(90,40%,48%)", "hsl(100,15%,96%)"],
+    vars: {
+      light: {
+        "--coral": "90 45% 42%", "--coral-dim": "95 30% 32%", "--coral-glow": "85 55% 52%",
+        "--chapter-line": "90 35% 40%", "--ring": "90 45% 42%",
+        "--background": "100 15% 97%", "--foreground": "140 20% 12%",
+        "--card": "105 12% 94%", "--card-foreground": "140 20% 12%",
+        "--primary": "145 28% 22%", "--primary-foreground": "100 15% 97%",
+        "--secondary": "105 12% 91%", "--secondary-foreground": "140 20% 18%",
+        "--muted": "105 8% 90%", "--muted-foreground": "140 10% 42%",
+        "--surface-elevated": "105 12% 93%", "--border": "105 8% 86%",
+      },
+      dark: {
+        "--coral": "90 50% 52%", "--coral-dim": "95 35% 38%", "--coral-glow": "85 60% 58%",
+        "--chapter-line": "90 30% 28%", "--ring": "90 45% 50%",
+        "--background": "150 25% 8%", "--foreground": "110 12% 95%",
+        "--card": "148 24% 12%", "--card-foreground": "110 12% 95%",
+        "--primary": "110 12% 92%", "--primary-foreground": "148 24% 12%",
+        "--secondary": "148 20% 16%", "--secondary-foreground": "110 12% 95%",
+        "--muted": "148 20% 16%", "--muted-foreground": "140 10% 55%",
+        "--surface-elevated": "148 24% 10%", "--border": "0 0% 100% / 10%",
+      },
+    },
+  },
+  {
+    id: "warm-earth",
+    name: "Warm Earth",
+    preview: ["hsl(25,30%,12%)", "hsl(20,70%,50%)", "hsl(30,20%,96%)"],
+    vars: {
+      light: {
+        "--coral": "20 70% 45%", "--coral-dim": "22 45% 34%", "--coral-glow": "18 80% 55%",
+        "--chapter-line": "20 50% 42%", "--ring": "20 70% 45%",
+        "--background": "30 20% 97%", "--foreground": "25 25% 12%",
+        "--card": "28 16% 94%", "--card-foreground": "25 25% 12%",
+        "--primary": "25 30% 22%", "--primary-foreground": "30 20% 97%",
+        "--secondary": "28 14% 91%", "--secondary-foreground": "25 25% 18%",
+        "--muted": "28 10% 90%", "--muted-foreground": "25 12% 42%",
+        "--surface-elevated": "28 14% 93%", "--border": "28 10% 86%",
+      },
+      dark: {
+        "--coral": "20 75% 55%", "--coral-dim": "22 50% 40%", "--coral-glow": "18 85% 62%",
+        "--chapter-line": "20 40% 30%", "--ring": "20 70% 52%",
+        "--background": "25 30% 9%", "--foreground": "30 14% 95%",
+        "--card": "24 28% 13%", "--card-foreground": "30 14% 95%",
+        "--primary": "30 14% 92%", "--primary-foreground": "24 28% 13%",
+        "--secondary": "24 22% 17%", "--secondary-foreground": "30 14% 95%",
+        "--muted": "24 22% 17%", "--muted-foreground": "25 12% 55%",
+        "--surface-elevated": "24 28% 11%", "--border": "0 0% 100% / 10%",
+      },
+    },
+  },
+  {
+    id: "indigo-violet",
+    name: "Indigo & Violet",
+    preview: ["hsl(260,30%,10%)", "hsl(270,60%,58%)", "hsl(265,18%,97%)"],
+    vars: {
+      light: {
+        "--coral": "270 60% 52%", "--coral-dim": "272 40% 40%", "--coral-glow": "268 70% 62%",
+        "--chapter-line": "270 45% 48%", "--ring": "270 60% 52%",
+        "--background": "265 18% 97%", "--foreground": "260 22% 14%",
+        "--card": "263 14% 94%", "--card-foreground": "260 22% 14%",
+        "--primary": "260 30% 24%", "--primary-foreground": "265 18% 97%",
+        "--secondary": "263 14% 91%", "--secondary-foreground": "260 22% 18%",
+        "--muted": "263 10% 90%", "--muted-foreground": "260 12% 44%",
+        "--surface-elevated": "263 14% 93%", "--border": "263 10% 86%",
+      },
+      dark: {
+        "--coral": "270 65% 62%", "--coral-dim": "272 45% 45%", "--coral-glow": "268 75% 70%",
+        "--chapter-line": "270 35% 32%", "--ring": "270 60% 60%",
+        "--background": "260 30% 9%", "--foreground": "265 12% 95%",
+        "--card": "258 28% 14%", "--card-foreground": "265 12% 95%",
+        "--primary": "265 12% 92%", "--primary-foreground": "258 28% 14%",
+        "--secondary": "258 22% 19%", "--secondary-foreground": "265 12% 95%",
+        "--muted": "258 22% 19%", "--muted-foreground": "262 12% 58%",
+        "--surface-elevated": "258 28% 12%", "--border": "0 0% 100% / 10%",
+      },
+    },
+  },
+  {
+    id: "mono-minimal",
+    name: "Mono Minimal",
+    preview: ["hsl(0,0%,8%)", "hsl(0,0%,55%)", "hsl(0,0%,97%)"],
+    vars: {
+      light: {
+        "--coral": "0 0% 30%", "--coral-dim": "0 0% 40%", "--coral-glow": "0 0% 20%",
+        "--chapter-line": "0 0% 45%", "--ring": "0 0% 30%",
+        "--background": "0 0% 97%", "--foreground": "0 0% 10%",
+        "--card": "0 0% 94%", "--card-foreground": "0 0% 10%",
+        "--primary": "0 0% 15%", "--primary-foreground": "0 0% 97%",
+        "--secondary": "0 0% 91%", "--secondary-foreground": "0 0% 15%",
+        "--muted": "0 0% 90%", "--muted-foreground": "0 0% 42%",
+        "--surface-elevated": "0 0% 93%", "--border": "0 0% 85%",
+      },
+      dark: {
+        "--coral": "0 0% 65%", "--coral-dim": "0 0% 50%", "--coral-glow": "0 0% 75%",
+        "--chapter-line": "0 0% 28%", "--ring": "0 0% 60%",
+        "--background": "0 0% 8%", "--foreground": "0 0% 95%",
+        "--card": "0 0% 13%", "--card-foreground": "0 0% 95%",
+        "--primary": "0 0% 92%", "--primary-foreground": "0 0% 13%",
+        "--secondary": "0 0% 18%", "--secondary-foreground": "0 0% 95%",
+        "--muted": "0 0% 18%", "--muted-foreground": "0 0% 55%",
+        "--surface-elevated": "0 0% 11%", "--border": "0 0% 100% / 10%",
+      },
+    },
+  },
 ];
 
 function applyPalette(palette: ColorPalette, isDark: boolean) {
@@ -323,7 +458,7 @@ const PaletteSwitcher = ({ isDark }: PaletteSwitcherProps) => {
               exit={{ opacity: 0, y: -8, scale: 0.95 }}
               transition={{ duration: 0.15 }}
               style={{ position: "fixed", top: pos.top, right: pos.right }}
-              className="bg-card border border-border rounded-lg shadow-lg p-2 w-52 z-[100]"
+              className="bg-card border border-border rounded-lg shadow-lg p-2 w-52 z-[100] max-h-[70vh] overflow-y-auto"
             >
               <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground px-2 py-1">
                 Color Palette
