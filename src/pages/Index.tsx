@@ -6,6 +6,9 @@ import PhaseTimeline from "@/components/PhaseTimeline";
 import PlaybookCTA from "@/components/PlaybookCTA";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import QuoteBlock from "@/components/QuoteBlock";
+import EnablersGrid from "@/components/EnablersGrid";
+import PilotTimeline from "@/components/PilotTimeline";
+import SuccessMetrics from "@/components/SuccessMetrics";
 
 const Index = () => {
   return (
@@ -40,6 +43,24 @@ const Index = () => {
           <span className="text-gold">150,000 officers</span>, day after day, and the cumulative cost
           is staggering.
         </p>
+        <div className="bg-surface-elevated border border-border rounded-lg p-6 mt-8">
+          <h4 className="font-display text-xl text-foreground mb-4">What's in It for Agencies?</h4>
+          <div className="space-y-4">
+            {[
+              { title: "Time back for meaningful work", detail: "Corporate teams often spend up to three days a week on repetitive, low-value tasks. Even recovering a fraction frees people for work that actually matters." },
+              { title: "A confident, capable workforce", detail: "The most significant outcome was watching officers who called themselves \"not technical\" build things that worked — and the shift in how they saw themselves afterwards. Confidence compounds and builds capability." },
+              { title: "Solutions built by the people who live with the problems", detail: "The person best placed to build a solution is almost always the person who lives with that problem every day. Not vendors. Not IT teams. Your own people." },
+            ].map((item) => (
+              <div key={item.title} className="flex gap-3 items-start">
+                <div className="w-1.5 h-1.5 rounded-full gradient-gold-bg mt-2.5 shrink-0" />
+                <div>
+                  <span className="font-semibold text-foreground text-sm">{item.title}.</span>{" "}
+                  <span className="text-secondary-foreground text-sm">{item.detail}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         <DualAudienceBlock
           leaderText="Agencies that move boldly will find their officers more capable, their services more responsive, and their teams more engaged. Those that move cautiously will face the prospect of closing the gap under greater pressure, with less time."
           practitionerText="You already know the pain. The spreadsheets, the copy-paste workflows, the 47-step approval chains. AI doesn't replace your expertise — it removes the friction around it."
@@ -94,41 +115,36 @@ const Index = () => {
         title="The Challenge"
       >
         <p>
-          Let's be honest about what stands in the way. Transformation fails not because of
-          technology — but because of the human systems around it. Until we are willing to talk
-          about these constraints openly, we will not make progress on them.
+          Across conversations with various agency teams, the picture is consistent. Agencies want to
+          start AI-First. The problem is they don't know how — and the conditions around them make
+          starting harder than it should be. The barriers are not technical. They are human, cultural,
+          and structural.
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
           {[
             {
-              label: "Procurement Friction",
-              detail:
-                "Before an officer can even begin to experiment, they face a gauntlet of barriers — devices, licenses, procurement rules not designed for rapid experimentation. Collectively, they signal the system is not set up for trying new things.",
+              label: "\"This is extra work\"",
+              detail: "Corporate officers are stretched. Experimentation competes with delivery and BAU always wins — until officers get protected time and explicit permission to try.",
             },
             {
-              label: "Tool Access Gap",
-              detail:
-                "Government-approved AI tools lag behind commercial alternatives. Officers who are used to the fluency of commercial tools find the experience limiting. We suppress adoption by placing the burden of discovery on the individual.",
+              label: "Leaders Must Walk the Talk",
+              detail: "When the Head of Agency visibly joins a sprint, builds something, and learns with the team — that is when people believe in cultural change. Not before.",
+            },
+            {
+              label: "No Trusted Peer Reference",
+              detail: "Agencies need a peer in the same function, at a comparable agency, who can say honestly: here's what we did, here's what was hard. Without that, the unknown risks feel bigger than the known benefits.",
+            },
+            {
+              label: "Systemic Friction",
+              detail: "Data classification uncertainty, procurement processes built for large IT projects, slow deployment of prototypes — many officers hit the wall and stop.",
+            },
+            {
+              label: "A Playbook That Isn't Theirs",
+              detail: "A GovTech playbook handed to agencies doesn't produce ownership. Agencies need to author their own version. The act of creating it is part of the cultural change.",
             },
             {
               label: "Deployment Gap",
-              detail:
-                "The biggest gap is between prototype and deployment. Officers can build things quickly, but getting solutions to colleagues, connecting to real data, and keeping them running is beyond most non-technical officers.",
-            },
-            {
-              label: "Data Ambiguity",
-              detail:
-                "Officers simply do not know what data they can use with which tools. This ambiguity is not neutral — it pushes people toward inaction. Clearer, more practical guidance would make a meaningful difference.",
-            },
-            {
-              label: "BAU Sacred Cow",
-              detail:
-                "Officers are rewarded for delivery and stability, not experimentation. Leaders are accountable for not dropping the ball, making it difficult to create the slack and psychological safety AI-First requires.",
-            },
-            {
-              label: "Leadership Gap",
-              detail:
-                "Nothing moves culture faster than leaders visibly doing the thing they are asking others to do. This does not scale through advocacy — it scales through example.",
+              detail: "The biggest gap is between prototype and deployment. Getting solutions to colleagues, connecting to real data, and keeping them running is beyond most non-technical officers.",
             },
           ].map((item) => (
             <div
@@ -140,6 +156,10 @@ const Index = () => {
             </div>
           ))}
         </div>
+        <QuoteBlock
+          quote="The common thread: this is a culture change problem, not a technology problem. The tools are there. What's missing are the conditions that empower officers to believe they can do it."
+          attribution="AI-First Engagement Strategy"
+        />
         <DualAudienceBlock
           leaderText="None of these constraints are insurmountable. But they require deliberate choices, not passive support. Your role is to make the cost of standing still more visible than the cost of moving."
           practitionerText="Start with one workflow. One team. One quick win. Transformation doesn't need permission from everyone — it needs proof from someone."
@@ -204,6 +224,10 @@ const Index = () => {
             ))}
           </div>
         </div>
+
+        {/* Enablers Grid */}
+        <EnablersGrid />
+
         <DualAudienceBlock
           leaderText="You don't need to understand every sprint ceremony. You need to trust the process, protect the team, and clear the blockers only you can clear. Most importantly — participate yourself."
           practitionerText="Each sprint has a clear input (a real problem), a clear output (a working prototype), and a clear feedback loop (users testing it). No vanity demos."
@@ -217,18 +241,15 @@ const Index = () => {
         title="How It Works"
       >
         <p>
-          Four phases. Each builds on the last. Each produces tangible outputs your organisation
-          can see, touch, and evaluate.
+          Scaling AI-First across 100 agencies doesn't start with 100 agencies. It starts with one
+          ministry family doing it well enough that others want to follow. Here is the three-month
+          engagement model — designed so agencies run it themselves, with GovTech as backbone, not
+          engine.
         </p>
-        <PhaseTimeline />
-        <p className="mt-8">
-          The lesson is that when you give officers the right conditions — tools, time, permission,
-          and support — they will surprise you. The DG Sprints that followed proved it: officers
-          with no engineering background used tools like Figma Make and Rabbit Deploy to build and
-          deploy working applications that broke the limits of what we thought was possible.
-        </p>
+        <PilotTimeline />
+        <SuccessMetrics />
         <DualAudienceBlock
-          leaderText="Your decision points come at phase gates. Discover reveals the opportunity size. Design confirms feasibility. Build proves value. Scale is your commitment to change."
+          leaderText="Your decision points come at phase gates. Discover reveals the opportunity size. Build proves value. Showcase is your proof to the rest of government. What your agency builds, owns, and demonstrates becomes the reference that moves others from waiting to acting."
           practitionerText="You'll be hands-on from Day 1. Expect to pair with AI engineers, challenge assumptions, and prototype solutions using your real data and real constraints."
         />
       </ChapterSection>
@@ -246,13 +267,20 @@ const Index = () => {
           <em className="text-muted-foreground">"AI is a tool I consume"</em> to{" "}
           <em className="text-gold-dim">"AI is a partner I work with."</em>
         </p>
-        <div className="grid sm:grid-cols-3 gap-4 mt-10">
+        <div className="grid sm:grid-cols-4 gap-4 mt-10">
           <StatCard value="73" label="AI solutions in 90 days" delay={0} />
           <StatCard value="200+" label="Officers engaged" delay={0.1} />
           <StatCard value="40%+" label="Cross-division adoption" delay={0.2} />
+          <StatCard value="60%" label="Confidence jump" delay={0.3} />
         </div>
 
-        <div className="mt-12 space-y-6">
+        <p className="mt-8 text-sm text-muted-foreground">
+          Officer confidence in using AI at work jumped from 1.97 to 3.12 on a 5-point scale in
+          three months. This is not a technology experiment anymore. It is a proven model ready to
+          scale.
+        </p>
+
+        <div className="mt-10 space-y-6">
           <CaseStudyCard
             title="AppraisAI"
             team="3 HR Officers"
@@ -290,7 +318,47 @@ const Index = () => {
           AI diffusion is not optional. It is a non-negotiable condition for remaining a world-class
           public service. To achieve this, we as leaders need to be bolder than feels comfortable.
         </p>
+
         <div className="bg-surface-elevated border border-border rounded-lg p-6 md:p-8 mt-8">
+          <h4 className="font-display text-2xl text-foreground mb-2">What We Need From You</h4>
+          <p className="text-sm text-muted-foreground mb-6">
+            The pilot's success isn't about tools or frameworks. It's about cultural readiness.
+          </p>
+          <div className="space-y-6">
+            {[
+              {
+                num: "01",
+                title: "Participate — don't just endorse.",
+                detail: "Show up for at least one sprint session. Let officers see you learning alongside them. When the PS is an active participant, it creates the psychological permission for everyone else to experiment in a way no formal directive ever could.",
+              },
+              {
+                num: "02",
+                title: "Protect the time.",
+                detail: "Experimentation always dies when it competes with day-to-day work and loses. We need a firm commitment to protect the time for participating officers. This is a leadership decision.",
+              },
+              {
+                num: "03",
+                title: "Nominate an AI Lead.",
+                detail: "Appoint one person — DD-level or above — to be the internal coordination point. This person isn't doing GovTech's work; they're building the internal ownership that will last.",
+              },
+              {
+                num: "04",
+                title: "Give your officers permission to fail.",
+                detail: "For cultural shift to happen, officers must feel safe trying things that might not work. That safety has to come from the top. A visible signal that an honest attempt is valued is more powerful than any workshop.",
+              },
+            ].map((item) => (
+              <div key={item.num} className="flex gap-4 items-start">
+                <span className="font-mono text-sm text-gold-dim mt-0.5">{item.num}</span>
+                <div>
+                  <span className="font-semibold text-foreground">{item.title}</span>{" "}
+                  <span className="text-secondary-foreground">{item.detail}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-surface-elevated border border-border rounded-lg p-6 md:p-8 mt-6">
           <h4 className="font-display text-2xl text-foreground mb-6">Decision Points</h4>
           <div className="space-y-6">
             <div>
@@ -300,7 +368,6 @@ const Index = () => {
                 <li>Create the protected time and psychological safety for experimentation</li>
                 <li>Participate yourself — not symbolically, but genuinely</li>
                 <li>Build the internal champions who will carry this further than you can reach alone</li>
-                <li>Nominate a transformation sponsor with budget authority</li>
                 <li>Set a 90-day milestone and protect the team's time</li>
               </ul>
             </div>
@@ -313,19 +380,20 @@ const Index = () => {
                 <li>Rally 3–5 colleagues willing to experiment</li>
                 <li>Request a sprint briefing — bring data, not slides</li>
                 <li>
-                  Remember: you don't need a mandate to start. You need a problem worth solving, a
+                  Remember: you don't need a mandate to start — you need a problem worth solving, a
                   team willing to try, and two weeks to prove it works
                 </li>
               </ul>
             </div>
           </div>
         </div>
+
         <QuoteBlock
           quote="The best public service in the world does not wait to be told it is falling behind. It decides to stay ahead. That decision starts with each of us."
           attribution="Bernard Toh"
         />
         <DualAudienceBlock
-          leaderText="Your legacy won't be the systems you maintained. It will be the transformation you had the courage to start. We did it with mostly non-technical corporate officers in 90 days. Imagine what you can do."
+          leaderText="GovTech SCG proved it with non-technical corporate officers in 90 days. Your agency has the opportunity to be the one that proves it scales — and whose story moves the rest of government from waiting to acting."
           practitionerText="GovTech is here to help. We have a model that has worked, a community of practitioners who have lived through it, and a genuine commitment to making this easier for you."
         />
       </ChapterSection>
