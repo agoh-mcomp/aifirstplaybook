@@ -6,6 +6,7 @@ import PhaseTimeline from "@/components/PhaseTimeline";
 import PlaybookCTA from "@/components/PlaybookCTA";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import QuoteBlock from "@/components/QuoteBlock";
+import OfficerVoices from "@/components/OfficerVoices";
 import EnablersGrid from "@/components/EnablersGrid";
 import TableOfContents from "@/components/TableOfContents";
 import PilotTimeline from "@/components/PilotTimeline";
@@ -306,6 +307,8 @@ const Index = () => {
             insight="The people who built the solution were the same people who suffered through the old process every month. That is not a coincidence — it is the point."
           />
         </div>
+
+        <OfficerVoices />
 
         <QuoteBlock
           quote="The person best placed to build a solution to a problem is almost always the person who lives with that problem every day. We have historically outsourced that knowledge to vendors, to IT teams, to project managers, and in doing so consistently produced solutions that are technically functional but operationally imperfect."
