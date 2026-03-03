@@ -6,7 +6,7 @@ import PhaseTimeline from "@/components/PhaseTimeline";
 import PlaybookCTA from "@/components/PlaybookCTA";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import QuoteBlock from "@/components/QuoteBlock";
-import OfficerVoices from "@/components/OfficerVoices";
+
 import EnablersGrid from "@/components/EnablersGrid";
 import TableOfContents from "@/components/TableOfContents";
 import PilotTimeline from "@/components/PilotTimeline";
@@ -67,6 +67,10 @@ const Index = () => {
             ))}
           </div>
         </div>
+        <QuoteBlock
+          quote="I realised AI isn't as daunting as I thought"
+          attribution="SCG Officer, Finance"
+        />
         <DualAudienceBlock
           leaderText="Agencies that move boldly will find their officers more capable, their services more responsive, and their teams more engaged. Those that move cautiously will face the prospect of closing the gap under greater pressure, with less time."
           practitionerText="You already know the pain. The spreadsheets, the copy-paste workflows, the 47-step approval chains. AI doesn't replace your expertise — it removes the friction around it."
@@ -109,6 +113,10 @@ const Index = () => {
             ))}
           </div>
         </div>
+        <QuoteBlock
+          quote='Instead of asking "How do I finish this task?", I now ask "Which part of this process can AI automate, accelerate, or improve?"'
+          attribution="SCG Officer, Procurement"
+        />
         <DualAudienceBlock
           leaderText="This is not primarily a technology problem. It is a leadership problem. Your mandate is not to adopt a technology, but to architect a new operating model where intelligence is embedded, not imported."
           practitionerText="Think of AI-First as a design principle. Before building any workflow, ask: what would this look like if AI were a given? The answer changes everything."
@@ -167,6 +175,10 @@ const Index = () => {
         <QuoteBlock
           quote="The common thread: this is a culture change problem, not a technology problem. The tools are there. What's missing are the conditions that empower officers to believe they can do it."
           attribution="AI-First Engagement Strategy"
+        />
+        <QuoteBlock
+          quote="It is easy to learn! The toughest part is breaking that inertia"
+          attribution="SCG Officer, People & Org"
         />
         <DualAudienceBlock
           leaderText="None of these constraints are insurmountable. But they require deliberate choices, not passive support. Your role is to make the cost of standing still more visible than the cost of moving."
@@ -237,6 +249,10 @@ const Index = () => {
         {/* Enablers Grid */}
         <EnablersGrid />
 
+        <QuoteBlock
+          quote="I need to set aside time on this to save time"
+          attribution="SCG Officer, Strat Plans"
+        />
         <DualAudienceBlock
           leaderText="You don't need to understand every sprint ceremony. You need to trust the process, protect the team, and clear the blockers only you can clear. Most importantly — participate yourself."
           practitionerText="Each sprint has a clear input (a real problem), a clear output (a working prototype), and a clear feedback loop (users testing it). No vanity demos."
@@ -258,6 +274,10 @@ const Index = () => {
         </p>
         <PilotTimeline />
         <SuccessMetrics />
+        <QuoteBlock
+          quote="You do not need coding skills to use AI for your work, just plain English, curiosity, and a willingness to learn and adjust along the way"
+          attribution="SCG Officer, Org Excellence"
+        />
         <DualAudienceBlock
           leaderText="Your decision points come at phase gates. Discover reveals the opportunity size. Build proves value. Showcase is your proof to the rest of government. What your agency builds, owns, and demonstrates becomes the reference that moves others from waiting to acting."
           practitionerText="You'll be hands-on from Day 1. Expect to pair with AI engineers, challenge assumptions, and prototype solutions using your real data and real constraints."
@@ -307,14 +327,21 @@ const Index = () => {
             insight="The people who built the solution were the same people who suffered through the old process every month. That is not a coincidence — it is the point."
           />
         </div>
+        <QuoteBlock
+          quote="I can do it myself instead of thinking I need to rely on tech teams"
+          attribution="SCG Officer, People & Org"
+        />
 
-        <OfficerVoices />
 
         <QuoteBlock
           quote="The person best placed to build a solution to a problem is almost always the person who lives with that problem every day. We have historically outsourced that knowledge to vendors, to IT teams, to project managers, and in doing so consistently produced solutions that are technically functional but operationally imperfect."
           attribution="Bernard Toh"
         />
 
+        <QuoteBlock
+          quote="Everyone can build AI solutions — it's about fundamentally reimagining how work gets done"
+          attribution="SCG Officer, Finance"
+        />
         <DualAudienceBlock
           leaderText="These aren't innovation theatre. Officers who had told themselves they were 'not technical' built working prototypes. The pace of prototyping compressed from months to days."
           practitionerText="Every solution started exactly where you are now — a team with a problem, a willingness to experiment, and a sprint to prove it out."
