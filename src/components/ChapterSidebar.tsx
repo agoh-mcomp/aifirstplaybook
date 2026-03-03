@@ -30,6 +30,25 @@ interface ChapterSidebarProps {
 const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme }: ChapterSidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  // Track scroll progress in the main content area
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!activeChapter) { setScrollProgress(0); return; }
+      const main = document.querySelector("main");
+      if (!main) return;
+      const scrollTop = main.scrollTop;
+      const scrollHeight = main.scrollHeight - main.clientHeight;
+      setScrollProgress(scrollHeight > 0 ? Math.min(scrollTop / scrollHeight, 1) : 0);
+    };
+    const main = document.querySelector("main");
+    if (main) {
+      main.addEventListener("scroll", handleScroll, { passive: true });
+      handleScroll();
+      return () => main.removeEventListener("scroll", handleScroll);
+    }
+  }, [activeChapter]);
 
   const activeIndex = chapters.findIndex((ch) => ch.id === activeChapter);
 
@@ -118,11 +137,14 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
                 )}
               </div>
               {isActive && !collapsed && (
-                <motion.div
-                  layoutId="chapter-indicator"
-                  className="h-0.5 gradient-gold-bg rounded-full mt-2"
-                  transition={{ type: "spring", stiffness: 500, damping: 35 }}
-                />
+                <div className="mt-2 h-1 rounded-full bg-border overflow-hidden">
+                  <motion.div
+                    className="h-full gradient-gold-bg rounded-full"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${Math.max(scrollProgress * 100, 2)}%` }}
+                    transition={{ duration: 0.15, ease: "easeOut" }}
+                  />
+                </div>
               )}
             </button>
           );
