@@ -12,6 +12,7 @@ import TableOfContents from "@/components/TableOfContents";
 import PilotTimeline from "@/components/PilotTimeline";
 import SuccessMetrics from "@/components/SuccessMetrics";
 import StickyChapterNav from "@/components/StickyChapterNav";
+import ResourceDownload from "@/components/ResourceDownload";
 
 const Index = () => {
   return (
@@ -249,6 +250,22 @@ const Index = () => {
         {/* Enablers Grid */}
         <EnablersGrid />
 
+        <div className="mt-8 space-y-3">
+          <h4 className="font-display text-lg text-foreground mb-3">📥 Resources & Templates</h4>
+          <ResourceDownload
+            title="Discovery Survey Template"
+            description="The pre-sprint survey used to identify pain points, map workflows, and prioritise AI opportunities across teams."
+            type="template"
+            href="#"
+          />
+          <ResourceDownload
+            title="Sprint Readiness Checklist"
+            description="Everything your agency needs to prepare before kicking off a 90-day AI-First sprint."
+            type="toolkit"
+            href="#"
+          />
+        </div>
+
         <QuoteBlock
           quote="I need to set aside time on this to save time"
           attribution="SCG Officer, Strat Plans"
@@ -274,6 +291,22 @@ const Index = () => {
         </p>
         <PilotTimeline />
         <SuccessMetrics />
+
+        <div className="mt-8 space-y-3">
+          <h4 className="font-display text-lg text-foreground mb-3">📥 Resources & Templates</h4>
+          <ResourceDownload
+            title="Impact Measurement Dashboard"
+            description="Live dashboard template tracking time saved, officer confidence, adoption rates, and solution deployment across sprints."
+            type="dashboard"
+            href="#"
+          />
+          <ResourceDownload
+            title="Post-Sprint Survey Template"
+            description="Measure confidence shifts, identify blockers, and capture qualitative feedback from sprint participants."
+            type="template"
+            href="#"
+          />
+        </div>
         <QuoteBlock
           quote="You do not need coding skills to use AI for your work, just plain English, curiosity, and a willingness to learn and adjust along the way"
           attribution="SCG Officer, Org Excellence"
