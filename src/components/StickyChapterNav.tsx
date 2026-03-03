@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, ChevronLeft, ChevronRight } from "lucide-react";
 
 const chapters = [
   { id: "ch-1", num: "01", title: "Why Now" },
@@ -55,6 +55,18 @@ const StickyChapterNav = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const activeIndex = chapters.findIndex((ch) => ch.id === activeId);
+
+  const goToPrev = () => {
+    const prevIndex = activeIndex <= 0 ? 0 : activeIndex - 1;
+    scrollTo(chapters[prevIndex].id);
+  };
+
+  const goToNext = () => {
+    const nextIndex = activeIndex >= chapters.length - 1 ? chapters.length - 1 : activeIndex + 1;
+    scrollTo(chapters[nextIndex].id);
+  };
+
   return (
     <motion.nav
       initial={false}
@@ -86,6 +98,23 @@ const StickyChapterNav = () => {
             );
           })}
           <span className="w-px h-5 bg-border ml-auto shrink-0" />
+          <button
+            onClick={goToPrev}
+            disabled={activeIndex <= 0}
+            className="shrink-0 p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+            aria-label="Previous chapter"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            onClick={goToNext}
+            disabled={activeIndex >= chapters.length - 1}
+            className="shrink-0 p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+            aria-label="Next chapter"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+          <span className="w-px h-5 bg-border shrink-0" />
           <button
             onClick={toggleTheme}
             className="shrink-0 p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
