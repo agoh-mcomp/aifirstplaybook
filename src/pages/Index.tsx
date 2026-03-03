@@ -40,7 +40,7 @@ const Index = () => {
         </p>
         <QuoteBlock
           quote="The productivity and capability differential that AI is creating — between those who embrace it deeply and those who treat it as a peripheral tool — will compound over the next few years in ways that are difficult to fully predict, but easy to anticipate in direction."
-          attribution="Bernard Toh, GovTech"
+          attribution="Bernard Toh, DCE Strategy Corporate Governance, GovTech"
         />
         <p>
           The friction that currently exists between ideation and deployment in government is not a
@@ -404,7 +404,7 @@ const Index = () => {
 
         <QuoteBlock
           quote="The person best placed to build a solution to a problem is almost always the person who lives with that problem every day. We have historically outsourced that knowledge to vendors, to IT teams, to project managers, and in doing so consistently produced solutions that are technically functional but operationally imperfect."
-          attribution="Bernard Toh"
+          attribution="Bernard Toh, DCE Strategy Corporate Governance, GovTech"
         />
 
         <QuoteBlock
@@ -500,7 +500,7 @@ const Index = () => {
 
         <QuoteBlock
           quote="The best public service in the world does not wait to be told it is falling behind. It decides to stay ahead. That decision starts with each of us."
-          attribution="Bernard Toh"
+          attribution="Bernard Toh, DCE Strategy Corporate Governance, GovTech"
         />
         <DualAudienceBlock
           leaderText="GovTech SCG proved it with non-technical corporate officers in 90 days. Your agency has the opportunity to be the one that proves it scales — and whose story moves the rest of government from waiting to acting."
