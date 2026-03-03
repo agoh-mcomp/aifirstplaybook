@@ -381,6 +381,21 @@ const Index = () => {
             insight="The people who built the solution were the same people who suffered through the old process every month. That is not a coincidence — it is the point."
           />
         </div>
+
+        <div className="mt-10">
+          <h4 className="font-display text-lg text-foreground mb-4">🎬 SCG AI-First Transformation Journey</h4>
+          <div className="rounded-lg overflow-hidden border border-border aspect-video">
+            <iframe
+              src="https://www.youtube.com/embed/CpjgrPZIkbI"
+              title="SCG AI-First Transformation Journey and Solutions"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+          <p className="text-sm text-muted-foreground mt-3">Watch how SCG officers built and deployed AI solutions across the organisation in 90 days.</p>
+        </div>
+
         <QuoteBlock
           quote="I can do it myself instead of thinking I need to rely on tech teams"
           attribution="SCG Officer, People & Org"
