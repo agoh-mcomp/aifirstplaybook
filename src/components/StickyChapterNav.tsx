@@ -75,9 +75,9 @@ const StickyChapterNav = () => {
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center h-12 gap-1 overflow-x-auto scrollbar-hide">
-          <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-gold-dim mr-3 shrink-0 hidden sm:block">
+          <a href="https://go.gov.sg/ai-first" target="_blank" rel="noopener noreferrer" className="font-mono text-[10px] tracking-[0.2em] uppercase text-gold-dim mr-3 shrink-0 hidden sm:block hover:text-gold transition-colors">
             AI-First
-          </span>
+          </a>
           <span className="w-px h-5 bg-border mr-2 shrink-0 hidden sm:block" />
           {chapters.map((ch) => {
             const isActive = activeId === ch.id;
