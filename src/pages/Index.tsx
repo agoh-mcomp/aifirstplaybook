@@ -268,8 +268,8 @@ const Index = () => {
         {activeChapter === "ch-4" && (
           <ChapterContent num="Chapter 04" arc="The Guide Appears" title="The Methodology">
             <p>
-              About a year ago, GovTech's Strategy, Corporate and Governance cluster kicked off "AI-First" — an
-              initiative to move from AI being something people read about to something they{" "}
+              In July 2025, GovTech's Strategy, Corporate and Governance cluster kicked off "AI-First" — an initiative
+              to move from AI being something people read about to something they{" "}
               <em className="italic text-gold-dim">did</em>. The premise was simple: an internal survey revealed SCG
               officers spent close to <span className="text-gold">three days a week</span> on repetitive, low-value
               tasks.
