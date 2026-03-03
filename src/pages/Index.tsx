@@ -266,6 +266,21 @@ const Index = () => {
           />
         </div>
 
+        <div className="mt-8 bg-surface-elevated border border-border rounded-lg p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="flex-1">
+            <h4 className="font-display text-lg text-foreground">Explore the AI-First Initiative</h4>
+            <p className="text-sm text-muted-foreground mt-1">Visit the official AI-First site for the latest updates, resources, and community.</p>
+          </div>
+          <a
+            href="https://go.gov.sg/ai-first"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 gradient-gold-bg text-primary-foreground font-body font-semibold px-6 py-3 rounded-lg text-sm tracking-wide hover:opacity-90 transition-opacity"
+          >
+            Visit AI-First &rarr;
+          </a>
+        </div>
+
         <QuoteBlock
           quote="I need to set aside time on this to save time"
           attribution="SCG Officer, Strat Plans"
