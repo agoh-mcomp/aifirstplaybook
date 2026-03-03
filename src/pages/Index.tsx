@@ -16,7 +16,7 @@ import ResourceDownload from "@/components/ResourceDownload";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div id="playbook-root" className="min-h-screen bg-background">
       <StickyChapterNav />
       <PlaybookHero />
       <TableOfContents />

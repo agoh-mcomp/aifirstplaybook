@@ -1,6 +1,62 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { FileDown, Loader2 } from "lucide-react";
 
 const PlaybookCTA = () => {
+  const [isGenerating, setIsGenerating] = useState(false);
+
+  const handleDownloadPDF = async () => {
+    setIsGenerating(true);
+    try {
+      const html2canvas = (await import("html2canvas")).default;
+      const { jsPDF } = await import("jspdf");
+
+      // Hide elements that shouldn't appear in PDF
+      const hiddenEls = document.querySelectorAll<HTMLElement>(
+        '[data-pdf-hide]'
+      );
+      hiddenEls.forEach((el) => (el.style.display = "none"));
+
+      const content = document.getElementById("playbook-root");
+      if (!content) return;
+
+      const canvas = await html2canvas(content, {
+        scale: 1.5,
+        useCORS: true,
+        logging: false,
+        backgroundColor: null,
+        windowWidth: 1200,
+      });
+
+      hiddenEls.forEach((el) => (el.style.display = ""));
+
+      const imgWidth = 210; // A4 width in mm
+      const pageHeight = 297; // A4 height in mm
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      const pdf = new jsPDF("p", "mm", "a4");
+
+      let heightLeft = imgHeight;
+      let position = 0;
+      const imgData = canvas.toDataURL("image/jpeg", 0.85);
+
+      pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      while (heightLeft > 0) {
+        position = position - pageHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      pdf.save("AI-First-Playbook.pdf");
+    } catch (err) {
+      console.error("PDF generation failed:", err);
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
   return (
     <section className="py-32 relative">
       <div className="chapter-divider w-full mb-20" />
@@ -30,12 +86,26 @@ const PlaybookCTA = () => {
           Your citizens are waiting. Your officers are ready. The tools exist.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4" data-pdf-hide>
           <button className="gradient-gold-bg text-primary-foreground font-body font-semibold px-8 py-4 rounded-lg text-base tracking-wide hover:opacity-90 transition-opacity">
             Request a Sprint Briefing
           </button>
-          <button className="border border-border text-foreground font-body font-medium px-8 py-4 rounded-lg text-base hover:bg-secondary transition-colors">
-            Download as PDF
+          <button
+            onClick={handleDownloadPDF}
+            disabled={isGenerating}
+            className="border border-border text-foreground font-body font-medium px-8 py-4 rounded-lg text-base hover:bg-secondary transition-colors inline-flex items-center gap-2 disabled:opacity-60"
+          >
+            {isGenerating ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                Generating PDF…
+              </>
+            ) : (
+              <>
+                <FileDown className="w-4 h-4" />
+                Download as PDF
+              </>
+            )}
           </button>
         </div>
 
