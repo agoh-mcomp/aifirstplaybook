@@ -319,7 +319,7 @@ const Index = () => {
             title="Impact Measurement Dashboard"
             description="Live dashboard template tracking time saved, officer confidence, adoption rates, and solution deployment across sprints."
             type="dashboard"
-            href="#"
+            href="https://go.gov.sg/aifirstp1"
           />
           <ResourceDownload
             title="Post-Sprint Survey Template"
