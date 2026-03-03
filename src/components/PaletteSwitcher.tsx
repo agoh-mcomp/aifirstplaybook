@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { Palette } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -255,12 +256,30 @@ interface PaletteSwitcherProps {
 const PaletteSwitcher = ({ isDark }: PaletteSwitcherProps) => {
   const [open, setOpen] = useState(false);
   const [activeId, setActiveId] = useState("navy-coral");
-  const ref = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState({ top: 0, right: 0 });
+
+  const updatePos = useCallback(() => {
+    if (buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setPos({
+        top: rect.bottom + 8,
+        right: window.innerWidth - rect.right,
+      });
+    }
+  }, []);
 
   // Close on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+      const target = e.target as Node;
+      if (
+        buttonRef.current && !buttonRef.current.contains(target) &&
+        dropdownRef.current && !dropdownRef.current.contains(target)
+      ) {
+        setOpen(false);
+      }
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
@@ -272,6 +291,11 @@ const PaletteSwitcher = ({ isDark }: PaletteSwitcherProps) => {
     if (palette) applyPalette(palette, isDark);
   }, [isDark, activeId]);
 
+  const handleToggle = () => {
+    updatePos();
+    setOpen((v) => !v);
+  };
+
   const handleSelect = (palette: ColorPalette) => {
     setActiveId(palette.id);
     applyPalette(palette, isDark);
@@ -279,53 +303,59 @@ const PaletteSwitcher = ({ isDark }: PaletteSwitcherProps) => {
   };
 
   return (
-    <div className="relative" ref={ref}>
+    <>
       <button
-        onClick={() => setOpen(!open)}
+        ref={buttonRef}
+        onClick={handleToggle}
         className="shrink-0 p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
         aria-label="Change color palette"
       >
         <Palette className="w-4 h-4" />
       </button>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -8, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -8, scale: 0.95 }}
-            transition={{ duration: 0.15 }}
-            className="absolute right-0 top-full mt-2 bg-card border border-border rounded-lg shadow-lg p-2 w-52 z-50"
-          >
-            <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground px-2 py-1">
-              Color Palette
-            </p>
-            {palettes.map((palette) => (
-              <button
-                key={palette.id}
-                onClick={() => handleSelect(palette)}
-                className={`w-full flex items-center gap-3 px-2 py-2 rounded-md text-left text-sm transition-colors cursor-pointer ${
-                  activeId === palette.id
-                    ? "bg-secondary text-foreground"
-                    : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
-                }`}
-              >
-                <div className="flex gap-0.5 shrink-0">
-                  {palette.preview.map((color, i) => (
-                    <div
-                      key={i}
-                      className="w-4 h-4 rounded-full border border-border"
-                      style={{ backgroundColor: color }}
-                    />
-                  ))}
-                </div>
-                <span className="font-body text-xs">{palette.name}</span>
-              </button>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+      {createPortal(
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              ref={dropdownRef}
+              initial={{ opacity: 0, y: -8, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8, scale: 0.95 }}
+              transition={{ duration: 0.15 }}
+              style={{ position: "fixed", top: pos.top, right: pos.right }}
+              className="bg-card border border-border rounded-lg shadow-lg p-2 w-52 z-[100]"
+            >
+              <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground px-2 py-1">
+                Color Palette
+              </p>
+              {palettes.map((palette) => (
+                <button
+                  key={palette.id}
+                  onClick={() => handleSelect(palette)}
+                  className={`w-full flex items-center gap-3 px-2 py-2 rounded-md text-left text-sm transition-colors cursor-pointer ${
+                    activeId === palette.id
+                      ? "bg-secondary text-foreground"
+                      : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
+                  }`}
+                >
+                  <div className="flex gap-0.5 shrink-0">
+                    {palette.preview.map((color, i) => (
+                      <div
+                        key={i}
+                        className="w-4 h-4 rounded-full border border-border"
+                        style={{ backgroundColor: color }}
+                      />
+                    ))}
+                  </div>
+                  <span className="font-body text-xs">{palette.name}</span>
+                </button>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
+    </>
   );
 };
 
