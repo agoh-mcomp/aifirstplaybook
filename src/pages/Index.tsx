@@ -7,6 +7,7 @@ import PlaybookCTA from "@/components/PlaybookCTA";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import QuoteBlock from "@/components/QuoteBlock";
 import EnablersGrid from "@/components/EnablersGrid";
+import TableOfContents from "@/components/TableOfContents";
 import PilotTimeline from "@/components/PilotTimeline";
 import SuccessMetrics from "@/components/SuccessMetrics";
 
@@ -14,9 +15,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <PlaybookHero />
+      <TableOfContents />
 
       {/* Chapter 1: Why Now */}
       <ChapterSection
+        id="ch-1"
         chapterNumber="Chapter 01"
         arcStage="The World Before"
         title="Why Now"
@@ -69,6 +72,7 @@ const Index = () => {
 
       {/* Chapter 2: The Vision */}
       <ChapterSection
+        id="ch-2"
         chapterNumber="Chapter 02"
         arcStage="The Call to Adventure"
         title="The Vision"
@@ -110,6 +114,7 @@ const Index = () => {
 
       {/* Chapter 3: The Challenge */}
       <ChapterSection
+        id="ch-3"
         chapterNumber="Chapter 03"
         arcStage="The Obstacle"
         title="The Challenge"
@@ -168,6 +173,7 @@ const Index = () => {
 
       {/* Chapter 4: The Methodology */}
       <ChapterSection
+        id="ch-4"
         chapterNumber="Chapter 04"
         arcStage="The Guide Appears"
         title="The Methodology"
@@ -236,6 +242,7 @@ const Index = () => {
 
       {/* Chapter 5: How It Works */}
       <ChapterSection
+        id="ch-5"
         chapterNumber="Chapter 05"
         arcStage="The Journey"
         title="How It Works"
@@ -256,6 +263,7 @@ const Index = () => {
 
       {/* Chapter 6: What We've Seen */}
       <ChapterSection
+        id="ch-6"
         chapterNumber="Chapter 06"
         arcStage="Proof It Works"
         title="What We've Seen"
@@ -310,6 +318,7 @@ const Index = () => {
 
       {/* Chapter 7: Your Move */}
       <ChapterSection
+        id="ch-7"
         chapterNumber="Chapter 07"
         arcStage="The New World"
         title="Your Move"
