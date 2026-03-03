@@ -393,14 +393,14 @@ const PaletteSwitcher = ({ isDark }: PaletteSwitcherProps) => {
   const [activeId, setActiveId] = useState("indigo-violet");
   const buttonRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const [pos, setPos] = useState({ top: 0, right: 0 });
+  const [pos, setPos] = useState({ bottom: 0, left: 0 });
 
   const updatePos = useCallback(() => {
     if (buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
       setPos({
-        top: rect.bottom + 8,
-        right: window.innerWidth - rect.right,
+        bottom: window.innerHeight - rect.top + 8,
+        left: rect.left,
       });
     }
   }, []);
@@ -457,7 +457,7 @@ const PaletteSwitcher = ({ isDark }: PaletteSwitcherProps) => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -8, scale: 0.95 }}
               transition={{ duration: 0.15 }}
-              style={{ position: "fixed", top: pos.top, right: pos.right }}
+              style={{ position: "fixed", bottom: pos.bottom, left: pos.left }}
               className="bg-card border border-border rounded-lg shadow-lg p-2 w-52 z-[100] max-h-[70vh] overflow-y-auto"
             >
               <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground px-2 py-1">
