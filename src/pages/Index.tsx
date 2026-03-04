@@ -163,6 +163,71 @@ const Index = () => {
               leaderText="Agencies that move boldly will find their officers more capable, their services more responsive, and their teams more engaged. Those that move cautiously will face the prospect of closing the gap under greater pressure, with less time."
               practitionerText="You already know the pain. The spreadsheets, the copy-paste workflows, the 47-step approval chains. AI doesn't replace your expertise — it removes the friction around it."
             />
+
+            {/* How to Navigate This Playbook */}
+            <div className="mt-16">
+              <div className="flex items-center gap-4 mb-8">
+                <span className="font-mono text-xs tracking-[0.3em] uppercase text-gold-dim">
+                  Your Map
+                </span>
+                <span className="flex-1 h-px bg-border" />
+              </div>
+              <h3 className="font-display text-3xl md:text-4xl text-foreground mb-4">
+                How to Navigate This Playbook
+              </h3>
+              <p className="text-secondary-foreground text-lg leading-relaxed mb-8">
+                This document is a modular toolkit designed to be used by different stakeholders at different stages of the transformation journey. You do not need to read it cover-to-cover — follow the path relevant to your role:
+              </p>
+
+              <div className="space-y-4">
+                {[
+                  {
+                    role: "Senior Leadership",
+                    tagline: 'The "Why" and "Where"',
+                    color: "gradient-gold-bg",
+                    labelColor: "text-gold-dim",
+                    description:
+                      'Focus on Chapter 1 (The World Before) and the Cultural Prerequisites section. Your role is to provide the mandate and the protected space for your teams. Use these chapters to understand the "Friction Tax" your team is currently paying and the leadership behaviors required to dismantle it.',
+                  },
+                  {
+                    role: "Transformation Drivers & Sprint Runners",
+                    tagline: 'The "How"',
+                    color: "bg-accent",
+                    labelColor: "text-accent-foreground",
+                    description:
+                      'Focus on Chapter 2 (The Problem-First Discovery), The Sprint System, and the Tactical Toolkits. These sections contain the "plug-and-play" templates, survey instruments, and sprint agendas you need to run your first 90-day cycle.',
+                  },
+                  {
+                    role: "Officers",
+                    tagline: 'The "Execution"',
+                    color: "bg-muted-foreground",
+                    labelColor: "text-muted-foreground",
+                    description:
+                      'Focus on the Tactical Toolkit and Governance/Pragmatism sections. These chapters provide the practical "how-to" for identifying friction, building your first prototype, and ensuring you are staying within the safe boundaries of data classification.',
+                  },
+                ].map((item, i) => (
+                  <motion.div
+                    key={item.role}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className="bg-surface-elevated border border-border rounded-lg p-6 hover:border-gold-dim/40 transition-colors duration-300"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`w-2.5 h-2.5 rounded-full ${item.color} shrink-0`} />
+                      <span className="font-display text-lg text-foreground">{item.role}</span>
+                      <span className={`font-mono text-[10px] tracking-[0.15em] uppercase ${item.labelColor}`}>
+                        {item.tagline}
+                      </span>
+                    </div>
+                    <p className="text-secondary-foreground text-sm leading-relaxed pl-[22px]">
+                      {item.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </ChapterContent>
         )}
 
