@@ -7,6 +7,7 @@ import StatCard from "@/components/StatCard";
 import PlaybookCTA from "@/components/PlaybookCTA";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import QuoteBlock from "@/components/QuoteBlock";
+import CulturalInfographic from "@/components/CulturalInfographic";
 import EnablersGrid from "@/components/EnablersGrid";
 import PilotTimeline from "@/components/PilotTimeline";
 import SuccessMetrics from "@/components/SuccessMetrics";
@@ -330,6 +331,8 @@ const Index = () => {
                 </div>
               ))}
             </div>
+
+            <CulturalInfographic />
 
             <QuoteBlock
               quote="The common thread: this is a culture change problem, not a technology problem. The tools are there. What's missing are the conditions that empower officers to believe they can do it."
