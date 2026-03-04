@@ -691,12 +691,6 @@ const Index = () => {
             
             <div className="mt-8 space-y-3">
               <h4 className="font-display text-lg text-foreground mb-3">📥 Resources & Templates</h4>
-              <ResourceDownload
-                title="Discovery Survey Template"
-                description="The pre-sprint survey used to identify pain points, map workflows, and prioritise AI opportunities across teams."
-                type="template"
-                href="#"
-              />
               <DiscoverySurvey />
               <ResourceDownload
                 title="Discovery Survey Results"
@@ -847,12 +841,6 @@ const Index = () => {
                 title="Sprint Readiness Checklist"
                 description="A printable checklist covering leadership commitment, officer selection, BAU trade-offs, and GovTech engagement — everything needed before Day 1."
                 type="toolkit"
-                href="#"
-              />
-              <ResourceDownload
-                title="Discovery Survey Template"
-                description="The pre-sprint survey used to identify pain points, map workflows, and prioritise AI opportunities across teams."
-                type="template"
                 href="#"
               />
               <DiscoverySurvey />
