@@ -727,8 +727,8 @@ const Index = () => {
             </div>
             <QuoteBlock quote="I need to set aside time on this to save time" attribution="SCG Officer, Strat Plans" />
             <DualAudienceBlock
-              leaderText="You don't need to understand every sprint ceremony. You need to trust the process, protect the team, and clear the blockers only you can clear. Most importantly — participate yourself."
-              practitionerText="Each sprint has a clear input (a real problem), a clear output (a working prototype), and a clear feedback loop (users testing it). No vanity demos."
+              leaderText="You don't need to master every sprint ceremony. You need to trust the process, protect the team, and clear the blockers only you can clear. Most importantly — participate yourself."
+              practitionerText="Each sprint has a clear input (a real problem), a clear output (a working prototype), and a clear feedback loop (users testing it). If it doesn't have these, it's just a vanity demos. Build for impact"
             />
           </ChapterContent>
         )}
