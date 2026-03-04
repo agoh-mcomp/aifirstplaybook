@@ -179,7 +179,7 @@ const Index = () => {
               augment my thinking, speed up my work and help me solve problems.
             </p>
             <div className="bg-surface-elevated border border-border rounded-lg p-6 md:p-8 mt-8">
-              <h4 className="font-display text-2xl text-foreground mb-6">True AI Diffusion Means</h4>
+              <h4 className="font-display text-2xl text-foreground mb-6">What Good Looks Like</h4>
               <div className="space-y-4">
                 {[
                   "Officers using the best available tools to do their core work better, faster, and with more creativity",
@@ -269,7 +269,9 @@ const Index = () => {
         {activeChapter === "ch-4" && (
           <ChapterContent num="Chapter 04" arc="The Foundation" title="Cultural Prerequisites">
             <p>
-              This mindset shift requires seven non-negotiables. Without these cultural foundations in place, no amount of tooling, training, or top-down directives will produce lasting change. These are the conditions that separate agencies that transform from agencies that merely experiment.
+              This mindset shift requires seven non-negotiables. Without these cultural foundations in place, no amount
+              of tooling, training, or top-down directives will produce lasting change. These are the conditions that
+              separate agencies that transform from agencies that merely experiment.
             </p>
 
             <div className="space-y-6 mt-8">
@@ -317,7 +319,10 @@ const Index = () => {
                   icon: "📊",
                 },
               ].map((item) => (
-                <div key={item.num} className="bg-surface-elevated border border-border rounded-lg p-6 flex gap-5 items-start">
+                <div
+                  key={item.num}
+                  className="bg-surface-elevated border border-border rounded-lg p-6 flex gap-5 items-start"
+                >
                   <div className="shrink-0 w-10 h-10 rounded-lg gradient-gold-bg flex items-center justify-center text-lg">
                     {item.icon}
                   </div>
@@ -449,22 +454,45 @@ const Index = () => {
         {activeChapter === "ch-6" && (
           <ChapterContent num="Chapter 06" arc="The Journey" title="How It Works">
             <p>
-              You've read the case for change. You've seen the cultural prerequisites. Now: how do you actually start? This chapter is your agency's starter kit — a practical, 90-day sprint model designed so your agency runs it, owns it, and builds the muscle to keep going without external support.
+              You've read the case for change. You've seen the cultural prerequisites. Now: how do you actually start?
+              This chapter is your agency's starter kit — a practical, 90-day sprint model designed so your agency runs
+              it, owns it, and builds the muscle to keep going without external support.
             </p>
 
             <div className="bg-surface-elevated border border-border rounded-lg p-6 md:p-8 mt-8">
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-gold-dim mb-2">Before You Begin</div>
+              <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-gold-dim mb-2">
+                Before You Begin
+              </div>
               <h4 className="font-display text-2xl text-foreground mb-4">Your Pre-Sprint Checklist</h4>
               <p className="text-sm text-muted-foreground mb-6">
-                Before kicking off Month 1, ensure these five foundations are in place. Without them, the sprint will stall.
+                Before kicking off Month 1, ensure these five foundations are in place. Without them, the sprint will
+                stall.
               </p>
               <div className="space-y-3">
                 {[
-                  { check: "Leadership commitment", detail: "PS or DCE has agreed to protect sprint time and participate visibly — not just endorse." },
-                  { check: "Nominated AI Lead", detail: "One DD-level (or above) coordinator who owns internal logistics and champions the initiative." },
-                  { check: "Identified 15–30 officers", detail: "A cross-functional cohort from corporate functions — HR, Finance, Procurement, Comms, Ops." },
-                  { check: "BAU trade-offs agreed", detail: "Specific deliverables deprioritised or deferred during sprint weeks. This is non-negotiable." },
-                  { check: "GovTech engagement confirmed", detail: "Sprint support, AI clinics, tool access, and deployment pathway via Rabbit Deploy." },
+                  {
+                    check: "Leadership commitment",
+                    detail: "PS or DCE has agreed to protect sprint time and participate visibly — not just endorse.",
+                  },
+                  {
+                    check: "Nominated AI Lead",
+                    detail:
+                      "One DD-level (or above) coordinator who owns internal logistics and champions the initiative.",
+                  },
+                  {
+                    check: "Identified 15–30 officers",
+                    detail:
+                      "A cross-functional cohort from corporate functions — HR, Finance, Procurement, Comms, Ops.",
+                  },
+                  {
+                    check: "BAU trade-offs agreed",
+                    detail:
+                      "Specific deliverables deprioritised or deferred during sprint weeks. This is non-negotiable.",
+                  },
+                  {
+                    check: "GovTech engagement confirmed",
+                    detail: "Sprint support, AI clinics, tool access, and deployment pathway via Rabbit Deploy.",
+                  },
                 ].map((item) => (
                   <div key={item.check} className="flex gap-3 items-start">
                     <div className="shrink-0 w-5 h-5 rounded border-2 border-gold-dim/60 flex items-center justify-center mt-0.5">
@@ -480,10 +508,13 @@ const Index = () => {
             </div>
 
             <div className="mt-10">
-              <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-gold-dim mb-4">The 90-Day Sprint</div>
+              <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-gold-dim mb-4">
+                The 90-Day Sprint
+              </div>
               <h4 className="font-display text-2xl text-foreground mb-2">Your Three-Month Roadmap</h4>
               <p className="text-sm text-muted-foreground mb-6">
-                Each month has a clear purpose, defined activities, and a tangible output. Your agency runs it — GovTech provides the backbone.
+                Each month has a clear purpose, defined activities, and a tangible output. Your agency runs it — GovTech
+                provides the backbone.
               </p>
             </div>
 
@@ -494,10 +525,26 @@ const Index = () => {
               <h4 className="font-display text-xl text-foreground mb-4">💡 Tips from Agencies That Have Done This</h4>
               <div className="space-y-4">
                 {[
-                  { tip: "Start smaller than you think.", detail: "Five officers solving one real problem will create more momentum than thirty officers attending a workshop." },
-                  { tip: "Make Sprint 1 ridiculously low-stakes.", detail: "The goal is toe-dipping, not transformation. Let officers explore, fail safely, and build confidence before Sprint 2 raises the bar." },
-                  { tip: "Showcase everything — not just successes.", detail: "The team that tried and learned something is as valuable as the team that shipped. Celebrate both." },
-                  { tip: "Document as you go.", detail: "Your agency playbook should be written during the sprint, not after. Capture decisions, friction points, and workarounds in real time." },
+                  {
+                    tip: "Start smaller than you think.",
+                    detail:
+                      "Five officers solving one real problem will create more momentum than thirty officers attending a workshop.",
+                  },
+                  {
+                    tip: "Make Sprint 1 ridiculously low-stakes.",
+                    detail:
+                      "The goal is toe-dipping, not transformation. Let officers explore, fail safely, and build confidence before Sprint 2 raises the bar.",
+                  },
+                  {
+                    tip: "Showcase everything — not just successes.",
+                    detail:
+                      "The team that tried and learned something is as valuable as the team that shipped. Celebrate both.",
+                  },
+                  {
+                    tip: "Document as you go.",
+                    detail:
+                      "Your agency playbook should be written during the sprint, not after. Capture decisions, friction points, and workarounds in real time.",
+                  },
                 ].map((item) => (
                   <div key={item.tip} className="flex gap-3 items-start">
                     <div className="w-1.5 h-1.5 rounded-full gradient-gold-bg mt-2.5 shrink-0" />
