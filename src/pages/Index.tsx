@@ -266,7 +266,85 @@ const Index = () => {
         )}
 
         {activeChapter === "ch-4" && (
-          <ChapterContent num="Chapter 04" arc="The Guide Appears" title="The Methodology">
+          <ChapterContent num="Chapter 04" arc="The Foundation" title="Cultural Prerequisites">
+            <p>
+              This mindset shift requires seven non-negotiables. Without these cultural foundations in place, no amount of tooling, training, or top-down directives will produce lasting change. These are the conditions that separate agencies that transform from agencies that merely experiment.
+            </p>
+
+            <div className="space-y-6 mt-8">
+              {[
+                {
+                  num: "01",
+                  title: "Leadership Modeling and Mandate",
+                  text: "Leaders must participate as learners, not just sponsors. When a Director builds their own AI agent, it signals that this is a legitimate investment of time. Leaders must be held accountable to build and showcase their own solution during the sprint.",
+                  icon: "👤",
+                },
+                {
+                  num: "02",
+                  title: "Permission to Invest Time",
+                  text: "Officers need explicit runway to invest the necessary time — away from BAU work — to experiment and build to reap time savings in the future. Specific BAU deliverables must be deprioritised or deferred during sprint periods. This is not about finding spare time; it's about creating it through deliberate trade-offs.",
+                  icon: "⏳",
+                },
+                {
+                  num: "03",
+                  title: "Reward Learning and Risk-Taking",
+                  text: "Experimentation must be celebrated even when solutions don't scale. Showcase attempts, lessons learned, and creative approaches — not just finished products — to signal that learning is the goal.",
+                  icon: "🏆",
+                },
+                {
+                  num: "04",
+                  title: "Start with Problems, Not Solutions",
+                  text: 'Officers must identify genuine workflow pain points before reaching for AI tools. The question is never "Where can I use AI?" but "What problem am I trying to solve?" AI becomes the implementation choice only after understanding the problem deeply.',
+                  icon: "🎯",
+                },
+                {
+                  num: "05",
+                  title: "Peer Proof Points as Inspiration",
+                  text: 'Officers need to see people like them succeed and draw inspiration for ideas. Their peers in HR, Finance, Procurement — people who had also called themselves "not technical" — showing what they built and the tangible benefits they have derived.',
+                  icon: "🤝",
+                },
+                {
+                  num: "06",
+                  title: "Sustained Engagement, Not One-Off Hackathons",
+                  text: "AI capability is a muscle that strengthens over time. SCG's three sprints over 90 days allowed officers to build confidence progressively — toe-dipping in Sprint 1, real solutions in Sprint 3. After Phase 1, SCG is now building confidence in helping corporate officers build and deploy prototypes for testing rapidly through vibe coding. Learning does not stop.",
+                  icon: "🔄",
+                },
+                {
+                  num: "07",
+                  title: "Pragmatic Data Classification",
+                  text: "Officers default to treating their work as sensitive, creating unnecessary barriers to using commercial AI tools. We must be pragmatic and willing to try commercial AI tools for non-confidential work.",
+                  icon: "📊",
+                },
+              ].map((item) => (
+                <div key={item.num} className="bg-surface-elevated border border-border rounded-lg p-6 flex gap-5 items-start">
+                  <div className="shrink-0 w-10 h-10 rounded-lg gradient-gold-bg flex items-center justify-center text-lg">
+                    {item.icon}
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="font-mono text-xs text-gold-dim tracking-wider">{item.num}</span>
+                      <h4 className="font-display text-xl text-foreground">{item.title}</h4>
+                    </div>
+                    <p className="text-secondary-foreground leading-relaxed">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <QuoteBlock
+              quote="The common thread: this is a culture change problem, not a technology problem. The tools are there. What's missing are the conditions that empower officers to believe they can do it."
+              attribution="AI-First Engagement Strategy"
+            />
+
+            <DualAudienceBlock
+              leaderText="These seven prerequisites are not optional extras. They are the difference between an initiative that sticks and one that fades. Your role is to create these conditions deliberately — not hope they emerge on their own."
+              practitionerText="If you're reading this and recognising what's missing in your agency, you now have a language for it. Share this chapter with your leadership. Change starts when the conditions are right."
+            />
+          </ChapterContent>
+        )}
+
+        {activeChapter === "ch-5" && (
+          <ChapterContent num="Chapter 05" arc="The Guide Appears" title="The Methodology">
             <p>
               In July 2025, GovTech's Strategy, Corporate and Governance cluster kicked off "AI-First" — an initiative
               to move from AI being something people read about to something they{" "}
@@ -365,8 +443,8 @@ const Index = () => {
           </ChapterContent>
         )}
 
-        {activeChapter === "ch-5" && (
-          <ChapterContent num="Chapter 05" arc="The Journey" title="How It Works">
+        {activeChapter === "ch-6" && (
+          <ChapterContent num="Chapter 06" arc="The Journey" title="How It Works">
             <p>
               Scaling AI-First across 100 agencies doesn't start with 100 agencies. It starts with one ministry family
               doing it well enough that others want to follow. Here is the three-month engagement model — designed so
@@ -400,8 +478,8 @@ const Index = () => {
           </ChapterContent>
         )}
 
-        {activeChapter === "ch-6" && (
-          <ChapterContent num="Chapter 06" arc="Proof It Works" title="What We've Seen">
+        {activeChapter === "ch-7" && (
+          <ChapterContent num="Chapter 07" arc="Proof It Works" title="What We've Seen">
             <p>
               The numbers from the SCG AI-First initiative were encouraging. But the more significant outcomes were
               cultural. The framing shifted — almost imperceptibly at first and then unmistakably — from{" "}
@@ -468,8 +546,8 @@ const Index = () => {
           </ChapterContent>
         )}
 
-        {activeChapter === "ch-7" && (
-          <ChapterContent num="Chapter 07" arc="The New World" title="Your Move">
+        {activeChapter === "ch-8" && (
+          <ChapterContent num="Chapter 08" arc="The New World" title="Your Move">
             <p>
               AI diffusion is not optional. It is a non-negotiable condition for remaining a world-class public service.
               To achieve this, we as leaders need to be bolder than feels comfortable.
