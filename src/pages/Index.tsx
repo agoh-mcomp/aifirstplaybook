@@ -364,7 +364,7 @@ const Index = () => {
               attribution="SCG Officer, Procurement"
             />
             <DualAudienceBlock
-              leaderText="AI-First demands a strategic shift: from outsourced innovation to in-house building by domain experts; from process stability to process agility; from IT/procurement gatekeeping to governance as an enabler of speed; and from perfect execution to a culture of experimentation and rapid prototyping."
+              leaderText="This is fundamentally a leadership challenge, not a technology problem. Your mandate is to architect an operating model where intelligence is embedded, not imported — shifting from outsourced innovation to in-house building, from process stability to agility, from gatekeeping to governance as an enabler, and from perfect execution to rapid experimentation."
               practitionerText={'Apply the "AI-First" design lens: before starting any task — budget reconciliation, procurement brief, or policy review — ask "What would this look like if AI were a given, not an afterthought?" Identify which steps are purely transactional vs. requiring human judgment, then use AI agents to handle high-volume/low-value toil so you can focus on the final strategic review.'}
             />
           </ChapterContent>
