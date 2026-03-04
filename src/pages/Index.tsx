@@ -365,7 +365,7 @@ const Index = () => {
             />
             <DualAudienceBlock
               leaderText="This is not primarily a technology problem. It is a leadership problem. Your mandate is not to adopt a technology, but to architect a new operating model where intelligence is embedded, not imported."
-              practitionerText="Think of AI-First as a design principle. Before building any workflow, ask: what would this look like if AI were a given? The answer changes everything."
+              practitionerText={'Apply the "AI-First" design lens: before starting any task — budget reconciliation, procurement brief, or policy review — ask "What would this look like if AI were a given, not an afterthought?" Identify which steps are purely transactional vs. requiring human judgment, then use AI agents to handle high-volume/low-value toil so you can focus on the final strategic review.'}
             />
           </ChapterContent>
         )}
