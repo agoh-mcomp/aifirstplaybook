@@ -7,7 +7,7 @@ import StatCard from "@/components/StatCard";
 import PlaybookCTA from "@/components/PlaybookCTA";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import QuoteBlock from "@/components/QuoteBlock";
-import CulturalInfographic from "@/components/CulturalInfographic";
+
 import EnablersGrid from "@/components/EnablersGrid";
 import PilotTimeline from "@/components/PilotTimeline";
 import SuccessMetrics from "@/components/SuccessMetrics";
@@ -39,6 +39,7 @@ import {
   Heart,
   Flag,
   Crown,
+  Download,
 } from "lucide-react";
 
 const Index = () => {
