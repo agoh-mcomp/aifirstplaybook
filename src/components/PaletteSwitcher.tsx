@@ -61,6 +61,14 @@ const fontThemes: FontTheme[] = [
     mono: "'JetBrains Mono', monospace",
     preview: "'Libre Baskerville', serif",
   },
+  {
+    id: "lato-inter",
+    name: "Lato + Inter",
+    display: "'Lato', sans-serif",
+    body: "'Inter', sans-serif",
+    mono: "'JetBrains Mono', monospace",
+    preview: "'Lato', sans-serif",
+  },
 ];
 
 export interface ColorPalette {
