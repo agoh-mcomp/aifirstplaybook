@@ -59,22 +59,22 @@
     --font-body: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
-    --sidebar-background: 25 30% 14%;
-    --sidebar-foreground: 30 14% 90%;
-    --sidebar-primary: 20 70% 45%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 25 22% 22%;
-    --sidebar-accent-foreground: 30 14% 90%;
-    --sidebar-border: 25 15% 80%;
+    --sidebar-background: 28 35% 12%;
+    --sidebar-foreground: 35 18% 88%;
+    --sidebar-primary: 20 70% 48%;
+    --sidebar-primary-foreground: 35 30% 96%;
+    --sidebar-accent: 26 28% 18%;
+    --sidebar-accent-foreground: 35 18% 88%;
+    --sidebar-border: 28 18% 22%;
     --sidebar-ring: 20 70% 45%;
 
-    --chart-1: 12 80% 55%;
-    --chart-2: 185 45% 50%;
-    --chart-3: 220 40% 35%;
-    --chart-4: 160 40% 55%;
-    --chart-5: 45 70% 60%;
+    --chart-1: 20 70% 45%;
+    --chart-2: 35 55% 50%;
+    --chart-3: 160 30% 40%;
+    --chart-4: 45 60% 55%;
+    --chart-5: 10 50% 55%;
 
-    --sidebar: 210 30% 98%;
+    --sidebar: 28 35% 12%;
     --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
     --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
