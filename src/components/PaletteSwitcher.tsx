@@ -1,7 +1,67 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
-import { Palette } from "lucide-react";
+import { Palette, Type } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+
+export interface FontTheme {
+  id: string;
+  name: string;
+  display: string;
+  body: string;
+  mono: string;
+  preview: string; // CSS font-family for the preview label
+}
+
+const fontThemes: FontTheme[] = [
+  {
+    id: "instrument-inter",
+    name: "Instrument + Inter",
+    display: "'Instrument Serif', serif",
+    body: "'Inter', sans-serif",
+    mono: "'Space Mono', ui-monospace, monospace",
+    preview: "'Instrument Serif', serif",
+  },
+  {
+    id: "playfair-dm",
+    name: "Playfair + DM Sans",
+    display: "'Playfair Display', serif",
+    body: "'DM Sans', sans-serif",
+    mono: "'Space Mono', ui-monospace, monospace",
+    preview: "'Playfair Display', serif",
+  },
+  {
+    id: "dm-serif-inter",
+    name: "DM Serif + Inter",
+    display: "'DM Serif Display', serif",
+    body: "'Inter', sans-serif",
+    mono: "'JetBrains Mono', monospace",
+    preview: "'DM Serif Display', serif",
+  },
+  {
+    id: "source-serif-ibm",
+    name: "Source Serif + IBM Plex",
+    display: "'Source Serif 4', serif",
+    body: "'IBM Plex Sans', sans-serif",
+    mono: "'IBM Plex Mono', monospace",
+    preview: "'Source Serif 4', serif",
+  },
+  {
+    id: "fraunces-work",
+    name: "Fraunces + Work Sans",
+    display: "'Fraunces', serif",
+    body: "'Work Sans', sans-serif",
+    mono: "'Space Mono', ui-monospace, monospace",
+    preview: "'Fraunces', serif",
+  },
+  {
+    id: "libre-inter",
+    name: "Libre Baskerville + Inter",
+    display: "'Libre Baskerville', serif",
+    body: "'Inter', sans-serif",
+    mono: "'JetBrains Mono', monospace",
+    preview: "'Libre Baskerville', serif",
+  },
+];
 
 export interface ColorPalette {
   id: string;
@@ -384,13 +444,22 @@ function applyPalette(palette: ColorPalette, isDark: boolean) {
   });
 }
 
+function applyFontTheme(theme: FontTheme) {
+  const root = document.documentElement;
+  root.style.setProperty("--font-display", theme.display);
+  root.style.setProperty("--font-body", theme.body);
+  root.style.setProperty("--font-mono", theme.mono);
+}
+
 interface PaletteSwitcherProps {
   isDark: boolean;
 }
 
 const PaletteSwitcher = ({ isDark }: PaletteSwitcherProps) => {
   const [open, setOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<"color" | "font">("color");
   const [activeId, setActiveId] = useState("indigo-violet");
+  const [activeFontId, setActiveFontId] = useState("instrument-inter");
   const buttonRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ bottom: 0, left: 0 });
@@ -434,7 +503,11 @@ const PaletteSwitcher = ({ isDark }: PaletteSwitcherProps) => {
   const handleSelect = (palette: ColorPalette) => {
     setActiveId(palette.id);
     applyPalette(palette, isDark);
-    setOpen(false);
+  };
+
+  const handleFontSelect = (theme: FontTheme) => {
+    setActiveFontId(theme.id);
+    applyFontTheme(theme);
   };
 
   return (
@@ -443,7 +516,7 @@ const PaletteSwitcher = ({ isDark }: PaletteSwitcherProps) => {
         ref={buttonRef}
         onClick={handleToggle}
         className="shrink-0 p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-        aria-label="Change color palette"
+        aria-label="Change theme"
       >
         <Palette className="w-4 h-4" />
       </button>
@@ -458,33 +531,86 @@ const PaletteSwitcher = ({ isDark }: PaletteSwitcherProps) => {
               exit={{ opacity: 0, y: -8, scale: 0.95 }}
               transition={{ duration: 0.15 }}
               style={{ position: "fixed", bottom: pos.bottom, left: pos.left }}
-              className="bg-card border border-border rounded-lg shadow-lg p-2 w-52 z-[100] max-h-[70vh] overflow-y-auto"
+              className="bg-card border border-border rounded-lg shadow-lg p-2 w-60 z-[100] max-h-[70vh] overflow-y-auto"
             >
-              <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground px-2 py-1">
-                Color Palette
-              </p>
-              {palettes.map((palette) => (
+              {/* Tabs */}
+              <div className="flex gap-1 mb-2 p-0.5 bg-secondary/50 rounded-md">
                 <button
-                  key={palette.id}
-                  onClick={() => handleSelect(palette)}
-                  className={`w-full flex items-center gap-3 px-2 py-2 rounded-md text-left text-sm transition-colors cursor-pointer ${
-                    activeId === palette.id
-                      ? "bg-secondary text-foreground"
-                      : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
+                  onClick={() => setActiveTab("color")}
+                  className={`flex-1 flex items-center justify-center gap-1.5 px-2 py-1.5 rounded text-[11px] font-mono uppercase tracking-wider transition-colors cursor-pointer ${
+                    activeTab === "color"
+                      ? "bg-card text-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  <div className="flex gap-0.5 shrink-0">
-                    {palette.preview.map((color, i) => (
-                      <div
-                        key={i}
-                        className="w-4 h-4 rounded-full border border-border"
-                        style={{ backgroundColor: color }}
-                      />
-                    ))}
-                  </div>
-                  <span className="font-body text-xs">{palette.name}</span>
+                  <Palette className="w-3 h-3" />
+                  Colors
                 </button>
-              ))}
+                <button
+                  onClick={() => setActiveTab("font")}
+                  className={`flex-1 flex items-center justify-center gap-1.5 px-2 py-1.5 rounded text-[11px] font-mono uppercase tracking-wider transition-colors cursor-pointer ${
+                    activeTab === "font"
+                      ? "bg-card text-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <Type className="w-3 h-3" />
+                  Fonts
+                </button>
+              </div>
+
+              {activeTab === "color" && (
+                <>
+                  {palettes.map((palette) => (
+                    <button
+                      key={palette.id}
+                      onClick={() => handleSelect(palette)}
+                      className={`w-full flex items-center gap-3 px-2 py-2 rounded-md text-left text-sm transition-colors cursor-pointer ${
+                        activeId === palette.id
+                          ? "bg-secondary text-foreground"
+                          : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
+                      }`}
+                    >
+                      <div className="flex gap-0.5 shrink-0">
+                        {palette.preview.map((color, i) => (
+                          <div
+                            key={i}
+                            className="w-4 h-4 rounded-full border border-border"
+                            style={{ backgroundColor: color }}
+                          />
+                        ))}
+                      </div>
+                      <span className="font-body text-xs">{palette.name}</span>
+                    </button>
+                  ))}
+                </>
+              )}
+
+              {activeTab === "font" && (
+                <>
+                  {fontThemes.map((theme) => (
+                    <button
+                      key={theme.id}
+                      onClick={() => handleFontSelect(theme)}
+                      className={`w-full flex flex-col gap-0.5 px-3 py-2.5 rounded-md text-left transition-colors cursor-pointer ${
+                        activeFontId === theme.id
+                          ? "bg-secondary text-foreground"
+                          : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
+                      }`}
+                    >
+                      <span
+                        className="text-base text-foreground leading-tight"
+                        style={{ fontFamily: theme.preview }}
+                      >
+                        The quick brown fox
+                      </span>
+                      <span className="text-[10px] font-mono tracking-wider uppercase opacity-60">
+                        {theme.name}
+                      </span>
+                    </button>
+                  ))}
+                </>
+              )}
             </motion.div>
           )}
         </AnimatePresence>,
