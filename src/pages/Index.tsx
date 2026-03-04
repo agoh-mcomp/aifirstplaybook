@@ -748,15 +748,14 @@ const Index = () => {
                 {[
                   {
                     check: "Leadership commitment",
-                    detail: "PS or DCE has agreed to protect sprint time and participate visibly — not just endorse.",
+                    detail: "PS or CE has agreed to protect sprint time and participate visibly — not just endorse.",
                   },
                   {
                     check: "Nominated AI Lead",
-                    detail:
-                      "One DD-level (or above) coordinator who owns internal logistics and champions the initiative.",
+                    detail: "One DD-level (or above) who owns internal logistics and champions the initiative.",
                   },
                   {
-                    check: "Identified 15–30 officers",
+                    check: "Identified officers to participate",
                     detail:
                       "A cross-functional cohort from corporate functions — HR, Finance, Procurement, Comms, Ops.",
                   },
@@ -766,7 +765,7 @@ const Index = () => {
                       "Specific deliverables deprioritised or deferred during sprint weeks. This is non-negotiable.",
                   },
                   {
-                    check: "GovTech engagement confirmed",
+                    check: "GovTech support confirmed ",
                     detail: "Sprint support, AI clinics, tool access, and deployment pathway via Rabbit Deploy.",
                   },
                 ].map((item) => (
