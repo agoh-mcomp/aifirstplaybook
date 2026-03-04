@@ -364,7 +364,7 @@ const Index = () => {
               attribution="SCG Officer, Procurement"
             />
             <DualAudienceBlock
-              leaderText="This is not primarily a technology problem. It is a leadership problem. Your mandate is not to adopt a technology, but to architect a new operating model where intelligence is embedded, not imported."
+              leaderText="AI-First demands a strategic shift: from outsourced innovation to in-house building by domain experts; from process stability to process agility; from IT/procurement gatekeeping to governance as an enabler of speed; and from perfect execution to a culture of experimentation and rapid prototyping."
               practitionerText={'Apply the "AI-First" design lens: before starting any task — budget reconciliation, procurement brief, or policy review — ask "What would this look like if AI were a given, not an afterthought?" Identify which steps are purely transactional vs. requiring human judgment, then use AI agents to handle high-volume/low-value toil so you can focus on the final strategic review.'}
             />
           </ChapterContent>
