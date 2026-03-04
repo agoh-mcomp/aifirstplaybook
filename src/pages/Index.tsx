@@ -687,7 +687,7 @@ const Index = () => {
                 ))}
               </div>
             </div>
-            <EnablersGrid />
+            
             <div className="mt-8 space-y-3">
               <h4 className="font-display text-lg text-foreground mb-3">📥 Resources & Templates</h4>
               <ResourceDownload
@@ -1073,6 +1073,8 @@ const Index = () => {
               leaderText="GovTech SCG proved it with non-technical corporate officers in 90 days. Your agency has the opportunity to be the one that proves it scales — and whose story moves the rest of government from waiting to acting."
               practitionerText="GovTech is here to help. We have a model that has worked, a community of practitioners who have lived through it, and a genuine commitment to making this easier for you."
             />
+
+            <EnablersGrid />
 
             {/* Epilogue CTA inline */}
             <div className="mt-16 pt-16 border-t border-border text-center">
