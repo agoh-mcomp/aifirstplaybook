@@ -612,7 +612,6 @@ const Index = () => {
               Download "The 7 Cultural Non-Negotiables" Infographic (PDF)
             </a>
 
-
             <DualAudienceBlock
               leaderText="These seven prerequisites are not optional extras. They are the difference between an initiative that sticks and one that fades. Your role is to create these conditions deliberately — not hope they emerge on their own."
               practitionerText="If you're reading this and recognising what's missing in your agency, you now have a language for it. Share this chapter with your leadership. Change starts when the conditions are right."
@@ -729,7 +728,7 @@ const Index = () => {
         )}
 
         {activeChapter === "ch-6" && (
-          <ChapterContent num="Chapter 06" arc="The Journey" title="How It Works">
+          <ChapterContent num="Chapter 06" arc="The Journey" title="How Do I Start">
             <p>
               You've read the case for change. You've seen the cultural prerequisites. Now: how do you actually start?
               This chapter is your agency's starter kit — a practical, 90-day sprint model designed so your agency runs
