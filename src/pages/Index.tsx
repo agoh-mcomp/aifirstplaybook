@@ -7,7 +7,7 @@ import StatCard from "@/components/StatCard";
 import PlaybookCTA from "@/components/PlaybookCTA";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import QuoteBlock from "@/components/QuoteBlock";
-import CulturalInfographic from "@/components/CulturalInfographic";
+
 import EnablersGrid from "@/components/EnablersGrid";
 import PilotTimeline from "@/components/PilotTimeline";
 import SuccessMetrics from "@/components/SuccessMetrics";
@@ -39,6 +39,7 @@ import {
   Heart,
   Flag,
   Crown,
+  Download,
 } from "lucide-react";
 
 const Index = () => {
@@ -602,7 +603,16 @@ const Index = () => {
               ))}
             </div>
 
-            <CulturalInfographic />
+            <div className="mt-10">
+              <a
+                href="#"
+                download
+                className="flex items-center gap-2 text-sm font-body font-medium text-gold-dim hover:text-gold transition-colors cursor-pointer group"
+              >
+                <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+                Download "The 7 Cultural Non-Negotiables" Infographic (PDF)
+              </a>
+            </div>
 
             <QuoteBlock
               quote="The common thread: this is a culture change problem, not a technology problem. The tools are there. What's missing are the conditions that empower officers to believe they can do it."
