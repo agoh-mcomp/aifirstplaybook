@@ -179,7 +179,7 @@ const Index = () => {
                 This document is a modular toolkit designed to be used by different stakeholders at different stages of the transformation journey. You do not need to read it cover-to-cover — follow the path relevant to your role:
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {[
                   {
                     role: "Senior Leadership",
@@ -187,7 +187,15 @@ const Index = () => {
                     color: "gradient-gold-bg",
                     labelColor: "text-gold-dim",
                     description:
-                      'Focus on Chapter 1 (The World Before) and the Cultural Prerequisites section. Your role is to provide the mandate and the protected space for your teams. Use these chapters to understand the "Friction Tax" your team is currently paying and the leadership behaviors required to dismantle it.',
+                      'Your role is to provide the mandate and protected space for your teams. Understand the "Friction Tax" your organisation is paying and the leadership behaviours required to dismantle it.',
+                    chapters: [
+                      { num: "01", title: "Why Now", note: "The strategic case for urgency" },
+                      { num: "02", title: "The Vision", note: "What AI-First actually means" },
+                      { num: "03", title: "The Challenge", note: "Barriers you must acknowledge" },
+                      { num: "04", title: "Cultural Prerequisites", note: "The culture you must model" },
+                      { num: "07", title: "Proof It Works", note: "Evidence to justify investment" },
+                      { num: "08", title: "Your Move", note: "Call to action" },
+                    ],
                   },
                   {
                     role: "Transformation Drivers & Sprint Runners",
@@ -195,15 +203,28 @@ const Index = () => {
                     color: "bg-accent",
                     labelColor: "text-accent-foreground",
                     description:
-                      'Focus on Chapter 2 (The Problem-First Discovery), The Sprint System, and the Tactical Toolkits. These sections contain the "plug-and-play" templates, survey instruments, and sprint agendas you need to run your first 90-day cycle.',
+                      'You own the engine room. These chapters give you the methodology, templates, and sprint playbook to run your first 90-day cycle.',
+                    chapters: [
+                      { num: "02", title: "The Vision", note: "Align your team on the destination" },
+                      { num: "03", title: "The Challenge", note: "Anticipate resistance patterns" },
+                      { num: "05", title: "The Methodology", note: "The discovery & build framework" },
+                      { num: "06", title: "90-Day Sprint Starter Kit", note: "Your execution playbook" },
+                      { num: "07", title: "Proof It Works", note: "Case studies to reference" },
+                      { num: "08", title: "Your Move", note: "Next steps" },
+                    ],
                   },
                   {
-                    role: "Officers",
+                    role: "Officers on the Ground",
                     tagline: 'The "Execution"',
                     color: "bg-muted-foreground",
                     labelColor: "text-muted-foreground",
                     description:
-                      'Focus on the Tactical Toolkit and Governance/Pragmatism sections. These chapters provide the practical "how-to" for identifying friction, building your first prototype, and ensuring you are staying within the safe boundaries of data classification.',
+                      'You live with the problems every day — these chapters show you how to turn friction into working solutions, even if you don\'t consider yourself "technical."',
+                    chapters: [
+                      { num: "05", title: "The Methodology", note: "How problems become prototypes" },
+                      { num: "06", title: "90-Day Sprint Starter Kit", note: "Templates & toolkits" },
+                      { num: "07", title: "Proof It Works", note: "Peer stories from officers like you" },
+                    ],
                   },
                 ].map((item, i) => (
                   <motion.div
@@ -211,19 +232,37 @@ const Index = () => {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    transition={{ duration: 0.5, delay: i * 0.12 }}
                     className="bg-surface-elevated border border-border rounded-lg p-6 hover:border-gold-dim/40 transition-colors duration-300"
                   >
-                    <div className="flex items-center gap-3 mb-3">
+                    <div className="flex items-center gap-3 mb-2">
                       <div className={`w-2.5 h-2.5 rounded-full ${item.color} shrink-0`} />
                       <span className="font-display text-lg text-foreground">{item.role}</span>
                       <span className={`font-mono text-[10px] tracking-[0.15em] uppercase ${item.labelColor}`}>
                         {item.tagline}
                       </span>
                     </div>
-                    <p className="text-secondary-foreground text-sm leading-relaxed pl-[22px]">
+                    <p className="text-secondary-foreground text-sm leading-relaxed pl-[22px] mb-4">
                       {item.description}
                     </p>
+                    <div className="pl-[22px] grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {item.chapters.map((ch) => (
+                        <button
+                          key={ch.num}
+                          onClick={() => {
+                            const el = document.getElementById(`ch-${ch.num === "01" ? "1" : ch.num === "02" ? "2" : ch.num === "03" ? "3" : ch.num === "04" ? "4" : ch.num === "05" ? "5" : ch.num === "06" ? "6" : ch.num === "07" ? "7" : "8"}`);
+                            if (el) el.scrollIntoView({ behavior: "smooth" });
+                          }}
+                          className="group flex items-start gap-2 text-left p-2 rounded-md hover:bg-background/50 transition-colors cursor-pointer"
+                        >
+                          <span className="font-mono text-[11px] text-gold-dim mt-0.5 shrink-0">{ch.num}</span>
+                          <div>
+                            <span className="text-sm font-medium text-foreground group-hover:text-gold transition-colors">{ch.title}</span>
+                            <span className="block text-[11px] text-muted-foreground leading-tight">{ch.note}</span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
                   </motion.div>
                 ))}
               </div>
