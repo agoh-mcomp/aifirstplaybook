@@ -13,6 +13,7 @@ import PilotTimeline from "@/components/PilotTimeline";
 import SuccessMetrics from "@/components/SuccessMetrics";
 import ResourceDownload from "@/components/ResourceDownload";
 import DiscoverySurvey from "@/components/DiscoverySurvey";
+import PostSprintSurvey from "@/components/PostSprintSurvey";
 import {
   BookOpen,
   ArrowRight,
