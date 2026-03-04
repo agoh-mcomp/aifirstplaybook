@@ -855,8 +855,7 @@ const Index = () => {
                 type="template"
                 href="#"
               />
-              <DiscoverySurvey
-              />
+              <DiscoverySurvey />
               <ResourceDownload
                 title="Impact Measurement Dashboard"
                 description="Live dashboard template tracking time saved, officer confidence, adoption rates, and solution deployment across sprints."
