@@ -131,9 +131,9 @@ const PlaybookCTA = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4" data-pdf-hide>
-          <button className="gradient-gold-bg text-primary-foreground font-body font-semibold px-8 py-4 rounded-lg text-base tracking-wide hover:opacity-90 transition-opacity">
-            Request a Sprint Briefing
-          </button>
+          <a href="https://go.gov.sg/ai-first" target="_blank" rel="noopener noreferrer" className="gradient-gold-bg text-primary-foreground font-body font-semibold px-8 py-4 rounded-lg text-base tracking-wide hover:opacity-90 transition-opacity inline-block">
+            Find out More
+          </a>
           <button
             onClick={handleDownloadPDF}
             disabled={isGenerating}
