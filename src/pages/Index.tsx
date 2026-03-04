@@ -523,7 +523,7 @@ const Index = () => {
             />
             <DualAudienceBlock
               leaderText="None of these constraints are insurmountable. But they require deliberate choices, not passive support. Your role is to make the cost of standing still more visible than the cost of moving."
-              practitionerText="Start with one workflow. One team. One quick win. Transformation doesn't need permission from everyone — Start with one workflow, one team, and one measurable quick win."
+              practitionerText="Transformation doesn't need permission from everyone — Start with one workflow, one team, and one measurable quick win."
             />
           </ChapterContent>
         )}
