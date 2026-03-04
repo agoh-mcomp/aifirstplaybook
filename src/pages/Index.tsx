@@ -698,12 +698,6 @@ const Index = () => {
                 type="dashboard"
                 href="https://go.gov.sg/aifirstdiscovery"
               />
-              <ResourceDownload
-                title="Sprint Readiness Checklist"
-                description="Everything your agency needs to prepare before kicking off a 90-day AI-First sprint."
-                type="toolkit"
-                href="#"
-              />
             </div>
             <div className="mt-8 bg-surface-elevated border border-border rounded-lg p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <div className="flex-1">
@@ -837,12 +831,6 @@ const Index = () => {
 
             <div className="mt-8 space-y-3">
               <h4 className="font-display text-lg text-foreground mb-3">📥 Starter Kit Resources</h4>
-              <ResourceDownload
-                title="Sprint Readiness Checklist"
-                description="A printable checklist covering leadership commitment, officer selection, BAU trade-offs, and GovTech engagement — everything needed before Day 1."
-                type="toolkit"
-                href="#"
-              />
               <DiscoverySurvey />
               <ResourceDownload
                 title="Impact Measurement Dashboard"
