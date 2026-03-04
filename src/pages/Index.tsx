@@ -1053,7 +1053,7 @@ const Index = () => {
                     {[
                       "Document your most painful workflow in detail",
                       "Rally 3–5 colleagues willing to experiment",
-                      "Request a sprint briefing — bring data, not slides",
+                      "Find out more at go.gov.sg/ai-first — bring data, not slides",
                       "Remember: you don't need a mandate to start — you need a problem worth solving, a team willing to try, and two weeks to prove it works",
                     ].map((item, i) => (
                       <li key={i} className="flex gap-2 items-start">
@@ -1087,9 +1087,9 @@ const Index = () => {
                 you back ?
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <button className="gradient-gold-bg text-primary-foreground font-body font-semibold px-8 py-4 rounded-lg text-base tracking-wide hover:opacity-90 transition-opacity cursor-pointer">
-                  Request a Sprint Briefing
-                </button>
+                <a href="https://go.gov.sg/ai-first" target="_blank" rel="noopener noreferrer" className="gradient-gold-bg text-primary-foreground font-body font-semibold px-8 py-4 rounded-lg text-base tracking-wide hover:opacity-90 transition-opacity cursor-pointer inline-block">
+                  Find out More
+                </a>
               </div>
               <div className="mt-16 font-mono text-xs text-muted-foreground tracking-wider">
                 Built with conviction. Shared with purpose.
