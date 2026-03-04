@@ -78,20 +78,20 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
   });
 
   const sidebarContent = (
-    <div className="flex flex-col h-full text-sidebar-foreground">
+    <div className="flex flex-col h-full">
       {/* Header */}
       <div className="p-4 pb-2">
         <button
           onClick={() => onSelectChapter(null)}
           className="flex items-center gap-2 text-left w-full group cursor-pointer"
         >
-          <BookOpen className="w-4 h-4 text-sidebar-primary shrink-0" />
+          <BookOpen className="w-4 h-4 text-gold shrink-0" />
           {!collapsed && (
             <div>
-              <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-sidebar-primary/70">
+              <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-gold-dim">
                 AI-First
               </div>
-              <div className="font-display text-sm text-sidebar-foreground group-hover:text-sidebar-primary transition-colors">
+              <div className="font-display text-sm text-foreground group-hover:text-gold transition-colors">
                 The Playbook
               </div>
             </div>
@@ -99,7 +99,7 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
         </button>
       </div>
 
-      <div className="w-full h-px bg-sidebar-border mx-0 my-2" />
+      <div className="w-full h-px bg-border mx-0 my-2" />
 
       {/* Chapter list */}
       <nav className="flex-1 overflow-y-auto px-2 py-1 space-y-0.5">
@@ -111,20 +111,20 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
           }}
           className={`w-full text-left rounded-lg px-3 py-2.5 transition-all duration-200 cursor-pointer group ${
             activeChapter === "start-here"
-              ? "bg-sidebar-accent text-sidebar-foreground"
-              : "text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent/50"
+              ? "bg-secondary text-foreground"
+              : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
           }`}
         >
           <div className="flex items-center gap-2.5">
-            <span className={`shrink-0 ${activeChapter === "start-here" ? "text-sidebar-primary" : "text-sidebar-foreground/40 group-hover:text-sidebar-primary/70"}`}>
+            <span className={`shrink-0 ${activeChapter === "start-here" ? "text-gold" : "text-muted-foreground group-hover:text-gold-dim"}`}>
               <BookOpen className="w-3.5 h-3.5" />
             </span>
             {!collapsed && (
               <div className="min-w-0">
-                <div className={`font-display text-sm leading-tight truncate ${activeChapter === "start-here" ? "text-sidebar-foreground" : ""}`}>
+                <div className={`font-display text-sm leading-tight truncate ${activeChapter === "start-here" ? "text-foreground" : ""}`}>
                   Start Here
                 </div>
-                <div className="font-mono text-[9px] tracking-wider uppercase text-sidebar-foreground/40 truncate mt-0.5">
+                <div className="font-mono text-[9px] tracking-wider uppercase text-muted-foreground truncate mt-0.5">
                   Your Reading Path
                 </div>
               </div>
@@ -132,7 +132,7 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
           </div>
         </button>
 
-        <div className="w-full h-px bg-sidebar-border mx-0 my-1" />
+        <div className="w-full h-px bg-border mx-0 my-1" />
 
         {chapters.map((ch) => {
           const isActive = activeChapter === ch.id;
@@ -145,31 +145,31 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
               }}
               className={`w-full text-left rounded-lg px-3 py-2.5 transition-all duration-200 cursor-pointer group ${
                 isActive
-                  ? "bg-sidebar-accent text-sidebar-foreground"
-                  : "text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent/50"
+                  ? "bg-secondary text-foreground"
+                  : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
               }`}
             >
               <div className="flex items-center gap-2.5">
                 <span className={`font-mono text-[11px] tracking-wider shrink-0 ${
-                  isActive ? "text-sidebar-primary" : "text-sidebar-foreground/40 group-hover:text-sidebar-primary/70"
+                  isActive ? "text-gold" : "text-muted-foreground group-hover:text-gold-dim"
                 }`}>
                   {ch.num}
                 </span>
                 {!collapsed && (
                   <div className="min-w-0">
                     <div className={`font-display text-sm leading-tight truncate ${
-                      isActive ? "text-sidebar-foreground" : ""
+                      isActive ? "text-foreground" : ""
                     }`}>
                       {ch.title}
                     </div>
-                    <div className="font-mono text-[9px] tracking-wider uppercase text-sidebar-foreground/40 truncate mt-0.5">
+                    <div className="font-mono text-[9px] tracking-wider uppercase text-muted-foreground truncate mt-0.5">
                       {ch.arcStage}
                     </div>
                   </div>
                 )}
               </div>
               {isActive && !collapsed && (
-                <div className="mt-2 h-1 rounded-full bg-sidebar-border overflow-hidden">
+                <div className="mt-2 h-1 rounded-full bg-border overflow-hidden">
                   <motion.div
                     className="h-full gradient-gold-bg rounded-full"
                     initial={{ width: 0 }}
@@ -183,7 +183,7 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
         })}
       </nav>
 
-      <div className="w-full h-px bg-sidebar-border mx-0 my-2" />
+      <div className="w-full h-px bg-border mx-0 my-2" />
 
       {/* Footer controls */}
       <div className="p-3 space-y-2">
@@ -193,20 +193,20 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
             <button
               onClick={goToPrev}
               disabled={activeIndex <= 0}
-              className="p-1.5 rounded-md text-sidebar-foreground/50 hover:text-sidebar-foreground transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+              className="p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
               aria-label="Previous chapter"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             {!collapsed && (
-              <span className="font-mono text-[10px] text-sidebar-foreground/40">
+              <span className="font-mono text-[10px] text-muted-foreground">
                 {activeIndex + 1} / {chapters.length}
               </span>
             )}
             <button
               onClick={goToNext}
               disabled={activeIndex >= chapters.length - 1}
-              className="p-1.5 rounded-md text-sidebar-foreground/50 hover:text-sidebar-foreground transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+              className="p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
               aria-label="Next chapter"
             >
               <ChevronRight className="w-4 h-4" />
@@ -219,14 +219,14 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
           <PaletteSwitcher isDark={isDark} />
           <button
             onClick={onToggleTheme}
-            className="p-1.5 rounded-md text-sidebar-foreground/50 hover:text-sidebar-foreground transition-colors cursor-pointer"
+            className="p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
             aria-label="Toggle theme"
           >
             {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
           <button
             onClick={() => setCollapsed(!collapsed)}
-            className="p-1.5 rounded-md text-sidebar-foreground/50 hover:text-sidebar-foreground transition-colors cursor-pointer hidden lg:block"
+            className="p-1.5 rounded-md text-muted-foreground hover:text-foreground transition-colors cursor-pointer hidden lg:block"
             aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
           >
             {collapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
@@ -263,7 +263,7 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
               animate={{ x: 0 }}
               exit={{ x: -280 }}
               transition={{ type: "spring", stiffness: 400, damping: 35 }}
-              className="fixed left-0 top-0 bottom-0 w-[260px] bg-sidebar border-r border-sidebar-border z-50 lg:hidden"
+              className="fixed left-0 top-0 bottom-0 w-[260px] bg-card border-r border-border z-50 lg:hidden"
             >
               <button
                 onClick={() => setMobileOpen(false)}
@@ -279,7 +279,7 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
 
       {/* Desktop sidebar */}
       <aside
-        className={`hidden lg:flex flex-col fixed left-0 top-0 bottom-0 bg-sidebar backdrop-blur-xl border-r border-sidebar-border z-40 transition-all duration-300 ${
+        className={`hidden lg:flex flex-col fixed left-0 top-0 bottom-0 bg-card/50 backdrop-blur-xl border-r border-border z-40 transition-all duration-300 ${
           collapsed ? "w-[60px]" : "w-[240px]"
         }`}
       >
