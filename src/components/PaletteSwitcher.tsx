@@ -467,7 +467,7 @@ const PaletteSwitcher = ({ isDark }: PaletteSwitcherProps) => {
   const [open, setOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<"color" | "font">("color");
   const [activeId, setActiveId] = useState("warm-earth");
-  const [activeFontId, setActiveFontId] = useState("instrument-inter");
+  const [activeFontId, setActiveFontId] = useState("dm-serif-inter");
   const buttonRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ bottom: 0, left: 0 });
