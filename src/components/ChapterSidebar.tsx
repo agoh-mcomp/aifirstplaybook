@@ -14,10 +14,11 @@ export const chapters: ChapterMeta[] = [
   { id: "ch-1", num: "01", arcStage: "The World Before", title: "Why Now" },
   { id: "ch-2", num: "02", arcStage: "The Call to Adventure", title: "The Vision" },
   { id: "ch-3", num: "03", arcStage: "The Obstacle", title: "The Challenge" },
-  { id: "ch-4", num: "04", arcStage: "The Guide Appears", title: "The Methodology" },
-  { id: "ch-5", num: "05", arcStage: "The Journey", title: "How It Works" },
-  { id: "ch-6", num: "06", arcStage: "Proof It Works", title: "What We've Seen" },
-  { id: "ch-7", num: "07", arcStage: "The New World", title: "Your Move" },
+  { id: "ch-4", num: "04", arcStage: "The Foundation", title: "Cultural Prerequisites" },
+  { id: "ch-5", num: "05", arcStage: "The Guide Appears", title: "The Methodology" },
+  { id: "ch-6", num: "06", arcStage: "The Journey", title: "How It Works" },
+  { id: "ch-7", num: "07", arcStage: "Proof It Works", title: "What We've Seen" },
+  { id: "ch-8", num: "08", arcStage: "The New World", title: "Your Move" },
 ];
 
 interface ChapterSidebarProps {

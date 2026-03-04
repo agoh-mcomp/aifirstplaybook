@@ -11,10 +11,11 @@ const chapters: Chapter[] = [
   { id: "ch-1", number: "01", arcStage: "The World Before", title: "Why Now" },
   { id: "ch-2", number: "02", arcStage: "The Call to Adventure", title: "The Vision" },
   { id: "ch-3", number: "03", arcStage: "The Obstacle", title: "The Challenge" },
-  { id: "ch-4", number: "04", arcStage: "The Guide Appears", title: "The Methodology" },
-  { id: "ch-5", number: "05", arcStage: "The Journey", title: "How It Works" },
-  { id: "ch-6", number: "06", arcStage: "Proof It Works", title: "What We've Seen" },
-  { id: "ch-7", number: "07", arcStage: "The New World", title: "Your Move" },
+  { id: "ch-4", number: "04", arcStage: "The Foundation", title: "Cultural Prerequisites" },
+  { id: "ch-5", number: "05", arcStage: "The Guide Appears", title: "The Methodology" },
+  { id: "ch-6", number: "06", arcStage: "The Journey", title: "How It Works" },
+  { id: "ch-7", number: "07", arcStage: "Proof It Works", title: "What We've Seen" },
+  { id: "ch-8", number: "08", arcStage: "The New World", title: "Your Move" },
 ];
 
 const TableOfContents = () => {
