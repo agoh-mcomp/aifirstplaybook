@@ -837,12 +837,7 @@ const Index = () => {
                 type="dashboard"
                 href="https://go.gov.sg/aifirstp1"
               />
-              <ResourceDownload
-                title="Post-Sprint Survey Template"
-                description="Measure confidence shifts, identify blockers, and capture qualitative feedback from sprint participants."
-                type="template"
-                href="#"
-              />
+              <PostSprintSurvey />
             </div>
 
             <QuoteBlock
