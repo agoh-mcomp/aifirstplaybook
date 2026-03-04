@@ -342,16 +342,19 @@ const Index = () => {
               </h4>
               <div className="space-y-4">
                 {[
-                  { text: "Officers using the best available tools to do their core work better, faster, and with more creativity", icon: Zap },
-                  { text: "Non-technical officers being able to build and deploy simple solutions themselves, without needing to engage IT teams or vendors", icon: UserCheck },
-                  { text: "A dramatically reduced cycle time from problem to prototype to deployment — from months or years, to days or hours", icon: Timer },
-                  { text: "A culture where experimentation is the norm, and where trying something and failing is treated as learning, not as a lapse", icon: Award },
+                  { header: "Augmented Expertise", text: "Officers using the best available tools to do their core work better, faster, and with more creativity", icon: Zap },
+                  { header: "User Empowerment", text: "Non-technical officers being able to build and deploy simple solutions themselves, without needing to engage IT teams or vendors", icon: UserCheck },
+                  { header: "Compressed Cycle Times", text: "A dramatically reduced cycle time from problem to prototype to deployment — from months or years, to days or hours", icon: Timer },
+                  { header: "Culture of Learning", text: "A culture where experimentation is the norm, and where trying something and failing is treated as learning, not as a lapse", icon: Award },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4 items-start">
                     <div className="shrink-0 w-8 h-8 rounded-md flex items-center justify-center mt-0.5" style={{ background: "linear-gradient(135deg, hsl(var(--coral) / 0.15), hsl(var(--coral) / 0.05))" }}>
                       <item.icon className="w-4 h-4 text-gold" />
                     </div>
-                    <p className="text-secondary-foreground">{item.text}</p>
+                    <div>
+                      <p className="font-semibold text-foreground">{item.header}</p>
+                      <p className="text-secondary-foreground">{item.text}</p>
+                    </div>
                   </div>
                 ))}
               </div>
