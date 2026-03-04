@@ -12,6 +12,7 @@ import EnablersGrid from "@/components/EnablersGrid";
 import PilotTimeline from "@/components/PilotTimeline";
 import SuccessMetrics from "@/components/SuccessMetrics";
 import ResourceDownload from "@/components/ResourceDownload";
+import DiscoverySurvey from "@/components/DiscoverySurvey";
 import {
   BookOpen,
   ArrowRight,
@@ -696,6 +697,7 @@ const Index = () => {
                 type="template"
                 href="#"
               />
+              <DiscoverySurvey />
               <ResourceDownload
                 title="Discovery Survey Results"
                 description="View aggregated findings from the AI-First discovery survey — key pain points, workflow gaps, and prioritised AI opportunities."
@@ -853,6 +855,7 @@ const Index = () => {
                 type="template"
                 href="#"
               />
+              <DiscoverySurvey />
               <ResourceDownload
                 title="Impact Measurement Dashboard"
                 description="Live dashboard template tracking time saved, officer confidence, adoption rates, and solution deployment across sprints."
