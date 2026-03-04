@@ -831,7 +831,6 @@ const Index = () => {
 
             <div className="mt-8 space-y-3">
               <h4 className="font-display text-lg text-foreground mb-3">📥 Starter Kit Resources</h4>
-              <DiscoverySurvey />
               <ResourceDownload
                 title="Impact Measurement Dashboard"
                 description="Live dashboard template tracking time saved, officer confidence, adoption rates, and solution deployment across sprints."
