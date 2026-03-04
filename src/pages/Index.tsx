@@ -13,6 +13,7 @@ import PilotTimeline from "@/components/PilotTimeline";
 import SuccessMetrics from "@/components/SuccessMetrics";
 import ResourceDownload from "@/components/ResourceDownload";
 import DiscoverySurvey from "@/components/DiscoverySurvey";
+import PostSprintSurvey from "@/components/PostSprintSurvey";
 import {
   BookOpen,
   ArrowRight,
@@ -837,12 +838,7 @@ const Index = () => {
                 type="dashboard"
                 href="https://go.gov.sg/aifirstp1"
               />
-              <ResourceDownload
-                title="Post-Sprint Survey Template"
-                description="Measure confidence shifts, identify blockers, and capture qualitative feedback from sprint participants."
-                type="template"
-                href="#"
-              />
+              <PostSprintSurvey />
             </div>
 
             <QuoteBlock
