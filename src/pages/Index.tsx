@@ -612,10 +612,6 @@ const Index = () => {
               Download "The 7 Cultural Non-Negotiables" Infographic (PDF)
             </a>
 
-            <QuoteBlock
-              quote="The common thread: this is a culture change problem, not a technology problem. The tools are there. What's missing are the conditions that empower officers to believe they can do it."
-              attribution="AI-First Engagement Strategy"
-            />
 
             <DualAudienceBlock
               leaderText="These seven prerequisites are not optional extras. They are the difference between an initiative that sticks and one that fades. Your role is to create these conditions deliberately — not hope they emerge on their own."
@@ -839,7 +835,6 @@ const Index = () => {
 
             <div className="mt-8 space-y-3">
               <h4 className="font-display text-lg text-foreground mb-3">📥 Starter Kit Resources</h4>
-              <DiscoverySurvey />
               <ResourceDownload
                 title="Impact Measurement Dashboard"
                 description="Live dashboard template tracking time saved, officer confidence, adoption rates, and solution deployment across sprints."
