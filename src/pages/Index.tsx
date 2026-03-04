@@ -7,7 +7,7 @@ import StatCard from "@/components/StatCard";
 import PlaybookCTA from "@/components/PlaybookCTA";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import QuoteBlock from "@/components/QuoteBlock";
-
+import CulturalInfographic from "@/components/CulturalInfographic";
 import EnablersGrid from "@/components/EnablersGrid";
 import PilotTimeline from "@/components/PilotTimeline";
 import SuccessMetrics from "@/components/SuccessMetrics";
@@ -39,7 +39,6 @@ import {
   Heart,
   Flag,
   Crown,
-  Download,
 } from "lucide-react";
 
 const Index = () => {
@@ -84,7 +83,7 @@ const Index = () => {
         </h1>
 
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 font-body">
-          A narrative guide for leaders and practitioners ready to move from AI-curious to AI-first.
+          A practical guide for leaders and practitioners ready to move from AI-curious to AI-first.
         </p>
 
         {/* Start Here CTA */}
@@ -603,16 +602,7 @@ const Index = () => {
               ))}
             </div>
 
-            <div className="mt-10">
-              <a
-                href="#"
-                download
-                className="flex items-center gap-2 text-sm font-body font-medium text-gold-dim hover:text-gold transition-colors cursor-pointer group"
-              >
-                <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
-                Download "The 7 Cultural Non-Negotiables" Infographic (PDF)
-              </a>
-            </div>
+            <CulturalInfographic />
 
             <QuoteBlock
               quote="The common thread: this is a culture change problem, not a technology problem. The tools are there. What's missing are the conditions that empower officers to believe they can do it."
@@ -735,7 +725,7 @@ const Index = () => {
         )}
 
         {activeChapter === "ch-6" && (
-          <ChapterContent num="Chapter 06" arc="The Journey" title="How Do I Start?">
+          <ChapterContent num="Chapter 06" arc="The Journey" title="How It Works">
             <p>
               You've read the case for change. You've seen the cultural prerequisites. Now: how do you actually start?
               This chapter is your agency's starter kit — a practical, 90-day sprint model designed so your agency runs
@@ -841,13 +831,14 @@ const Index = () => {
 
             <div className="mt-8 space-y-3">
               <h4 className="font-display text-lg text-foreground mb-3">📥 Starter Kit Resources</h4>
-              <PostSprintSurvey />
+              <DiscoverySurvey />
               <ResourceDownload
                 title="Impact Measurement Dashboard"
                 description="Live dashboard template tracking time saved, officer confidence, adoption rates, and solution deployment across sprints."
                 type="dashboard"
                 href="https://go.gov.sg/aifirstp1"
               />
+              <PostSprintSurvey />
             </div>
 
             <QuoteBlock
