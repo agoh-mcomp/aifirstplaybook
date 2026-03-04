@@ -687,6 +687,7 @@ const Index = () => {
                 ))}
               </div>
             </div>
+            <EnablersGrid />
             <div className="mt-8 space-y-3">
               <h4 className="font-display text-lg text-foreground mb-3">📥 Resources & Templates</h4>
               <ResourceDownload
@@ -1073,8 +1074,6 @@ const Index = () => {
               practitionerText="GovTech is here to help. We have a model that has worked, a community of practitioners who have lived through it, and a genuine commitment to making this easier for you."
             />
 
-            <EnablersGrid />
-
             {/* Epilogue CTA inline */}
             <div className="mt-16 pt-16 border-t border-border text-center">
               <div className="font-mono text-xs tracking-[0.2em] uppercase text-gold-dim mb-6">Epilogue</div>
@@ -1084,8 +1083,8 @@ const Index = () => {
                 <span className="italic gradient-gold">when you do.</span>
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed mb-10 font-body max-w-xl mx-auto">
-                Every transformation begins with a single decision. Not to be perfect — but to begin. Your citizens are
-                waiting. Your officers are ready. The tools exist.
+                Every transformation begins with a single decision. Not to be perfect — but to begin. What is holding
+                you back ?
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <button className="gradient-gold-bg text-primary-foreground font-body font-semibold px-8 py-4 rounded-lg text-base tracking-wide hover:opacity-90 transition-opacity cursor-pointer">
