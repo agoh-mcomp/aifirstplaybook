@@ -688,7 +688,7 @@ const Index = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="mt-8 space-y-3">
               <h4 className="font-display text-lg text-foreground mb-3">📥 Resources & Templates</h4>
               <DiscoverySurvey />
@@ -697,6 +697,12 @@ const Index = () => {
                 description="View aggregated findings from the AI-First discovery survey — key pain points, workflow gaps, and prioritised AI opportunities."
                 type="dashboard"
                 href="https://go.gov.sg/aifirstdiscovery"
+              />
+              <ResourceDownload
+                title="Sprint Readiness Checklist"
+                description="Everything your agency needs to prepare before kicking off a 90-day AI-First sprint."
+                type="toolkit"
+                href="#"
               />
             </div>
             <div className="mt-8 bg-surface-elevated border border-border rounded-lg p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -785,8 +791,7 @@ const Index = () => {
               </div>
               <h4 className="font-display text-2xl text-foreground mb-2">Your Three-Month Roadmap</h4>
               <p className="text-sm text-muted-foreground mb-6">
-                Each month has a clear purpose, defined activities, and a tangible output. Your agency runs it — GovTech
-                provides the backbone.
+                Each month has a clear purpose, defined activities, and a tangible output.
               </p>
             </div>
 
@@ -803,19 +808,19 @@ const Index = () => {
                       "Five officers solving one real problem will create more momentum than thirty officers attending a workshop.",
                   },
                   {
-                    tip: "Make Sprint 1 ridiculously low-stakes.",
+                    tip: "Make Sprint low-stakes to build confidence.",
                     detail:
-                      "The goal is toe-dipping, not transformation. Let officers explore, fail safely, and build confidence before Sprint 2 raises the bar.",
+                      "The goal is toe-dipping, not transformation. Let officers explore, fail safely, and build confidence before raising the bar.",
                   },
                   {
-                    tip: "Showcase everything — not just successes.",
+                    tip: "Showcase learning — not just successes.",
                     detail:
                       "The team that tried and learned something is as valuable as the team that shipped. Celebrate both.",
                   },
                   {
                     tip: "Document as you go.",
                     detail:
-                      "Your agency playbook should be written during the sprint, not after. Capture decisions, friction points, and workarounds in real time.",
+                      "Your agency playbook should be written during the sprint, not after. Capture decisions, friction points, and workarounds as you sprint.",
                   },
                 ].map((item) => (
                   <div key={item.tip} className="flex gap-3 items-start">
@@ -831,6 +836,12 @@ const Index = () => {
 
             <div className="mt-8 space-y-3">
               <h4 className="font-display text-lg text-foreground mb-3">📥 Starter Kit Resources</h4>
+              <ResourceDownload
+                title="Sprint Readiness Checklist"
+                description="A printable checklist covering leadership commitment, officer selection, BAU trade-offs, and GovTech engagement — everything needed before Day 1."
+                type="toolkit"
+                href="#"
+              />
               <DiscoverySurvey />
               <ResourceDownload
                 title="Impact Measurement Dashboard"
@@ -1068,7 +1079,12 @@ const Index = () => {
                 you back ?
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://go.gov.sg/ai-first" target="_blank" rel="noopener noreferrer" className="gradient-gold-bg text-primary-foreground font-body font-semibold px-8 py-4 rounded-lg text-base tracking-wide hover:opacity-90 transition-opacity cursor-pointer inline-block">
+                <a
+                  href="https://go.gov.sg/ai-first"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="gradient-gold-bg text-primary-foreground font-body font-semibold px-8 py-4 rounded-lg text-base tracking-wide hover:opacity-90 transition-opacity cursor-pointer inline-block"
+                >
                   Find out More
                 </a>
               </div>
