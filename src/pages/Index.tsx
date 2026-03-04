@@ -16,10 +16,10 @@ import { BookOpen, ArrowRight, Zap, Clock, Users, Lightbulb, ShieldCheck, Target
 
 const Index = () => {
   const [activeChapter, setActiveChapter] = useState<string | null>(null);
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    document.documentElement.classList.add("dark");
+    document.documentElement.classList.remove("dark");
   }, []);
 
   const toggleTheme = () => {
