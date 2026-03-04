@@ -279,7 +279,7 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
 
       {/* Desktop sidebar */}
       <aside
-        className={`hidden lg:flex flex-col fixed left-0 top-0 bottom-0 bg-card/50 backdrop-blur-xl border-r border-border z-40 transition-all duration-300 ${
+        className={`hidden lg:flex flex-col fixed left-0 top-0 bottom-0 bg-sidebar backdrop-blur-xl border-r border-sidebar-border z-40 transition-all duration-300 ${
           collapsed ? "w-[60px]" : "w-[240px]"
         }`}
       >

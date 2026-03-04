@@ -131,13 +131,13 @@
     --chart-4: 270 40% 60%;
     --chart-5: 45 60% 55%;
 
-    --sidebar: 24 28% 13%;
-    --sidebar-foreground: 30 14% 95%;
+    --sidebar: 22 32% 10%;
+    --sidebar-foreground: 32 16% 92%;
     --sidebar-primary: 20 75% 55%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 24 22% 19%;
-    --sidebar-accent-foreground: 30 14% 95%;
-    --sidebar-border: 0 0% 100% / 10%;
+    --sidebar-primary-foreground: 35 30% 96%;
+    --sidebar-accent: 24 26% 16%;
+    --sidebar-accent-foreground: 32 16% 92%;
+    --sidebar-border: 22 20% 18%;
     --sidebar-ring: 20 70% 52%;
 
     --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
