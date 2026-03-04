@@ -8,7 +8,7 @@ const chapters = [
   { id: "ch-2", num: "02", title: "The Vision" },
   { id: "ch-3", num: "03", title: "The Challenge" },
   { id: "ch-4", num: "04", title: "The Methodology" },
-  { id: "ch-5", num: "05", title: "How It Works" },
+  { id: "ch-5", num: "05", title: "How Do I Start?" },
   { id: "ch-6", num: "06", title: "What We've Seen" },
   { id: "ch-7", num: "07", title: "Your Move" },
 ];

@@ -16,7 +16,7 @@ export const chapters: ChapterMeta[] = [
   { id: "ch-3", num: "03", arcStage: "The Obstacle", title: "The Challenge" },
   { id: "ch-4", num: "04", arcStage: "The Foundation", title: "Cultural Prerequisites" },
   { id: "ch-5", num: "05", arcStage: "The Guide Appears", title: "The Methodology" },
-  { id: "ch-6", num: "06", arcStage: "The Journey", title: "How It Works" },
+  { id: "ch-6", num: "06", arcStage: "The Journey", title: "How Do I Start?" },
   { id: "ch-7", num: "07", arcStage: "Proof It Works", title: "What We've Seen" },
   { id: "ch-8", num: "08", arcStage: "The New World", title: "Your Move" },
 ];
