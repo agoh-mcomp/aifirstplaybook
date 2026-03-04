@@ -602,7 +602,14 @@ const Index = () => {
               ))}
             </div>
 
-            <CulturalInfographic />
+            <a
+              href="#"
+              download
+              className="inline-flex items-center gap-2 text-sm font-body font-medium text-gold-dim hover:text-gold transition-colors mt-6 group"
+            >
+              <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+              Download "The 7 Cultural Non-Negotiables" Infographic (PDF)
+            </a>
 
             <QuoteBlock
               quote="The common thread: this is a culture change problem, not a technology problem. The tools are there. What's missing are the conditions that empower officers to believe they can do it."
