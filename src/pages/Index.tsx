@@ -12,7 +12,32 @@ import EnablersGrid from "@/components/EnablersGrid";
 import PilotTimeline from "@/components/PilotTimeline";
 import SuccessMetrics from "@/components/SuccessMetrics";
 import ResourceDownload from "@/components/ResourceDownload";
-import { BookOpen, ArrowRight, Zap, Clock, Users, Lightbulb, ShieldCheck, Target, HandshakeIcon, RefreshCw, BarChart3, TrendingUp, AlertTriangle, Eye, Puzzle, Layers, UserCheck, Timer, Award, Compass, Rocket, Heart, Flag, Crown } from "lucide-react";
+import {
+  BookOpen,
+  ArrowRight,
+  Zap,
+  Clock,
+  Users,
+  Lightbulb,
+  ShieldCheck,
+  Target,
+  HandshakeIcon,
+  RefreshCw,
+  BarChart3,
+  TrendingUp,
+  AlertTriangle,
+  Eye,
+  Puzzle,
+  Layers,
+  UserCheck,
+  Timer,
+  Award,
+  Compass,
+  Rocket,
+  Heart,
+  Flag,
+  Crown,
+} from "lucide-react";
 
 const Index = () => {
   const [activeChapter, setActiveChapter] = useState<string | null>(null);
@@ -76,7 +101,7 @@ const Index = () => {
           const chapterIcons = [Zap, Eye, AlertTriangle, Heart, Compass, Rocket, BarChart3, Flag];
           const chapterColors = [
             "from-coral-dim/20 to-transparent",
-            "from-chart-2/20 to-transparent", 
+            "from-chart-2/20 to-transparent",
             "from-destructive/20 to-transparent",
             "from-chart-4/20 to-transparent",
             "from-chart-3/20 to-transparent",
@@ -105,7 +130,12 @@ const Index = () => {
                       }}
                     />
                     <div className="flex items-center gap-2 mb-3 relative">
-                      <div className="w-7 h-7 rounded-md gradient-gold-bg/20 flex items-center justify-center" style={{ background: `linear-gradient(135deg, hsl(var(--coral) / 0.15), hsl(var(--coral) / 0.05))` }}>
+                      <div
+                        className="w-7 h-7 rounded-md gradient-gold-bg/20 flex items-center justify-center"
+                        style={{
+                          background: `linear-gradient(135deg, hsl(var(--coral) / 0.15), hsl(var(--coral) / 0.05))`,
+                        }}
+                      >
                         <Icon className="w-3.5 h-3.5 text-gold" />
                       </div>
                       <span className="font-mono text-xs text-gold-dim tracking-wider">{ch.num}</span>
@@ -198,7 +228,12 @@ const Index = () => {
                   },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4 items-start">
-                    <div className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(var(--coral) / 0.15), hsl(var(--coral) / 0.05))" }}>
+                    <div
+                      className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
+                      style={{
+                        background: "linear-gradient(135deg, hsl(var(--coral) / 0.15), hsl(var(--coral) / 0.05))",
+                      }}
+                    >
                       <item.icon className="w-5 h-5 text-gold" />
                     </div>
                     <div>
@@ -214,7 +249,6 @@ const Index = () => {
               leaderText="Agencies that move boldly will find their officers more capable, their services more responsive, and their teams more engaged. Those that move cautiously will face the prospect of closing the gap under greater pressure, with less time."
               practitionerText="You already know the pain. The spreadsheets, the copy-paste workflows, the 47-step approval chains. AI doesn't replace your expertise — it removes the friction around it."
             />
-
           </ChapterContent>
         )}
 
@@ -223,13 +257,17 @@ const Index = () => {
             <div className="flex items-center gap-4 mb-8">
               <span className="font-mono text-sm tracking-[0.2em] uppercase text-gold-dim">Start Here</span>
               <span className="w-12 h-px bg-gold-dim" />
-              <span className="font-mono text-xs tracking-[0.15em] uppercase text-muted-foreground">Your Reading Path</span>
+              <span className="font-mono text-xs tracking-[0.15em] uppercase text-muted-foreground">
+                Your Reading Path
+              </span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-6 text-foreground">
               How to Navigate This Playbook
             </h2>
             <p className="text-secondary-foreground text-lg leading-relaxed mb-4">
-              This document is a modular toolkit designed to be used by different stakeholders at different stages of the transformation journey. You do not need to read it cover-to-cover — follow the path relevant to your role:
+              This document is a modular toolkit designed to be used by different stakeholders at different stages of
+              the transformation journey. You do not need to read it cover-to-cover — follow the path relevant to your
+              role:
             </p>
             <p className="text-muted-foreground text-base leading-relaxed mb-10 italic">
               Click any chapter below to jump straight in.
@@ -259,7 +297,7 @@ const Index = () => {
                   color: "bg-accent",
                   labelColor: "text-accent-foreground",
                   description:
-                    'You own the engine room. These chapters give you the methodology, templates, and sprint playbook to run your first 90-day cycle.',
+                    "You own the engine room. These chapters give you the methodology, templates, and sprint playbook to run your first 90-day cycle.",
                   chapters: [
                     { num: "02", id: "ch-2", title: "The Vision", note: "Align your team on the destination" },
                     { num: "03", id: "ch-3", title: "The Challenge", note: "Anticipate resistance patterns" },
@@ -298,9 +336,7 @@ const Index = () => {
                       {item.tagline}
                     </span>
                   </div>
-                  <p className="text-secondary-foreground text-sm leading-relaxed pl-[22px] mb-4">
-                    {item.description}
-                  </p>
+                  <p className="text-secondary-foreground text-sm leading-relaxed pl-[22px] mb-4">{item.description}</p>
                   <div className="pl-[22px] grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {item.chapters.map((ch) => (
                       <button
@@ -310,7 +346,9 @@ const Index = () => {
                       >
                         <span className="font-mono text-[11px] text-gold-dim mt-0.5 shrink-0">{ch.num}</span>
                         <div>
-                          <span className="text-sm font-medium text-foreground group-hover:text-gold transition-colors">{ch.title}</span>
+                          <span className="text-sm font-medium text-foreground group-hover:text-gold transition-colors">
+                            {ch.title}
+                          </span>
                           <span className="block text-[11px] text-muted-foreground leading-tight">{ch.note}</span>
                         </div>
                       </button>
@@ -335,20 +373,46 @@ const Index = () => {
               augment my thinking, speed up my work and help me solve problems.
             </p>
             <div className="bg-surface-elevated border border-border rounded-xl p-6 md:p-8 mt-8 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 opacity-10 pointer-events-none" style={{ background: "radial-gradient(circle at top right, hsl(var(--chart-2) / 0.6), transparent 70%)" }} />
+              <div
+                className="absolute top-0 right-0 w-40 h-40 opacity-10 pointer-events-none"
+                style={{
+                  background: "radial-gradient(circle at top right, hsl(var(--chart-2) / 0.6), transparent 70%)",
+                }}
+              />
               <h4 className="font-display text-2xl text-foreground mb-6 flex items-center gap-3">
                 <Eye className="w-6 h-6 text-gold" />
                 What Good Looks Like
               </h4>
               <div className="space-y-4">
                 {[
-                  { header: "Augmented Expertise", text: "Officers using the best available tools to do their core work better, faster, and with more creativity", icon: Zap },
-                  { header: "User Empowerment", text: "Non-technical officers being able to build and deploy simple solutions themselves, without needing to engage IT teams or vendors", icon: UserCheck },
-                  { header: "Compressed Cycle Times", text: "A dramatically reduced cycle time from problem to prototype to deployment — from months or years, to days or hours", icon: Timer },
-                  { header: "Culture of Learning", text: "A culture where experimentation is the norm, and where trying something and failing is treated as learning, not as a lapse", icon: Award },
+                  {
+                    header: "Augmented Expertise",
+                    text: "Officers using the best available tools to do their core work better, faster, and with more creativity",
+                    icon: Zap,
+                  },
+                  {
+                    header: "User Empowerment",
+                    text: "Non-technical officers being able to build and deploy simple solutions themselves, without needing to engage IT teams or vendors",
+                    icon: UserCheck,
+                  },
+                  {
+                    header: "Compressed Cycle Times",
+                    text: "A dramatically reduced cycle time from problem to prototype to deployment — from months or years, to days or hours",
+                    icon: Timer,
+                  },
+                  {
+                    header: "Culture of Learning",
+                    text: "A culture where experimentation is the norm, and where trying something and failing is treated as learning, not as a lapse",
+                    icon: Award,
+                  },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4 items-start">
-                    <div className="shrink-0 w-8 h-8 rounded-md flex items-center justify-center mt-0.5" style={{ background: "linear-gradient(135deg, hsl(var(--coral) / 0.15), hsl(var(--coral) / 0.05))" }}>
+                    <div
+                      className="shrink-0 w-8 h-8 rounded-md flex items-center justify-center mt-0.5"
+                      style={{
+                        background: "linear-gradient(135deg, hsl(var(--coral) / 0.15), hsl(var(--coral) / 0.05))",
+                      }}
+                    >
                       <item.icon className="w-4 h-4 text-gold" />
                     </div>
                     <div>
@@ -365,7 +429,9 @@ const Index = () => {
             />
             <DualAudienceBlock
               leaderText="AI-First demands a strategic shift: from outsourced innovation to in-house building by domain experts; from process stability to process agility; from IT/procurement gatekeeping to governance as an enabler of speed; and from perfect execution to a culture of experimentation and rapid prototyping."
-              practitionerText={'Apply the "AI-First" design lens: before starting any task — budget reconciliation, procurement brief, or policy review — ask "What would this look like if AI were a given, not an afterthought?" Identify which steps are purely transactional vs. requiring human judgment, then use AI agents to handle high-volume/low-value toil so you can focus on the final strategic review.'}
+              practitionerText={
+                'Apply the "AI-First" design lens: before starting any task — budget reconciliation, procurement brief, or policy review — ask "What would this look like if AI were a given, not an afterthought?" Identify which steps are purely transactional vs. requiring human judgment, then use AI agents to handle high-volume/low-value toil so you can focus on the final strategic review.'
+              }
             />
           </ChapterContent>
         )}
@@ -381,37 +447,43 @@ const Index = () => {
               {[
                 {
                   label: '"This is extra work"',
-                  detail: "Corporate officers are stretched. Experimentation competes with delivery and BAU always wins — until officers get protected time and explicit permission to try.",
+                  detail:
+                    "Corporate officers are stretched. Experimentation competes with delivery and BAU always wins — until officers get protected time and explicit permission to try.",
                   icon: Timer,
                   color: "var(--coral)",
                 },
                 {
                   label: "Leaders Must Walk the Talk",
-                  detail: "When the Head of Agency visibly joins a sprint, builds something, and learns with the team — that is when people believe in cultural change. Not before.",
+                  detail:
+                    "When the Head of Agency visibly joins a sprint, builds something, and learns with the team — that is when people believe in cultural change. Not before.",
                   icon: Eye,
                   color: "var(--chart-2)",
                 },
                 {
                   label: "No Trusted Peer Reference",
-                  detail: "Agencies need a peer in the same function, at a comparable agency, who can say honestly: here's what we did, here's what was hard. Without that, the unknown risks feel bigger than the known benefits.",
+                  detail:
+                    "Agencies need a peer in the same function, at a comparable agency, who can say honestly: here's what we did, here's what was hard. Without that, the unknown risks feel bigger than the known benefits.",
                   icon: Users,
                   color: "var(--chart-3)",
                 },
                 {
                   label: "Systemic Friction",
-                  detail: "Data classification uncertainty, procurement processes built for large IT projects, slow deployment of prototypes — many officers hit the wall and stop.",
+                  detail:
+                    "Data classification uncertainty, procurement processes built for large IT projects, slow deployment of prototypes — many officers hit the wall and stop.",
                   icon: Layers,
                   color: "var(--chart-4)",
                 },
                 {
                   label: "A Playbook That Isn't Theirs",
-                  detail: "A GovTech playbook handed to agencies doesn't produce ownership. Agencies need to author their own version. The act of creating it is part of the cultural change.",
+                  detail:
+                    "A GovTech playbook handed to agencies doesn't produce ownership. Agencies need to author their own version. The act of creating it is part of the cultural change.",
                   icon: Puzzle,
                   color: "var(--chart-5)",
                 },
                 {
                   label: "Deployment Gap",
-                  detail: "The biggest gap is between prototype and deployment. Getting solutions to colleagues, connecting to real data, and keeping them running is beyond most non-technical officers.",
+                  detail:
+                    "The biggest gap is between prototype and deployment. Getting solutions to colleagues, connecting to real data, and keeping them running is beyond most non-technical officers.",
                   icon: AlertTriangle,
                   color: "var(--destructive)",
                 },
@@ -424,9 +496,15 @@ const Index = () => {
                   transition={{ duration: 0.4, delay: idx * 0.08 }}
                   className="relative bg-surface-elevated border border-border rounded-xl p-5 overflow-hidden hover:border-gold-dim/30 transition-colors duration-300"
                 >
-                  <div className="absolute top-0 left-0 w-full h-1 opacity-60" style={{ background: `linear-gradient(90deg, hsl(${item.color}), transparent)` }} />
+                  <div
+                    className="absolute top-0 left-0 w-full h-1 opacity-60"
+                    style={{ background: `linear-gradient(90deg, hsl(${item.color}), transparent)` }}
+                  />
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: `hsl(${item.color} / 0.15)` }}>
+                    <div
+                      className="w-9 h-9 rounded-lg flex items-center justify-center"
+                      style={{ background: `hsl(${item.color} / 0.15)` }}
+                    >
                       <item.icon className="w-4.5 h-4.5" style={{ color: `hsl(${item.color})` }} />
                     </div>
                     <h4 className="font-display text-lg text-foreground">{item.label}</h4>
@@ -445,7 +523,7 @@ const Index = () => {
             />
             <DualAudienceBlock
               leaderText="None of these constraints are insurmountable. But they require deliberate choices, not passive support. Your role is to make the cost of standing still more visible than the cost of moving."
-              practitionerText="Start with one workflow. One team. One quick win. Transformation doesn't need permission from everyone — it needs proof from someone."
+              practitionerText="Start with one workflow. One team. One quick win. Transformation doesn't need permission from everyone — Start with one workflow, one team, and one measurable quick win."
             />
           </ChapterContent>
         )}
@@ -550,21 +628,54 @@ const Index = () => {
               participated directly.
             </p>
             <div className="bg-surface-elevated border border-border rounded-xl p-6 md:p-8 mt-8 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 opacity-10 pointer-events-none" style={{ background: "radial-gradient(circle at top right, hsl(var(--coral) / 0.6), transparent 70%)" }} />
+              <div
+                className="absolute top-0 right-0 w-40 h-40 opacity-10 pointer-events-none"
+                style={{ background: "radial-gradient(circle at top right, hsl(var(--coral) / 0.6), transparent 70%)" }}
+              />
               <h4 className="font-display text-2xl text-foreground mb-6 flex items-center gap-3">
                 <Compass className="w-6 h-6 text-gold" />
                 What Made It Work
               </h4>
               <div className="space-y-5">
                 {[
-                  { num: "01", title: "Leadership as participant, not cheerleader.", text: "When officers saw their leaders in the trenches with them, the psychological permission to try was real. This is not something you can delegate.", icon: Crown },
-                  { num: "02", title: "Start with real pain, not technology.", text: "We asked officers: what frustrates you most? What takes up time that shouldn't? The best solutions came from honest problem-finding.", icon: Target },
-                  { num: "03", title: "Protected time and structured space.", text: "Experimentation requires slack. If officers are fully loaded with BAU, nothing will change. Leadership had to actively create conditions and tolerate short-term disruption.", icon: ShieldCheck },
-                  { num: "04", title: "An ecosystem of support.", text: "AI clinics, workshops, Slack channels, expert access from GovTech's CIO Office and AI Practice. Without them, teams would have hit walls and giving up.", icon: HandshakeIcon },
-                  { num: "05", title: "Celebrate learning, not just winning.", text: "Not every idea was good. Not every team produced something scalable. We celebrated the ones that tried, learned, and shared — not just the ones that won.", icon: Award },
+                  {
+                    num: "01",
+                    title: "Leadership as participant, not cheerleader.",
+                    text: "When officers saw their leaders in the trenches with them, the psychological permission to try was real. This is not something you can delegate.",
+                    icon: Crown,
+                  },
+                  {
+                    num: "02",
+                    title: "Start with real pain, not technology.",
+                    text: "We asked officers: what frustrates you most? What takes up time that shouldn't? The best solutions came from honest problem-finding.",
+                    icon: Target,
+                  },
+                  {
+                    num: "03",
+                    title: "Protected time and structured space.",
+                    text: "Experimentation requires slack. If officers are fully loaded with BAU, nothing will change. Leadership had to actively create conditions and tolerate short-term disruption.",
+                    icon: ShieldCheck,
+                  },
+                  {
+                    num: "04",
+                    title: "An ecosystem of support.",
+                    text: "AI clinics, workshops, Slack channels, expert access from GovTech's CIO Office and AI Practice. Without them, teams would have hit walls and giving up.",
+                    icon: HandshakeIcon,
+                  },
+                  {
+                    num: "05",
+                    title: "Celebrate learning, not just winning.",
+                    text: "Not every idea was good. Not every team produced something scalable. We celebrated the ones that tried, learned, and shared — not just the ones that won.",
+                    icon: Award,
+                  },
                 ].map((p) => (
                   <div key={p.num} className="flex gap-4 items-start">
-                    <div className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(var(--coral) / 0.15), hsl(var(--coral) / 0.05))" }}>
+                    <div
+                      className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
+                      style={{
+                        background: "linear-gradient(135deg, hsl(var(--coral) / 0.15), hsl(var(--coral) / 0.05))",
+                      }}
+                    >
                       <p.icon className="w-5 h-5 text-gold" />
                     </div>
                     <div>
@@ -841,7 +952,10 @@ const Index = () => {
               To achieve this, we as leaders need to be bolder than feels comfortable.
             </p>
             <div className="bg-surface-elevated border border-border rounded-xl p-6 md:p-8 mt-8 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 opacity-10 pointer-events-none" style={{ background: "radial-gradient(circle at top right, hsl(var(--coral) / 0.6), transparent 70%)" }} />
+              <div
+                className="absolute top-0 right-0 w-40 h-40 opacity-10 pointer-events-none"
+                style={{ background: "radial-gradient(circle at top right, hsl(var(--coral) / 0.6), transparent 70%)" }}
+              />
               <h4 className="font-display text-2xl text-foreground mb-2 flex items-center gap-3">
                 <Flag className="w-6 h-6 text-gold" />
                 What We Need From You
@@ -851,13 +965,42 @@ const Index = () => {
               </p>
               <div className="space-y-5">
                 {[
-                  { num: "01", title: "Participate — don't just endorse.", detail: "Show up for at least one sprint session. Let officers see you learning alongside them. When the PS is an active participant, it creates the psychological permission for everyone else to experiment in a way no formal directive ever could.", icon: Eye },
-                  { num: "02", title: "Protect the time.", detail: "Experimentation always dies when it competes with day-to-day work and loses. We need a firm commitment to protect the time for participating officers. This is a leadership decision.", icon: ShieldCheck },
-                  { num: "03", title: "Nominate an AI Lead.", detail: "Appoint one person — DD-level or above — to be the internal coordination point. This person isn't doing GovTech's work; they're building the internal ownership that will last.", icon: UserCheck },
-                  { num: "04", title: "Give your officers permission to fail.", detail: "For cultural shift to happen, officers must feel safe trying things that might not work. That safety has to come from the top. A visible signal that an honest attempt is valued is more powerful than any workshop.", icon: Heart },
+                  {
+                    num: "01",
+                    title: "Participate — don't just endorse.",
+                    detail:
+                      "Show up for at least one sprint session. Let officers see you learning alongside them. When the PS is an active participant, it creates the psychological permission for everyone else to experiment in a way no formal directive ever could.",
+                    icon: Eye,
+                  },
+                  {
+                    num: "02",
+                    title: "Protect the time.",
+                    detail:
+                      "Experimentation always dies when it competes with day-to-day work and loses. We need a firm commitment to protect the time for participating officers. This is a leadership decision.",
+                    icon: ShieldCheck,
+                  },
+                  {
+                    num: "03",
+                    title: "Nominate an AI Lead.",
+                    detail:
+                      "Appoint one person — DD-level or above — to be the internal coordination point. This person isn't doing GovTech's work; they're building the internal ownership that will last.",
+                    icon: UserCheck,
+                  },
+                  {
+                    num: "04",
+                    title: "Give your officers permission to fail.",
+                    detail:
+                      "For cultural shift to happen, officers must feel safe trying things that might not work. That safety has to come from the top. A visible signal that an honest attempt is valued is more powerful than any workshop.",
+                    icon: Heart,
+                  },
                 ].map((item) => (
                   <div key={item.num} className="flex gap-4 items-start">
-                    <div className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(var(--coral) / 0.15), hsl(var(--coral) / 0.05))" }}>
+                    <div
+                      className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
+                      style={{
+                        background: "linear-gradient(135deg, hsl(var(--coral) / 0.15), hsl(var(--coral) / 0.05))",
+                      }}
+                    >
                       <item.icon className="w-5 h-5 text-gold" />
                     </div>
                     <div>
@@ -874,13 +1017,22 @@ const Index = () => {
                 Decision Points
               </h4>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="relative p-5 rounded-lg border border-border" style={{ background: "linear-gradient(135deg, hsl(var(--coral) / 0.05), transparent)" }}>
+                <div
+                  className="relative p-5 rounded-lg border border-border"
+                  style={{ background: "linear-gradient(135deg, hsl(var(--coral) / 0.05), transparent)" }}
+                >
                   <div className="flex items-center gap-2 mb-3">
                     <Crown className="w-4 h-4 text-gold" />
                     <h5 className="font-body font-semibold text-foreground">If you're a leader:</h5>
                   </div>
                   <ul className="space-y-2 text-secondary-foreground text-sm">
-                    {["Give your officers the best tools you can access", "Create the protected time and psychological safety for experimentation", "Participate yourself — not symbolically, but genuinely", "Build the internal champions who will carry this further than you can reach alone", "Set a 90-day milestone and protect the team's time"].map((item, i) => (
+                    {[
+                      "Give your officers the best tools you can access",
+                      "Create the protected time and psychological safety for experimentation",
+                      "Participate yourself — not symbolically, but genuinely",
+                      "Build the internal champions who will carry this further than you can reach alone",
+                      "Set a 90-day milestone and protect the team's time",
+                    ].map((item, i) => (
                       <li key={i} className="flex gap-2 items-start">
                         <div className="w-1.5 h-1.5 rounded-full gradient-gold-bg mt-2 shrink-0" />
                         <span>{item}</span>
@@ -888,13 +1040,21 @@ const Index = () => {
                     ))}
                   </ul>
                 </div>
-                <div className="relative p-5 rounded-lg border border-border" style={{ background: "linear-gradient(135deg, hsl(var(--muted-foreground) / 0.05), transparent)" }}>
+                <div
+                  className="relative p-5 rounded-lg border border-border"
+                  style={{ background: "linear-gradient(135deg, hsl(var(--muted-foreground) / 0.05), transparent)" }}
+                >
                   <div className="flex items-center gap-2 mb-3">
                     <Rocket className="w-4 h-4 text-muted-foreground" />
                     <h5 className="font-body font-semibold text-foreground">If you're a practitioner:</h5>
                   </div>
                   <ul className="space-y-2 text-secondary-foreground text-sm">
-                    {["Document your most painful workflow in detail", "Rally 3–5 colleagues willing to experiment", "Request a sprint briefing — bring data, not slides", "Remember: you don't need a mandate to start — you need a problem worth solving, a team willing to try, and two weeks to prove it works"].map((item, i) => (
+                    {[
+                      "Document your most painful workflow in detail",
+                      "Rally 3–5 colleagues willing to experiment",
+                      "Request a sprint briefing — bring data, not slides",
+                      "Remember: you don't need a mandate to start — you need a problem worth solving, a team willing to try, and two weeks to prove it works",
+                    ].map((item, i) => (
                       <li key={i} className="flex gap-2 items-start">
                         <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground mt-2 shrink-0" />
                         <span>{item}</span>
@@ -938,7 +1098,9 @@ const Index = () => {
         )}
 
         {/* Chapter navigation at bottom */}
-        {activeChapter && activeChapter !== "start-here" && <ChapterNav activeChapter={activeChapter} onSelect={setActiveChapter} />}
+        {activeChapter && activeChapter !== "start-here" && (
+          <ChapterNav activeChapter={activeChapter} onSelect={setActiveChapter} />
+        )}
       </motion.div>
     );
   };
