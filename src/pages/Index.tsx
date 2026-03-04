@@ -531,9 +531,10 @@ const Index = () => {
         {activeChapter === "ch-4" && (
           <ChapterContent num="Chapter 04" arc="The Foundation" title="Cultural Prerequisites">
             <p>
-              This mindset shift requires seven non-negotiables. Without these cultural foundations in place, no amount
-              of tooling, training, or top-down directives will produce lasting change. These are the conditions that
-              separate agencies that transform from agencies that merely experiment.
+              True transformation isn't found in a toolset; it is found in the conditions we create. Without the
+              cultural foundations in place, no amount of tooling, training, or top-down directives will produce lasting
+              change. These seven non-negotiables are the conditions that separate agencies that transform from agencies
+              that merely experiment.
             </p>
 
             <div className="space-y-6 mt-8">
