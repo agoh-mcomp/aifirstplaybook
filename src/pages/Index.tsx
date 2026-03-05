@@ -927,7 +927,7 @@ const Index = () => {
             />
             <DualAudienceBlock
               leaderText="Your decision points come at phase gates. Discover reveals the opportunity size. Build proves value. Showcase is your proof to the rest of government. What your agency builds, owns, and demonstrates becomes the reference that moves others from waiting to acting."
-              practitionerText="You'll be hands-on from Day 1. Expect to pair with AI engineers, challenge assumptions, and prototype solutions using your real data and real constraints. The starter kit gives you everything you need — the only missing ingredient is your willingness to begin."
+              practitionerText="You'll be hands-on from Day 1. Expect to pair with practitioners, challenge assumptions, and prototype solutions using your real data and real constraints. The starter kit gives you everything you need — the only missing ingredient is your willingness to begin."
             />
           </ChapterContent>
         )}
