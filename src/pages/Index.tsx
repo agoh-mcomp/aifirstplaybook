@@ -1200,7 +1200,10 @@ const Index = () => {
                   Find out More
                 </a>
               </div>
-              <div className="mt-16 font-mono text-xs text-muted-foreground tracking-wider">
+              <div className="mt-12">
+                <LoveButton />
+              </div>
+              <div className="mt-10 font-mono text-xs text-muted-foreground tracking-wider">
                 Built with conviction. Shared with purpose.
               </div>
             </div>
