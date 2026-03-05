@@ -670,7 +670,7 @@ const Index = () => {
                 className="w-full h-auto object-cover"
               />
               <figcaption className="bg-surface-elevated px-4 py-3 text-center font-mono text-xs tracking-wider uppercase text-muted-foreground">
-                SCG officers at a Lorong AI hands-on workshop
+                GovTech officers at a Lorong AI hands-on workshop
               </figcaption>
             </motion.figure>
             <div className="bg-surface-elevated border border-border rounded-xl p-6 md:p-8 mt-8 relative overflow-hidden">
