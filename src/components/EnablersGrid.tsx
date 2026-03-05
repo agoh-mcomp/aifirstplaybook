@@ -25,12 +25,6 @@ const enablers: Enabler[] = [
     description:
       "AI clinics, expert drop-ins, tool access, and deployment support through Rabbit Deploy. Without this, officers hit walls and stop. With it, they build through them.",
   },
-  {
-    icon: "🏛️",
-    title: "Functional Community Model",
-    description:
-      "We won't engage 100 agencies individually — that doesn't scale. Corporate officers across agencies work within functional communities: HR with HR, Finance with Finance. Knowledge grows across WOG, not stuck in a single agency.",
-  },
 ];
 
 const EnablersGrid = () => {
