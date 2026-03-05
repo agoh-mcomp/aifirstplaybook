@@ -826,7 +826,7 @@ const Index = () => {
                       "Specific deliverables deprioritised or deferred during sprint weeks. This is non-negotiable.",
                   },
                   {
-                    check: "GovTech support confirmed ",
+                    check: "Sprint support confirmed ",
                     detail: "Sprint support, AI clinics, tool access, and deployment pathway via Rabbit Deploy.",
                   },
                 ].map((item) => (
