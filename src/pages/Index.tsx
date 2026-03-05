@@ -22,6 +22,7 @@ import SuccessMetrics from "@/components/SuccessMetrics";
 import ResourceDownload from "@/components/ResourceDownload";
 import DiscoverySurvey from "@/components/DiscoverySurvey";
 import PostSprintSurvey from "@/components/PostSprintSurvey";
+import CulturalInfographic from "@/components/CulturalInfographic";
 import LoveButton from "@/components/LoveButton";
 import { useLoveCount } from "@/hooks/use-love-count";
 import {
@@ -661,14 +662,7 @@ const Index = () => {
               </figcaption>
             </motion.figure>
 
-            <a
-              href="#"
-              download
-              className="inline-flex items-center gap-2 text-sm font-body font-medium text-gold-dim hover:text-gold transition-colors mt-6 group"
-            >
-              <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
-              Download "The 7 Cultural Non-Negotiables" Infographic (PDF)
-            </a>
+            <CulturalInfographic />
 
             <DualAudienceBlock
               leaderText="These seven prerequisites are not optional extras. They are the difference between an initiative that sticks and one that fades. Your role is to create these conditions deliberately — not hope they emerge on their own."
