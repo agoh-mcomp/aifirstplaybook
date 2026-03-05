@@ -248,7 +248,7 @@ const CulturalInfographic = () => {
         ) : (
           <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
         )}
-        {isGenerating ? "Generating PDF…" : "Download as PDF"}
+        {isGenerating ? "Generating PDF…" : "Download infographic — The 7 Cultural Non-Negotiables"}
       </motion.button>
     </div>
   );
