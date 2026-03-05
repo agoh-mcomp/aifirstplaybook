@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 const LoveButton = () => {
   const [count, setCount] = useState<number>(0);
@@ -31,6 +32,11 @@ const LoveButton = () => {
     setCount((c) => c + 1);
 
     setTimeout(() => setAnimating(false), 600);
+
+    toast({
+      title: "Thank you! ❤️",
+      description: "We're glad you enjoyed the playbook.",
+    });
 
     const { data } = await supabase.rpc("increment_playbook_likes");
     if (typeof data === "number") setCount(data);
