@@ -22,6 +22,7 @@ import SuccessMetrics from "@/components/SuccessMetrics";
 import ResourceDownload from "@/components/ResourceDownload";
 import DiscoverySurvey from "@/components/DiscoverySurvey";
 import PostSprintSurvey from "@/components/PostSprintSurvey";
+import LoveButton from "@/components/LoveButton";
 import {
   BookOpen,
   ArrowRight,
@@ -1200,7 +1201,10 @@ const Index = () => {
                   Find out More
                 </a>
               </div>
-              <div className="mt-16 font-mono text-xs text-muted-foreground tracking-wider">
+              <div className="mt-12">
+                <LoveButton />
+              </div>
+              <div className="mt-10 font-mono text-xs text-muted-foreground tracking-wider">
                 Built with conviction. Shared with purpose.
               </div>
             </div>
