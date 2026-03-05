@@ -33,7 +33,7 @@ const QuoteBlock = ({ quote, attribution, imageSrc }: QuoteBlockProps) => {
           <img
             src={imageSrc}
             alt={attribution}
-            className="w-20 h-20 rounded-full object-cover border-2 border-gold-dim/30"
+            className="w-28 h-28 rounded-full object-cover border-2 border-gold-dim/30"
           />
         )}
         <div className="flex items-center gap-2">
