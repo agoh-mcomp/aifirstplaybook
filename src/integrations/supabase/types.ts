@@ -34,7 +34,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      increment_playbook_likes: { Args: never; Returns: number }
     }
     Enums: {
       [_ in never]: never
