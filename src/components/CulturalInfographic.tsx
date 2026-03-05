@@ -59,10 +59,14 @@ const CulturalInfographic = () => {
 
   return (
     <div className="mt-10 space-y-4">
-      {/* Infographic rendered with inline styles for reliable PDF capture */}
+      {/* Hidden infographic for PDF capture only */}
       <div
         ref={infographicRef}
         style={{
+          position: "absolute",
+          left: "-9999px",
+          top: 0,
+          width: 800,
           background: `linear-gradient(160deg, ${PDF_COLORS.bg}, ${PDF_COLORS.bgGradientEnd})`,
           borderRadius: 12,
           overflow: "hidden",
