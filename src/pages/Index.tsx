@@ -22,6 +22,7 @@ import SuccessMetrics from "@/components/SuccessMetrics";
 import ResourceDownload from "@/components/ResourceDownload";
 import DiscoverySurvey from "@/components/DiscoverySurvey";
 import PostSprintSurvey from "@/components/PostSprintSurvey";
+import LoveButton from "@/components/LoveButton";
 import {
   BookOpen,
   ArrowRight,
