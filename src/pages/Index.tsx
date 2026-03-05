@@ -995,7 +995,7 @@ const Index = () => {
                 className="w-full h-auto object-cover"
               />
               <figcaption className="bg-surface-elevated px-4 py-3 text-center font-mono text-xs tracking-wider uppercase text-muted-foreground">
-                Discovery Showcase with Minister of State (MDDI) Jasmin Lau
+                Discover Showcase with Minister of State (MDDI) Jasmin Lau
               </figcaption>
             </motion.figure>
             <div className="mt-10">
