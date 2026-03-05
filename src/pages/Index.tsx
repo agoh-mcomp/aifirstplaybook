@@ -378,7 +378,7 @@ const Index = () => {
               missed the point entirely.
             </p>
             <p>
-              <span className="gradient-gold font-display text-2xl italic">"AI-First"</span> is about something bigger .
+              <span className="gradient-gold font-display text-2xl italic">"AI-First"</span> is something much bigger.
               It is a mindset change. Instead of asking what AI tools to use — ask how can AI augment my thinking, speed
               up my work and help me solve problems.
             </p>
