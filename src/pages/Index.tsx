@@ -1070,7 +1070,7 @@ const Index = () => {
                     num: "03",
                     title: "Nominate an AI Lead.",
                     detail:
-                      "Appoint one person — DD-level or above — to be the internal coordination point. This person isn't doing GovTech's work; they're building the internal ownership that will last.",
+                      "Appoint one person — DD-level or above — to be the internal lead. This person isn't doing GovTech's work; they're building the internal ownership that will last.",
                     icon: UserCheck,
                   },
                   {
