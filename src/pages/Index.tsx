@@ -120,11 +120,25 @@ const Index = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.15 }}
           onClick={() => setActiveChapter("start-here")}
-          className="inline-flex items-center gap-2 gradient-gold-bg text-white font-mono text-xs tracking-[0.15em] uppercase px-6 py-3 rounded-lg hover:opacity-90 transition-opacity cursor-pointer mb-14"
+          className="inline-flex items-center gap-2 gradient-gold-bg text-white font-mono text-xs tracking-[0.15em] uppercase px-6 py-3 rounded-lg hover:opacity-90 transition-opacity cursor-pointer mb-6"
         >
           <BookOpen className="w-4 h-4" />
           Start Here — Find Your Reading Path
         </motion.button>
+
+        {loveCount > 0 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="flex items-center justify-center gap-1.5 mb-14 text-muted-foreground"
+          >
+            <Heart className="w-3.5 h-3.5 fill-red-500 text-red-500" />
+            <span className="font-mono text-xs tracking-wide">
+              Loved by {loveCount.toLocaleString()} {loveCount === 1 ? "reader" : "readers"}
+            </span>
+          </motion.div>
+        )}
 
         {/* Chapter cards */}
         {(() => {
