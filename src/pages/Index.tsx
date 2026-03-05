@@ -1045,7 +1045,7 @@ const Index = () => {
               />
               <h4 className="font-display text-2xl text-foreground mb-2 flex items-center gap-3">
                 <Flag className="w-6 h-6 text-gold" />
-                What We Need From You
+                Call to Act Now
               </h4>
               <p className="text-sm text-muted-foreground mb-6">
                 The pilot's success isn't about tools or frameworks. It's about cultural readiness.
