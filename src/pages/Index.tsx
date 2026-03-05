@@ -75,6 +75,8 @@ const Index = () => {
     return () => main.removeEventListener("scroll", handleScroll);
   }, [activeChapter]);
 
+  const loveCount = useLoveCount();
+
   const toggleTheme = () => {
     const next = !isDark;
     setIsDark(next);
