@@ -466,7 +466,7 @@ interface PaletteSwitcherProps {
 const PaletteSwitcher = ({ isDark }: PaletteSwitcherProps) => {
   const [open, setOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<"color" | "font">("color");
-  const [activeId, setActiveId] = useState("warm-earth");
+  const [activeId, setActiveId] = useState("midnight-electric");
   const [activeFontId, setActiveFontId] = useState("dm-serif-inter");
   const buttonRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
