@@ -960,7 +960,7 @@ const Index = () => {
               />
               <CaseStudyCard
                 title="Pirates of Treasury"
-                team="Finance Officers"
+                team="Cross Divisional Team of Finance and Digital Governance Officers"
                 problem="Consolidating investment performance data from 14 disparate sources took 12 hours of manual, error-prone work monthly."
                 solution="AI-powered integration that consolidates all 14 sources and produces real-time insights ready for the Board — reducing the process from 12 hours to 1 hour."
                 insight="The people who built the solution were the same people who suffered through the old process every month. That is not a coincidence — it is the point."
