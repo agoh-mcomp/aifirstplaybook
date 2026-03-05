@@ -13,6 +13,7 @@ import sprintWinnersImg from "@/assets/sprint-winners.jpg";
 import manusWorkshopImg from "@/assets/manus-workshop.jpg";
 import discoveryShowcaseImg from "@/assets/discovery-showcase.jpg";
 import aiClinicsEdmImg from "@/assets/ai-clinics-edm.jpg";
+import christinaLeeEdmImg from "@/assets/christina-lee-edm.png";
 
 import EnablersGrid from "@/components/EnablersGrid";
 import PilotTimeline from "@/components/PilotTimeline";
@@ -609,6 +610,23 @@ const Index = () => {
                 </div>
               ))}
             </div>
+
+            <motion.figure
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="my-10 rounded-xl overflow-hidden border border-border"
+            >
+              <img
+                src={christinaLeeEdmImg}
+                alt="Christina Lee shares how testing an AI conversation simulator changed her perspective on learning and development"
+                className="w-full h-auto object-cover"
+              />
+              <figcaption className="bg-surface-elevated px-4 py-3 text-center font-mono text-xs tracking-wider uppercase text-muted-foreground">
+                Human stories — Christina Lee shares how AI shifted her perspective on learning and development
+              </figcaption>
+            </motion.figure>
 
             <a
               href="#"
