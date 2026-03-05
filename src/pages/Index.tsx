@@ -10,6 +10,7 @@ import QuoteBlock from "@/components/QuoteBlock";
 import bernardTohImg from "@/assets/bernard-toh.jpg";
 import scgWorkshopImg from "@/assets/scg-workshop.jpg";
 import sprintWinnersImg from "@/assets/sprint-winners.jpg";
+import manusWorkshopImg from "@/assets/manus-workshop.jpg";
 
 import EnablersGrid from "@/components/EnablersGrid";
 import PilotTimeline from "@/components/PilotTimeline";
@@ -813,6 +814,24 @@ const Index = () => {
             </div>
 
             <PilotTimeline />
+
+            <motion.figure
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="my-10 rounded-xl overflow-hidden border border-border"
+            >
+              <img
+                src={manusWorkshopImg}
+                alt="SCG officers at a hands-on workshop with Manus AI, learning together"
+                className="w-full h-auto object-cover"
+              />
+              <figcaption className="bg-surface-elevated px-4 py-3 text-center font-mono text-xs tracking-wider uppercase text-muted-foreground">
+                SCG officers at a hands-on workshop with Manus AI
+              </figcaption>
+            </motion.figure>
+
             <SuccessMetrics />
 
             <div className="bg-surface-elevated border border-border rounded-lg p-6 md:p-8 mt-10">
