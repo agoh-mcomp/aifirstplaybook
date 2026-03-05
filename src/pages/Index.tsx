@@ -12,6 +12,7 @@ import scgWorkshopImg from "@/assets/scg-workshop.jpg";
 import sprintWinnersImg from "@/assets/sprint-winners.jpg";
 import manusWorkshopImg from "@/assets/manus-workshop.jpg";
 import discoveryShowcaseImg from "@/assets/discovery-showcase.jpg";
+import aiClinicsEdmImg from "@/assets/ai-clinics-edm.jpg";
 
 import EnablersGrid from "@/components/EnablersGrid";
 import PilotTimeline from "@/components/PilotTimeline";
@@ -714,6 +715,23 @@ const Index = () => {
                 ))}
               </div>
             </div>
+
+            <motion.figure
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="my-10 rounded-xl overflow-hidden border border-border"
+            >
+              <img
+                src={aiClinicsEdmImg}
+                alt="SCG AI-First EDM showing AI Clinics where officers brought their data and questions to sharpen ideas into workable solutions"
+                className="w-full h-auto object-cover"
+              />
+              <figcaption className="bg-surface-elevated px-4 py-3 text-center font-mono text-xs tracking-wider uppercase text-muted-foreground">
+                AI Clinics — Officers brought their data and questions to sharpen ideas into workable solutions
+              </figcaption>
+            </motion.figure>
 
             <div className="mt-8 space-y-3">
               <h4 className="font-display text-lg text-foreground mb-3">📥 Resources & Templates</h4>
