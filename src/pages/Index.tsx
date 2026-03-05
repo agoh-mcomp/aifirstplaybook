@@ -255,7 +255,7 @@ const Index = () => {
                 ))}
               </div>
             </div>
-            <QuoteBlock quote="I realised AI isn't as daunting as I thought" attribution="SCG Officer, Finance" />
+            <QuoteBlock quote="I realised AI isn't as daunting as I thought" attribution="Finance Officer, GovTech" />
             <DualAudienceBlock
               leaderText="Agencies that move boldly will find their officers more capable, their services more responsive, and their teams more engaged. Those that move cautiously will face the prospect of closing the gap under greater pressure, with less time."
               practitionerText="You already know the pain. The spreadsheets, the copy-paste workflows, the 47-step approval chains. AI doesn't replace your expertise — it removes the friction around it."
@@ -436,7 +436,7 @@ const Index = () => {
             </div>
             <QuoteBlock
               quote='Instead of asking "How do I finish this task?", I now ask "Which part of this process can AI automate, accelerate, or improve?"'
-              attribution="SCG Officer, Procurement"
+              attribution="Procurement Officer, GovTech"
             />
             <DualAudienceBlock
               leaderText="AI-First demands a strategic shift: from outsourced innovation to in-house building by domain experts; from process stability to process agility; from IT/procurement gatekeeping to governance as an enabler of speed; and from perfect execution to a culture of experimentation and rapid prototyping."
@@ -530,7 +530,7 @@ const Index = () => {
             />
             <QuoteBlock
               quote="It is easy to learn! The toughest part is breaking that inertia"
-              attribution="SCG Officer, People & Org"
+              attribution="People & Org Officer, GovTech"
             />
             <DualAudienceBlock
               leaderText="None of these constraints are insurmountable. But they require deliberate choices, not passive support. Your role is to make the cost of standing still more visible than the cost of moving."
@@ -777,7 +777,7 @@ const Index = () => {
                 Visit AI-First &rarr;
               </a>
             </div>
-            <QuoteBlock quote="I need to set aside time on this to save time" attribution="SCG Officer, Strat Plans" />
+            <QuoteBlock quote="I need to set aside time on this to save time" attribution="Strat Plans Officer, GovTech" />
             <DualAudienceBlock
               leaderText="You don't need to master every sprint ceremony. You need to trust the process, protect the team, and clear the blockers only you can clear. Most importantly — participate yourself."
               practitionerText="Each sprint has a clear input (a real problem), a clear output (a working prototype), and a clear feedback loop (users testing it). If it doesn't have these, it's just a vanity demos. Build for impact"
@@ -920,7 +920,7 @@ const Index = () => {
 
             <QuoteBlock
               quote="You do not need coding skills to use AI for your work, just plain English, curiosity, and a willingness to learn and adjust along the way"
-              attribution="SCG Officer, Org Excellence"
+              attribution="Org Excellence Officer, GovTech"
             />
             <DualAudienceBlock
               leaderText="Your decision points come at phase gates. Discover reveals the opportunity size. Build proves value. Showcase is your proof to the rest of government. What your agency builds, owns, and demonstrates becomes the reference that moves others from waiting to acting."
@@ -1012,7 +1012,7 @@ const Index = () => {
             </div>
             <QuoteBlock
               quote="I can do it myself instead of thinking I need to rely on tech teams"
-              attribution="SCG Officer, People & Org"
+              attribution="People & Org Officer, GovTech"
             />
             <QuoteBlock
               quote="The person best placed to build a solution to a problem is almost always the person who lives with that problem every day. We have historically outsourced that knowledge to vendors, to IT teams, to project managers, and in doing so consistently produced solutions that are technically functional but operationally imperfect."
@@ -1020,7 +1020,7 @@ const Index = () => {
             />
             <QuoteBlock
               quote="Everyone can build AI solutions — it's about fundamentally reimagining how work gets done"
-              attribution="SCG Officer, Finance"
+              attribution="Finance Officer, GovTech"
             />
             <DualAudienceBlock
               leaderText="These aren't innovation theatre. Officers who had told themselves they were 'not technical' built working prototypes. The pace of prototyping compressed from months to days."
