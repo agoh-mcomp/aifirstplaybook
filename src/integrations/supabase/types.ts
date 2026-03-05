@@ -14,7 +14,21 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      playbook_likes: {
+        Row: {
+          count: number
+          id: string
+        }
+        Insert: {
+          count?: number
+          id?: string
+        }
+        Update: {
+          count?: number
+          id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
