@@ -813,7 +813,7 @@ const Index = () => {
                   },
                   {
                     check: "Nominated AI Lead",
-                    detail: "One DD-level (or above) who owns internal logistics and champions the initiative.",
+                    detail: "One DD-level (or above) who owns and champions the initiative.",
                   },
                   {
                     check: "Identified officers to participate",
