@@ -33,6 +33,11 @@ const LoveButton = () => {
 
     setTimeout(() => setAnimating(false), 600);
 
+    toast({
+      title: "Thank you! ❤️",
+      description: "We're glad you enjoyed the playbook.",
+    });
+
     const { data } = await supabase.rpc("increment_playbook_likes");
     if (typeof data === "number") setCount(data);
   };
