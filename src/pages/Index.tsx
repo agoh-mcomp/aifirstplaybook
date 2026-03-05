@@ -8,6 +8,7 @@ import PlaybookCTA from "@/components/PlaybookCTA";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import QuoteBlock from "@/components/QuoteBlock";
 import bernardTohImg from "@/assets/bernard-toh.jpg";
+import scgWorkshopImg from "@/assets/scg-workshop.jpg";
 
 import EnablersGrid from "@/components/EnablersGrid";
 import PilotTimeline from "@/components/PilotTimeline";
@@ -635,6 +636,22 @@ const Index = () => {
               tools and expert support, and protected time to experiment. Leaders — including Bernard himself —
               participated directly.
             </p>
+            <motion.figure
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="my-10 rounded-xl overflow-hidden border border-border"
+            >
+              <img
+                src={scgWorkshopImg}
+                alt="SCG officers at a Lorong AI hands-on workshop learning AI together"
+                className="w-full h-auto object-cover"
+              />
+              <figcaption className="bg-surface-elevated px-4 py-3 text-center font-mono text-xs tracking-wider uppercase text-muted-foreground">
+                SCG officers at a Lorong AI hands-on workshop
+              </figcaption>
+            </motion.figure>
             <div className="bg-surface-elevated border border-border rounded-xl p-6 md:p-8 mt-8 relative overflow-hidden">
               <div
                 className="absolute top-0 right-0 w-40 h-40 opacity-10 pointer-events-none"
