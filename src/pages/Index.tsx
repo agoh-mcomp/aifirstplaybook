@@ -991,7 +991,7 @@ const Index = () => {
             >
               <img
                 src={discoveryShowcaseImg}
-                alt="Discovery Showcase with Minister of State (MDDI) Jasmin Lau and SCG AI-First officers"
+                alt="Discover Showcase with Minister of State (MDDI) Jasmin Lau and SCG AI-First officers"
                 className="w-full h-auto object-cover"
               />
               <figcaption className="bg-surface-elevated px-4 py-3 text-center font-mono text-xs tracking-wider uppercase text-muted-foreground">
