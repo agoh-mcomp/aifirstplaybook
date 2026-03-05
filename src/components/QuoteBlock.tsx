@@ -4,9 +4,10 @@ import { Quote } from "lucide-react";
 interface QuoteBlockProps {
   quote: string;
   attribution: string;
+  imageSrc?: string;
 }
 
-const QuoteBlock = ({ quote, attribution }: QuoteBlockProps) => {
+const QuoteBlock = ({ quote, attribution, imageSrc }: QuoteBlockProps) => {
   return (
     <motion.blockquote
       initial={{ opacity: 0, x: -20 }}
@@ -27,11 +28,20 @@ const QuoteBlock = ({ quote, attribution }: QuoteBlockProps) => {
       <p className="font-display text-xl md:text-2xl italic leading-relaxed text-foreground">
         "{quote}"
       </p>
-      <footer className="mt-4 flex items-center gap-2">
-        <div className="w-6 h-px gradient-gold-bg" />
-        <span className="font-mono text-xs tracking-[0.15em] uppercase text-gold-dim">
-          {attribution}
-        </span>
+      <footer className="mt-4 flex items-center gap-3">
+        {imageSrc && (
+          <img
+            src={imageSrc}
+            alt={attribution}
+            className="w-12 h-12 rounded-full object-cover border-2 border-gold-dim/30"
+          />
+        )}
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-px gradient-gold-bg" />
+          <span className="font-mono text-xs tracking-[0.15em] uppercase text-gold-dim">
+            {attribution}
+          </span>
+        </div>
       </footer>
     </motion.blockquote>
   );

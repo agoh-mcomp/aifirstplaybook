@@ -7,6 +7,7 @@ import StatCard from "@/components/StatCard";
 import PlaybookCTA from "@/components/PlaybookCTA";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import QuoteBlock from "@/components/QuoteBlock";
+import bernardTohImg from "@/assets/bernard-toh.jpg";
 
 import EnablersGrid from "@/components/EnablersGrid";
 import PilotTimeline from "@/components/PilotTimeline";
@@ -192,6 +193,7 @@ const Index = () => {
             <QuoteBlock
               quote="The productivity and capability differential that AI is creating — between those who embrace it deeply and those who treat it as a peripheral tool — will compound over the next few years in ways that are difficult to fully predict, but easy to anticipate in direction."
               attribution="Bernard Toh, DCE Strategy Corporate Governance, GovTech"
+              imageSrc={bernardTohImg}
             />
             <p>
               The friction that currently exists between ideation and deployment in government is not a minor
