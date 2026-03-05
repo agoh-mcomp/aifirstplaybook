@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ChapterSidebar, { chapters } from "@/components/ChapterSidebar";
+import MobileBottomNav from "@/components/MobileBottomNav";
 import ChapterSection from "@/components/ChapterSection";
 import DualAudienceBlock from "@/components/DualAudienceBlock";
 import StatCard from "@/components/StatCard";
@@ -52,10 +53,25 @@ import {
 const Index = () => {
   const [activeChapter, setActiveChapter] = useState<string | null>(null);
   const [isDark, setIsDark] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     document.documentElement.classList.remove("dark");
   }, []);
+
+  // Track scroll progress for mobile bottom nav
+  useEffect(() => {
+    const main = document.querySelector("main");
+    if (!main) return;
+    const handleScroll = () => {
+      const scrollTop = main.scrollTop;
+      const scrollHeight = main.scrollHeight - main.clientHeight;
+      setScrollProgress(scrollHeight > 0 ? Math.min(scrollTop / scrollHeight, 1) : 0);
+    };
+    main.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => main.removeEventListener("scroll", handleScroll);
+  }, [activeChapter]);
 
   const toggleTheme = () => {
     const next = !isDark;
@@ -1207,11 +1223,18 @@ const Index = () => {
         isDark={isDark}
         onToggleTheme={toggleTheme}
       />
-      <main className="flex-1 min-h-screen relative overflow-y-auto">
+      <main className="flex-1 min-h-screen relative overflow-y-auto pb-20 lg:pb-0">
         <AnimatePresence mode="wait">
           {activeChapter === null ? renderLanding() : renderChapterContent()}
         </AnimatePresence>
       </main>
+      <MobileBottomNav
+        activeChapter={activeChapter}
+        onSelectChapter={setActiveChapter}
+        isDark={isDark}
+        onToggleTheme={toggleTheme}
+        scrollProgress={scrollProgress}
+      />
     </div>
   );
 };
