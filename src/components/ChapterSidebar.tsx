@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon, ChevronLeft, ChevronRight, Menu, X, BookOpen } from "lucide-react";
+import { Sun, Moon, ChevronLeft, ChevronRight, Menu, X, BookOpen, Heart } from "lucide-react";
+import { useLoveCount } from "@/hooks/use-love-count";
 import PaletteSwitcher from "./PaletteSwitcher";
 
 export interface ChapterMeta {
