@@ -199,7 +199,6 @@ const Index = () => {
             <QuoteBlock
               quote="The productivity and capability differential that AI is creating — between those who embrace it deeply and those who treat it as a peripheral tool — will compound over the next few years in ways that are difficult to fully predict, but easy to anticipate in direction."
               attribution="Bernard Toh, DCE Strategy Corporate Governance, GovTech"
-              
             />
             <p>
               The friction that currently exists between ideation and deployment in government is not a minor
@@ -777,7 +776,10 @@ const Index = () => {
                 Visit AI-First &rarr;
               </a>
             </div>
-            <QuoteBlock quote="I need to set aside time on this to save time" attribution="Strat Plans Officer, GovTech" />
+            <QuoteBlock
+              quote="I need to set aside time on this to save time"
+              attribution="Strat Plans Officer, GovTech"
+            />
             <DualAudienceBlock
               leaderText="You don't need to master every sprint ceremony. You need to trust the process, protect the team, and clear the blockers only you can clear. Most importantly — participate yourself."
               practitionerText="Each sprint has a clear input (a real problem), a clear output (a working prototype), and a clear feedback loop (users testing it). If it doesn't have these, it's just a vanity demos. Build for impact"
@@ -806,7 +808,8 @@ const Index = () => {
                 {[
                   {
                     check: "Leadership commitment",
-                    detail: "PS or CE has agreed to protect sprint time and participate visibly — not just endorse.",
+                    detail:
+                      "The Head of Agency has agreed to protect sprint time and participate visibly — not just endorse.",
                   },
                   {
                     check: "Nominated AI Lead",
@@ -1053,7 +1056,7 @@ const Index = () => {
                     num: "01",
                     title: "Participate — don't just endorse.",
                     detail:
-                      "Show up for at least one sprint session. Let officers see you learning alongside them. When the PS is an active participant, it creates the psychological permission for everyone else to experiment in a way no formal directive ever could.",
+                      "Show up for at least one sprint session. Let officers see you learning alongside them. When the Head of Agency is an active participant, it creates the psychological permission for everyone else to experiment in a way no formal directive ever could.",
                     icon: Eye,
                   },
                   {
