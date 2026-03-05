@@ -23,6 +23,7 @@ import ResourceDownload from "@/components/ResourceDownload";
 import DiscoverySurvey from "@/components/DiscoverySurvey";
 import PostSprintSurvey from "@/components/PostSprintSurvey";
 import LoveButton from "@/components/LoveButton";
+import { useLoveCount } from "@/hooks/use-love-count";
 import {
   BookOpen,
   ArrowRight,
