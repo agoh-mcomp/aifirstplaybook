@@ -9,6 +9,7 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 import QuoteBlock from "@/components/QuoteBlock";
 import bernardTohImg from "@/assets/bernard-toh.jpg";
 import scgWorkshopImg from "@/assets/scg-workshop.jpg";
+import sprintWinnersImg from "@/assets/sprint-winners.jpg";
 
 import EnablersGrid from "@/components/EnablersGrid";
 import PilotTimeline from "@/components/PilotTimeline";
@@ -906,6 +907,22 @@ const Index = () => {
                 insight="The people who built the solution were the same people who suffered through the old process every month. That is not a coincidence — it is the point."
               />
             </div>
+            <motion.figure
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="my-10 rounded-xl overflow-hidden border border-border"
+            >
+              <img
+                src={sprintWinnersImg}
+                alt="SCG AI-First Sprint 2 Winners celebrating their achievements"
+                className="w-full h-auto object-cover"
+              />
+              <figcaption className="bg-surface-elevated px-4 py-3 text-center font-mono text-xs tracking-wider uppercase text-muted-foreground">
+                Celebrating SCG AI-First Sprint 2 Winners
+              </figcaption>
+            </motion.figure>
             <div className="mt-10">
               <h4 className="font-display text-lg text-foreground mb-4">🎬 SCG AI-First Transformation Journey</h4>
               <div className="rounded-lg overflow-hidden border border-border aspect-video">
