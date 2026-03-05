@@ -33,6 +33,7 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const loveCount = useLoveCount();
 
   // Track scroll progress in the main content area
   useEffect(() => {
@@ -183,6 +184,14 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
           );
         })}
       </nav>
+
+      {/* Love count */}
+      {loveCount > 0 && !collapsed && (
+        <div className="px-3 pb-1 flex items-center justify-center gap-1.5 text-muted-foreground">
+          <Heart className="w-3 h-3 fill-red-500 text-red-500" />
+          <span className="font-mono text-[10px] tracking-wide">{loveCount.toLocaleString()} loves</span>
+        </div>
+      )}
 
       <div className="w-full h-px bg-border mx-0 my-2" />
 
