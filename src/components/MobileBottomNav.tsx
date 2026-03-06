@@ -25,7 +25,7 @@ const MobileBottomNav = ({ activeChapter, onSelectChapter, isDark, onToggleTheme
     if (activeIndex < chapters.length - 1) onSelectChapter(chapters[activeIndex + 1].id);
   };
 
-  if (!activeChapter || activeChapter === "start-here") return null;
+  if (!activeChapter || activeChapter === "start-here" || activeChapter === "foreword") return null;
 
   return (
     <>
