@@ -3,6 +3,15 @@ import { motion } from "framer-motion";
 const Foreword = () => {
   return (
     <div>
+      {/* Title */}
+      <div className="mb-12">
+        <span className="font-mono text-xs tracking-[0.3em] uppercase text-gold-dim">Foreword</span>
+        <h1 className="font-display text-4xl md:text-5xl text-foreground mt-3 leading-tight">
+          A Message to Leaders
+        </h1>
+        <div className="w-16 h-px bg-gold-dim mt-6" />
+      </div>
+
       {/* Letter content */}
       <div className="space-y-6 text-lg leading-relaxed text-secondary-foreground font-body">
         <p className="italic text-foreground font-display text-xl">To the leaders reading this,</p>
