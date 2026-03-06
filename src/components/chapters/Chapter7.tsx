@@ -10,8 +10,8 @@ import discoveryShowcaseImg from "@/assets/discovery-showcase.jpg";
 const Chapter7 = () => (
   <ChapterContent num="Chapter 07" arc="Proof It Works" title="What We've Seen">
     <p>
-      The numbers from the SCG AI-First initiative were encouraging. But the more significant outcomes were
-      cultural. The framing shifted — almost imperceptibly at first and then unmistakably — from{" "}
+      The numbers from the SCG AI-First initiative were encouraging. But the more significant outcomes were cultural.
+      The framing shifted — almost imperceptibly at first and then unmistakably — from{" "}
       <em className="text-muted-foreground">"AI is a tool I consume"</em> to{" "}
       <em className="text-gold-dim">"AI is a partner I work with."</em>
     </p>
@@ -22,8 +22,8 @@ const Chapter7 = () => (
       <StatCard value="60%" label="Confidence jump" delay={0.3} />
     </div>
     <p className="mt-8 text-sm text-muted-foreground">
-      Officer confidence in using AI at work jumped from 1.97 to 3.15 on a 5-point scale in three months. This
-      is not a technology experiment anymore. It is a proven model ready to scale.
+      Officer confidence in using AI at work jumped from 1.97 to 3.15 on a 5-point scale in three months. This is not a
+      technology experiment anymore. It is a proven model ready to scale.
     </p>
     <div className="mt-10 space-y-6">
       <CaseStudyCard
@@ -48,7 +48,11 @@ const Chapter7 = () => (
       transition={{ duration: 0.7 }}
       className="my-10 rounded-xl overflow-hidden border border-border"
     >
-      <img src={sprintWinnersImg} alt="SCG AI-First Sprint 2 Winners celebrating their achievements" className="w-full h-auto object-cover" />
+      <img
+        src={sprintWinnersImg}
+        alt="SCG AI-First Sprint 2 Winners celebrating their achievements"
+        className="w-full h-auto object-cover"
+      />
       <figcaption className="bg-surface-elevated px-4 py-3 text-center font-mono text-xs tracking-wider uppercase text-muted-foreground">
         Celebrating SCG AI-First Sprint 2 Winners
       </figcaption>
@@ -60,7 +64,11 @@ const Chapter7 = () => (
       transition={{ duration: 0.7 }}
       className="my-10 rounded-xl overflow-hidden border border-border"
     >
-      <img src={discoveryShowcaseImg} alt="Discover Showcase with Minister of State (MDDI) Jasmin Lau and SCG AI-First officers" className="w-full h-auto object-cover" />
+      <img
+        src={discoveryShowcaseImg}
+        alt="Discover Showcase with Minister of State (MDDI) Jasmin Lau and SCG AI-First officers"
+        className="w-full h-auto object-cover"
+      />
       <figcaption className="bg-surface-elevated px-4 py-3 text-center font-mono text-xs tracking-wider uppercase text-muted-foreground">
         Discover Showcase with Minister of State (MDDI) Jasmin Lau
       </figcaption>
@@ -87,7 +95,8 @@ const Chapter7 = () => (
     <QuoteBlock
       quote="The person best placed to build a solution to a problem is almost always the person who lives with that problem every day. We have historically outsourced that knowledge to vendors, to IT teams, to project managers, and in doing so consistently produced solutions that are technically functional but operationally imperfect."
       attribution="Bernard Toh, DCE Strategy, Corporate & Governance, GovTech"
-    />
+    />{" "}
+    Comm
     <QuoteBlock
       quote="Everyone can build AI solutions — it's about fundamentally reimagining how work gets done"
       attribution="Finance Officer, GovTech"
