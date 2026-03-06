@@ -58,7 +58,7 @@ const LandingPage = ({ onSelectChapter }: LandingPageProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="flex items-center justify-center gap-1.5 mb-14 text-muted-foreground"
+            className="flex items-center justify-center gap-1.5 mb-8 text-muted-foreground"
           >
             <Heart className="w-3.5 h-3.5 fill-red-500 text-red-500" />
             <span className="font-mono text-xs tracking-wide">
@@ -66,6 +66,38 @@ const LandingPage = ({ onSelectChapter }: LandingPageProps) => {
             </span>
           </motion.div>
         )}
+
+        {/* Foreword CTA */}
+        <motion.button
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.18 }}
+          onClick={() => onSelectChapter("foreword")}
+          className="group relative w-full max-w-2xl mx-auto mb-10 bg-surface-elevated border border-border rounded-xl p-6 hover:border-gold-dim transition-all duration-300 cursor-pointer overflow-hidden text-left"
+        >
+          <div
+            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+            style={{ background: `radial-gradient(circle at top left, hsl(var(--coral) / 0.08), transparent 60%)` }}
+          />
+          <div className="flex items-start gap-4 relative">
+            <div
+              className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+              style={{ background: `linear-gradient(135deg, hsl(var(--coral) / 0.15), hsl(var(--coral) / 0.05))` }}
+            >
+              <BookOpen className="w-5 h-5 text-gold" />
+            </div>
+            <div className="min-w-0">
+              <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-gold-dim mb-1">Foreword</div>
+              <h3 className="font-display text-lg text-foreground group-hover:text-gold transition-colors flex items-center gap-2">
+                A Message to Leaders
+                <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-gold" />
+              </h3>
+              <p className="font-body text-sm text-muted-foreground mt-1 leading-relaxed">
+                A personal letter on what it takes to lead your agency into the AI-first era.
+              </p>
+            </div>
+          </div>
+        </motion.button>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 text-left max-w-4xl mx-auto">
           {chapters.map((ch, i) => {
