@@ -12,7 +12,7 @@ const Chapter6 = () => (
   <ChapterContent num="Chapter 06" arc="The Journey" title="How Do I Start">
     <p>
       You've read the case for change. You've seen the cultural prerequisites. Now: how do you actually start? This
-      chapter is your agency's starter kit — a practical, 90-day sprint model designed so your agency runs it, owns it,
+      chapter is your agency's starter kit. A practical, 90-day sprint model designed so your agency runs it, owns it,
       and builds the muscle to keep going without external support.
     </p>
 
