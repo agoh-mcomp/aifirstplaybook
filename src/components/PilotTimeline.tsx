@@ -56,7 +56,7 @@ const PilotTimeline = () => {
         {
           name: "Agency-Authored Playbook",
           detail:
-            "Shaped by and for the agency — not a GovTech playbook. The act of creating it is part of the cultural change.",
+            "Shaped by and for the agency not a GovTech playbook. The act of creating it is part of the cultural change.",
         },
         {
           name: "Peer Coaches",
