@@ -23,7 +23,7 @@ const Foreword = () => {
         <p>
           What happened next surprised even us. Officers who had never touched an AI tool were building working
           prototypes in weeks. Teams that used to wait months for vendor solutions were solving their own problems in
-          days. The energy was unlike anything I'd seen in my years in public service.
+          days.
         </p>
 
         <p>
@@ -44,7 +44,7 @@ const Foreword = () => {
           {[
             {
               bold: "Get your hands dirty.",
-              text: "Don't just champion AI from the townhall. Sit with your officers. Try the tools yourself. They need to see you learning, not just leading.",
+              text: "Try the tools yourself. Your officers need to see you learning, not just leading.",
             },
             {
               bold: "Make room.",
@@ -52,11 +52,11 @@ const Foreword = () => {
             },
             {
               bold: "Let people stumble.",
-              text: "The first experiment might not work. That's fine. What kills transformation isn't failure. It is the fear of it.",
+              text: "What kills transformation isn't failure. It is the fear of it.",
             },
             {
               bold: "Start now.",
-              text: "Not next quarter. Not after the next reorganisation. Now. Every week you wait is a week your officers spend on work that AI could already be doing for them.",
+              text: "Every week you wait is a week your officers spend on work that AI could already be doing for them.",
             },
           ].map((item) => (
             <motion.div
@@ -74,10 +74,7 @@ const Foreword = () => {
           ))}
         </div>
 
-        <p>
-          We've tested this. It works. GovTech is ready to walk alongside your agency but it begins with you deciding to
-          take the first step.
-        </p>
+        <p>We've tested this. It works. GovTech is ready to walk alongside your agency but it begins with you.</p>
 
         <motion.p
           initial={{ opacity: 0 }}
