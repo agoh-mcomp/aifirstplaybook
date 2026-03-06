@@ -26,12 +26,12 @@ const Chapter6 = () => (
         {[
           {
             check: "Leadership commitment",
-            detail: "The Head of Agency has agreed to protect sprint time and participate visibly — not just endorse.",
+            detail: "The Head of Agency has agreed to protect sprint time and participate visibly not just endorse.",
           },
           { check: "Nominated AI Lead", detail: "One DD-level (or above) who owns and champions the initiative." },
           {
             check: "Identified officers to participate",
-            detail: "A cross-functional cohort from corporate functions — HR, Finance, Procurement, Comms, Ops.",
+            detail: "A cross-functional cohort from corporate functions: HR, Finance, Procurement, Comms, Ops.",
           },
           {
             check: "BAU trade-offs agreed",
