@@ -1242,6 +1242,11 @@ const Index = () => {
         <AnimatePresence mode="wait">
           {activeChapter === null ? renderLanding() : renderChapterContent()}
         </AnimatePresence>
+        <footer className="border-t border-border py-6 text-center">
+          <p className="font-mono text-xs tracking-wider text-muted-foreground">
+            © 2026 Government Technology Agency of Singapore
+          </p>
+        </footer>
       </main>
       <MobileBottomNav
         activeChapter={activeChapter}
