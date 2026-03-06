@@ -40,7 +40,7 @@ const Chapter2 = () => (
           },
           {
             header: "Compressed Cycle Times",
-            text: "A dramatically reduced cycle time from problem to prototype to deployment — from months or years, to days or hours",
+            text: "A dramatically reduced cycle time from problem to prototype to deployment from months or years, to days or hours",
             icon: Timer,
           },
           {
@@ -73,7 +73,7 @@ const Chapter2 = () => (
     <DualAudienceBlock
       leaderText="AI-First demands a strategic shift: from outsourced innovation to in-house building by domain experts; from process stability to process agility; from IT/procurement gatekeeping to governance as an enabler of speed; and from perfect execution to a culture of experimentation and rapid prototyping."
       practitionerText={
-        'Apply the "AI-First" design lens: before starting any task — budget reconciliation, procurement brief, or policy review - ask "What would this look like if AI were a given, not an afterthought?" Identify which steps are purely transactional vs. requiring human judgment, then use AI agents to handle high-volume/low-value toil so you can focus on the final strategic review.'
+        'Apply the "AI-First" design lens: before starting any task e.g. budget reconciliation, procurement brief, or policy review - ask "What would this look like if AI were a given, not an afterthought?" Identify which steps are purely transactional vs. requiring human judgment, then use AI agents to handle high-volume/low-value toil so you can focus on the final strategic review.'
       }
     />
   </ChapterContent>
