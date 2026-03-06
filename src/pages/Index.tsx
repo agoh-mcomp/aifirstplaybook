@@ -23,6 +23,7 @@ import ResourceDownload from "@/components/ResourceDownload";
 import DiscoverySurvey from "@/components/DiscoverySurvey";
 import PostSprintSurvey from "@/components/PostSprintSurvey";
 import CulturalInfographic from "@/components/CulturalInfographic";
+import Foreword from "@/components/Foreword";
 import LoveButton from "@/components/LoveButton";
 import { useLoveCount } from "@/hooks/use-love-count";
 import {
@@ -295,6 +296,10 @@ const Index = () => {
               practitionerText="You already know the pain. The spreadsheets, the copy-paste workflows, the 47-step approval chains. AI doesn't replace your expertise — it removes the friction around it."
             />
           </ChapterContent>
+        )}
+
+        {activeChapter === "foreword" && (
+          <Foreword />
         )}
 
         {activeChapter === "start-here" && (
