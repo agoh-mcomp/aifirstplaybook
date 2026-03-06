@@ -7,18 +7,54 @@ import { Timer, Eye, Users, Layers, Puzzle, AlertTriangle } from "lucide-react";
 const Chapter3 = () => (
   <ChapterContent num="Chapter 03" arc="The Obstacle" title="The Challenge">
     <p>
-      Across conversations with various agency teams, the picture is consistent. Agencies want to start
-      AI-First. The problem is they don't know how — and the conditions around them make starting harder than it
-      should be. The barriers are not technical. They are human, cultural, and structural.
+      Across conversations with various agency teams, the picture is consistent. Agencies want to start AI-First. The
+      problem is they don't know how and the conditions around them make starting harder than it should be. The barriers
+      are not technical. They are human, cultural, and structural.
     </p>
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
       {[
-        { label: '"This is extra work"', detail: "Corporate officers are stretched. Experimentation competes with delivery and BAU always wins — until officers get protected time and explicit permission to try.", icon: Timer, color: "var(--coral)" },
-        { label: "Leaders Must Walk the Talk", detail: "When the Head of Agency visibly joins a sprint, builds something, and learns with the team — that is when people believe in cultural change. Not before.", icon: Eye, color: "var(--chart-2)" },
-        { label: "No Trusted Peer Reference", detail: "Agencies need a peer in the same function, at a comparable agency, who can say honestly: here's what we did, here's what was hard. Without that, the unknown risks feel bigger than the known benefits.", icon: Users, color: "var(--chart-3)" },
-        { label: "Systemic Friction", detail: "Data classification uncertainty, procurement processes built for large IT projects, slow deployment of prototypes — many officers hit the wall and stop.", icon: Layers, color: "var(--chart-4)" },
-        { label: "A Playbook That Isn't Theirs", detail: "A GovTech playbook handed to agencies doesn't produce ownership. Agencies need to author their own version. The act of creating it is part of the cultural change.", icon: Puzzle, color: "var(--chart-5)" },
-        { label: "Deployment Gap", detail: "The biggest gap is between prototype and deployment. Getting solutions to colleagues, connecting to real data, and keeping them running is beyond most non-technical officers.", icon: AlertTriangle, color: "var(--destructive)" },
+        {
+          label: '"This is extra work"',
+          detail:
+            "Corporate officers are stretched. Experimentation competes with delivery and BAU always wins — until officers get protected time and explicit permission to try.",
+          icon: Timer,
+          color: "var(--coral)",
+        },
+        {
+          label: "Leaders Must Walk the Talk",
+          detail:
+            "When the Head of Agency visibly joins a sprint, builds something, and learns with the team — that is when people believe in cultural change. Not before.",
+          icon: Eye,
+          color: "var(--chart-2)",
+        },
+        {
+          label: "No Trusted Peer Reference",
+          detail:
+            "Agencies need a peer in the same function, at a comparable agency, who can say honestly: here's what we did, here's what was hard. Without that, the unknown risks feel bigger than the known benefits.",
+          icon: Users,
+          color: "var(--chart-3)",
+        },
+        {
+          label: "Systemic Friction",
+          detail:
+            "Data classification uncertainty, procurement processes built for large IT projects, slow deployment of prototypes — many officers hit the wall and stop.",
+          icon: Layers,
+          color: "var(--chart-4)",
+        },
+        {
+          label: "A Playbook That Isn't Theirs",
+          detail:
+            "A GovTech playbook handed to agencies doesn't produce ownership. Agencies need to author their own version. The act of creating it is part of the cultural change.",
+          icon: Puzzle,
+          color: "var(--chart-5)",
+        },
+        {
+          label: "Deployment Gap",
+          detail:
+            "The biggest gap is between prototype and deployment. Getting solutions to colleagues, connecting to real data, and keeping them running is beyond most non-technical officers.",
+          icon: AlertTriangle,
+          color: "var(--destructive)",
+        },
       ].map((item, idx) => (
         <motion.div
           key={item.label}
