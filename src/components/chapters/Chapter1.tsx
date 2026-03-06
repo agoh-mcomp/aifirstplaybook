@@ -17,7 +17,7 @@ const Chapter1 = () => (
     </p>
     <QuoteBlock
       quote="The productivity and capability differential that AI is creating — between those who embrace it deeply and those who treat it as a peripheral tool — will compound over the next few years in ways that are difficult to fully predict, but easy to anticipate in direction."
-      attribution="Bernard Toh, DCE Strategy Corporate Governance, GovTech"
+      attribution="Bernard Toh, DCE Strategy, Corporate & Governance, GovTech"
     />
     <p>
       The friction that currently exists between ideation and deployment in government is not a minor

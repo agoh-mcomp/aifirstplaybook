@@ -100,7 +100,7 @@ const Chapter8 = () => (
     </div>
     <QuoteBlock
       quote="The best public service in the world does not wait to be told it is falling behind. It decides to stay ahead. That decision starts with each of us."
-      attribution="Bernard Toh, DCE Strategy Corporate Governance, GovTech"
+      attribution="Bernard Toh, DCE Strategy, Corporate & Governance, GovTech"
     />
     <DualAudienceBlock
       leaderText="GovTech SCG proved it with non-technical corporate officers in 90 days. Your agency has the opportunity to be the one that proves it scales — and whose story moves the rest of government from waiting to acting."

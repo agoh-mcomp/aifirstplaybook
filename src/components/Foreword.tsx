@@ -8,7 +8,7 @@ const Foreword = () => {
         <p className="italic text-foreground font-display text-xl">To the leaders reading this,</p>
 
         <p>
-          Let me be honest — when we started our AI-First journey at GovTech's Strategy &amp; Corporate Governance
+          Let me be honest — when we started our AI-First journey at GovTech's Strategy, Corporate &amp; Governance
           Group, we didn't have all the answers. We had conviction, curiosity, and a willingness to look a little
           foolish along the way.
         </p>
@@ -89,7 +89,7 @@ const Foreword = () => {
         <div className="pt-6 border-t border-border mt-10">
           <div className="font-display text-base text-foreground">Bernard Toh</div>
           <div className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted-foreground mt-1">
-            Deputy Chief Executive, Strategy &amp; Corporate Governance
+            Deputy Chief Executive, Strategy, Corporate &amp; Governance
           </div>
           <div className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted-foreground">
             Government Technology Agency of Singapore
