@@ -86,7 +86,7 @@ const Chapter7 = () => (
     />
     <QuoteBlock
       quote="The person best placed to build a solution to a problem is almost always the person who lives with that problem every day. We have historically outsourced that knowledge to vendors, to IT teams, to project managers, and in doing so consistently produced solutions that are technically functional but operationally imperfect."
-      attribution="Bernard Toh, DCE Strategy Corporate Governance, GovTech"
+      attribution="Bernard Toh, DCE Strategy, Corporate & Governance, GovTech"
     />
     <QuoteBlock
       quote="Everyone can build AI solutions — it's about fundamentally reimagining how work gets done"
