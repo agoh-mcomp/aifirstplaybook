@@ -81,10 +81,10 @@ const Chapter3 = () => (
         </motion.div>
       ))}
     </div>
-    <QuoteBlock
+    {/* <QuoteBlock
       quote="The common thread: this is a culture change problem, not a technology problem. The tools are there. What's missing are the conditions that empower officers to believe they can do it."
       attribution="AI-First Engagement Strategy"
-    />
+    /> */}
     <QuoteBlock
       quote="It is easy to learn! The toughest part is breaking that inertia"
       attribution="People & Org Officer, GovTech"
