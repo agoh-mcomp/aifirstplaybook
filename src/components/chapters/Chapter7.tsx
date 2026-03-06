@@ -101,7 +101,7 @@ const Chapter7 = () => (
       attribution="Finance Officer, GovTech"
     />
     <DualAudienceBlock
-      leaderText="These aren't innovation theatre. Officers who had told themselves they were 'not technical' built working prototypes. The pace of prototyping compressed from months to days."
+      leaderText="Officers who had told themselves they were 'not technical' built working prototypes. The pace of prototyping compressed from months to days."
       practitionerText="Every solution started exactly where you are now — a team with a problem, a willingness to experiment, and a sprint to prove it out."
     />
   </ChapterContent>
