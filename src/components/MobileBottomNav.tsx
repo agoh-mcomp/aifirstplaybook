@@ -25,7 +25,7 @@ const MobileBottomNav = ({ activeChapter, onSelectChapter, isDark, onToggleTheme
     if (activeIndex < chapters.length - 1) onSelectChapter(chapters[activeIndex + 1].id);
   };
 
-  if (!activeChapter || activeChapter === "start-here") return null;
+  if (!activeChapter || activeChapter === "start-here" || activeChapter === "foreword") return null;
 
   return (
     <>
@@ -152,6 +152,22 @@ const MobileBottomNav = ({ activeChapter, onSelectChapter, isDark, onToggleTheme
                   <div className="flex items-center gap-3">
                     <BookOpen className="w-4 h-4 text-gold-dim shrink-0" />
                     <span className="font-display text-sm text-foreground">Home</span>
+                  </div>
+                </button>
+
+                {/* Foreword */}
+                <button
+                  onClick={() => { onSelectChapter("foreword"); setDrawerOpen(false); }}
+                  className={`w-full text-left rounded-xl px-4 py-3 transition-colors touch-manipulation ${
+                    activeChapter === "foreword" ? "bg-secondary" : "hover:bg-secondary/50 active:bg-secondary"
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <BookOpen className="w-4 h-4 text-gold-dim shrink-0" />
+                    <div>
+                      <span className="font-display text-sm text-foreground block">Foreword</span>
+                      <span className="font-mono text-[9px] tracking-wider uppercase text-muted-foreground">A Message to Leaders</span>
+                    </div>
                   </div>
                 </button>
 
