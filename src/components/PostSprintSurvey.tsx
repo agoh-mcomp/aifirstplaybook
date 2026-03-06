@@ -211,7 +211,7 @@ const surveySections: SurveySection[] = [
         note: "Check all that apply. Grouped by category.",
         options: [
           "Productivity: I spend less time on repetitive tasks",
-          "I complete work faster",
+          "Productivity: I complete work faster",
           "Productivity: I can handle higher volume of work",
           "Productivity: I have more time for strategic/creative work",
           "Work Quality: I produce higher quality outputs",
