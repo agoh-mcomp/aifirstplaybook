@@ -11,7 +11,7 @@ const Chapter7 = () => (
   <ChapterContent num="Chapter 07" arc="Proof It Works" title="What We've Seen">
     <p>
       The numbers from the SCG AI-First initiative were encouraging. But the more significant outcomes were cultural.
-      The framing shifted — almost imperceptibly at first and then unmistakably — from{" "}
+      The framing shifted almost imperceptibly at first and then unmistakably from{" "}
       <em className="text-muted-foreground">"AI is a tool I consume"</em> to{" "}
       <em className="text-gold-dim">"AI is a partner I work with."</em>
     </p>
