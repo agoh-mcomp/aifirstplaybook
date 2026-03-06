@@ -8,8 +8,8 @@ import { Eye, ShieldCheck, UserCheck, Heart, Flag, Compass, Crown, Rocket } from
 const Chapter8 = () => (
   <ChapterContent num="Chapter 08" arc="The New World" title="Your Move">
     <p>
-      AI diffusion is not optional. It is a non-negotiable condition for remaining a world-class public service.
-      To achieve this, we as leaders need to be bolder than feels comfortable.
+      AI diffusion is not optional. It is a non-negotiable condition for remaining a world-class public service. To
+      achieve this, we as leaders need to be bolder than feels comfortable.
     </p>
     <div className="bg-surface-elevated border border-border rounded-xl p-6 md:p-8 mt-8 relative overflow-hidden">
       <div
@@ -25,10 +25,34 @@ const Chapter8 = () => (
       </p>
       <div className="space-y-5">
         {[
-          { num: "01", title: "Participate — don't just endorse.", detail: "Show up for at least one sprint session. Let officers see you learning alongside them. When the Head of Agency is an active participant, it creates the psychological permission for everyone else to experiment in a way no formal directive ever could.", icon: Eye },
-          { num: "02", title: "Protect the time.", detail: "Experimentation always dies when it competes with day-to-day work and loses. We need a firm commitment to protect the time for participating officers. This is a leadership decision.", icon: ShieldCheck },
-          { num: "03", title: "Nominate an AI Lead.", detail: "Appoint one person — DD-level or above — to be the internal lead. This person will be leading the organising team to drive active engagement, organising sprints and participation; they're building the internal ownership that will last.", icon: UserCheck },
-          { num: "04", title: "Give your officers permission to fail.", detail: "For cultural shift to happen, officers must feel safe trying things that might not work. That safety has to come from the top. A visible signal that an honest attempt is valued is more powerful than any workshop.", icon: Heart },
+          {
+            num: "01",
+            title: "Participate — don't just endorse.",
+            detail:
+              "Show up for at least one sprint session. Let officers see you learning alongside them. When the Head of Agency is an active participant, it creates the psychological permission for everyone else to experiment in a way no formal directive ever could.",
+            icon: Eye,
+          },
+          {
+            num: "02",
+            title: "Protect the time.",
+            detail:
+              "Experimentation always dies when it competes with day-to-day work and loses. We need a firm commitment to protect the time for participating officers. This is a leadership decision.",
+            icon: ShieldCheck,
+          },
+          {
+            num: "03",
+            title: "Nominate an AI Lead.",
+            detail:
+              "Appoint one person. A DD-level or above to be the internal lead. This person will be leading the organising team to drive active engagement, organising sprints and participation; they're building the internal ownership that will last.",
+            icon: UserCheck,
+          },
+          {
+            num: "04",
+            title: "Give your officers permission to fail.",
+            detail:
+              "For cultural shift to happen, officers must feel safe trying things that might not work. That safety has to come from the top. A visible signal that an honest attempt is valued is more powerful than any workshop.",
+            icon: Heart,
+          },
         ].map((item) => (
           <div key={item.num} className="flex gap-4 items-start">
             <div
@@ -63,7 +87,7 @@ const Chapter8 = () => (
             {[
               "Give your officers the best tools you can access",
               "Create the protected time and psychological safety for experimentation",
-              "Participate yourself — not symbolically, but genuinely",
+              "Participate yourself not symbolically, but genuinely",
               "Build the internal champions who will carry this further than you can reach alone",
               "Set a 90-day milestone and protect the team's time",
             ].map((item, i) => (
@@ -86,8 +110,8 @@ const Chapter8 = () => (
             {[
               "Document your most painful workflow in detail",
               "Rally 3–5 colleagues willing to experiment",
-              "Find out more at go.gov.sg/ai-first — bring data, not slides",
-              "Remember: you don't need a mandate to start — you need a problem worth solving, a team willing to try, and two weeks to prove it works",
+              "Bring data, not slides",
+              "Remember: you don't need a mandate to start. You need a problem worth solving, a team willing to try, and two weeks to prove it works",
             ].map((item, i) => (
               <li key={i} className="flex gap-2 items-start">
                 <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground mt-2 shrink-0" />
@@ -103,7 +127,7 @@ const Chapter8 = () => (
       attribution="Bernard Toh, DCE Strategy, Corporate & Governance, GovTech"
     />
     <DualAudienceBlock
-      leaderText="GovTech SCG proved it with non-technical corporate officers in 90 days. Your agency has the opportunity to be the one that proves it scales — and whose story moves the rest of government from waiting to acting."
+      leaderText="GovTech SCG proved it with non-technical corporate officers in 90 days. Your agency has the opportunity to be the one that proves it scales and whose story moves the rest of government from waiting to acting."
       practitionerText="GovTech is here to help. We have a model that has worked, a community of practitioners who have lived through it, and a genuine commitment to making this easier for you."
     />
 
@@ -118,8 +142,7 @@ const Chapter8 = () => (
         <span className="italic gradient-gold">when you do.</span>
       </h3>
       <p className="text-lg text-muted-foreground leading-relaxed mb-10 font-body max-w-xl mx-auto">
-        Every transformation begins with a single decision. Not to be perfect — but to begin. What is holding
-        you back ?
+        Every transformation begins with a single decision. Not to be perfect — but to begin. What is holding you back ?
       </p>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
