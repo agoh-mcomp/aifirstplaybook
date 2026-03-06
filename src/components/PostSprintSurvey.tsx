@@ -31,10 +31,18 @@ const surveySections: SurveySection[] = [
         question: "Which SCG/Corporate Division are you from?",
         type: "single-select",
         options: [
-          "Comms & Marketing", "CIO Office", "Digital Governance", "Finance",
-          "Internal Audit", "Legal", "Organisational Excellence",
-          "Partnerships and Engagement", "People & Organisation", "Procurement",
-          "Strategy Planning & Transformation", "Other",
+          "Comms & Marketing",
+          "CIO Office",
+          "Digital Governance",
+          "Finance",
+          "Internal Audit",
+          "Legal",
+          "Organisational Excellence",
+          "Partnerships and Engagement",
+          "People & Organisation",
+          "Procurement",
+          "Strategy Planning & Transformation",
+          "Other",
         ],
       },
       {
@@ -43,20 +51,30 @@ const surveySections: SurveySection[] = [
         type: "multi-select",
         note: "Include team name where applicable. Check all that apply.",
         options: [
-          "Sprint 1 (Aug)", "Sprint 2 (Sep)", "Sprint 3 (Oct)",
-          "Weekly AI Clinics (office hours)", "Lorong AI Workshop (Aug)",
-          "Changi Airport Experiential Visit (Sep)", "Manus AI hands-on workshop (Oct)",
-          "AI-First CLW Showcase (5 Nov)", "AI-First Discover Showcase (14 Nov)",
-          "I didn't participate", "Other",
+          "Sprint 1 (Aug)",
+          "Sprint 2 (Sep)",
+          "Sprint 3 (Oct)",
+          "Weekly AI Clinics (office hours)",
+          "Lorong AI Workshop (Aug)",
+          "Changi Airport Experiential Visit (Sep)",
+          "Manus AI hands-on workshop (Oct)",
+          "AI-First CLW Showcase (5 Nov)",
+          "AI-First Discover Showcase (14 Nov)",
+          "I didn't participate",
+          "Other",
         ],
       },
       {
         id: "Q3a",
-        question: "How many hours on average did you spend on AI-First activities (sprints, workshop, clinics) per week?",
+        question:
+          "How many hours on average did you spend on AI-First activities (sprints, workshop, clinics) per week?",
         type: "single-select",
         options: [
-          "1-5 hours per week", "5-10 hours per week", "10-20 hours per week",
-          "20-40 hours per week", "> 40 hours per week",
+          "1-5 hours per week",
+          "5-10 hours per week",
+          "10-20 hours per week",
+          "20-40 hours per week",
+          "> 40 hours per week",
           "Did not spend time on AI-First activities",
         ],
       },
@@ -68,11 +86,15 @@ const surveySections: SurveySection[] = [
     questions: [
       {
         id: "Q4",
-        question: "Before AI-First, how confident were you that you could build an AI solution directly (e.g., using AIBots, Pair or vibe coding)?",
+        question:
+          "Before AI-First, how confident were you that you could build an AI solution directly (e.g., using AIBots, Pair or vibe coding)?",
         type: "scale",
         options: [
-          "1 - Not confident at all", "2 - Slightly confident",
-          "3 - Moderately confident", "4 - Confident", "5 - Very confident",
+          "1 - Not confident at all",
+          "2 - Slightly confident",
+          "3 - Moderately confident",
+          "4 - Confident",
+          "5 - Very confident",
         ],
       },
       {
@@ -80,8 +102,11 @@ const surveySections: SurveySection[] = [
         question: "NOW, how confident are you that you can build an AI solution directly?",
         type: "scale",
         options: [
-          "1 - Not confident at all", "2 - Slightly confident",
-          "3 - Moderately confident", "4 - Confident", "5 - Very confident",
+          "1 - Not confident at all",
+          "2 - Slightly confident",
+          "3 - Moderately confident",
+          "4 - Confident",
+          "5 - Very confident",
         ],
       },
       {
@@ -140,7 +165,8 @@ const surveySections: SurveySection[] = [
           "Yes, multiple solutions actively used",
           "Yes, one solution actively used",
           "Built prototype, not yet deployed",
-          "Still exploring", "Not yet",
+          "Still exploring",
+          "Not yet",
         ],
       },
     ],
@@ -151,7 +177,8 @@ const surveySections: SurveySection[] = [
     questions: [
       {
         id: "Q10",
-        question: "What are the top 3 Time-Intensive Repetitive Tasks that consume MOST time in your typical work week?",
+        question:
+          "What are the top 3 Time-Intensive Repetitive Tasks that consume MOST time in your typical work week?",
         type: "multi-select",
         note: "Select up to 3.",
         options: [
@@ -184,7 +211,7 @@ const surveySections: SurveySection[] = [
         note: "Check all that apply. Grouped by category.",
         options: [
           "Productivity: I spend less time on repetitive tasks",
-          "Productivity: I complete work faster",
+          "I complete work faster",
           "Productivity: I can handle higher volume of work",
           "Productivity: I have more time for strategic/creative work",
           "Work Quality: I produce higher quality outputs",
@@ -376,8 +403,8 @@ const PostSprintSurvey = () => {
               {/* Intro */}
               <div className="bg-surface-elevated/50 border border-border/60 rounded-lg p-4">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Over the past months, you've been part of AI-First—sprints, workshops, clinics, and showcases. 
-                  This survey captures what worked, what transformed, and where we go next. Your insights shape Phase 2.
+                  Over the past months, you've been part of AI-First—sprints, workshops, clinics, and showcases. This
+                  survey captures what worked, what transformed, and where we go next. Your insights shape Phase 2.
                 </p>
                 <p className="text-xs text-gold mt-2 font-mono">⏱ Estimated time: 5 minutes</p>
               </div>
@@ -388,9 +415,7 @@ const PostSprintSurvey = () => {
                     <span className="text-xs font-mono font-bold tracking-wider text-gold bg-gold/10 px-2.5 py-1 rounded">
                       {section.title}
                     </span>
-                    <span className="text-[10px] font-mono text-muted-foreground">
-                      {section.count} questions
-                    </span>
+                    <span className="text-[10px] font-mono text-muted-foreground">{section.count} questions</span>
                   </div>
 
                   <div className="space-y-4">
@@ -412,9 +437,7 @@ const PostSprintSurvey = () => {
                         </div>
                         <p className="text-sm text-foreground font-medium leading-relaxed">{q.question}</p>
 
-                        {q.note && (
-                          <p className="mt-1.5 text-xs text-muted-foreground/80 italic">{q.note}</p>
-                        )}
+                        {q.note && <p className="mt-1.5 text-xs text-muted-foreground/80 italic">{q.note}</p>}
 
                         {q.options && (
                           <ul className="mt-3 space-y-1.5">
@@ -434,7 +457,10 @@ const PostSprintSurvey = () => {
                                 <tr>
                                   <th className="text-left text-muted-foreground font-normal pb-2 pr-4">Format</th>
                                   {q.matrixCols.map((col) => (
-                                    <th key={col} className="text-center text-muted-foreground font-normal pb-2 px-2 min-w-[32px]">
+                                    <th
+                                      key={col}
+                                      className="text-center text-muted-foreground font-normal pb-2 px-2 min-w-[32px]"
+                                    >
                                       {col}
                                     </th>
                                   ))}
