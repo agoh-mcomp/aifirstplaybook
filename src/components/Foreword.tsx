@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import bernardTohImg from "@/assets/bernard-toh.jpg";
 
 const Foreword = () => {
   return (
@@ -23,11 +22,6 @@ const Foreword = () => {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="flex items-center gap-5 mb-12 bg-surface-elevated border border-border rounded-xl p-5"
       >
-        <img
-          src={bernardTohImg}
-          alt="Bernard Toh"
-          className="w-20 h-20 rounded-full object-cover border-2 border-gold-dim/30 shrink-0"
-        />
         <div>
           <div className="font-display text-lg text-foreground">Bernard Toh</div>
           <div className="font-mono text-[10px] tracking-[0.15em] uppercase text-gold-dim mt-1">
