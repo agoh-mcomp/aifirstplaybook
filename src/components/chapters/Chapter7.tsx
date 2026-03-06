@@ -23,7 +23,7 @@ const Chapter7 = () => (
     </div>
     <p className="mt-8 text-sm text-muted-foreground">
       Officer confidence in using AI at work jumped from 1.97 to 3.15 on a 5-point scale in three months. This is not a
-      technology experiment anymore. It is a proven model ready to scale.
+      technology experiment anymore. It is a proven model that worked.
     </p>
     <div className="mt-10 space-y-6">
       <CaseStudyCard
