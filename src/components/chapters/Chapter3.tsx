@@ -16,14 +16,14 @@ const Chapter3 = () => (
         {
           label: '"This is extra work"',
           detail:
-            "Corporate officers are stretched. Experimentation competes with delivery and BAU always wins — until officers get protected time and explicit permission to try.",
+            "Corporate officers are stretched. Experimentation competes with delivery and BAU always wins until officers get protected time and explicit permission to try.",
           icon: Timer,
           color: "var(--coral)",
         },
         {
           label: "Leaders Must Walk the Talk",
           detail:
-            "When the Head of Agency visibly joins a sprint, builds something, and learns with the team — that is when people believe in cultural change. Not before.",
+            "When the Head of Agency visibly joins a sprint, builds something, and learns with the team. That is when people believe in cultural change.",
           icon: Eye,
           color: "var(--chart-2)",
         },
@@ -37,7 +37,7 @@ const Chapter3 = () => (
         {
           label: "Systemic Friction",
           detail:
-            "Data classification uncertainty, procurement processes built for large IT projects, slow deployment of prototypes — many officers hit the wall and stop.",
+            "Data classification uncertainty, procurement processes built for large IT projects, slow deployment of prototypes. Many officers hit the wall and stop.",
           icon: Layers,
           color: "var(--chart-4)",
         },
@@ -91,7 +91,7 @@ const Chapter3 = () => (
     />
     <DualAudienceBlock
       leaderText="None of these constraints are insurmountable. But they require deliberate choices, not passive support. Your role is to make the cost of standing still more visible than the cost of moving."
-      practitionerText="Transformation doesn't need permission from everyone — Start with one workflow, one team, and one measurable quick win."
+      practitionerText="Transformation doesn't need permission from everyone. Start with one workflow, one team, and one measurable quick win."
     />
   </ChapterContent>
 );
