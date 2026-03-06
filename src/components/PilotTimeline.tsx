@@ -22,7 +22,7 @@ const PilotTimeline = () => {
         {
           name: "Map the Pain",
           detail:
-            "Corporate officers map their most time-consuming problems. Shared pain highlights universal problems — the first cultural shift.",
+            "Corporate officers map their most time-consuming problems. Shared pain highlights universal problems, the first cultural shift.",
         },
       ],
       output:
@@ -40,7 +40,7 @@ const PilotTimeline = () => {
         {
           name: "The Leader's Moment",
           detail:
-            "Head of Agency makes a visible appearance — dropping in on a sprint, trying something, learning alongside the team. More powerful than any comms campaign.",
+            "Head of Agency makes a visible appearance dropping in on a sprint, trying something, learning alongside the team. More powerful than any comms campaign.",
         },
       ],
       output: "Working prototypes built by the people who live with the problems every day.",
