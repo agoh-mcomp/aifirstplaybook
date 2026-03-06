@@ -3,36 +3,6 @@ import { motion } from "framer-motion";
 const Foreword = () => {
   return (
     <div>
-      <div className="flex items-center gap-4 mb-8">
-        <span className="font-mono text-sm tracking-[0.2em] uppercase text-gold-dim">Foreword</span>
-        <span className="w-12 h-px bg-gold-dim" />
-        <span className="font-mono text-xs tracking-[0.15em] uppercase text-muted-foreground">
-          A Message to Leaders
-        </span>
-      </div>
-
-      <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-10 text-foreground">
-        The Time to Begin Is Now
-      </h2>
-
-      {/* Author card */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="flex items-center gap-5 mb-12 bg-surface-elevated border border-border rounded-xl p-5"
-      >
-        <div>
-          <div className="font-display text-lg text-foreground">Bernard Toh</div>
-          <div className="font-mono text-[10px] tracking-[0.15em] uppercase text-gold-dim mt-1">
-            Deputy Chief Executive, Strategy &amp; Corporate Governance
-          </div>
-          <div className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted-foreground mt-0.5">
-            Government Technology Agency of Singapore
-          </div>
-        </div>
-      </motion.div>
-
       {/* Letter content */}
       <div className="space-y-6 text-lg leading-relaxed text-secondary-foreground font-body">
         <p className="italic text-foreground font-display text-xl">To the leaders reading this,</p>
