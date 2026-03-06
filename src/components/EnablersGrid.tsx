@@ -25,6 +25,12 @@ const enablers: Enabler[] = [
     description:
       "AI clinics, expert drop-ins, tool access, and deployment support through Rabbit Deploy. Without this, officers hit walls and stop. With it, they build through them.",
   },
+  {
+    icon: "📊",
+    title: "Measurement Framework",
+    description:
+      "Dashboards to track agency AI-First progress and outcomes to course-correct early. Data-driven transformation management.",
+  },
 ];
 
 const EnablersGrid = () => {
