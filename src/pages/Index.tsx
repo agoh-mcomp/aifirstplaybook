@@ -1,5 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Acknowledgements from "@/components/Acknowledgements";
 import ChapterSidebar, { chapters } from "@/components/ChapterSidebar";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import { ChapterNav } from "@/components/chapters/ChapterNav";
@@ -118,6 +119,7 @@ const Index = () => {
         <AnimatePresence mode="wait">
           {renderContent()}
         </AnimatePresence>
+        <Acknowledgements />
         <footer className="border-t border-border py-6 text-center">
           <p className="font-mono text-xs tracking-wider text-muted-foreground">
             © 2026 Government Technology Agency of Singapore
