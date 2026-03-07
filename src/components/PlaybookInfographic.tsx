@@ -581,7 +581,7 @@ const PlaybookInfographic = () => {
         pCtx.drawImage(trimmed, 0, sourceY, W * scale, sliceH, 0, 0, W * scale, sliceH);
         const pageImg = pageCanvas.toDataURL("image/png");
         const sliceMm = Math.min(pdfH, sliceH / pxPerMm);
-        pdf.addImage(pageImg, "PNG", 0, 0, pdfW, sliceMm, undefined, "FAST");
+        pdf.addImage(pageImg, "PNG", 0, 0, pdfW, sliceMm, undefined, "NONE");
       }
 
       pdf.save("AI-First-Playbook-Executive-Brief.pdf");
