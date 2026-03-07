@@ -142,7 +142,7 @@ const PlaybookInfographic = () => {
       const W = 1200;
       // A4 aspect ratio: 297/210 ≈ 1.4143
       const PAGE_H = Math.round(W * 297 / 210); // ~1697px
-      const totalPages = 4;
+      const totalPages = 3;
 
       function makeCanvas(): [HTMLCanvasElement, CanvasRenderingContext2D] {
         const c = document.createElement("canvas");
@@ -515,133 +515,12 @@ const PlaybookInfographic = () => {
 
       drawFooter(ctx3, W, PAGE_H, 3, totalPages);
 
-      /* ══════════════ PAGE 4: Acknowledgements ══════════════ */
-      const [c4, ctx4] = makeCanvas();
-
-      y = 80;
-      // Decorative top flourish
-      ctx4.fillStyle = C.gold + "15";
-      ctx4.beginPath(); ctx4.arc(W / 2, y - 20, 120, 0, Math.PI * 2); ctx4.fill();
-
-      ctx4.textAlign = "center";
-
-      // Title
-      ctx4.fillStyle = C.navy;
-      ctx4.font = "700 48px 'DM Serif Display', serif";
-      ctx4.fillText("With Gratitude", W / 2, y + 30);
-      ctx4.fillText("& Deep Thanks", W / 2, y + 86);
-
-      y += 130;
-      ctx4.fillStyle = C.textMuted;
-      ctx4.font = "italic 18px 'Inter', sans-serif";
-      wrap(ctx4, "This playbook was built in the trenches — from 90 days of high energy — by a team that chose to believe something different was possible.", W / 2, y, W - 200, 26, 3);
-
-      y += 90;
-      drawGoldDivider(ctx4, W, y);
-      y += 40;
-
-      // Helper to draw acknowledgement blocks
-      function drawAckBlock(
-        ctx: CanvasRenderingContext2D,
-        startY: number,
-        label: string,
-        name: string,
-        note: string,
-        blockW: number,
-      ): number {
-        // Label badge
-        ctx.fillStyle = C.goldBg;
-        const lw = ctx.measureText(label).width;
-        rr(ctx, W / 2 - lw / 2 - 20, startY - 14, lw + 40, 30, 15); ctx.fill();
-        ctx.strokeStyle = C.gold + "40"; ctx.lineWidth = 1;
-        rr(ctx, W / 2 - lw / 2 - 20, startY - 14, lw + 40, 30, 15); ctx.stroke();
-        ctx.fillStyle = C.gold;
-        ctx.font = "700 13px 'JetBrains Mono', monospace";
-        ctx.fillText(label, W / 2, startY + 6);
-
-        startY += 40;
-
-        // Name(s)
-        ctx.fillStyle = C.navy;
-        ctx.font = "700 22px 'DM Serif Display', serif";
-        const nameLines = name.split("\n");
-        nameLines.forEach((nl) => {
-          ctx.fillText(nl, W / 2, startY);
-          startY += 30;
-        });
-
-        startY += 4;
-
-        // Note
-        ctx.fillStyle = C.textMuted;
-        ctx.font = "italic 16px 'Inter', sans-serif";
-        startY = wrap(ctx, note, W / 2, startY, blockW, 24, 3);
-
-        return startY + 14;
-      }
-
-      ctx4.textAlign = "center";
-
-      // The Core Team header
-      ctx4.fillStyle = C.navy;
-      ctx4.font = "700 15px 'JetBrains Mono', monospace";
-      ctx4.fillText("THE CORE TEAM", W / 2, y);
-      y += 36;
-
-      // Champion
-      ctx4.font = "700 13px 'JetBrains Mono', monospace";
-      y = drawAckBlock(ctx4, y, "CHAMPION & ROLE MODEL", "Bernard Toh", "For your vision, giving us protected time to reimagine, and leading from the front.", W - 280);
-
-      y += 10;
-
-      // AI-First Working Group
-      y = drawAckBlock(
-        ctx4, y, "AI-FIRST WORKING GROUP",
-        "Adrian Goh  ·  Elise Lee  ·  Bertram Lim  ·  Jackson Wong\nChen Weijun  ·  Alyssa Goh  ·  Debbie Yosh  ·  Jade Lee  ·  Nicole Goh",
-        "For steering, building, and bringing the AI-First initiative to life through every sprint.",
-        W - 240,
-      );
-
-      y += 10;
-
-      // CIO Office
-      y = drawAckBlock(
-        ctx4, y, "CIO OFFICE & AI-FIRST CLINICS",
-        "Chen Weijun  ·  Poh Quan Wei  ·  Nicholas Foong\nGabriel Chua  ·  Tsang Bao Xian",
-        "For showing up clinic after clinic, helping to deploy prototypes with tireless patience and expertise.",
-        W - 240,
-      );
-
-      y += 10;
-
-      // Leaders & Officers
-      ctx4.fillStyle = C.goldBg;
-      rr(ctx4, 80, y, W - 160, 160, 14); ctx4.fill();
-      ctx4.strokeStyle = C.gold + "40"; ctx4.lineWidth = 1.5;
-      rr(ctx4, 80, y, W - 160, 160, 14); ctx4.stroke();
-
-      // Gold left accent
-      ctx4.fillStyle = C.gold;
-      rr(ctx4, 80, y + 16, 5, 128, 3); ctx4.fill();
-
-      ctx4.fillStyle = C.gold;
-      ctx4.font = "700 13px 'JetBrains Mono', monospace";
-      ctx4.fillText("OUR LEADERS & EVERY SCG OFFICER", W / 2, y + 36);
-
-      ctx4.fillStyle = C.text;
-      ctx4.font = "italic 17px 'Inter', sans-serif";
-      wrap(ctx4, "To our leaders in SCG and to every SCG team member who raised their hand, showed up to participate in a sprint, built their first solution, and made SCG AI-First a reality.", W / 2, y + 70, W - 240, 26, 4);
-
-      ctx4.textAlign = "left";
-
-      drawFooter(ctx4, W, PAGE_H, 4, totalPages);
-
       /* ── Export to PDF ── */
       const pdfW = 210;
       const pdfH = 297;
       const pdf = new jsPDF({ orientation: "p", unit: "mm", format: "a4", compress: true });
 
-      [c1, c2, c3, c4].forEach((c, i) => {
+      [c1, c2, c3].forEach((c, i) => {
         if (i > 0) pdf.addPage();
         const img = c.toDataURL("image/jpeg", 0.85);
         pdf.addImage(img, "JPEG", 0, 0, pdfW, pdfH, undefined, "FAST");
