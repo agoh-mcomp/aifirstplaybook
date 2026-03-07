@@ -292,81 +292,82 @@ const PlaybookInfographic = () => {
       addPageBreak(curY - 8);
 
       /* ── Team illustration ── */
-      const teamH = 220;
-      const teamW = W - 200;
+      const teamH = 240;
+      const teamW = W - 180;
       ctx.save();
-      rr(ctx, 100, curY, teamW, teamH, 16);
+      rr(ctx, 90, curY, teamW, teamH, 16);
       ctx.clip();
-      ctx.drawImage(team, 100, curY, teamW, teamH);
+      ctx.drawImage(team, 90, curY, teamW, teamH);
       ctx.restore();
       ctx.strokeStyle = C.border;
-      ctx.lineWidth = 1;
-      rr(ctx, 100, curY, teamW, teamH, 16);
+      ctx.lineWidth = 1.5;
+      rr(ctx, 90, curY, teamW, teamH, 16);
       ctx.stroke();
 
-      curY += teamH + 30;
+      curY += teamH + 40;
       addPageBreak(curY - 8);
 
       /* ══════════════ 7 NON-NEGOTIABLES ══════════════ */
       drawGoldDivider(ctx, W, curY - 12);
-      curY += 14;
+      curY += 18;
       drawSectionLabel(ctx, W, curY, "THE 7 CULTURAL NON-NEGOTIABLES");
 
-      curY += 14;
+      curY += 20;
       ctx.fillStyle = C.textMuted;
-      ctx.font = "italic 14px 'Inter', sans-serif";
+      ctx.font = "italic 15px 'Inter', sans-serif";
       ctx.textAlign = "center";
       ctx.fillText("The conditions that separate agencies that transform from those that merely experiment.", W / 2, curY);
       ctx.textAlign = "left";
 
-      curY += 30;
+      curY += 38;
 
-      // Clean list layout — all navy + gold
       nonNegotiables.forEach((nn, i) => {
-        const nnH = 70;
-        const nnY = curY + i * (nnH + 10);
-        const nnX = 80;
-        const nnW = W - 160;
+        const nnH = 78;
+        const nnY = curY + i * (nnH + 14);
+        const nnX = 70;
+        const nnW = W - 140;
 
-        // Card
+        // Card with alternating bg
         ctx.fillStyle = i % 2 === 0 ? C.bgSoft : C.bg;
         rr(ctx, nnX, nnY, nnW, nnH, 10);
         ctx.fill();
         ctx.strokeStyle = C.border;
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 1.5;
         rr(ctx, nnX, nnY, nnW, nnH, 10);
         ctx.stroke();
 
-        // Gold left bar
-        ctx.fillStyle = C.gold;
-        rr(ctx, nnX, nnY + 6, 4, nnH - 12, 2);
+        // Bright blue left bar
+        const barGrad = ctx.createLinearGradient(nnX, nnY, nnX, nnY + nnH);
+        barGrad.addColorStop(0, C.navyLight); barGrad.addColorStop(1, C.navy);
+        ctx.fillStyle = barGrad;
+        rr(ctx, nnX, nnY + 8, 5, nnH - 16, 3);
         ctx.fill();
 
         // Number circle
         ctx.fillStyle = C.navy;
-        ctx.beginPath(); ctx.arc(nnX + 36, nnY + nnH / 2, 16, 0, Math.PI * 2); ctx.fill();
+        ctx.beginPath(); ctx.arc(nnX + 40, nnY + nnH / 2, 18, 0, Math.PI * 2); ctx.fill();
         ctx.fillStyle = "#FFFFFF";
-        ctx.font = "700 13px 'JetBrains Mono', monospace";
+        ctx.font = "700 15px 'JetBrains Mono', monospace";
         ctx.textAlign = "center";
-        ctx.fillText(nn.num, nnX + 36, nnY + nnH / 2 + 5);
+        ctx.fillText(nn.num, nnX + 40, nnY + nnH / 2 + 5);
         ctx.textAlign = "left";
 
         // Emoji
-        ctx.font = "400 20px sans-serif";
-        ctx.fillText(nn.emoji, nnX + 62, nnY + nnH / 2 + 7);
+        ctx.font = "400 22px sans-serif";
+        ctx.fillText(nn.emoji, nnX + 68, nnY + nnH / 2 + 8);
 
-        // Title
+        // Title - larger, bolder
         ctx.fillStyle = C.navy;
-        ctx.font = "600 17px 'DM Serif Display', serif";
-        ctx.fillText(nn.title, nnX + 92, nnY + 28);
+        ctx.font = "600 19px 'DM Serif Display', serif";
+        ctx.fillText(nn.title, nnX + 100, nnY + 30);
 
-        // Description
+        // Description - larger
         ctx.fillStyle = C.textMuted;
-        ctx.font = "400 12.5px 'Inter', sans-serif";
-        ctx.fillText(nn.desc, nnX + 92, nnY + 50);
+        ctx.font = "400 14px 'Inter', sans-serif";
+        ctx.fillText(nn.desc, nnX + 100, nnY + 54);
       });
 
-      curY += 7 * 80 + 30;
+      curY += 7 * 92 + 40;
       addPageBreak(curY - 12);
 
       /* ══════════════ 90-DAY SPRINT ══════════════ */
