@@ -5,22 +5,22 @@ import heroImg from "@/assets/infographic-hero.png";
 import sprintImg from "@/assets/infographic-sprint.png";
 import teamImg from "@/assets/infographic-team.png";
 
-/* ── Simplified palette: navy + gold + neutrals only ── */
+/* ── Vibrant palette: bright blues + gold + high contrast ── */
 const C = {
   bg: "#FFFFFF",
-  bgSoft: "#F8FAFC",
-  navy: "#1E3A5F",
-  navyLight: "#2C5282",
-  navyPale: "#E8EDF4",
-  gold: "#B8860B",
+  bgSoft: "#EDF2FF",
+  navy: "#0A3D91",
+  navyLight: "#1565C0",
+  navyPale: "#D6E4FF",
+  gold: "#C49000",
   goldDim: "#8B6914",
   goldLight: "#DAA520",
-  goldBg: "#FDF6E3",
-  text: "#1E293B",
-  textMuted: "#475569",
-  textDim: "#64748B",
+  goldBg: "#FFF8E1",
+  text: "#0F172A",
+  textMuted: "#1E293B",
+  textDim: "#334155",
   textLight: "#94A3B8",
-  border: "#E2E8F0",
+  border: "#CBD5E1",
 };
 
 /* ── Data ── */
@@ -79,18 +79,18 @@ function drawGoldDivider(ctx: CanvasRenderingContext2D, W: number, y: number) {
 }
 
 function drawSectionLabel(ctx: CanvasRenderingContext2D, W: number, y: number, text: string) {
-  ctx.font = "700 12px 'JetBrains Mono', monospace";
+  ctx.font = "700 14px 'JetBrains Mono', monospace";
   const tw = ctx.measureText(text).width;
   ctx.fillStyle = C.goldBg;
-  rr(ctx, W / 2 - tw / 2 - 20, y - 12, tw + 40, 26, 13);
+  rr(ctx, W / 2 - tw / 2 - 22, y - 14, tw + 44, 30, 15);
   ctx.fill();
-  ctx.strokeStyle = C.gold + "30";
-  ctx.lineWidth = 1;
-  rr(ctx, W / 2 - tw / 2 - 20, y - 12, tw + 40, 26, 13);
+  ctx.strokeStyle = C.gold + "40";
+  ctx.lineWidth = 1.5;
+  rr(ctx, W / 2 - tw / 2 - 22, y - 14, tw + 44, 30, 15);
   ctx.stroke();
   ctx.fillStyle = C.gold;
   ctx.textAlign = "center";
-  ctx.fillText(text, W / 2, y + 4);
+  ctx.fillText(text, W / 2, y + 5);
   ctx.textAlign = "left";
 }
 
@@ -119,7 +119,7 @@ const PlaybookInfographic = () => {
 
       const scale = 3;
       const W = 1200;
-      const H = 5600;
+      const H = 6200;
       const sectionBreaks: number[] = [];
       const addPageBreak = (y: number) => sectionBreaks.push(Math.max(0, Math.floor(y)));
       const canvas = document.createElement("canvas");
@@ -135,61 +135,62 @@ const PlaybookInfographic = () => {
       ctx.fillRect(0, 0, W, H);
 
       /* ══════════════ HEADER ══════════════ */
-      // Top gold accent bar
-      ctx.fillStyle = C.gold;
-      ctx.fillRect(0, 0, W, 5);
+      // Top accent bar - bright blue gradient
+      const topBar = ctx.createLinearGradient(0, 0, W, 0);
+      topBar.addColorStop(0, C.navy); topBar.addColorStop(1, C.navyLight);
+      ctx.fillStyle = topBar;
+      ctx.fillRect(0, 0, W, 6);
 
       // Badge
-      let curY = 50;
+      let curY = 55;
       ctx.fillStyle = C.goldBg;
-      rr(ctx, W / 2 - 130, curY, 260, 34, 17);
+      rr(ctx, W / 2 - 140, curY, 280, 38, 19);
       ctx.fill();
-      ctx.strokeStyle = C.gold + "50";
-      ctx.lineWidth = 1;
-      rr(ctx, W / 2 - 130, curY, 260, 34, 17);
+      ctx.strokeStyle = C.gold + "60";
+      ctx.lineWidth = 1.5;
+      rr(ctx, W / 2 - 140, curY, 280, 38, 19);
       ctx.stroke();
       ctx.fillStyle = C.gold;
-      ctx.font = "700 12px 'JetBrains Mono', monospace";
+      ctx.font = "700 13px 'JetBrains Mono', monospace";
       ctx.textAlign = "center";
-      ctx.fillText("\u23F1  3-MINUTE EXECUTIVE BRIEF", W / 2, curY + 22);
+      ctx.fillText("\u23F1  3-MINUTE EXECUTIVE BRIEF", W / 2, curY + 25);
 
       // Title
-      curY = 115;
+      curY = 130;
       ctx.fillStyle = C.textDim;
-      ctx.font = "500 14px 'JetBrains Mono', monospace";
+      ctx.font = "500 15px 'JetBrains Mono', monospace";
       ctx.fillText("THE AI-FIRST PLAYBOOK", W / 2, curY);
 
-      curY = 165;
+      curY = 185;
       ctx.fillStyle = C.navy;
-      ctx.font = "700 58px 'DM Serif Display', serif";
+      ctx.font = "700 62px 'DM Serif Display', serif";
       ctx.fillText("Your Agency. Transformed.", W / 2, curY);
 
       ctx.fillStyle = C.textMuted;
-      ctx.font = "400 17px 'Inter', sans-serif";
-      ctx.fillText("A practical guide for leaders ready to move from AI-curious to AI-first.", W / 2, curY + 40);
+      ctx.font = "400 19px 'Inter', sans-serif";
+      ctx.fillText("A practical guide for leaders ready to move from AI-curious to AI-first.", W / 2, curY + 48);
       ctx.textAlign = "left";
 
       /* ── Hero image ── */
-      curY = 240;
-      const heroH = 260;
-      const heroW = W - 160;
+      curY = 270;
+      const heroH = 280;
+      const heroW = W - 140;
       ctx.save();
-      rr(ctx, 80, curY, heroW, heroH, 16);
+      rr(ctx, 70, curY, heroW, heroH, 16);
       ctx.clip();
-      ctx.drawImage(hero, 80, curY, heroW, heroH);
+      ctx.drawImage(hero, 70, curY, heroW, heroH);
       ctx.restore();
-      // Subtle border
       ctx.strokeStyle = C.border;
-      ctx.lineWidth = 1;
-      rr(ctx, 80, curY, heroW, heroH, 16);
+      ctx.lineWidth = 1.5;
+      rr(ctx, 70, curY, heroW, heroH, 16);
       ctx.stroke();
 
       /* ── Hero stats banner ── */
-      curY += heroH + 24;
-      const bannerGrad = ctx.createLinearGradient(60, curY, W - 60, curY);
+      curY += heroH + 30;
+      const bannerGrad = ctx.createLinearGradient(50, curY, W - 50, curY + 100);
       bannerGrad.addColorStop(0, C.navy); bannerGrad.addColorStop(1, C.navyLight);
       ctx.fillStyle = bannerGrad;
-      rr(ctx, 60, curY, W - 120, 90, 14);
+      rr(ctx, 50, curY, W - 100, 100, 14);
       ctx.fill();
 
       const heroStats = [
@@ -198,195 +199,198 @@ const PlaybookInfographic = () => {
         { val: "200+", label: "Officers Engaged" },
         { val: "60%", label: "Confidence Jump" },
       ];
-      const bw = (W - 120) / 4;
+      const bw = (W - 100) / 4;
       ctx.textAlign = "center";
       heroStats.forEach((s, i) => {
-        const bx = 60 + i * bw + bw / 2;
+        const bx = 50 + i * bw + bw / 2;
         ctx.fillStyle = "#FFFFFF";
-        ctx.font = "700 28px 'DM Serif Display', serif";
-        ctx.fillText(s.val, bx, curY + 38);
-        ctx.fillStyle = "rgba(255,255,255,0.65)";
-        ctx.font = "400 11px 'Inter', sans-serif";
-        ctx.fillText(s.label, bx, curY + 58);
+        ctx.font = "700 32px 'DM Serif Display', serif";
+        ctx.fillText(s.val, bx, curY + 42);
+        ctx.fillStyle = "rgba(255,255,255,0.75)";
+        ctx.font = "500 13px 'Inter', sans-serif";
+        ctx.fillText(s.label, bx, curY + 66);
         if (i < 3) {
-          ctx.strokeStyle = "rgba(255,255,255,0.15)";
+          ctx.strokeStyle = "rgba(255,255,255,0.2)";
           ctx.lineWidth = 1;
           ctx.beginPath();
-          ctx.moveTo(60 + (i + 1) * bw, curY + 16);
-          ctx.lineTo(60 + (i + 1) * bw, curY + 74);
+          ctx.moveTo(50 + (i + 1) * bw, curY + 18);
+          ctx.lineTo(50 + (i + 1) * bw, curY + 82);
           ctx.stroke();
         }
       });
       ctx.textAlign = "left";
-      addPageBreak(curY + 110);
+      addPageBreak(curY + 120);
 
       /* ══════════════ CHAPTERS ══════════════ */
-      curY += 130;
-      drawGoldDivider(ctx, W, curY - 18);
+      curY += 140;
+      drawGoldDivider(ctx, W, curY - 22);
       drawSectionLabel(ctx, W, curY, "THE JOURNEY \u2014 8 CHAPTERS");
 
-      curY += 30;
-      const mx = 60;
-      const cardW = (W - mx * 2 - 20) / 2; // 2-column layout
+      curY += 40;
+      const mx = 50;
+      const cardW = (W - mx * 2 - 24) / 2;
 
       chapters.forEach((ch, i) => {
         const col = i % 2;
         const row = Math.floor(i / 2);
-        const cardH = 185;
-        const x = mx + col * (cardW + 20);
-        const y = curY + row * (cardH + 16);
+        const cardH = 210;
+        const x = mx + col * (cardW + 24);
+        const y = curY + row * (cardH + 20);
 
-        // Clean card
+        // Card with brighter blue tint
         ctx.fillStyle = C.bgSoft;
         rr(ctx, x, y, cardW, cardH, 12);
         ctx.fill();
         ctx.strokeStyle = C.border;
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 1.5;
         rr(ctx, x, y, cardW, cardH, 12);
         ctx.stroke();
 
-        // Left navy accent bar
-        ctx.fillStyle = C.navy;
-        rr(ctx, x, y + 8, 4, cardH - 16, 2);
+        // Left blue accent bar
+        const accentGrad = ctx.createLinearGradient(x, y, x, y + cardH);
+        accentGrad.addColorStop(0, C.navy); accentGrad.addColorStop(1, C.navyLight);
+        ctx.fillStyle = accentGrad;
+        rr(ctx, x, y + 10, 5, cardH - 20, 3);
         ctx.fill();
 
         // Number circle
         ctx.fillStyle = C.navy;
-        ctx.beginPath(); ctx.arc(x + 32, y + 30, 18, 0, Math.PI * 2); ctx.fill();
+        ctx.beginPath(); ctx.arc(x + 36, y + 34, 20, 0, Math.PI * 2); ctx.fill();
         ctx.fillStyle = "#FFFFFF";
-        ctx.font = "700 14px 'JetBrains Mono', monospace";
+        ctx.font = "700 16px 'JetBrains Mono', monospace";
         ctx.textAlign = "center";
-        ctx.fillText(ch.num, x + 32, y + 35);
+        ctx.fillText(ch.num, x + 36, y + 40);
         ctx.textAlign = "left";
 
-        // Title
+        // Title - larger
         ctx.fillStyle = C.navy;
-        ctx.font = "600 22px 'DM Serif Display', serif";
-        ctx.fillText(ch.title, x + 60, y + 36);
+        ctx.font = "600 24px 'DM Serif Display', serif";
+        ctx.fillText(ch.title, x + 66, y + 42);
 
-        // Key insight
+        // Key insight - larger with more spacing
         ctx.fillStyle = C.textMuted;
-        ctx.font = "400 12.5px 'Inter', sans-serif";
-        wrap(ctx, ch.keyInsight, x + 16, y + 62, cardW - 32, 18, 3);
+        ctx.font = "400 14px 'Inter', sans-serif";
+        wrap(ctx, ch.keyInsight, x + 20, y + 72, cardW - 40, 21, 3);
 
-        // Stats row
-        const sY = y + 120;
+        // Stats row - more spacing
+        const sY = y + 142;
         ch.stats.forEach((s, si) => {
-          const sx = x + 16 + si * (cardW / 2 - 12);
-          const sw = cardW / 2 - 24;
+          const sx = x + 20 + si * (cardW / 2 - 14);
+          const sw = cardW / 2 - 30;
           ctx.fillStyle = C.navyPale;
-          rr(ctx, sx, sY, sw, 42, 6); ctx.fill();
+          rr(ctx, sx, sY, sw, 48, 8); ctx.fill();
           ctx.fillStyle = C.navy;
-          ctx.font = "700 17px 'DM Serif Display', serif";
-          ctx.fillText(s.val, sx + 10, sY + 18);
+          ctx.font = "700 19px 'DM Serif Display', serif";
+          ctx.fillText(s.val, sx + 12, sY + 22);
           ctx.fillStyle = C.textDim;
-          ctx.font = "400 10px 'Inter', sans-serif";
-          ctx.fillText(s.label, sx + 10, sY + 34);
+          ctx.font = "400 11px 'Inter', sans-serif";
+          ctx.fillText(s.label, sx + 12, sY + 39);
         });
       });
 
-      curY += 4 * (185 + 16) + 20;
+      curY += 4 * (210 + 20) + 30;
       addPageBreak(curY - 8);
 
       /* ── Team illustration ── */
-      const teamH = 220;
-      const teamW = W - 200;
+      const teamH = 240;
+      const teamW = W - 180;
       ctx.save();
-      rr(ctx, 100, curY, teamW, teamH, 16);
+      rr(ctx, 90, curY, teamW, teamH, 16);
       ctx.clip();
-      ctx.drawImage(team, 100, curY, teamW, teamH);
+      ctx.drawImage(team, 90, curY, teamW, teamH);
       ctx.restore();
       ctx.strokeStyle = C.border;
-      ctx.lineWidth = 1;
-      rr(ctx, 100, curY, teamW, teamH, 16);
+      ctx.lineWidth = 1.5;
+      rr(ctx, 90, curY, teamW, teamH, 16);
       ctx.stroke();
 
-      curY += teamH + 30;
+      curY += teamH + 40;
       addPageBreak(curY - 8);
 
       /* ══════════════ 7 NON-NEGOTIABLES ══════════════ */
       drawGoldDivider(ctx, W, curY - 12);
-      curY += 14;
+      curY += 18;
       drawSectionLabel(ctx, W, curY, "THE 7 CULTURAL NON-NEGOTIABLES");
 
-      curY += 14;
+      curY += 20;
       ctx.fillStyle = C.textMuted;
-      ctx.font = "italic 14px 'Inter', sans-serif";
+      ctx.font = "italic 15px 'Inter', sans-serif";
       ctx.textAlign = "center";
       ctx.fillText("The conditions that separate agencies that transform from those that merely experiment.", W / 2, curY);
       ctx.textAlign = "left";
 
-      curY += 30;
+      curY += 38;
 
-      // Clean list layout — all navy + gold
       nonNegotiables.forEach((nn, i) => {
-        const nnH = 70;
-        const nnY = curY + i * (nnH + 10);
-        const nnX = 80;
-        const nnW = W - 160;
+        const nnH = 78;
+        const nnY = curY + i * (nnH + 14);
+        const nnX = 70;
+        const nnW = W - 140;
 
-        // Card
+        // Card with alternating bg
         ctx.fillStyle = i % 2 === 0 ? C.bgSoft : C.bg;
         rr(ctx, nnX, nnY, nnW, nnH, 10);
         ctx.fill();
         ctx.strokeStyle = C.border;
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 1.5;
         rr(ctx, nnX, nnY, nnW, nnH, 10);
         ctx.stroke();
 
-        // Gold left bar
-        ctx.fillStyle = C.gold;
-        rr(ctx, nnX, nnY + 6, 4, nnH - 12, 2);
+        // Bright blue left bar
+        const barGrad = ctx.createLinearGradient(nnX, nnY, nnX, nnY + nnH);
+        barGrad.addColorStop(0, C.navyLight); barGrad.addColorStop(1, C.navy);
+        ctx.fillStyle = barGrad;
+        rr(ctx, nnX, nnY + 8, 5, nnH - 16, 3);
         ctx.fill();
 
         // Number circle
         ctx.fillStyle = C.navy;
-        ctx.beginPath(); ctx.arc(nnX + 36, nnY + nnH / 2, 16, 0, Math.PI * 2); ctx.fill();
+        ctx.beginPath(); ctx.arc(nnX + 40, nnY + nnH / 2, 18, 0, Math.PI * 2); ctx.fill();
         ctx.fillStyle = "#FFFFFF";
-        ctx.font = "700 13px 'JetBrains Mono', monospace";
+        ctx.font = "700 15px 'JetBrains Mono', monospace";
         ctx.textAlign = "center";
-        ctx.fillText(nn.num, nnX + 36, nnY + nnH / 2 + 5);
+        ctx.fillText(nn.num, nnX + 40, nnY + nnH / 2 + 5);
         ctx.textAlign = "left";
 
         // Emoji
-        ctx.font = "400 20px sans-serif";
-        ctx.fillText(nn.emoji, nnX + 62, nnY + nnH / 2 + 7);
+        ctx.font = "400 22px sans-serif";
+        ctx.fillText(nn.emoji, nnX + 68, nnY + nnH / 2 + 8);
 
-        // Title
+        // Title - larger, bolder
         ctx.fillStyle = C.navy;
-        ctx.font = "600 17px 'DM Serif Display', serif";
-        ctx.fillText(nn.title, nnX + 92, nnY + 28);
+        ctx.font = "600 19px 'DM Serif Display', serif";
+        ctx.fillText(nn.title, nnX + 100, nnY + 30);
 
-        // Description
+        // Description - larger
         ctx.fillStyle = C.textMuted;
-        ctx.font = "400 12.5px 'Inter', sans-serif";
-        ctx.fillText(nn.desc, nnX + 92, nnY + 50);
+        ctx.font = "400 14px 'Inter', sans-serif";
+        ctx.fillText(nn.desc, nnX + 100, nnY + 54);
       });
 
-      curY += 7 * 80 + 30;
+      curY += 7 * 92 + 40;
       addPageBreak(curY - 12);
 
       /* ══════════════ 90-DAY SPRINT ══════════════ */
       drawGoldDivider(ctx, W, curY - 6);
-      curY += 20;
+      curY += 24;
       drawSectionLabel(ctx, W, curY, "THE 90-DAY SPRINT FRAMEWORK");
 
-      curY += 20;
+      curY += 28;
 
       // Sprint illustration
-      const spH = 200;
-      const spW = W - 200;
+      const spH = 220;
+      const spW = W - 180;
       ctx.save();
-      rr(ctx, 100, curY, spW, spH, 16);
+      rr(ctx, 90, curY, spW, spH, 16);
       ctx.clip();
-      ctx.drawImage(sprint, 100, curY, spW, spH);
+      ctx.drawImage(sprint, 90, curY, spW, spH);
       ctx.restore();
       ctx.strokeStyle = C.border;
-      ctx.lineWidth = 1;
-      rr(ctx, 100, curY, spW, spH, 16);
+      ctx.lineWidth = 1.5;
+      rr(ctx, 90, curY, spW, spH, 16);
       ctx.stroke();
 
-      curY += spH + 24;
+      curY += spH + 32;
 
       const phases = [
         { name: "Discovery", days: "Day 1\u201330", activities: ["Run discovery survey", "Identify pain points", "Map AI opportunities", "Leadership kickoff"], output: "Prioritised problem list + team formation" },
@@ -395,80 +399,82 @@ const PlaybookInfographic = () => {
       ];
 
       const phW = 340;
-      const phGap = 20;
+      const phGap = 24;
       const phStartX = (W - (3 * phW + 2 * phGap)) / 2;
 
       phases.forEach((ph, i) => {
         const px = phStartX + i * (phW + phGap);
-        const phH = 260;
+        const phH = 290;
 
         // Card
         ctx.fillStyle = C.bgSoft;
         rr(ctx, px, curY, phW, phH, 12);
         ctx.fill();
         ctx.strokeStyle = C.border;
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 1.5;
         rr(ctx, px, curY, phW, phH, 12);
         ctx.stroke();
 
-        // Top navy bar
-        ctx.fillStyle = C.navy;
-        rr(ctx, px, curY, phW, 5, 2);
+        // Top blue gradient bar
+        const phBar = ctx.createLinearGradient(px, curY, px + phW, curY);
+        phBar.addColorStop(0, C.navy); phBar.addColorStop(1, C.navyLight);
+        ctx.fillStyle = phBar;
+        rr(ctx, px, curY, phW, 6, 2);
         ctx.fill();
 
-        // Phase name
+        // Phase name - larger
         ctx.fillStyle = C.navy;
-        ctx.font = "700 24px 'DM Serif Display', serif";
-        ctx.fillText(ph.name, px + 18, curY + 38);
+        ctx.font = "700 26px 'DM Serif Display', serif";
+        ctx.fillText(ph.name, px + 20, curY + 44);
 
         ctx.fillStyle = C.gold;
-        ctx.font = "600 11px 'JetBrains Mono', monospace";
-        ctx.fillText(ph.days, px + 18, curY + 58);
+        ctx.font = "600 12px 'JetBrains Mono', monospace";
+        ctx.fillText(ph.days, px + 20, curY + 66);
 
-        // Activities
+        // Activities - larger with more spacing
         ph.activities.forEach((a, ai) => {
-          const ay = curY + 84 + ai * 26;
-          ctx.fillStyle = C.navy;
-          ctx.beginPath(); ctx.arc(px + 28, ay - 4, 3, 0, Math.PI * 2); ctx.fill();
+          const ay = curY + 96 + ai * 30;
+          ctx.fillStyle = C.navyLight;
+          ctx.beginPath(); ctx.arc(px + 30, ay - 4, 4, 0, Math.PI * 2); ctx.fill();
           ctx.fillStyle = C.textMuted;
-          ctx.font = "400 13px 'Inter', sans-serif";
-          ctx.fillText(a, px + 40, ay);
+          ctx.font = "400 14px 'Inter', sans-serif";
+          ctx.fillText(a, px + 44, ay);
         });
 
-        // Output box
-        const outY = curY + phH - 58;
+        // Output box - more spacing
+        const outY = curY + phH - 66;
         ctx.fillStyle = C.goldBg;
-        rr(ctx, px + 14, outY, phW - 28, 44, 8); ctx.fill();
-        ctx.strokeStyle = C.gold + "30";
-        rr(ctx, px + 14, outY, phW - 28, 44, 8); ctx.stroke();
+        rr(ctx, px + 14, outY, phW - 28, 50, 8); ctx.fill();
+        ctx.strokeStyle = C.gold + "40";
+        rr(ctx, px + 14, outY, phW - 28, 50, 8); ctx.stroke();
         ctx.fillStyle = C.gold;
-        ctx.font = "700 10px 'JetBrains Mono', monospace";
-        ctx.fillText("\u2192 OUTPUT", px + 24, outY + 16);
+        ctx.font = "700 11px 'JetBrains Mono', monospace";
+        ctx.fillText("\u2192 OUTPUT", px + 26, outY + 18);
         ctx.fillStyle = C.text;
-        ctx.font = "italic 12px 'Inter', sans-serif";
-        wrap(ctx, ph.output, px + 24, outY + 34, phW - 52, 15, 1);
+        ctx.font = "italic 13px 'Inter', sans-serif";
+        wrap(ctx, ph.output, px + 26, outY + 38, phW - 56, 16, 1);
       });
 
       // Connecting arrows
-      ctx.lineWidth = 2;
+      ctx.lineWidth = 2.5;
       ctx.strokeStyle = C.navy;
       for (let i = 0; i < 2; i++) {
         const ax = phStartX + (i + 1) * phW + i * phGap + phGap / 2;
-        const ay = curY + 36;
-        ctx.beginPath(); ctx.moveTo(ax - 10, ay); ctx.lineTo(ax + 10, ay);
-        ctx.moveTo(ax + 5, ay - 5); ctx.lineTo(ax + 10, ay); ctx.lineTo(ax + 5, ay + 5);
+        const ay = curY + 40;
+        ctx.beginPath(); ctx.moveTo(ax - 12, ay); ctx.lineTo(ax + 12, ay);
+        ctx.moveTo(ax + 6, ay - 6); ctx.lineTo(ax + 12, ay); ctx.lineTo(ax + 6, ay + 6);
         ctx.stroke();
       }
 
-      curY += 300;
+      curY += 330;
       addPageBreak(curY - 10);
 
       /* ══════════════ 4 LEADERSHIP ASKS ══════════════ */
       drawGoldDivider(ctx, W, curY - 6);
-      curY += 20;
+      curY += 24;
       drawSectionLabel(ctx, W, curY, "YOUR 4 LEADERSHIP ASKS");
 
-      curY += 25;
+      curY += 32;
 
       const asks = [
         { num: "01", title: "Participate", desc: "Show up for at least one sprint. Learn alongside your officers.", emoji: "\uD83D\uDC41\uFE0F" },
@@ -477,75 +483,77 @@ const PlaybookInfographic = () => {
         { num: "04", title: "Permission to Fail", desc: "Signal that honest attempts are valued more than perfect execution.", emoji: "\u2764\uFE0F" },
       ];
 
-      const askW = (W - 120 - 20) / 2;
+      const askW = (W - 100 - 24) / 2;
       asks.forEach((a, i) => {
         const col = i % 2;
         const row = Math.floor(i / 2);
-        const ax = 60 + col * (askW + 20);
-        const ay = curY + row * 100;
+        const ax = 50 + col * (askW + 24);
+        const ay = curY + row * 110;
 
         // Card
         ctx.fillStyle = C.bgSoft;
-        rr(ctx, ax, ay, askW, 85, 12);
+        rr(ctx, ax, ay, askW, 95, 12);
         ctx.fill();
         ctx.strokeStyle = C.border;
-        ctx.lineWidth = 1;
-        rr(ctx, ax, ay, askW, 85, 12);
+        ctx.lineWidth = 1.5;
+        rr(ctx, ax, ay, askW, 95, 12);
         ctx.stroke();
 
-        // Gold left accent
-        ctx.fillStyle = C.gold;
-        rr(ctx, ax, ay + 8, 4, 69, 2);
+        // Blue left accent
+        const askBar = ctx.createLinearGradient(ax, ay, ax, ay + 95);
+        askBar.addColorStop(0, C.gold); askBar.addColorStop(1, C.goldDim);
+        ctx.fillStyle = askBar;
+        rr(ctx, ax, ay + 10, 5, 75, 3);
         ctx.fill();
 
-        // Number + emoji
+        // Number circle
         ctx.fillStyle = C.navy;
-        ctx.beginPath(); ctx.arc(ax + 34, ay + 42, 18, 0, Math.PI * 2); ctx.fill();
+        ctx.beginPath(); ctx.arc(ax + 38, ay + 47, 20, 0, Math.PI * 2); ctx.fill();
         ctx.fillStyle = "#FFFFFF";
-        ctx.font = "700 12px 'JetBrains Mono', monospace";
+        ctx.font = "700 14px 'JetBrains Mono', monospace";
         ctx.textAlign = "center";
-        ctx.fillText(a.num, ax + 34, ay + 47);
+        ctx.fillText(a.num, ax + 38, ay + 52);
         ctx.textAlign = "left";
 
-        // Title
+        // Title - larger
         ctx.fillStyle = C.navy;
-        ctx.font = "600 20px 'DM Serif Display', serif";
-        ctx.fillText(a.title, ax + 62, ay + 36);
+        ctx.font = "600 22px 'DM Serif Display', serif";
+        ctx.fillText(a.title, ax + 68, ay + 40);
         ctx.fillStyle = C.textMuted;
-        ctx.font = "400 12px 'Inter', sans-serif";
-        wrap(ctx, a.desc, ax + 62, ay + 56, askW - 82, 16, 2);
+        ctx.font = "400 13px 'Inter', sans-serif";
+        wrap(ctx, a.desc, ax + 68, ay + 62, askW - 90, 18, 2);
       });
 
-      curY += 230;
+      curY += 260;
       addPageBreak(curY - 10);
 
       /* ══════════════ QUOTE ══════════════ */
       ctx.fillStyle = C.goldBg;
-      rr(ctx, 60, curY, W - 120, 110, 16); ctx.fill();
-      ctx.strokeStyle = C.gold + "30";
-      ctx.lineWidth = 1;
-      rr(ctx, 60, curY, W - 120, 110, 16); ctx.stroke();
+      rr(ctx, 50, curY, W - 100, 120, 16); ctx.fill();
+      ctx.strokeStyle = C.gold + "40";
+      ctx.lineWidth = 1.5;
+      rr(ctx, 50, curY, W - 100, 120, 16); ctx.stroke();
 
       // Gold bar
       ctx.fillStyle = C.gold;
-      rr(ctx, 60, curY + 12, 5, 86, 3); ctx.fill();
+      rr(ctx, 50, curY + 14, 6, 92, 3); ctx.fill();
 
       // Quote mark
-      ctx.fillStyle = C.gold + "40";
-      ctx.font = "italic 700 80px 'DM Serif Display', serif";
-      ctx.fillText("\u201C", 78, curY + 56);
+      ctx.fillStyle = C.gold + "50";
+      ctx.font = "italic 700 86px 'DM Serif Display', serif";
+      ctx.fillText("\u201C", 72, curY + 60);
 
       ctx.fillStyle = C.text;
-      ctx.font = "italic 16px 'Inter', sans-serif";
+      ctx.font = "italic 18px 'Inter', sans-serif";
       ctx.textAlign = "center";
-      wrap(ctx, "The best public service in the world does not wait to be told it is falling behind. It decides to stay ahead.", W / 2, curY + 42, W - 220, 24, 2);
+      wrap(ctx, "The best public service in the world does not wait to be told it is falling behind. It decides to stay ahead.", W / 2, curY + 48, W - 200, 26, 2);
 
       ctx.fillStyle = C.goldDim;
-      ctx.font = "600 11px 'JetBrains Mono', monospace";
-      ctx.fillText("\u2014 Bernard Toh, DCE Strategy, Corporate & Governance, GovTech", W / 2, curY + 96);
+      ctx.font = "600 12px 'JetBrains Mono', monospace";
+      ctx.fillText("\u2014 Bernard Toh, DCE Strategy, Corporate & Governance, GovTech", W / 2, curY + 104);
       ctx.textAlign = "left";
 
-      curY += 140;
+      curY += 150;
       addPageBreak(curY - 10);
 
       /* ══════════════ FOOTER BAR ══════════════ */
