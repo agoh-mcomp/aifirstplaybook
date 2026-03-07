@@ -140,6 +140,8 @@ const LandingPage = ({ onSelectChapter }: LandingPageProps) => {
             );
           })}
         </div>
+
+        <PlaybookInfographic />
       </div>
     </motion.div>
   );
