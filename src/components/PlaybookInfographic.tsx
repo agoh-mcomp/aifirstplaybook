@@ -372,25 +372,25 @@ const PlaybookInfographic = () => {
 
       /* ══════════════ 90-DAY SPRINT ══════════════ */
       drawGoldDivider(ctx, W, curY - 6);
-      curY += 20;
+      curY += 24;
       drawSectionLabel(ctx, W, curY, "THE 90-DAY SPRINT FRAMEWORK");
 
-      curY += 20;
+      curY += 28;
 
       // Sprint illustration
-      const spH = 200;
-      const spW = W - 200;
+      const spH = 220;
+      const spW = W - 180;
       ctx.save();
-      rr(ctx, 100, curY, spW, spH, 16);
+      rr(ctx, 90, curY, spW, spH, 16);
       ctx.clip();
-      ctx.drawImage(sprint, 100, curY, spW, spH);
+      ctx.drawImage(sprint, 90, curY, spW, spH);
       ctx.restore();
       ctx.strokeStyle = C.border;
-      ctx.lineWidth = 1;
-      rr(ctx, 100, curY, spW, spH, 16);
+      ctx.lineWidth = 1.5;
+      rr(ctx, 90, curY, spW, spH, 16);
       ctx.stroke();
 
-      curY += spH + 24;
+      curY += spH + 32;
 
       const phases = [
         { name: "Discovery", days: "Day 1\u201330", activities: ["Run discovery survey", "Identify pain points", "Map AI opportunities", "Leadership kickoff"], output: "Prioritised problem list + team formation" },
@@ -399,72 +399,74 @@ const PlaybookInfographic = () => {
       ];
 
       const phW = 340;
-      const phGap = 20;
+      const phGap = 24;
       const phStartX = (W - (3 * phW + 2 * phGap)) / 2;
 
       phases.forEach((ph, i) => {
         const px = phStartX + i * (phW + phGap);
-        const phH = 260;
+        const phH = 290;
 
         // Card
         ctx.fillStyle = C.bgSoft;
         rr(ctx, px, curY, phW, phH, 12);
         ctx.fill();
         ctx.strokeStyle = C.border;
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 1.5;
         rr(ctx, px, curY, phW, phH, 12);
         ctx.stroke();
 
-        // Top navy bar
-        ctx.fillStyle = C.navy;
-        rr(ctx, px, curY, phW, 5, 2);
+        // Top blue gradient bar
+        const phBar = ctx.createLinearGradient(px, curY, px + phW, curY);
+        phBar.addColorStop(0, C.navy); phBar.addColorStop(1, C.navyLight);
+        ctx.fillStyle = phBar;
+        rr(ctx, px, curY, phW, 6, 2);
         ctx.fill();
 
-        // Phase name
+        // Phase name - larger
         ctx.fillStyle = C.navy;
-        ctx.font = "700 24px 'DM Serif Display', serif";
-        ctx.fillText(ph.name, px + 18, curY + 38);
+        ctx.font = "700 26px 'DM Serif Display', serif";
+        ctx.fillText(ph.name, px + 20, curY + 44);
 
         ctx.fillStyle = C.gold;
-        ctx.font = "600 11px 'JetBrains Mono', monospace";
-        ctx.fillText(ph.days, px + 18, curY + 58);
+        ctx.font = "600 12px 'JetBrains Mono', monospace";
+        ctx.fillText(ph.days, px + 20, curY + 66);
 
-        // Activities
+        // Activities - larger with more spacing
         ph.activities.forEach((a, ai) => {
-          const ay = curY + 84 + ai * 26;
-          ctx.fillStyle = C.navy;
-          ctx.beginPath(); ctx.arc(px + 28, ay - 4, 3, 0, Math.PI * 2); ctx.fill();
+          const ay = curY + 96 + ai * 30;
+          ctx.fillStyle = C.navyLight;
+          ctx.beginPath(); ctx.arc(px + 30, ay - 4, 4, 0, Math.PI * 2); ctx.fill();
           ctx.fillStyle = C.textMuted;
-          ctx.font = "400 13px 'Inter', sans-serif";
-          ctx.fillText(a, px + 40, ay);
+          ctx.font = "400 14px 'Inter', sans-serif";
+          ctx.fillText(a, px + 44, ay);
         });
 
-        // Output box
-        const outY = curY + phH - 58;
+        // Output box - more spacing
+        const outY = curY + phH - 66;
         ctx.fillStyle = C.goldBg;
-        rr(ctx, px + 14, outY, phW - 28, 44, 8); ctx.fill();
-        ctx.strokeStyle = C.gold + "30";
-        rr(ctx, px + 14, outY, phW - 28, 44, 8); ctx.stroke();
+        rr(ctx, px + 14, outY, phW - 28, 50, 8); ctx.fill();
+        ctx.strokeStyle = C.gold + "40";
+        rr(ctx, px + 14, outY, phW - 28, 50, 8); ctx.stroke();
         ctx.fillStyle = C.gold;
-        ctx.font = "700 10px 'JetBrains Mono', monospace";
-        ctx.fillText("\u2192 OUTPUT", px + 24, outY + 16);
+        ctx.font = "700 11px 'JetBrains Mono', monospace";
+        ctx.fillText("\u2192 OUTPUT", px + 26, outY + 18);
         ctx.fillStyle = C.text;
-        ctx.font = "italic 12px 'Inter', sans-serif";
-        wrap(ctx, ph.output, px + 24, outY + 34, phW - 52, 15, 1);
+        ctx.font = "italic 13px 'Inter', sans-serif";
+        wrap(ctx, ph.output, px + 26, outY + 38, phW - 56, 16, 1);
       });
 
       // Connecting arrows
-      ctx.lineWidth = 2;
+      ctx.lineWidth = 2.5;
       ctx.strokeStyle = C.navy;
       for (let i = 0; i < 2; i++) {
         const ax = phStartX + (i + 1) * phW + i * phGap + phGap / 2;
-        const ay = curY + 36;
-        ctx.beginPath(); ctx.moveTo(ax - 10, ay); ctx.lineTo(ax + 10, ay);
-        ctx.moveTo(ax + 5, ay - 5); ctx.lineTo(ax + 10, ay); ctx.lineTo(ax + 5, ay + 5);
+        const ay = curY + 40;
+        ctx.beginPath(); ctx.moveTo(ax - 12, ay); ctx.lineTo(ax + 12, ay);
+        ctx.moveTo(ax + 6, ay - 6); ctx.lineTo(ax + 12, ay); ctx.lineTo(ax + 6, ay + 6);
         ctx.stroke();
       }
 
-      curY += 300;
+      curY += 330;
       addPageBreak(curY - 10);
 
       /* ══════════════ 4 LEADERSHIP ASKS ══════════════ */
