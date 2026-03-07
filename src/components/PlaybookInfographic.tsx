@@ -286,6 +286,7 @@ const PlaybookInfographic = () => {
       });
 
       curY += 4 * (185 + 16) + 20;
+      addPageBreak(curY - 8);
 
       /* ── Team illustration ── */
       const teamH = 220;
