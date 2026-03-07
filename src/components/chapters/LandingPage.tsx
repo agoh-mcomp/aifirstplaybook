@@ -4,6 +4,7 @@ import { useLoveCount } from "@/hooks/use-love-count";
 import {
   BookOpen, ArrowRight, Zap, Eye, AlertTriangle, Heart, Compass, Rocket, BarChart3, Flag,
 } from "lucide-react";
+import PlaybookInfographic from "@/components/PlaybookInfographic";
 
 interface LandingPageProps {
   onSelectChapter: (id: string) => void;
@@ -139,6 +140,8 @@ const LandingPage = ({ onSelectChapter }: LandingPageProps) => {
             );
           })}
         </div>
+
+        <PlaybookInfographic />
       </div>
     </motion.div>
   );
