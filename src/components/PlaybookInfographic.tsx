@@ -79,18 +79,18 @@ function drawGoldDivider(ctx: CanvasRenderingContext2D, W: number, y: number) {
 }
 
 function drawSectionLabel(ctx: CanvasRenderingContext2D, W: number, y: number, text: string) {
-  ctx.font = "700 12px 'JetBrains Mono', monospace";
+  ctx.font = "700 14px 'JetBrains Mono', monospace";
   const tw = ctx.measureText(text).width;
   ctx.fillStyle = C.goldBg;
-  rr(ctx, W / 2 - tw / 2 - 20, y - 12, tw + 40, 26, 13);
+  rr(ctx, W / 2 - tw / 2 - 22, y - 14, tw + 44, 30, 15);
   ctx.fill();
-  ctx.strokeStyle = C.gold + "30";
-  ctx.lineWidth = 1;
-  rr(ctx, W / 2 - tw / 2 - 20, y - 12, tw + 40, 26, 13);
+  ctx.strokeStyle = C.gold + "40";
+  ctx.lineWidth = 1.5;
+  rr(ctx, W / 2 - tw / 2 - 22, y - 14, tw + 44, 30, 15);
   ctx.stroke();
   ctx.fillStyle = C.gold;
   ctx.textAlign = "center";
-  ctx.fillText(text, W / 2, y + 4);
+  ctx.fillText(text, W / 2, y + 5);
   ctx.textAlign = "left";
 }
 
