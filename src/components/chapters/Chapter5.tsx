@@ -125,7 +125,7 @@ const Chapter5 = () => (
       <div className="flex-1">
         <h4 className="font-display text-lg text-foreground">Explore the AI-First Initiative</h4>
         <p className="text-sm text-muted-foreground mt-1">
-          Visit the official AI-First site for the latest updates, resources, and community.
+          Visit the official AI-First site for the sprint mechanics, curated learning resources, and community.
         </p>
       </div>
       <a
