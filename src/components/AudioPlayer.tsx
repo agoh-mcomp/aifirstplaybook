@@ -13,6 +13,8 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
   const [isPaused, setIsPaused] = useState(false);
   const [progress, setProgress] = useState(0);
   const [rate, setRate] = useState(1);
+  const currentCharIndexRef = useRef(0);
+  const fullTextRef = useRef("");
   const [muted, setMuted] = useState(false);
   const [supported, setSupported] = useState(true);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
@@ -74,24 +76,20 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
     setProgress(0);
   }, []);
 
-  const play = useCallback(() => {
+  const playFromIndex = useCallback((startIndex: number, playbackRate: number) => {
     if (!window.speechSynthesis) return;
-
-    if (isPaused && utteranceRef.current) {
-      window.speechSynthesis.resume();
-      setIsPaused(false);
-      setIsPlaying(true);
-      return;
-    }
 
     cancelledRef.current = true;
     window.speechSynthesis.cancel();
 
-    const text = extractText();
+    const text = fullTextRef.current;
     if (!text.trim()) return;
 
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = rate;
+    const remaining = text.slice(startIndex);
+    if (!remaining.trim()) return;
+
+    const utterance = new SpeechSynthesisUtterance(remaining);
+    utterance.rate = playbackRate;
     utterance.volume = muted ? 0 : 1;
     if (selectedVoice) utterance.voice = selectedVoice;
 
@@ -100,13 +98,16 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
     utterance.onboundary = (e) => {
       if (cancelledRef.current) return;
       if (e.name === "word") {
-        const pct = text.length > 0 ? (e.charIndex / text.length) * 100 : 0;
+        const absoluteIndex = startIndex + e.charIndex;
+        currentCharIndexRef.current = absoluteIndex;
+        const pct = text.length > 0 ? (absoluteIndex / text.length) * 100 : 0;
         setProgress(Math.min(pct, 100));
       }
     };
 
     utterance.onend = () => {
       if (cancelledRef.current) return;
+      currentCharIndexRef.current = 0;
       setIsPlaying(false);
       setIsPaused(false);
       setProgress(100);
@@ -126,15 +127,39 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
       window.speechSynthesis.speak(utterance);
       setIsPlaying(true);
       setIsPaused(false);
-      setProgress(0);
     }, 50);
-  }, [isPaused, extractText, rate, muted, selectedVoice]);
+  }, [muted, selectedVoice]);
+
+  const play = useCallback(() => {
+    if (!window.speechSynthesis) return;
+
+    if (isPaused && utteranceRef.current) {
+      window.speechSynthesis.resume();
+      setIsPaused(false);
+      setIsPlaying(true);
+      return;
+    }
+
+    const text = extractText();
+    if (!text.trim()) return;
+    fullTextRef.current = text;
+    currentCharIndexRef.current = 0;
+    setProgress(0);
+    playFromIndex(0, rate);
+  }, [isPaused, extractText, rate, playFromIndex]);
 
   const pause = useCallback(() => {
     window.speechSynthesis.pause();
     setIsPaused(true);
     setIsPlaying(false);
   }, []);
+
+  const changeRate = useCallback((newRate: number) => {
+    setRate(newRate);
+    if (isPlaying || isPaused) {
+      playFromIndex(currentCharIndexRef.current, newRate);
+    }
+  }, [isPlaying, isPaused, playFromIndex]);
 
   const toggleMute = useCallback(() => {
     setMuted((m) => !m);
@@ -257,7 +282,7 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
             {[0.75, 1, 1.25, 1.5, 1.75, 2].map((r) => (
               <button
                 key={r}
-                onClick={() => setRate(r)}
+                onClick={() => changeRate(r)}
                 className={cn(
                   "font-mono text-xs px-2 py-1 rounded-md transition-colors",
                   rate === r
