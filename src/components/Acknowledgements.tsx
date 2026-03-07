@@ -105,8 +105,8 @@ const Acknowledgements = () => {
             Our Leaders & Every SCG Officer
           </span>
           <p className="font-body text-base md:text-lg text-foreground italic max-w-xl mx-auto leading-relaxed">
-            To Lim Thian Chin, Cynthia Lee, our leadership in SCG and to every SCG team member who raised the bar,
-            showed up to participate in a sprint, built their first solution, and made SCG AI-First a reality.
+            To Cynthia Lee, Lim Thian Chin, all leaders in SCG and to every SCG team member who raised the bar, showed
+            up to participate in a sprint, built their first solution, and made SCG AI-First a reality.
           </p>
         </motion.div>
       </div>
