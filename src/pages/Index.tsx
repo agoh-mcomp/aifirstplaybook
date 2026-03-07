@@ -1,6 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Acknowledgements from "@/components/Acknowledgements";
 import ChapterSidebar, { chapters } from "@/components/ChapterSidebar";
 import MobileBottomNav from "@/components/MobileBottomNav";
 import { ChapterNav } from "@/components/chapters/ChapterNav";
@@ -17,6 +16,7 @@ const Chapter5 = lazy(() => import("@/components/chapters/Chapter5"));
 const Chapter6 = lazy(() => import("@/components/chapters/Chapter6"));
 const Chapter7 = lazy(() => import("@/components/chapters/Chapter7"));
 const Chapter8 = lazy(() => import("@/components/chapters/Chapter8"));
+const Acknowledgements = lazy(() => import("@/components/Acknowledgements"));
 
 const chapterComponents: Record<string, React.LazyExoticComponent<React.ComponentType<any>>> = {
   "ch-1": Chapter1,
@@ -94,6 +94,7 @@ const Index = () => {
         <Suspense fallback={<ChapterFallback />}>
           {activeChapter === "foreword" && <Foreword />}
           {activeChapter === "start-here" && <StartHere onSelectChapter={setActiveChapter} />}
+          {activeChapter === "acknowledgements" && <Acknowledgements />}
           {chapterComponents[activeChapter] && (() => {
             const ChapterComponent = chapterComponents[activeChapter];
             return <ChapterComponent />;
@@ -119,7 +120,6 @@ const Index = () => {
         <AnimatePresence mode="wait">
           {renderContent()}
         </AnimatePresence>
-        <Acknowledgements />
         <footer className="border-t border-border py-6 text-center">
           <p className="font-mono text-xs tracking-wider text-muted-foreground">
             © 2026 Government Technology Agency of Singapore

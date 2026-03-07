@@ -212,6 +212,37 @@ const ChapterSidebar = ({ activeChapter, onSelectChapter, isDark, onToggleTheme 
             </button>
           );
         })}
+
+        <div className="w-full h-px bg-border mx-0 my-1" />
+
+        {/* Acknowledgements entry */}
+        <button
+          onClick={() => {
+            onSelectChapter("acknowledgements");
+            setMobileOpen(false);
+          }}
+          className={`w-full text-left rounded-lg px-3 py-2.5 transition-all duration-200 cursor-pointer group ${
+            activeChapter === "acknowledgements"
+              ? "bg-secondary text-foreground"
+              : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+          }`}
+        >
+          <div className="flex items-center gap-2.5">
+            <span className={`shrink-0 ${activeChapter === "acknowledgements" ? "text-gold" : "text-muted-foreground group-hover:text-gold-dim"}`}>
+              <Heart className="w-3.5 h-3.5" />
+            </span>
+            {!collapsed && (
+              <div className="min-w-0">
+                <div className={`font-display text-sm leading-tight truncate ${activeChapter === "acknowledgements" ? "text-foreground" : ""}`}>
+                  Acknowledgements
+                </div>
+                <div className="font-mono text-[9px] tracking-wider uppercase text-muted-foreground truncate mt-0.5">
+                  With Gratitude
+                </div>
+              </div>
+            )}
+          </div>
+        </button>
       </nav>
 
       {/* Love count */}
