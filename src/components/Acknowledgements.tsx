@@ -71,7 +71,7 @@ const Acknowledgements = () => {
         <AckBlock
           label="AI-First Working Group"
           names={
-            "Adrian Goh  ·  Elise Lee  ·  Bertram Lim  ·  Jackson Wong  ·  Chen Weijun  ·  Alyssa Goh  ·  Debbie Yosh  ·  Jade Lee  ·  Nicole Goh ·  Sadhanasri Dasarathan ·  Mishra Aditi Rakesh"
+            "Adrian Goh  ·  Elise Lee  ·  Bertram Lim  ·  Jackson Wong  \n Chen Weijun  ·  Alyssa Goh  ·  Debbie Yosh  ·  Jade Lee  ·  Nicole Goh \nSadhanasri Dasarathan ·  Mishra Aditi Rakesh"
           }
           note="For steering, building, and bringing the AI-First initiative to life through every sprint."
           delay={0.2}
