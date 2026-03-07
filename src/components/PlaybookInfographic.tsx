@@ -138,7 +138,7 @@ const PlaybookInfographic = () => {
         loadImg(heroImg), loadImg(sprintImg), loadImg(teamImg),
       ]);
 
-      const scale = 3;
+      const scale = 2;
       const W = 1200;
       // A4 aspect ratio: 297/210 ≈ 1.4143
       const PAGE_H = Math.round(W * 297 / 210); // ~1697px
