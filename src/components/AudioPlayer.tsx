@@ -17,11 +17,19 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
   const [supported, setSupported] = useState(true);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const cancelledRef = useRef(false);
+  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
 
   useEffect(() => {
     if (!window.speechSynthesis) {
       setSupported(false);
+      return;
     }
+    const loadVoices = () => {
+      const available = window.speechSynthesis.getVoices();
+      setVoices(available);
+    };
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
   }, []);
 
   const extractText = useCallback(() => {
@@ -60,6 +68,16 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = rate;
     utterance.volume = muted ? 0 : 1;
+
+    // Pick a natural-sounding female voice
+    const femaleVoice = voices.find(v =>
+      /samantha|victoria|karen|zira|fiona|google.*female|google.*uk.*female|microsoft.*zira|tessa/i.test(v.name)
+    ) || voices.find(v =>
+      /female|woman/i.test(v.name)
+    ) || voices.find(v =>
+      v.lang.startsWith("en") && /fiona|samantha|karen|moira|tessa|veena|victoria|zira|susan|hazel|heather|kate|serena/i.test(v.name)
+    ) || voices.find(v => v.lang.startsWith("en"));
+    if (femaleVoice) utterance.voice = femaleVoice;
 
     // Reset cancelled flag right before speaking
     cancelledRef.current = false;
@@ -160,7 +178,7 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
         <div className="flex items-center gap-2">
           <span className="font-mono text-xs text-muted-foreground hidden sm:inline">Speed</span>
           <div className="flex gap-1">
-            {[0.75, 1, 1.25, 1.5].map((r) => (
+            {[0.75, 1, 1.25, 1.5, 1.75, 2].map((r) => (
               <button
                 key={r}
                 onClick={() => setRate(r)}
