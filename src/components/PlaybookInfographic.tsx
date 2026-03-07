@@ -222,71 +222,73 @@ const PlaybookInfographic = () => {
       addPageBreak(curY + 120);
 
       /* ══════════════ CHAPTERS ══════════════ */
-      curY += 130;
-      drawGoldDivider(ctx, W, curY - 18);
+      curY += 140;
+      drawGoldDivider(ctx, W, curY - 22);
       drawSectionLabel(ctx, W, curY, "THE JOURNEY \u2014 8 CHAPTERS");
 
-      curY += 30;
-      const mx = 60;
-      const cardW = (W - mx * 2 - 20) / 2; // 2-column layout
+      curY += 40;
+      const mx = 50;
+      const cardW = (W - mx * 2 - 24) / 2;
 
       chapters.forEach((ch, i) => {
         const col = i % 2;
         const row = Math.floor(i / 2);
-        const cardH = 185;
-        const x = mx + col * (cardW + 20);
-        const y = curY + row * (cardH + 16);
+        const cardH = 210;
+        const x = mx + col * (cardW + 24);
+        const y = curY + row * (cardH + 20);
 
-        // Clean card
+        // Card with brighter blue tint
         ctx.fillStyle = C.bgSoft;
         rr(ctx, x, y, cardW, cardH, 12);
         ctx.fill();
         ctx.strokeStyle = C.border;
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 1.5;
         rr(ctx, x, y, cardW, cardH, 12);
         ctx.stroke();
 
-        // Left navy accent bar
-        ctx.fillStyle = C.navy;
-        rr(ctx, x, y + 8, 4, cardH - 16, 2);
+        // Left blue accent bar
+        const accentGrad = ctx.createLinearGradient(x, y, x, y + cardH);
+        accentGrad.addColorStop(0, C.navy); accentGrad.addColorStop(1, C.navyLight);
+        ctx.fillStyle = accentGrad;
+        rr(ctx, x, y + 10, 5, cardH - 20, 3);
         ctx.fill();
 
         // Number circle
         ctx.fillStyle = C.navy;
-        ctx.beginPath(); ctx.arc(x + 32, y + 30, 18, 0, Math.PI * 2); ctx.fill();
+        ctx.beginPath(); ctx.arc(x + 36, y + 34, 20, 0, Math.PI * 2); ctx.fill();
         ctx.fillStyle = "#FFFFFF";
-        ctx.font = "700 14px 'JetBrains Mono', monospace";
+        ctx.font = "700 16px 'JetBrains Mono', monospace";
         ctx.textAlign = "center";
-        ctx.fillText(ch.num, x + 32, y + 35);
+        ctx.fillText(ch.num, x + 36, y + 40);
         ctx.textAlign = "left";
 
-        // Title
+        // Title - larger
         ctx.fillStyle = C.navy;
-        ctx.font = "600 22px 'DM Serif Display', serif";
-        ctx.fillText(ch.title, x + 60, y + 36);
+        ctx.font = "600 24px 'DM Serif Display', serif";
+        ctx.fillText(ch.title, x + 66, y + 42);
 
-        // Key insight
+        // Key insight - larger with more spacing
         ctx.fillStyle = C.textMuted;
-        ctx.font = "400 12.5px 'Inter', sans-serif";
-        wrap(ctx, ch.keyInsight, x + 16, y + 62, cardW - 32, 18, 3);
+        ctx.font = "400 14px 'Inter', sans-serif";
+        wrap(ctx, ch.keyInsight, x + 20, y + 72, cardW - 40, 21, 3);
 
-        // Stats row
-        const sY = y + 120;
+        // Stats row - more spacing
+        const sY = y + 142;
         ch.stats.forEach((s, si) => {
-          const sx = x + 16 + si * (cardW / 2 - 12);
-          const sw = cardW / 2 - 24;
+          const sx = x + 20 + si * (cardW / 2 - 14);
+          const sw = cardW / 2 - 30;
           ctx.fillStyle = C.navyPale;
-          rr(ctx, sx, sY, sw, 42, 6); ctx.fill();
+          rr(ctx, sx, sY, sw, 48, 8); ctx.fill();
           ctx.fillStyle = C.navy;
-          ctx.font = "700 17px 'DM Serif Display', serif";
-          ctx.fillText(s.val, sx + 10, sY + 18);
+          ctx.font = "700 19px 'DM Serif Display', serif";
+          ctx.fillText(s.val, sx + 12, sY + 22);
           ctx.fillStyle = C.textDim;
-          ctx.font = "400 10px 'Inter', sans-serif";
-          ctx.fillText(s.label, sx + 10, sY + 34);
+          ctx.font = "400 11px 'Inter', sans-serif";
+          ctx.fillText(s.label, sx + 12, sY + 39);
         });
       });
 
-      curY += 4 * (185 + 16) + 20;
+      curY += 4 * (210 + 20) + 30;
       addPageBreak(curY - 8);
 
       /* ── Team illustration ── */
