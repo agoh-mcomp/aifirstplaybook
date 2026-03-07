@@ -120,11 +120,15 @@ const PlaybookInfographic = () => {
       const scale = 3;
       const W = 1200;
       const H = 5600;
+      const sectionBreaks: number[] = [];
+      const addPageBreak = (y: number) => sectionBreaks.push(Math.max(0, Math.floor(y)));
       const canvas = document.createElement("canvas");
       canvas.width = W * scale;
       canvas.height = H * scale;
       const ctx = canvas.getContext("2d")!;
       ctx.scale(scale, scale);
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
 
       /* ── Background ── */
       ctx.fillStyle = C.bg;
@@ -214,6 +218,7 @@ const PlaybookInfographic = () => {
         }
       });
       ctx.textAlign = "left";
+      addPageBreak(curY + 110);
 
       /* ══════════════ CHAPTERS ══════════════ */
       curY += 130;
@@ -296,6 +301,7 @@ const PlaybookInfographic = () => {
       ctx.stroke();
 
       curY += teamH + 30;
+      addPageBreak(curY - 8);
 
       /* ══════════════ 7 NON-NEGOTIABLES ══════════════ */
       drawGoldDivider(ctx, W, curY - 12);
@@ -357,6 +363,7 @@ const PlaybookInfographic = () => {
       });
 
       curY += 7 * 80 + 30;
+      addPageBreak(curY - 12);
 
       /* ══════════════ 90-DAY SPRINT ══════════════ */
       drawGoldDivider(ctx, W, curY - 6);
@@ -453,6 +460,7 @@ const PlaybookInfographic = () => {
       }
 
       curY += 300;
+      addPageBreak(curY - 10);
 
       /* ══════════════ 4 LEADERSHIP ASKS ══════════════ */
       drawGoldDivider(ctx, W, curY - 6);
@@ -508,6 +516,7 @@ const PlaybookInfographic = () => {
       });
 
       curY += 230;
+      addPageBreak(curY - 10);
 
       /* ══════════════ QUOTE ══════════════ */
       ctx.fillStyle = C.goldBg;
@@ -536,6 +545,7 @@ const PlaybookInfographic = () => {
       ctx.textAlign = "left";
 
       curY += 140;
+      addPageBreak(curY - 10);
 
       /* ══════════════ FOOTER ══════════════ */
       drawGoldDivider(ctx, W, curY);
