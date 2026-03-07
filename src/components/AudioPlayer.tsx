@@ -13,6 +13,8 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
   const [isPaused, setIsPaused] = useState(false);
   const [progress, setProgress] = useState(0);
   const [rate, setRate] = useState(1);
+  const currentCharIndexRef = useRef(0);
+  const fullTextRef = useRef("");
   const [muted, setMuted] = useState(false);
   const [supported, setSupported] = useState(true);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
