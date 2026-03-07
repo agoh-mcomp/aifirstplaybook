@@ -35,8 +35,8 @@ const Acknowledgements = () => {
             <br />& Deep Thanks
           </h2>
           <p className="font-body text-base md:text-lg text-muted-foreground italic max-w-xl mx-auto">
-            This playbook was built in the trenches from 90 days of high energy, by a team that chose to believe
-            something different was possible.
+            This playbook was built in the trenches from 90 days of high energy, by a team that chose to believe they
+            could create something special.
           </p>
         </motion.div>
 
