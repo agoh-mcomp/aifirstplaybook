@@ -471,10 +471,10 @@ const PlaybookInfographic = () => {
 
       /* ══════════════ 4 LEADERSHIP ASKS ══════════════ */
       drawGoldDivider(ctx, W, curY - 6);
-      curY += 20;
+      curY += 24;
       drawSectionLabel(ctx, W, curY, "YOUR 4 LEADERSHIP ASKS");
 
-      curY += 25;
+      curY += 32;
 
       const asks = [
         { num: "01", title: "Participate", desc: "Show up for at least one sprint. Learn alongside your officers.", emoji: "\uD83D\uDC41\uFE0F" },
@@ -483,75 +483,77 @@ const PlaybookInfographic = () => {
         { num: "04", title: "Permission to Fail", desc: "Signal that honest attempts are valued more than perfect execution.", emoji: "\u2764\uFE0F" },
       ];
 
-      const askW = (W - 120 - 20) / 2;
+      const askW = (W - 100 - 24) / 2;
       asks.forEach((a, i) => {
         const col = i % 2;
         const row = Math.floor(i / 2);
-        const ax = 60 + col * (askW + 20);
-        const ay = curY + row * 100;
+        const ax = 50 + col * (askW + 24);
+        const ay = curY + row * 110;
 
         // Card
         ctx.fillStyle = C.bgSoft;
-        rr(ctx, ax, ay, askW, 85, 12);
+        rr(ctx, ax, ay, askW, 95, 12);
         ctx.fill();
         ctx.strokeStyle = C.border;
-        ctx.lineWidth = 1;
-        rr(ctx, ax, ay, askW, 85, 12);
+        ctx.lineWidth = 1.5;
+        rr(ctx, ax, ay, askW, 95, 12);
         ctx.stroke();
 
-        // Gold left accent
-        ctx.fillStyle = C.gold;
-        rr(ctx, ax, ay + 8, 4, 69, 2);
+        // Blue left accent
+        const askBar = ctx.createLinearGradient(ax, ay, ax, ay + 95);
+        askBar.addColorStop(0, C.gold); askBar.addColorStop(1, C.goldDim);
+        ctx.fillStyle = askBar;
+        rr(ctx, ax, ay + 10, 5, 75, 3);
         ctx.fill();
 
-        // Number + emoji
+        // Number circle
         ctx.fillStyle = C.navy;
-        ctx.beginPath(); ctx.arc(ax + 34, ay + 42, 18, 0, Math.PI * 2); ctx.fill();
+        ctx.beginPath(); ctx.arc(ax + 38, ay + 47, 20, 0, Math.PI * 2); ctx.fill();
         ctx.fillStyle = "#FFFFFF";
-        ctx.font = "700 12px 'JetBrains Mono', monospace";
+        ctx.font = "700 14px 'JetBrains Mono', monospace";
         ctx.textAlign = "center";
-        ctx.fillText(a.num, ax + 34, ay + 47);
+        ctx.fillText(a.num, ax + 38, ay + 52);
         ctx.textAlign = "left";
 
-        // Title
+        // Title - larger
         ctx.fillStyle = C.navy;
-        ctx.font = "600 20px 'DM Serif Display', serif";
-        ctx.fillText(a.title, ax + 62, ay + 36);
+        ctx.font = "600 22px 'DM Serif Display', serif";
+        ctx.fillText(a.title, ax + 68, ay + 40);
         ctx.fillStyle = C.textMuted;
-        ctx.font = "400 12px 'Inter', sans-serif";
-        wrap(ctx, a.desc, ax + 62, ay + 56, askW - 82, 16, 2);
+        ctx.font = "400 13px 'Inter', sans-serif";
+        wrap(ctx, a.desc, ax + 68, ay + 62, askW - 90, 18, 2);
       });
 
-      curY += 230;
+      curY += 260;
       addPageBreak(curY - 10);
 
       /* ══════════════ QUOTE ══════════════ */
       ctx.fillStyle = C.goldBg;
-      rr(ctx, 60, curY, W - 120, 110, 16); ctx.fill();
-      ctx.strokeStyle = C.gold + "30";
-      ctx.lineWidth = 1;
-      rr(ctx, 60, curY, W - 120, 110, 16); ctx.stroke();
+      rr(ctx, 50, curY, W - 100, 120, 16); ctx.fill();
+      ctx.strokeStyle = C.gold + "40";
+      ctx.lineWidth = 1.5;
+      rr(ctx, 50, curY, W - 100, 120, 16); ctx.stroke();
 
       // Gold bar
       ctx.fillStyle = C.gold;
-      rr(ctx, 60, curY + 12, 5, 86, 3); ctx.fill();
+      rr(ctx, 50, curY + 14, 6, 92, 3); ctx.fill();
 
       // Quote mark
-      ctx.fillStyle = C.gold + "40";
-      ctx.font = "italic 700 80px 'DM Serif Display', serif";
-      ctx.fillText("\u201C", 78, curY + 56);
+      ctx.fillStyle = C.gold + "50";
+      ctx.font = "italic 700 86px 'DM Serif Display', serif";
+      ctx.fillText("\u201C", 72, curY + 60);
 
       ctx.fillStyle = C.text;
-      ctx.font = "italic 16px 'Inter', sans-serif";
+      ctx.font = "italic 18px 'Inter', sans-serif";
       ctx.textAlign = "center";
-      wrap(ctx, "The best public service in the world does not wait to be told it is falling behind. It decides to stay ahead.", W / 2, curY + 42, W - 220, 24, 2);
+      wrap(ctx, "The best public service in the world does not wait to be told it is falling behind. It decides to stay ahead.", W / 2, curY + 48, W - 200, 26, 2);
 
       ctx.fillStyle = C.goldDim;
-      ctx.font = "600 11px 'JetBrains Mono', monospace";
-      ctx.fillText("\u2014 Bernard Toh, DCE Strategy, Corporate & Governance, GovTech", W / 2, curY + 96);
+      ctx.font = "600 12px 'JetBrains Mono', monospace";
+      ctx.fillText("\u2014 Bernard Toh, DCE Strategy, Corporate & Governance, GovTech", W / 2, curY + 104);
       ctx.textAlign = "left";
 
-      curY += 140;
+      curY += 150;
       addPageBreak(curY - 10);
 
       /* ══════════════ FOOTER BAR ══════════════ */
