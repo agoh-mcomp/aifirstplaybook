@@ -548,19 +548,8 @@ const PlaybookInfographic = () => {
       curY += 140;
       addPageBreak(curY - 10);
 
-      /* ══════════════ FOOTER ══════════════ */
+      /* ══════════════ FOOTER BAR ══════════════ */
       drawGoldDivider(ctx, W, curY);
-      curY += 24;
-      ctx.fillStyle = C.textDim;
-      ctx.font = "400 13px 'Inter', sans-serif";
-      ctx.textAlign = "center";
-      ctx.fillText("aifirstplaybook.lovable.app", W / 2, curY);
-
-      curY += 24;
-      ctx.fillStyle = C.goldDim;
-      ctx.font = "600 10px 'JetBrains Mono', monospace";
-      ctx.fillText("\u00A9 2026 Government Technology Agency of Singapore", W / 2, curY);
-
       curY += 20;
       ctx.fillStyle = C.gold;
       ctx.fillRect(0, curY, W, 5);
@@ -568,16 +557,12 @@ const PlaybookInfographic = () => {
 
       /* ── Export PDF ── */
       const finalH = curY + 5;
-      const trimmed = document.createElement("canvas");
-      trimmed.width = W * scale;
-      trimmed.height = finalH * scale;
-      const tCtx = trimmed.getContext("2d")!;
-      tCtx.imageSmoothingEnabled = true;
-      tCtx.imageSmoothingQuality = "high";
-      tCtx.drawImage(canvas, 0, 0, W * scale, finalH * scale, 0, 0, W * scale, finalH * scale);
 
       const pdfW = 210;
       const pdfH = 297;
+      const footerY = 292;
+      const pageContentMm = 286;
+
       const pdf = new jsPDF({
         orientation: "p",
         unit: "mm",
@@ -585,20 +570,19 @@ const PlaybookInfographic = () => {
         compress: false,
         precision: 16,
       });
+
       const pxPerMm = (W * scale) / pdfW;
-      const nominalPageHeightPx = Math.floor(pdfH * pxPerMm);
+      const nominalPageHeightPx = Math.floor(pageContentMm * pxPerMm);
       const finalPxHeight = finalH * scale;
       const breakpointsPx = [...new Set(sectionBreaks
         .map((y) => y * scale)
         .filter((y) => y > 0 && y < finalPxHeight)
         .map((y) => Math.floor(y)))].sort((a, b) => a - b);
 
+      const slices: Array<{ start: number; end: number }> = [];
       let sourceY = 0;
-      let pageIndex = 0;
 
       while (sourceY < finalPxHeight) {
-        if (pageIndex > 0) pdf.addPage();
-
         const idealEnd = Math.min(sourceY + nominalPageHeightPx, finalPxHeight);
         const minBreak = Math.min(finalPxHeight, sourceY + Math.floor(nominalPageHeightPx * 0.62));
 
@@ -607,23 +591,42 @@ const PlaybookInfographic = () => {
           .pop();
 
         const sliceEnd = breakBeforeIdeal ?? idealEnd;
-        const sliceH = Math.max(1, sliceEnd - sourceY);
+        slices.push({ start: sourceY, end: sliceEnd });
+        sourceY = sliceEnd;
+      }
 
+      const totalPages = slices.length;
+
+      slices.forEach((slice, pageIndex) => {
+        if (pageIndex > 0) pdf.addPage();
+
+        const sliceH = Math.max(1, slice.end - slice.start);
         const pageCanvas = document.createElement("canvas");
         pageCanvas.width = W * scale;
         pageCanvas.height = sliceH;
         const pCtx = pageCanvas.getContext("2d")!;
         pCtx.imageSmoothingEnabled = true;
         pCtx.imageSmoothingQuality = "high";
-        pCtx.drawImage(trimmed, 0, sourceY, W * scale, sliceH, 0, 0, W * scale, sliceH);
+        pCtx.drawImage(canvas, 0, slice.start, W * scale, sliceH, 0, 0, W * scale, sliceH);
 
         const pageImg = pageCanvas.toDataURL("image/png", 1.0);
         const sliceMm = sliceH / pxPerMm;
-        pdf.addImage(pageImg, "PNG", 0, 0, pdfW, sliceMm, undefined, "SLOW");
+        pdf.addImage(pageImg, "PNG", 0, 0, pdfW, sliceMm, undefined, "NONE");
 
-        sourceY = sliceEnd;
-        pageIndex += 1;
-      }
+        pdf.setDrawColor(210, 214, 220);
+        pdf.setLineWidth(0.2);
+        pdf.line(12, 287.5, 198, 287.5);
+
+        pdf.setFont("helvetica", "normal");
+        pdf.setFontSize(9);
+        pdf.setTextColor(120, 125, 132);
+        pdf.text(
+          `© 2026 Government Technology Agency of Singapore  •  Page ${pageIndex + 1} of ${totalPages}`,
+          105,
+          footerY,
+          { align: "center" }
+        );
+      });
 
       pdf.save("AI-First-Playbook-Executive-Brief.pdf");
     } catch (err) {
