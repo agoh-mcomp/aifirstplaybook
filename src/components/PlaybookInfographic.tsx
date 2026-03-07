@@ -119,7 +119,7 @@ const PlaybookInfographic = () => {
 
       const scale = 3;
       const W = 1200;
-      const H = 5600;
+      const H = 6200;
       const sectionBreaks: number[] = [];
       const addPageBreak = (y: number) => sectionBreaks.push(Math.max(0, Math.floor(y)));
       const canvas = document.createElement("canvas");
@@ -135,61 +135,62 @@ const PlaybookInfographic = () => {
       ctx.fillRect(0, 0, W, H);
 
       /* ══════════════ HEADER ══════════════ */
-      // Top gold accent bar
-      ctx.fillStyle = C.gold;
-      ctx.fillRect(0, 0, W, 5);
+      // Top accent bar - bright blue gradient
+      const topBar = ctx.createLinearGradient(0, 0, W, 0);
+      topBar.addColorStop(0, C.navy); topBar.addColorStop(1, C.navyLight);
+      ctx.fillStyle = topBar;
+      ctx.fillRect(0, 0, W, 6);
 
       // Badge
-      let curY = 50;
+      let curY = 55;
       ctx.fillStyle = C.goldBg;
-      rr(ctx, W / 2 - 130, curY, 260, 34, 17);
+      rr(ctx, W / 2 - 140, curY, 280, 38, 19);
       ctx.fill();
-      ctx.strokeStyle = C.gold + "50";
-      ctx.lineWidth = 1;
-      rr(ctx, W / 2 - 130, curY, 260, 34, 17);
+      ctx.strokeStyle = C.gold + "60";
+      ctx.lineWidth = 1.5;
+      rr(ctx, W / 2 - 140, curY, 280, 38, 19);
       ctx.stroke();
       ctx.fillStyle = C.gold;
-      ctx.font = "700 12px 'JetBrains Mono', monospace";
+      ctx.font = "700 13px 'JetBrains Mono', monospace";
       ctx.textAlign = "center";
-      ctx.fillText("\u23F1  3-MINUTE EXECUTIVE BRIEF", W / 2, curY + 22);
+      ctx.fillText("\u23F1  3-MINUTE EXECUTIVE BRIEF", W / 2, curY + 25);
 
       // Title
-      curY = 115;
+      curY = 130;
       ctx.fillStyle = C.textDim;
-      ctx.font = "500 14px 'JetBrains Mono', monospace";
+      ctx.font = "500 15px 'JetBrains Mono', monospace";
       ctx.fillText("THE AI-FIRST PLAYBOOK", W / 2, curY);
 
-      curY = 165;
+      curY = 185;
       ctx.fillStyle = C.navy;
-      ctx.font = "700 58px 'DM Serif Display', serif";
+      ctx.font = "700 62px 'DM Serif Display', serif";
       ctx.fillText("Your Agency. Transformed.", W / 2, curY);
 
       ctx.fillStyle = C.textMuted;
-      ctx.font = "400 17px 'Inter', sans-serif";
-      ctx.fillText("A practical guide for leaders ready to move from AI-curious to AI-first.", W / 2, curY + 40);
+      ctx.font = "400 19px 'Inter', sans-serif";
+      ctx.fillText("A practical guide for leaders ready to move from AI-curious to AI-first.", W / 2, curY + 48);
       ctx.textAlign = "left";
 
       /* ── Hero image ── */
-      curY = 240;
-      const heroH = 260;
-      const heroW = W - 160;
+      curY = 270;
+      const heroH = 280;
+      const heroW = W - 140;
       ctx.save();
-      rr(ctx, 80, curY, heroW, heroH, 16);
+      rr(ctx, 70, curY, heroW, heroH, 16);
       ctx.clip();
-      ctx.drawImage(hero, 80, curY, heroW, heroH);
+      ctx.drawImage(hero, 70, curY, heroW, heroH);
       ctx.restore();
-      // Subtle border
       ctx.strokeStyle = C.border;
-      ctx.lineWidth = 1;
-      rr(ctx, 80, curY, heroW, heroH, 16);
+      ctx.lineWidth = 1.5;
+      rr(ctx, 70, curY, heroW, heroH, 16);
       ctx.stroke();
 
       /* ── Hero stats banner ── */
-      curY += heroH + 24;
-      const bannerGrad = ctx.createLinearGradient(60, curY, W - 60, curY);
+      curY += heroH + 30;
+      const bannerGrad = ctx.createLinearGradient(50, curY, W - 50, curY + 100);
       bannerGrad.addColorStop(0, C.navy); bannerGrad.addColorStop(1, C.navyLight);
       ctx.fillStyle = bannerGrad;
-      rr(ctx, 60, curY, W - 120, 90, 14);
+      rr(ctx, 50, curY, W - 100, 100, 14);
       ctx.fill();
 
       const heroStats = [
@@ -198,27 +199,27 @@ const PlaybookInfographic = () => {
         { val: "200+", label: "Officers Engaged" },
         { val: "60%", label: "Confidence Jump" },
       ];
-      const bw = (W - 120) / 4;
+      const bw = (W - 100) / 4;
       ctx.textAlign = "center";
       heroStats.forEach((s, i) => {
-        const bx = 60 + i * bw + bw / 2;
+        const bx = 50 + i * bw + bw / 2;
         ctx.fillStyle = "#FFFFFF";
-        ctx.font = "700 28px 'DM Serif Display', serif";
-        ctx.fillText(s.val, bx, curY + 38);
-        ctx.fillStyle = "rgba(255,255,255,0.65)";
-        ctx.font = "400 11px 'Inter', sans-serif";
-        ctx.fillText(s.label, bx, curY + 58);
+        ctx.font = "700 32px 'DM Serif Display', serif";
+        ctx.fillText(s.val, bx, curY + 42);
+        ctx.fillStyle = "rgba(255,255,255,0.75)";
+        ctx.font = "500 13px 'Inter', sans-serif";
+        ctx.fillText(s.label, bx, curY + 66);
         if (i < 3) {
-          ctx.strokeStyle = "rgba(255,255,255,0.15)";
+          ctx.strokeStyle = "rgba(255,255,255,0.2)";
           ctx.lineWidth = 1;
           ctx.beginPath();
-          ctx.moveTo(60 + (i + 1) * bw, curY + 16);
-          ctx.lineTo(60 + (i + 1) * bw, curY + 74);
+          ctx.moveTo(50 + (i + 1) * bw, curY + 18);
+          ctx.lineTo(50 + (i + 1) * bw, curY + 82);
           ctx.stroke();
         }
       });
       ctx.textAlign = "left";
-      addPageBreak(curY + 110);
+      addPageBreak(curY + 120);
 
       /* ══════════════ CHAPTERS ══════════════ */
       curY += 130;
