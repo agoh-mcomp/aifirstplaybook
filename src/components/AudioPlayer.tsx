@@ -32,14 +32,23 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
     const loadVoices = () => {
       const available = window.speechSynthesis.getVoices();
       setVoices(available);
-      // Auto-select a nice female voice if none chosen yet
+      // Auto-select an energetic, polished female voice if none chosen yet
       if (!selectedVoiceURI && available.length > 0) {
-        const female = available.find(v =>
-          /samantha|victoria|karen|zira|fiona|tessa/i.test(v.name)
-        ) || available.find(v =>
-          v.lang.startsWith("en") && /fiona|samantha|karen|moira|tessa|veena|victoria|zira|susan|hazel|heather|kate|serena/i.test(v.name)
-        ) || available.find(v => v.lang.startsWith("en"));
-        if (female) setSelectedVoiceURI(female.voiceURI);
+        const enVoices = available.filter(v => v.lang.startsWith("en"));
+        // Tier 1: Premium/enhanced voices known for being energetic & polished
+        const tier1 = enVoices.find(v =>
+          /ava.*premium|allison.*premium|zoe.*premium|nova|ava.*enhanced/i.test(v.name)
+        );
+        // Tier 2: High-quality natural female voices
+        const tier2 = enVoices.find(v =>
+          /\b(ava|allison|samantha|kate|serena|karen|martha)\b/i.test(v.name) && !/male/i.test(v.name)
+        );
+        // Tier 3: Any English female-sounding voice
+        const tier3 = enVoices.find(v =>
+          /fiona|victoria|tessa|moira|heather|susan|hazel|veena|zira/i.test(v.name)
+        );
+        const pick = tier1 || tier2 || tier3 || enVoices[0];
+        if (pick) setSelectedVoiceURI(pick.voiceURI);
       }
     };
     loadVoices();
