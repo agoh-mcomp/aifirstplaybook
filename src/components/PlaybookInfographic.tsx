@@ -501,7 +501,7 @@ const PlaybookInfographic = () => {
 
       ctx3.fillStyle = C.gold + "40";
       ctx3.font = "italic 700 72px 'DM Serif Display', serif";
-      ctx3.fillText(""", 68, y + 52);
+      ctx3.fillText("\u201C", 68, y + 52);
 
       ctx3.fillStyle = C.text;
       ctx3.font = "italic 17px 'Inter', sans-serif";
