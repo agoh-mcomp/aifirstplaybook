@@ -282,7 +282,7 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
             {[0.75, 1, 1.25, 1.5, 1.75, 2].map((r) => (
               <button
                 key={r}
-                onClick={() => setRate(r)}
+                onClick={() => changeRate(r)}
                 className={cn(
                   "font-mono text-xs px-2 py-1 rounded-md transition-colors",
                   rate === r
