@@ -56,7 +56,7 @@ const Acknowledgements = () => {
 
         {/* Champion */}
         <AckBlock
-          label="Champion & Role Model"
+          label="Champion & Participant"
           names="Bernard Toh"
           note="For your vision, giving us protected time to reimagine, and leading from the front."
           delay={0.15}
