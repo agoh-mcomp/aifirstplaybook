@@ -117,7 +117,7 @@ const PlaybookInfographic = () => {
         loadImg(heroImg), loadImg(sprintImg), loadImg(teamImg),
       ]);
 
-      const scale = 2;
+      const scale = 3;
       const W = 1200;
       const H = 5600;
       const canvas = document.createElement("canvas");
