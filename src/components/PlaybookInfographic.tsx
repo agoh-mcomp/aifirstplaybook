@@ -559,8 +559,8 @@ const PlaybookInfographic = () => {
       const finalH = curY + 5;
 
       const pdfW = 210;
-      const pdfH = 297;
       const footerY = 292;
+      const pageContentMm = 286;
       const pageContentMm = 286;
 
       const pdf = new jsPDF({
