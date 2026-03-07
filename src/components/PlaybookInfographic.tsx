@@ -561,7 +561,6 @@ const PlaybookInfographic = () => {
       const pdfW = 210;
       const footerY = 292;
       const pageContentMm = 286;
-      const pageContentMm = 286;
 
       const pdf = new jsPDF({
         orientation: "p",
