@@ -5,22 +5,22 @@ import heroImg from "@/assets/infographic-hero.png";
 import sprintImg from "@/assets/infographic-sprint.png";
 import teamImg from "@/assets/infographic-team.png";
 
-/* ── Simplified palette: navy + gold + neutrals only ── */
+/* ── Vibrant palette: bright blues + gold + high contrast ── */
 const C = {
   bg: "#FFFFFF",
-  bgSoft: "#F8FAFC",
-  navy: "#1E3A5F",
-  navyLight: "#2C5282",
-  navyPale: "#E8EDF4",
-  gold: "#B8860B",
+  bgSoft: "#EDF2FF",
+  navy: "#0A3D91",
+  navyLight: "#1565C0",
+  navyPale: "#D6E4FF",
+  gold: "#C49000",
   goldDim: "#8B6914",
   goldLight: "#DAA520",
-  goldBg: "#FDF6E3",
-  text: "#1E293B",
-  textMuted: "#475569",
-  textDim: "#64748B",
+  goldBg: "#FFF8E1",
+  text: "#0F172A",
+  textMuted: "#1E293B",
+  textDim: "#334155",
   textLight: "#94A3B8",
-  border: "#E2E8F0",
+  border: "#CBD5E1",
 };
 
 /* ── Data ── */
