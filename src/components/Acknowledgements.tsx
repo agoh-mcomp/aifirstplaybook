@@ -34,8 +34,8 @@ const AckBlock = ({ label, names, note, delay = 0 }: AckBlockProps) => (
 
 const Acknowledgements = () => {
   return (
-    <section className="py-20 md:py-28 border-t border-border" data-pdf-hide>
-      <div className="max-w-3xl mx-auto px-6 md:px-8 space-y-16">
+    <div className="space-y-16" data-pdf-hide>
+      <div className="space-y-16">
         {/* Title */}
         <motion.div {...fadeUp} className="text-center space-y-6">
           <h2 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
@@ -115,7 +115,7 @@ const Acknowledgements = () => {
           </p>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 };
 
