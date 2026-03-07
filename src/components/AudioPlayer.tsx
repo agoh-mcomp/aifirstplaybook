@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { Play, Pause, Square, Volume2, VolumeX } from "lucide-react";
+import { Play, Pause, Square, Volume2, VolumeX, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -18,6 +18,9 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const cancelledRef = useRef(false);
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const [selectedVoiceURI, setSelectedVoiceURI] = useState<string>("");
+  const [showVoiceMenu, setShowVoiceMenu] = useState(false);
+  const voiceMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!window.speechSynthesis) {
@@ -27,10 +30,33 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
     const loadVoices = () => {
       const available = window.speechSynthesis.getVoices();
       setVoices(available);
+      // Auto-select a nice female voice if none chosen yet
+      if (!selectedVoiceURI && available.length > 0) {
+        const female = available.find(v =>
+          /samantha|victoria|karen|zira|fiona|tessa/i.test(v.name)
+        ) || available.find(v =>
+          v.lang.startsWith("en") && /fiona|samantha|karen|moira|tessa|veena|victoria|zira|susan|hazel|heather|kate|serena/i.test(v.name)
+        ) || available.find(v => v.lang.startsWith("en"));
+        if (female) setSelectedVoiceURI(female.voiceURI);
+      }
     };
     loadVoices();
     window.speechSynthesis.onvoiceschanged = loadVoices;
   }, []);
+
+  // Close voice menu on outside click
+  useEffect(() => {
+    if (!showVoiceMenu) return;
+    const handler = (e: MouseEvent) => {
+      if (voiceMenuRef.current && !voiceMenuRef.current.contains(e.target as Node)) {
+        setShowVoiceMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [showVoiceMenu]);
+
+  const selectedVoice = voices.find(v => v.voiceURI === selectedVoiceURI) || null;
 
   const extractText = useCallback(() => {
     if (contentRef?.current) {
@@ -58,7 +84,6 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
       return;
     }
 
-    // Stop any existing speech first
     cancelledRef.current = true;
     window.speechSynthesis.cancel();
 
@@ -68,18 +93,8 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = rate;
     utterance.volume = muted ? 0 : 1;
+    if (selectedVoice) utterance.voice = selectedVoice;
 
-    // Pick a natural-sounding female voice
-    const femaleVoice = voices.find(v =>
-      /samantha|victoria|karen|zira|fiona|google.*female|google.*uk.*female|microsoft.*zira|tessa/i.test(v.name)
-    ) || voices.find(v =>
-      /female|woman/i.test(v.name)
-    ) || voices.find(v =>
-      v.lang.startsWith("en") && /fiona|samantha|karen|moira|tessa|veena|victoria|zira|susan|hazel|heather|kate|serena/i.test(v.name)
-    ) || voices.find(v => v.lang.startsWith("en"));
-    if (femaleVoice) utterance.voice = femaleVoice;
-
-    // Reset cancelled flag right before speaking
     cancelledRef.current = false;
 
     utterance.onboundary = (e) => {
@@ -99,7 +114,6 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
 
     utterance.onerror = (e) => {
       if (cancelledRef.current) return;
-      // "interrupted" and "canceled" are expected when we stop manually
       if (e.error === "interrupted" || e.error === "canceled") return;
       setIsPlaying(false);
       setIsPaused(false);
@@ -107,7 +121,6 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
 
     utteranceRef.current = utterance;
 
-    // Small delay to ensure cancel() has completed
     setTimeout(() => {
       if (cancelledRef.current) return;
       window.speechSynthesis.speak(utterance);
@@ -115,7 +128,7 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
       setIsPaused(false);
       setProgress(0);
     }, 50);
-  }, [isPaused, extractText, rate, muted]);
+  }, [isPaused, extractText, rate, muted, selectedVoice]);
 
   const pause = useCallback(() => {
     window.speechSynthesis.pause();
@@ -127,7 +140,6 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
     setMuted((m) => !m);
   }, []);
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => {
       cancelledRef.current = true;
@@ -137,13 +149,77 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
 
   if (!supported) return null;
 
+  // Group voices by language for the dropdown
+  const englishVoices = voices.filter(v => v.lang.startsWith("en"));
+  const otherVoices = voices.filter(v => !v.lang.startsWith("en"));
+
   return (
     <div className="bg-surface-elevated border border-border rounded-xl p-4 mb-8">
-      <div className="flex items-center gap-2 mb-3">
-        <Volume2 className="w-4 h-4 text-gold" />
-        <span className="font-mono text-xs tracking-wider uppercase text-muted-foreground">
-          Listen to {chapterTitle}
-        </span>
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center gap-2">
+          <Volume2 className="w-4 h-4 text-gold" />
+          <span className="font-mono text-xs tracking-wider uppercase text-muted-foreground">
+            Listen to {chapterTitle}
+          </span>
+        </div>
+
+        {/* Voice selector */}
+        <div className="relative" ref={voiceMenuRef}>
+          <button
+            onClick={() => setShowVoiceMenu(!showVoiceMenu)}
+            className="flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg border border-border bg-background hover:bg-accent transition-colors max-w-[200px]"
+          >
+            <span className="truncate">
+              {selectedVoice ? selectedVoice.name : "Select voice"}
+            </span>
+            <ChevronDown className={cn("w-3 h-3 shrink-0 transition-transform", showVoiceMenu && "rotate-180")} />
+          </button>
+
+          {showVoiceMenu && (
+            <div className="absolute right-0 top-full mt-1 w-72 max-h-64 overflow-y-auto bg-background border border-border rounded-lg shadow-lg z-50">
+              {englishVoices.length > 0 && (
+                <>
+                  <div className="px-3 py-1.5 font-mono text-[10px] tracking-wider uppercase text-muted-foreground bg-muted/50 sticky top-0">
+                    English
+                  </div>
+                  {englishVoices.map((v) => (
+                    <button
+                      key={v.voiceURI}
+                      onClick={() => { setSelectedVoiceURI(v.voiceURI); setShowVoiceMenu(false); }}
+                      className={cn(
+                        "w-full text-left px-3 py-2 text-xs hover:bg-accent transition-colors flex items-center justify-between gap-2",
+                        selectedVoiceURI === v.voiceURI && "bg-gold/10 text-gold"
+                      )}
+                    >
+                      <span className="truncate">{v.name}</span>
+                      <span className="text-[10px] text-muted-foreground shrink-0">{v.lang}</span>
+                    </button>
+                  ))}
+                </>
+              )}
+              {otherVoices.length > 0 && (
+                <>
+                  <div className="px-3 py-1.5 font-mono text-[10px] tracking-wider uppercase text-muted-foreground bg-muted/50 sticky top-0">
+                    Other Languages
+                  </div>
+                  {otherVoices.map((v) => (
+                    <button
+                      key={v.voiceURI}
+                      onClick={() => { setSelectedVoiceURI(v.voiceURI); setShowVoiceMenu(false); }}
+                      className={cn(
+                        "w-full text-left px-3 py-2 text-xs hover:bg-accent transition-colors flex items-center justify-between gap-2",
+                        selectedVoiceURI === v.voiceURI && "bg-gold/10 text-gold"
+                      )}
+                    >
+                      <span className="truncate">{v.name}</span>
+                      <span className="text-[10px] text-muted-foreground shrink-0">{v.lang}</span>
+                    </button>
+                  ))}
+                </>
+              )}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Progress bar */}
