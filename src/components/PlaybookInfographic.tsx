@@ -5,7 +5,7 @@ import heroImg from "@/assets/infographic-hero.png";
 import sprintImg from "@/assets/infographic-sprint.png";
 import teamImg from "@/assets/infographic-team.png";
 
-/* ── Vibrant palette: bright blues + gold + high contrast ── */
+/* ── Vibrant palette ── */
 const C = {
   bg: "#FFFFFF",
   bgSoft: "#EDF2FF",
@@ -23,26 +23,25 @@ const C = {
   border: "#CBD5E1",
 };
 
-/* ── Data ── */
 const chapters = [
-  { num: "01", title: "Why Now", keyInsight: "The window for managed transformation is narrowing. What we do in the next 2\u20133 years defines whether we lead or scramble.", stats: [{ val: "150K+", label: "Officers" }, { val: "3 days/wk", label: "On repetitive tasks" }], execTakeaway: "Inaction compounds daily across 150,000 officers." },
-  { num: "02", title: "The Vision", keyInsight: "AI-First is a mindset shift: \u2018Can AI augment my thinking, speed up my work, and help me solve problems?\u2019", stats: [{ val: "4 Pillars", label: "What Good Looks Like" }, { val: "4 Shifts", label: "Old \u2192 New Model" }], execTakeaway: "Shift from outsourced innovation to in-house building." },
-  { num: "03", title: "The Challenge", keyInsight: "Barriers are human, cultural, and structural \u2014 not technical. This is a culture change problem.", stats: [{ val: "6", label: "Barriers Identified" }, { val: "#1 Gap", label: "Prototype \u2192 Deploy" }], execTakeaway: "Make standing still costlier than moving." },
-  { num: "04", title: "Cultural Prerequisites", keyInsight: "Seven non-negotiable conditions separate agencies that transform from those that merely experiment.", stats: [{ val: "7", label: "Non-Negotiables" }, { val: "#1", label: "Leaders Must Model" }], execTakeaway: "Not optional \u2014 the difference between sticking and fading." },
-  { num: "05", title: "The Methodology", keyInsight: "Three monthly sprints over 90 days. Real problems, protected time, expert support.", stats: [{ val: "90 Days", label: "Sprint Duration" }, { val: "3 Phases", label: "Discover \u2192 Build \u2192 Show" }], execTakeaway: "Clear input, clear output, clear feedback loop." },
-  { num: "06", title: "How Do I Start?", keyInsight: "A practical 90-day model your agency runs, owns, and builds the muscle to sustain.", stats: [{ val: "5", label: "Pre-Sprint Checklist" }, { val: "4", label: "Success Tests" }], execTakeaway: "5 officers + 1 real problem > 30 at a workshop." },
-  { num: "07", title: "What We\u2019ve Seen", keyInsight: "73 AI solutions in 90 days. Confidence jumped 60%. \u2018AI is a tool\u2019 became \u2018AI is a partner.\u2019", stats: [{ val: "73", label: "Solutions Built" }, { val: "60%", label: "Confidence Jump" }], execTakeaway: "\u2018Not technical\u2019 officers built working prototypes in days." },
-  { num: "08", title: "Your Move", keyInsight: "Four asks: Participate, Protect time, Nominate AI Lead, Permission to fail.", stats: [{ val: "4", label: "Leadership Asks" }, { val: "1", label: "Decision: Start Now" }], execTakeaway: "The best public service decides to stay ahead." },
+  { num: "01", title: "Why Now", insight: "The window for managed transformation is narrowing — act in the next 2–3 years or scramble to catch up." },
+  { num: "02", title: "The Vision", insight: "AI-First is a mindset: 'Can AI augment my thinking, speed up my work, and help me solve problems?'" },
+  { num: "03", title: "The Challenge", insight: "Barriers are human, cultural, and structural — not technical. This is a culture change problem." },
+  { num: "04", title: "Cultural Prerequisites", insight: "Seven non-negotiable conditions separate agencies that transform from those that merely experiment." },
+  { num: "05", title: "The Methodology", insight: "Three monthly sprints over 90 days. Real problems, protected time, expert support." },
+  { num: "06", title: "How Do I Start?", insight: "A practical 90-day model your agency runs, owns, and builds the muscle to sustain." },
+  { num: "07", title: "What We've Seen", insight: "73 AI solutions in 90 days. Confidence jumped 60%. Officers built working prototypes in days." },
+  { num: "08", title: "Your Move", insight: "Four asks: Participate, Protect time, Nominate AI Lead, Permission to fail." },
 ];
 
 const nonNegotiables = [
-  { num: "1", title: "Leadership Modeling", desc: "Leaders participate as learners, not just sponsors", emoji: "\uD83D\uDC64" },
-  { num: "2", title: "Permission to Invest Time", desc: "Explicit runway away from BAU to experiment", emoji: "\u23F3" },
-  { num: "3", title: "Reward Learning & Risk", desc: "Celebrate attempts and lessons, not just wins", emoji: "\uD83C\uDFC6" },
-  { num: "4", title: "Start with Problems", desc: "Identify pain points before reaching for tools", emoji: "\uD83C\uDFAF" },
-  { num: "5", title: "Peer Proof Points", desc: "See people like you succeed and draw inspiration", emoji: "\uD83E\uDD1D" },
-  { num: "6", title: "Sustained Engagement", desc: "AI capability is a muscle \u2014 3 sprints, not 1 hackathon", emoji: "\uD83D\uDD04" },
-  { num: "7", title: "Pragmatic Data Classification", desc: "Be willing to try commercial AI for non-sensitive work", emoji: "\uD83D\uDCCA" },
+  { num: "1", title: "Leadership Modeling", desc: "Leaders participate as learners, not just sponsors.", example: "e.g. A Director joins a sprint team and builds a prototype alongside officers.", emoji: "👤" },
+  { num: "2", title: "Permission to Invest Time", desc: "Explicit runway away from BAU to experiment.", example: "e.g. Officers get 2 protected half-days per week during the 90-day sprint.", emoji: "⏳" },
+  { num: "3", title: "Reward Learning & Risk", desc: "Celebrate attempts and lessons, not just wins.", example: "e.g. 'Best Failed Experiment' award at Demo Day — normalising learning from failure.", emoji: "🏆" },
+  { num: "4", title: "Start with Problems", desc: "Identify pain points before reaching for tools.", example: "e.g. 'We spend 3 days/week on manual data entry' → then explore AI solutions.", emoji: "🎯" },
+  { num: "5", title: "Peer Proof Points", desc: "See people like you succeed and draw inspiration.", example: "e.g. HR officer automates leave reconciliation — peers in Finance see what's possible.", emoji: "🤝" },
+  { num: "6", title: "Sustained Engagement", desc: "AI capability is a muscle — 3 sprints, not 1 hackathon.", example: "e.g. Progressive 90-day cycles: Discover → Build → Show → repeat with harder problems.", emoji: "🔄" },
+  { num: "7", title: "Pragmatic Data Classification", desc: "Be willing to try commercial AI for non-sensitive work.", example: "e.g. Use AI for drafting comms and summarising public docs — no classified data needed.", emoji: "📊" },
 ];
 
 /* ── Canvas helpers ── */
@@ -54,14 +53,14 @@ function rr(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: n
   ctx.lineTo(x, y + r); ctx.quadraticCurveTo(x, y, x + r, y); ctx.closePath();
 }
 
-function wrap(ctx: CanvasRenderingContext2D, text: string, x: number, y: number, maxW: number, lh: number, maxLines = 99) {
+function wrap(ctx: CanvasRenderingContext2D, text: string, x: number, y: number, maxW: number, lh: number, maxLines = 99): number {
   const words = text.split(" ");
   let line = "", cy = y, lines = 0;
   for (const w of words) {
     const test = line + w + " ";
     if (ctx.measureText(test).width > maxW && line) {
       lines++;
-      if (lines >= maxLines) { ctx.fillText(line.trim() + "\u2026", x, cy); return cy + lh; }
+      if (lines >= maxLines) { ctx.fillText(line.trim() + "…", x, cy); return cy + lh; }
       ctx.fillText(line.trim(), x, cy); line = w + " "; cy += lh;
     } else line = test;
   }
@@ -70,27 +69,26 @@ function wrap(ctx: CanvasRenderingContext2D, text: string, x: number, y: number,
 }
 
 function drawGoldDivider(ctx: CanvasRenderingContext2D, W: number, y: number) {
-  const g = ctx.createLinearGradient(100, 0, W - 100, 0);
+  const g = ctx.createLinearGradient(80, 0, W - 80, 0);
   g.addColorStop(0, "transparent"); g.addColorStop(0.15, C.gold + "60");
   g.addColorStop(0.5, C.gold); g.addColorStop(0.85, C.gold + "60");
   g.addColorStop(1, "transparent");
   ctx.strokeStyle = g; ctx.lineWidth = 1.5;
-  ctx.beginPath(); ctx.moveTo(100, y); ctx.lineTo(W - 100, y); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(80, y); ctx.lineTo(W - 80, y); ctx.stroke();
 }
 
 function drawSectionLabel(ctx: CanvasRenderingContext2D, W: number, y: number, text: string) {
-  ctx.font = "700 14px 'JetBrains Mono', monospace";
+  ctx.font = "700 15px 'JetBrains Mono', monospace";
   const tw = ctx.measureText(text).width;
   ctx.fillStyle = C.goldBg;
-  rr(ctx, W / 2 - tw / 2 - 22, y - 14, tw + 44, 30, 15);
+  rr(ctx, W / 2 - tw / 2 - 22, y - 14, tw + 44, 32, 16);
   ctx.fill();
-  ctx.strokeStyle = C.gold + "40";
-  ctx.lineWidth = 1.5;
-  rr(ctx, W / 2 - tw / 2 - 22, y - 14, tw + 44, 30, 15);
+  ctx.strokeStyle = C.gold + "40"; ctx.lineWidth = 1.5;
+  rr(ctx, W / 2 - tw / 2 - 22, y - 14, tw + 44, 32, 16);
   ctx.stroke();
   ctx.fillStyle = C.gold;
   ctx.textAlign = "center";
-  ctx.fillText(text, W / 2, y + 5);
+  ctx.fillText(text, W / 2, y + 6);
   ctx.textAlign = "left";
 }
 
@@ -103,6 +101,29 @@ function loadImg(src: string): Promise<HTMLImageElement> {
     img.src = src;
   });
 }
+
+function drawTopBar(ctx: CanvasRenderingContext2D, W: number) {
+  const g = ctx.createLinearGradient(0, 0, W, 0);
+  g.addColorStop(0, C.navy); g.addColorStop(1, C.navyLight);
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, W, 5);
+}
+
+function drawFooter(ctx: CanvasRenderingContext2D, W: number, H: number, pageNum: number, totalPages: number) {
+  ctx.strokeStyle = C.border;
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(60, H - 40); ctx.lineTo(W - 60, H - 40); ctx.stroke();
+  ctx.fillStyle = C.textLight;
+  ctx.font = "400 11px 'Inter', sans-serif";
+  ctx.textAlign = "center";
+  ctx.fillText(`© 2026 Government Technology Agency of Singapore  •  Page ${pageNum} of ${totalPages}`, W / 2, H - 22);
+  ctx.textAlign = "left";
+  // Bottom accent
+  ctx.fillStyle = C.gold;
+  ctx.fillRect(0, H - 4, W, 4);
+}
+
+/* ══════════════════════════════════════════════════════════════ */
 
 const PlaybookInfographic = () => {
   const [generating, setGenerating] = useState(false);
@@ -119,79 +140,69 @@ const PlaybookInfographic = () => {
 
       const scale = 3;
       const W = 1200;
-      const H = 6200;
-      const sectionBreaks: number[] = [];
-      const addPageBreak = (y: number) => sectionBreaks.push(Math.max(0, Math.floor(y)));
-      const canvas = document.createElement("canvas");
-      canvas.width = W * scale;
-      canvas.height = H * scale;
-      const ctx = canvas.getContext("2d")!;
-      ctx.scale(scale, scale);
-      ctx.imageSmoothingEnabled = true;
-      ctx.imageSmoothingQuality = "high";
+      // A4 aspect ratio: 297/210 ≈ 1.4143
+      const PAGE_H = Math.round(W * 297 / 210); // ~1697px
+      const totalPages = 3;
 
-      /* ── Background ── */
-      ctx.fillStyle = C.bg;
-      ctx.fillRect(0, 0, W, H);
+      function makeCanvas(): [HTMLCanvasElement, CanvasRenderingContext2D] {
+        const c = document.createElement("canvas");
+        c.width = W * scale; c.height = PAGE_H * scale;
+        const ctx = c.getContext("2d")!;
+        ctx.scale(scale, scale);
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = "high";
+        ctx.fillStyle = C.bg;
+        ctx.fillRect(0, 0, W, PAGE_H);
+        drawTopBar(ctx, W);
+        return [c, ctx];
+      }
 
-      /* ══════════════ HEADER ══════════════ */
-      // Top accent bar - bright blue gradient
-      const topBar = ctx.createLinearGradient(0, 0, W, 0);
-      topBar.addColorStop(0, C.navy); topBar.addColorStop(1, C.navyLight);
-      ctx.fillStyle = topBar;
-      ctx.fillRect(0, 0, W, 6);
+      /* ══════════════ PAGE 1: Chapter Summary ══════════════ */
+      const [c1, ctx1] = makeCanvas();
 
+      let y = 50;
       // Badge
-      let curY = 55;
-      ctx.fillStyle = C.goldBg;
-      rr(ctx, W / 2 - 140, curY, 280, 38, 19);
-      ctx.fill();
-      ctx.strokeStyle = C.gold + "60";
-      ctx.lineWidth = 1.5;
-      rr(ctx, W / 2 - 140, curY, 280, 38, 19);
-      ctx.stroke();
-      ctx.fillStyle = C.gold;
-      ctx.font = "700 13px 'JetBrains Mono', monospace";
-      ctx.textAlign = "center";
-      ctx.fillText("\u23F1  3-MINUTE EXECUTIVE BRIEF", W / 2, curY + 25);
+      ctx1.fillStyle = C.goldBg;
+      rr(ctx1, W / 2 - 140, y, 280, 36, 18); ctx1.fill();
+      ctx1.strokeStyle = C.gold + "60"; ctx1.lineWidth = 1.5;
+      rr(ctx1, W / 2 - 140, y, 280, 36, 18); ctx1.stroke();
+      ctx1.fillStyle = C.gold;
+      ctx1.font = "700 13px 'JetBrains Mono', monospace";
+      ctx1.textAlign = "center";
+      ctx1.fillText("⏱  3-MINUTE EXECUTIVE BRIEF", W / 2, y + 24);
 
-      // Title
-      curY = 130;
-      ctx.fillStyle = C.textDim;
-      ctx.font = "500 15px 'JetBrains Mono', monospace";
-      ctx.fillText("THE AI-FIRST PLAYBOOK", W / 2, curY);
+      y = 120;
+      ctx1.fillStyle = C.textDim;
+      ctx1.font = "500 14px 'JetBrains Mono', monospace";
+      ctx1.fillText("THE AI-FIRST PLAYBOOK", W / 2, y);
 
-      curY = 185;
-      ctx.fillStyle = C.navy;
-      ctx.font = "700 62px 'DM Serif Display', serif";
-      ctx.fillText("Your Agency. Transformed.", W / 2, curY);
+      y = 170;
+      ctx1.fillStyle = C.navy;
+      ctx1.font = "700 56px 'DM Serif Display', serif";
+      ctx1.fillText("Your Agency. Transformed.", W / 2, y);
 
-      ctx.fillStyle = C.textMuted;
-      ctx.font = "400 19px 'Inter', sans-serif";
-      ctx.fillText("A practical guide for leaders ready to move from AI-curious to AI-first.", W / 2, curY + 48);
-      ctx.textAlign = "left";
+      ctx1.fillStyle = C.textMuted;
+      ctx1.font = "400 18px 'Inter', sans-serif";
+      ctx1.fillText("A practical guide for leaders ready to move from AI-curious to AI-first.", W / 2, y + 42);
+      ctx1.textAlign = "left";
 
-      /* ── Hero image ── */
-      curY = 270;
-      const heroH = 280;
+      // Hero image
+      y = 250;
+      const heroH = 240;
       const heroW = W - 140;
-      ctx.save();
-      rr(ctx, 70, curY, heroW, heroH, 16);
-      ctx.clip();
-      ctx.drawImage(hero, 70, curY, heroW, heroH);
-      ctx.restore();
-      ctx.strokeStyle = C.border;
-      ctx.lineWidth = 1.5;
-      rr(ctx, 70, curY, heroW, heroH, 16);
-      ctx.stroke();
+      ctx1.save();
+      rr(ctx1, 70, y, heroW, heroH, 14); ctx1.clip();
+      ctx1.drawImage(hero, 70, y, heroW, heroH);
+      ctx1.restore();
+      ctx1.strokeStyle = C.border; ctx1.lineWidth = 1.5;
+      rr(ctx1, 70, y, heroW, heroH, 14); ctx1.stroke();
 
-      /* ── Hero stats banner ── */
-      curY += heroH + 30;
-      const bannerGrad = ctx.createLinearGradient(50, curY, W - 50, curY + 100);
+      // Stats banner
+      y += heroH + 24;
+      const bannerGrad = ctx1.createLinearGradient(50, y, W - 50, y + 80);
       bannerGrad.addColorStop(0, C.navy); bannerGrad.addColorStop(1, C.navyLight);
-      ctx.fillStyle = bannerGrad;
-      rr(ctx, 50, curY, W - 100, 100, 14);
-      ctx.fill();
+      ctx1.fillStyle = bannerGrad;
+      rr(ctx1, 50, y, W - 100, 80, 12); ctx1.fill();
 
       const heroStats = [
         { val: "73", label: "AI Solutions Built" },
@@ -200,439 +211,319 @@ const PlaybookInfographic = () => {
         { val: "60%", label: "Confidence Jump" },
       ];
       const bw = (W - 100) / 4;
-      ctx.textAlign = "center";
+      ctx1.textAlign = "center";
       heroStats.forEach((s, i) => {
         const bx = 50 + i * bw + bw / 2;
-        ctx.fillStyle = "#FFFFFF";
-        ctx.font = "700 32px 'DM Serif Display', serif";
-        ctx.fillText(s.val, bx, curY + 42);
-        ctx.fillStyle = "rgba(255,255,255,0.75)";
-        ctx.font = "500 13px 'Inter', sans-serif";
-        ctx.fillText(s.label, bx, curY + 66);
+        ctx1.fillStyle = "#FFFFFF";
+        ctx1.font = "700 28px 'DM Serif Display', serif";
+        ctx1.fillText(s.val, bx, y + 36);
+        ctx1.fillStyle = "rgba(255,255,255,0.75)";
+        ctx1.font = "500 12px 'Inter', sans-serif";
+        ctx1.fillText(s.label, bx, y + 56);
         if (i < 3) {
-          ctx.strokeStyle = "rgba(255,255,255,0.2)";
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(50 + (i + 1) * bw, curY + 18);
-          ctx.lineTo(50 + (i + 1) * bw, curY + 82);
-          ctx.stroke();
+          ctx1.strokeStyle = "rgba(255,255,255,0.2)"; ctx1.lineWidth = 1;
+          ctx1.beginPath(); ctx1.moveTo(50 + (i + 1) * bw, y + 14); ctx1.lineTo(50 + (i + 1) * bw, y + 66); ctx1.stroke();
         }
       });
-      ctx.textAlign = "left";
-      addPageBreak(curY + 120);
+      ctx1.textAlign = "left";
 
-      /* ══════════════ CHAPTERS ══════════════ */
-      curY += 140;
-      drawGoldDivider(ctx, W, curY - 22);
-      drawSectionLabel(ctx, W, curY, "THE JOURNEY \u2014 8 CHAPTERS");
+      // Chapter section label
+      y += 110;
+      drawGoldDivider(ctx1, W, y);
+      y += 28;
+      drawSectionLabel(ctx1, W, y, "THE JOURNEY — 8 CHAPTERS");
+      y += 38;
 
-      curY += 40;
+      // 8 chapter cards in 2x4 grid
       const mx = 50;
       const cardW = (W - mx * 2 - 24) / 2;
+      const cardH = 170;
 
       chapters.forEach((ch, i) => {
         const col = i % 2;
         const row = Math.floor(i / 2);
-        const cardH = 210;
-        const x = mx + col * (cardW + 24);
-        const y = curY + row * (cardH + 20);
+        const cx = mx + col * (cardW + 24);
+        const cy = y + row * (cardH + 16);
 
-        // Card with brighter blue tint
-        ctx.fillStyle = C.bgSoft;
-        rr(ctx, x, y, cardW, cardH, 12);
-        ctx.fill();
-        ctx.strokeStyle = C.border;
-        ctx.lineWidth = 1.5;
-        rr(ctx, x, y, cardW, cardH, 12);
-        ctx.stroke();
+        ctx1.fillStyle = C.bgSoft;
+        rr(ctx1, cx, cy, cardW, cardH, 10); ctx1.fill();
+        ctx1.strokeStyle = C.border; ctx1.lineWidth = 1;
+        rr(ctx1, cx, cy, cardW, cardH, 10); ctx1.stroke();
 
-        // Left blue accent bar
-        const accentGrad = ctx.createLinearGradient(x, y, x, y + cardH);
-        accentGrad.addColorStop(0, C.navy); accentGrad.addColorStop(1, C.navyLight);
-        ctx.fillStyle = accentGrad;
-        rr(ctx, x, y + 10, 5, cardH - 20, 3);
-        ctx.fill();
+        // Left accent
+        const ag = ctx1.createLinearGradient(cx, cy, cx, cy + cardH);
+        ag.addColorStop(0, C.navy); ag.addColorStop(1, C.navyLight);
+        ctx1.fillStyle = ag;
+        rr(ctx1, cx, cy + 8, 4, cardH - 16, 2); ctx1.fill();
 
         // Number circle
-        ctx.fillStyle = C.navy;
-        ctx.beginPath(); ctx.arc(x + 36, y + 34, 20, 0, Math.PI * 2); ctx.fill();
-        ctx.fillStyle = "#FFFFFF";
-        ctx.font = "700 16px 'JetBrains Mono', monospace";
-        ctx.textAlign = "center";
-        ctx.fillText(ch.num, x + 36, y + 40);
-        ctx.textAlign = "left";
+        ctx1.fillStyle = C.navy;
+        ctx1.beginPath(); ctx1.arc(cx + 32, cy + 30, 17, 0, Math.PI * 2); ctx1.fill();
+        ctx1.fillStyle = "#FFFFFF";
+        ctx1.font = "700 14px 'JetBrains Mono', monospace";
+        ctx1.textAlign = "center";
+        ctx1.fillText(ch.num, cx + 32, cy + 35);
+        ctx1.textAlign = "left";
 
-        // Title - larger
-        ctx.fillStyle = C.navy;
-        ctx.font = "600 24px 'DM Serif Display', serif";
-        ctx.fillText(ch.title, x + 66, y + 42);
+        // Title
+        ctx1.fillStyle = C.navy;
+        ctx1.font = "700 22px 'DM Serif Display', serif";
+        ctx1.fillText(ch.title, cx + 58, cy + 36);
 
-        // Key insight - larger with more spacing
-        ctx.fillStyle = C.textMuted;
-        ctx.font = "400 14px 'Inter', sans-serif";
-        wrap(ctx, ch.keyInsight, x + 20, y + 72, cardW - 40, 21, 3);
-
-        // Stats row - more spacing
-        const sY = y + 142;
-        ch.stats.forEach((s, si) => {
-          const sx = x + 20 + si * (cardW / 2 - 14);
-          const sw = cardW / 2 - 30;
-          ctx.fillStyle = C.navyPale;
-          rr(ctx, sx, sY, sw, 48, 8); ctx.fill();
-          ctx.fillStyle = C.navy;
-          ctx.font = "700 19px 'DM Serif Display', serif";
-          ctx.fillText(s.val, sx + 12, sY + 22);
-          ctx.fillStyle = C.textDim;
-          ctx.font = "400 11px 'Inter', sans-serif";
-          ctx.fillText(s.label, sx + 12, sY + 39);
-        });
+        // Insight
+        ctx1.fillStyle = C.textMuted;
+        ctx1.font = "400 14px 'Inter', sans-serif";
+        wrap(ctx1, ch.insight, cx + 18, cy + 64, cardW - 36, 20, 4);
       });
 
-      curY += 4 * (210 + 20) + 30;
-      addPageBreak(curY - 8);
+      drawFooter(ctx1, W, PAGE_H, 1, totalPages);
 
-      /* ── Team illustration ── */
-      const teamH = 240;
-      const teamW = W - 180;
-      ctx.save();
-      rr(ctx, 90, curY, teamW, teamH, 16);
-      ctx.clip();
-      ctx.drawImage(team, 90, curY, teamW, teamH);
-      ctx.restore();
-      ctx.strokeStyle = C.border;
-      ctx.lineWidth = 1.5;
-      rr(ctx, 90, curY, teamW, teamH, 16);
-      ctx.stroke();
+      /* ══════════════ PAGE 2: 7 Non-Negotiables ══════════════ */
+      const [c2, ctx2] = makeCanvas();
 
-      curY += teamH + 40;
-      addPageBreak(curY - 8);
+      y = 45;
+      drawSectionLabel(ctx2, W, y, "THE 7 CULTURAL NON-NEGOTIABLES");
+      y += 30;
+      ctx2.fillStyle = C.textMuted;
+      ctx2.font = "italic 16px 'Inter', sans-serif";
+      ctx2.textAlign = "center";
+      ctx2.fillText("The conditions that separate agencies that transform from those that merely experiment.", W / 2, y);
+      ctx2.textAlign = "left";
 
-      /* ══════════════ 7 NON-NEGOTIABLES ══════════════ */
-      drawGoldDivider(ctx, W, curY - 12);
-      curY += 18;
-      drawSectionLabel(ctx, W, curY, "THE 7 CULTURAL NON-NEGOTIABLES");
+      y += 36;
 
-      curY += 20;
-      ctx.fillStyle = C.textMuted;
-      ctx.font = "italic 15px 'Inter', sans-serif";
-      ctx.textAlign = "center";
-      ctx.fillText("The conditions that separate agencies that transform from those that merely experiment.", W / 2, curY);
-      ctx.textAlign = "left";
+      // Team image
+      const teamH = 180;
+      const teamW = W - 160;
+      ctx2.save();
+      rr(ctx2, 80, y, teamW, teamH, 14); ctx2.clip();
+      ctx2.drawImage(team, 80, y, teamW, teamH);
+      ctx2.restore();
+      ctx2.strokeStyle = C.border; ctx2.lineWidth = 1.5;
+      rr(ctx2, 80, y, teamW, teamH, 14); ctx2.stroke();
 
-      curY += 38;
+      y += teamH + 30;
+
+      // 7 items with expanded insights
+      const nnH = 130;
+      const nnGap = 14;
 
       nonNegotiables.forEach((nn, i) => {
-        const nnH = 78;
-        const nnY = curY + i * (nnH + 14);
-        const nnX = 70;
-        const nnW = W - 140;
+        const nnY = y + i * (nnH + nnGap);
+        const nnX = 60;
+        const nnW = W - 120;
 
-        // Card with alternating bg
-        ctx.fillStyle = i % 2 === 0 ? C.bgSoft : C.bg;
-        rr(ctx, nnX, nnY, nnW, nnH, 10);
-        ctx.fill();
-        ctx.strokeStyle = C.border;
-        ctx.lineWidth = 1.5;
-        rr(ctx, nnX, nnY, nnW, nnH, 10);
-        ctx.stroke();
+        ctx2.fillStyle = i % 2 === 0 ? C.bgSoft : C.bg;
+        rr(ctx2, nnX, nnY, nnW, nnH, 10); ctx2.fill();
+        ctx2.strokeStyle = C.border; ctx2.lineWidth = 1;
+        rr(ctx2, nnX, nnY, nnW, nnH, 10); ctx2.stroke();
 
-        // Bright blue left bar
-        const barGrad = ctx.createLinearGradient(nnX, nnY, nnX, nnY + nnH);
-        barGrad.addColorStop(0, C.navyLight); barGrad.addColorStop(1, C.navy);
-        ctx.fillStyle = barGrad;
-        rr(ctx, nnX, nnY + 8, 5, nnH - 16, 3);
-        ctx.fill();
+        // Left accent
+        const bg = ctx2.createLinearGradient(nnX, nnY, nnX, nnY + nnH);
+        bg.addColorStop(0, C.navyLight); bg.addColorStop(1, C.navy);
+        ctx2.fillStyle = bg;
+        rr(ctx2, nnX, nnY + 8, 5, nnH - 16, 3); ctx2.fill();
 
         // Number circle
-        ctx.fillStyle = C.navy;
-        ctx.beginPath(); ctx.arc(nnX + 40, nnY + nnH / 2, 18, 0, Math.PI * 2); ctx.fill();
-        ctx.fillStyle = "#FFFFFF";
-        ctx.font = "700 15px 'JetBrains Mono', monospace";
-        ctx.textAlign = "center";
-        ctx.fillText(nn.num, nnX + 40, nnY + nnH / 2 + 5);
-        ctx.textAlign = "left";
+        ctx2.fillStyle = C.navy;
+        ctx2.beginPath(); ctx2.arc(nnX + 38, nnY + 32, 18, 0, Math.PI * 2); ctx2.fill();
+        ctx2.fillStyle = "#FFFFFF";
+        ctx2.font = "700 15px 'JetBrains Mono', monospace";
+        ctx2.textAlign = "center";
+        ctx2.fillText(nn.num, nnX + 38, nnY + 37);
+        ctx2.textAlign = "left";
 
         // Emoji
-        ctx.font = "400 22px sans-serif";
-        ctx.fillText(nn.emoji, nnX + 68, nnY + nnH / 2 + 8);
+        ctx2.font = "400 22px sans-serif";
+        ctx2.fillText(nn.emoji, nnX + 66, nnY + 38);
 
-        // Title - larger, bolder
-        ctx.fillStyle = C.navy;
-        ctx.font = "600 19px 'DM Serif Display', serif";
-        ctx.fillText(nn.title, nnX + 100, nnY + 30);
+        // Title
+        ctx2.fillStyle = C.navy;
+        ctx2.font = "700 20px 'DM Serif Display', serif";
+        ctx2.fillText(nn.title, nnX + 96, nnY + 34);
 
-        // Description - larger
-        ctx.fillStyle = C.textMuted;
-        ctx.font = "400 14px 'Inter', sans-serif";
-        ctx.fillText(nn.desc, nnX + 100, nnY + 54);
+        // Description
+        ctx2.fillStyle = C.textMuted;
+        ctx2.font = "400 14px 'Inter', sans-serif";
+        ctx2.fillText(nn.desc, nnX + 96, nnY + 58);
+
+        // Example in gold box
+        ctx2.fillStyle = C.goldBg;
+        rr(ctx2, nnX + 90, nnY + 74, nnW - 110, 42, 6); ctx2.fill();
+        ctx2.strokeStyle = C.gold + "30"; ctx2.lineWidth = 1;
+        rr(ctx2, nnX + 90, nnY + 74, nnW - 110, 42, 6); ctx2.stroke();
+
+        ctx2.fillStyle = C.goldDim;
+        ctx2.font = "italic 13px 'Inter', sans-serif";
+        wrap(ctx2, nn.example, nnX + 104, nnY + 94, nnW - 140, 18, 2);
       });
 
-      curY += 7 * 92 + 40;
-      addPageBreak(curY - 12);
+      drawFooter(ctx2, W, PAGE_H, 2, totalPages);
 
-      /* ══════════════ 90-DAY SPRINT ══════════════ */
-      drawGoldDivider(ctx, W, curY - 6);
-      curY += 24;
-      drawSectionLabel(ctx, W, curY, "THE 90-DAY SPRINT FRAMEWORK");
+      /* ══════════════ PAGE 3: Sprint + GovTech Support ══════════════ */
+      const [c3, ctx3] = makeCanvas();
 
-      curY += 28;
+      y = 45;
+      drawSectionLabel(ctx3, W, y, "THE 90-DAY SPRINT FRAMEWORK");
+      y += 34;
 
-      // Sprint illustration
-      const spH = 220;
-      const spW = W - 180;
-      ctx.save();
-      rr(ctx, 90, curY, spW, spH, 16);
-      ctx.clip();
-      ctx.drawImage(sprint, 90, curY, spW, spH);
-      ctx.restore();
-      ctx.strokeStyle = C.border;
-      ctx.lineWidth = 1.5;
-      rr(ctx, 90, curY, spW, spH, 16);
-      ctx.stroke();
+      // Sprint image
+      const spH = 190;
+      const spW = W - 160;
+      ctx3.save();
+      rr(ctx3, 80, y, spW, spH, 14); ctx3.clip();
+      ctx3.drawImage(sprint, 80, y, spW, spH);
+      ctx3.restore();
+      ctx3.strokeStyle = C.border; ctx3.lineWidth = 1.5;
+      rr(ctx3, 80, y, spW, spH, 14); ctx3.stroke();
+      y += spH + 28;
 
-      curY += spH + 32;
-
+      // 3 phase cards
       const phases = [
-        { name: "Discovery", days: "Day 1\u201330", activities: ["Run discovery survey", "Identify pain points", "Map AI opportunities", "Leadership kickoff"], output: "Prioritised problem list + team formation" },
-        { name: "Build", days: "Day 31\u201360", activities: ["Hands-on workshops", "AI clinics & mentoring", "Prototype with real data", "Iterate with users"], output: "Working prototypes solving real problems" },
-        { name: "Showcase", days: "Day 61\u201390", activities: ["Demo Day presentations", "Measure impact", "Document learnings", "Plan deployment & scale"], output: "Proven solutions + agency playbook" },
+        { name: "Discovery", days: "Day 1–30", activities: ["Run discovery survey", "Identify pain points", "Map AI opportunities", "Leadership kickoff"], output: "Prioritised problem list + team formation" },
+        { name: "Build", days: "Day 31–60", activities: ["Hands-on workshops", "AI clinics & mentoring", "Prototype with real data", "Iterate with users"], output: "Working prototypes solving real problems" },
+        { name: "Showcase", days: "Day 61–90", activities: ["Demo Day presentations", "Measure impact", "Document learnings", "Plan deployment & scale"], output: "Proven solutions + agency playbook" },
       ];
 
       const phW = 340;
       const phGap = 24;
       const phStartX = (W - (3 * phW + 2 * phGap)) / 2;
+      const phH = 270;
 
       phases.forEach((ph, i) => {
         const px = phStartX + i * (phW + phGap);
-        const phH = 290;
 
-        // Card
-        ctx.fillStyle = C.bgSoft;
-        rr(ctx, px, curY, phW, phH, 12);
-        ctx.fill();
-        ctx.strokeStyle = C.border;
-        ctx.lineWidth = 1.5;
-        rr(ctx, px, curY, phW, phH, 12);
-        ctx.stroke();
+        ctx3.fillStyle = C.bgSoft;
+        rr(ctx3, px, y, phW, phH, 12); ctx3.fill();
+        ctx3.strokeStyle = C.border; ctx3.lineWidth = 1;
+        rr(ctx3, px, y, phW, phH, 12); ctx3.stroke();
 
-        // Top blue gradient bar
-        const phBar = ctx.createLinearGradient(px, curY, px + phW, curY);
+        // Top bar
+        const phBar = ctx3.createLinearGradient(px, y, px + phW, y);
         phBar.addColorStop(0, C.navy); phBar.addColorStop(1, C.navyLight);
-        ctx.fillStyle = phBar;
-        rr(ctx, px, curY, phW, 6, 2);
-        ctx.fill();
+        ctx3.fillStyle = phBar;
+        rr(ctx3, px, y, phW, 6, 2); ctx3.fill();
 
-        // Phase name - larger
-        ctx.fillStyle = C.navy;
-        ctx.font = "700 26px 'DM Serif Display', serif";
-        ctx.fillText(ph.name, px + 20, curY + 44);
+        ctx3.fillStyle = C.navy;
+        ctx3.font = "700 24px 'DM Serif Display', serif";
+        ctx3.fillText(ph.name, px + 18, y + 40);
+        ctx3.fillStyle = C.gold;
+        ctx3.font = "600 12px 'JetBrains Mono', monospace";
+        ctx3.fillText(ph.days, px + 18, y + 60);
 
-        ctx.fillStyle = C.gold;
-        ctx.font = "600 12px 'JetBrains Mono', monospace";
-        ctx.fillText(ph.days, px + 20, curY + 66);
-
-        // Activities - larger with more spacing
         ph.activities.forEach((a, ai) => {
-          const ay = curY + 96 + ai * 30;
-          ctx.fillStyle = C.navyLight;
-          ctx.beginPath(); ctx.arc(px + 30, ay - 4, 4, 0, Math.PI * 2); ctx.fill();
-          ctx.fillStyle = C.textMuted;
-          ctx.font = "400 14px 'Inter', sans-serif";
-          ctx.fillText(a, px + 44, ay);
+          const ay = y + 86 + ai * 28;
+          ctx3.fillStyle = C.navyLight;
+          ctx3.beginPath(); ctx3.arc(px + 28, ay - 4, 4, 0, Math.PI * 2); ctx3.fill();
+          ctx3.fillStyle = C.textMuted;
+          ctx3.font = "400 14px 'Inter', sans-serif";
+          ctx3.fillText(a, px + 42, ay);
         });
 
-        // Output box - more spacing
-        const outY = curY + phH - 66;
-        ctx.fillStyle = C.goldBg;
-        rr(ctx, px + 14, outY, phW - 28, 50, 8); ctx.fill();
-        ctx.strokeStyle = C.gold + "40";
-        rr(ctx, px + 14, outY, phW - 28, 50, 8); ctx.stroke();
-        ctx.fillStyle = C.gold;
-        ctx.font = "700 11px 'JetBrains Mono', monospace";
-        ctx.fillText("\u2192 OUTPUT", px + 26, outY + 18);
-        ctx.fillStyle = C.text;
-        ctx.font = "italic 13px 'Inter', sans-serif";
-        wrap(ctx, ph.output, px + 26, outY + 38, phW - 56, 16, 1);
+        const outY = y + phH - 60;
+        ctx3.fillStyle = C.goldBg;
+        rr(ctx3, px + 12, outY, phW - 24, 46, 8); ctx3.fill();
+        ctx3.strokeStyle = C.gold + "40";
+        rr(ctx3, px + 12, outY, phW - 24, 46, 8); ctx3.stroke();
+        ctx3.fillStyle = C.gold;
+        ctx3.font = "700 11px 'JetBrains Mono', monospace";
+        ctx3.fillText("→ OUTPUT", px + 24, outY + 18);
+        ctx3.fillStyle = C.text;
+        ctx3.font = "italic 13px 'Inter', sans-serif";
+        wrap(ctx3, ph.output, px + 24, outY + 36, phW - 52, 16, 1);
       });
 
       // Connecting arrows
-      ctx.lineWidth = 2.5;
-      ctx.strokeStyle = C.navy;
+      ctx3.lineWidth = 2.5; ctx3.strokeStyle = C.navy;
       for (let i = 0; i < 2; i++) {
         const ax = phStartX + (i + 1) * phW + i * phGap + phGap / 2;
-        const ay = curY + 40;
-        ctx.beginPath(); ctx.moveTo(ax - 12, ay); ctx.lineTo(ax + 12, ay);
-        ctx.moveTo(ax + 6, ay - 6); ctx.lineTo(ax + 12, ay); ctx.lineTo(ax + 6, ay + 6);
-        ctx.stroke();
+        const ay = y + 38;
+        ctx3.beginPath(); ctx3.moveTo(ax - 12, ay); ctx3.lineTo(ax + 12, ay);
+        ctx3.moveTo(ax + 6, ay - 6); ctx3.lineTo(ax + 12, ay); ctx3.lineTo(ax + 6, ay + 6);
+        ctx3.stroke();
       }
 
-      curY += 330;
-      addPageBreak(curY - 10);
+      y += phH + 36;
 
-      /* ══════════════ 4 LEADERSHIP ASKS ══════════════ */
-      drawGoldDivider(ctx, W, curY - 6);
-      curY += 24;
-      drawSectionLabel(ctx, W, curY, "YOUR 4 LEADERSHIP ASKS");
+      // GovTech Support section
+      drawGoldDivider(ctx3, W, y);
+      y += 28;
+      drawSectionLabel(ctx3, W, y, "HOW GOVTECH CAN SUPPORT YOU");
+      y += 38;
 
-      curY += 32;
-
-      const asks = [
-        { num: "01", title: "Participate", desc: "Show up for at least one sprint. Learn alongside your officers.", emoji: "\uD83D\uDC41\uFE0F" },
-        { num: "02", title: "Protect Time", desc: "Shield sprint time from BAU. Experimentation dies when it competes.", emoji: "\uD83D\uDEE1\uFE0F" },
-        { num: "03", title: "Nominate AI Lead", desc: "One DD-level champion who drives engagement and organises sprints.", emoji: "\uD83D\uDC64" },
-        { num: "04", title: "Permission to Fail", desc: "Signal that honest attempts are valued more than perfect execution.", emoji: "\u2764\uFE0F" },
+      const supports = [
+        { title: "Proven Model", desc: "A tested sprint framework that has delivered 73 AI solutions across multiple agencies.", emoji: "🏗️" },
+        { title: "Peer-to-Peer Support", desc: "Connect your officers with peers who've already built AI solutions in government.", emoji: "🤝" },
+        { title: "Ecosystem for Scaling", desc: "Access to AI tools, platforms, and technical expertise to move from prototype to production.", emoji: "🚀" },
+        { title: "Measurement Framework", desc: "Dashboards to track your agency's AI-First progress, confidence, and measurable outcomes.", emoji: "📊" },
       ];
 
-      const askW = (W - 100 - 24) / 2;
-      asks.forEach((a, i) => {
+      const supW = (W - 100 - 24) / 2;
+      supports.forEach((s, i) => {
         const col = i % 2;
         const row = Math.floor(i / 2);
-        const ax = 50 + col * (askW + 24);
-        const ay = curY + row * 110;
+        const sx = 50 + col * (supW + 24);
+        const sy = y + row * 120;
 
-        // Card
-        ctx.fillStyle = C.bgSoft;
-        rr(ctx, ax, ay, askW, 95, 12);
-        ctx.fill();
-        ctx.strokeStyle = C.border;
-        ctx.lineWidth = 1.5;
-        rr(ctx, ax, ay, askW, 95, 12);
-        ctx.stroke();
+        ctx3.fillStyle = C.bgSoft;
+        rr(ctx3, sx, sy, supW, 106, 10); ctx3.fill();
+        ctx3.strokeStyle = C.border; ctx3.lineWidth = 1;
+        rr(ctx3, sx, sy, supW, 106, 10); ctx3.stroke();
 
-        // Blue left accent
-        const askBar = ctx.createLinearGradient(ax, ay, ax, ay + 95);
-        askBar.addColorStop(0, C.gold); askBar.addColorStop(1, C.goldDim);
-        ctx.fillStyle = askBar;
-        rr(ctx, ax, ay + 10, 5, 75, 3);
-        ctx.fill();
+        // Gold left accent
+        const sg = ctx3.createLinearGradient(sx, sy, sx, sy + 106);
+        sg.addColorStop(0, C.gold); sg.addColorStop(1, C.goldDim);
+        ctx3.fillStyle = sg;
+        rr(ctx3, sx, sy + 10, 5, 86, 3); ctx3.fill();
 
-        // Number circle
-        ctx.fillStyle = C.navy;
-        ctx.beginPath(); ctx.arc(ax + 38, ay + 47, 20, 0, Math.PI * 2); ctx.fill();
-        ctx.fillStyle = "#FFFFFF";
-        ctx.font = "700 14px 'JetBrains Mono', monospace";
-        ctx.textAlign = "center";
-        ctx.fillText(a.num, ax + 38, ay + 52);
-        ctx.textAlign = "left";
+        ctx3.font = "400 24px sans-serif";
+        ctx3.fillText(s.emoji, sx + 22, sy + 40);
 
-        // Title - larger
-        ctx.fillStyle = C.navy;
-        ctx.font = "600 22px 'DM Serif Display', serif";
-        ctx.fillText(a.title, ax + 68, ay + 40);
-        ctx.fillStyle = C.textMuted;
-        ctx.font = "400 13px 'Inter', sans-serif";
-        wrap(ctx, a.desc, ax + 68, ay + 62, askW - 90, 18, 2);
+        ctx3.fillStyle = C.navy;
+        ctx3.font = "700 20px 'DM Serif Display', serif";
+        ctx3.fillText(s.title, sx + 56, sy + 38);
+
+        ctx3.fillStyle = C.textMuted;
+        ctx3.font = "400 13px 'Inter', sans-serif";
+        wrap(ctx3, s.desc, sx + 56, sy + 60, supW - 76, 19, 3);
       });
 
-      curY += 260;
-      addPageBreak(curY - 10);
+      y += 270;
 
-      /* ══════════════ QUOTE ══════════════ */
-      ctx.fillStyle = C.goldBg;
-      rr(ctx, 50, curY, W - 100, 120, 16); ctx.fill();
-      ctx.strokeStyle = C.gold + "40";
-      ctx.lineWidth = 1.5;
-      rr(ctx, 50, curY, W - 100, 120, 16); ctx.stroke();
+      // Closing quote
+      ctx3.fillStyle = C.goldBg;
+      rr(ctx3, 50, y, W - 100, 110, 14); ctx3.fill();
+      ctx3.strokeStyle = C.gold + "40"; ctx3.lineWidth = 1.5;
+      rr(ctx3, 50, y, W - 100, 110, 14); ctx3.stroke();
 
-      // Gold bar
-      ctx.fillStyle = C.gold;
-      rr(ctx, 50, curY + 14, 6, 92, 3); ctx.fill();
+      ctx3.fillStyle = C.gold;
+      rr(ctx3, 50, y + 12, 5, 86, 3); ctx3.fill();
 
-      // Quote mark
-      ctx.fillStyle = C.gold + "50";
-      ctx.font = "italic 700 86px 'DM Serif Display', serif";
-      ctx.fillText("\u201C", 72, curY + 60);
+      ctx3.fillStyle = C.gold + "40";
+      ctx3.font = "italic 700 72px 'DM Serif Display', serif";
+      ctx3.fillText(""", 68, y + 52);
 
-      ctx.fillStyle = C.text;
-      ctx.font = "italic 18px 'Inter', sans-serif";
-      ctx.textAlign = "center";
-      wrap(ctx, "The best public service in the world does not wait to be told it is falling behind. It decides to stay ahead.", W / 2, curY + 48, W - 200, 26, 2);
+      ctx3.fillStyle = C.text;
+      ctx3.font = "italic 17px 'Inter', sans-serif";
+      ctx3.textAlign = "center";
+      wrap(ctx3, "The best public service in the world does not wait to be told it is falling behind. It decides to stay ahead.", W / 2, y + 42, W - 200, 24, 2);
 
-      ctx.fillStyle = C.goldDim;
-      ctx.font = "600 12px 'JetBrains Mono', monospace";
-      ctx.fillText("\u2014 Bernard Toh, DCE Strategy, Corporate & Governance, GovTech", W / 2, curY + 104);
-      ctx.textAlign = "left";
+      ctx3.fillStyle = C.goldDim;
+      ctx3.font = "600 11px 'JetBrains Mono', monospace";
+      ctx3.fillText("— Bernard Toh, DCE Strategy, Corporate & Governance, GovTech", W / 2, y + 96);
+      ctx3.textAlign = "left";
 
-      curY += 150;
-      addPageBreak(curY - 10);
+      drawFooter(ctx3, W, PAGE_H, 3, totalPages);
 
-      /* ══════════════ FOOTER BAR ══════════════ */
-      drawGoldDivider(ctx, W, curY);
-      curY += 20;
-      ctx.fillStyle = C.gold;
-      ctx.fillRect(0, curY, W, 5);
-      ctx.textAlign = "left";
-
-      /* ── Export PDF ── */
-      const finalH = curY + 5;
-
+      /* ── Export to PDF ── */
       const pdfW = 210;
-      const footerY = 292;
-      const pageContentMm = 286;
+      const pdfH = 297;
+      const pdf = new jsPDF({ orientation: "p", unit: "mm", format: "a4", compress: false, precision: 16 });
 
-      const pdf = new jsPDF({
-        orientation: "p",
-        unit: "mm",
-        format: "a4",
-        compress: false,
-        precision: 16,
-      });
-
-      const pxPerMm = (W * scale) / pdfW;
-      const nominalPageHeightPx = Math.floor(pageContentMm * pxPerMm);
-      const finalPxHeight = finalH * scale;
-      const breakpointsPx = [...new Set(sectionBreaks
-        .map((y) => y * scale)
-        .filter((y) => y > 0 && y < finalPxHeight)
-        .map((y) => Math.floor(y)))].sort((a, b) => a - b);
-
-      const slices: Array<{ start: number; end: number }> = [];
-      let sourceY = 0;
-
-      while (sourceY < finalPxHeight) {
-        const idealEnd = Math.min(sourceY + nominalPageHeightPx, finalPxHeight);
-        const minBreak = Math.min(finalPxHeight, sourceY + Math.floor(nominalPageHeightPx * 0.62));
-
-        const breakBeforeIdeal = breakpointsPx
-          .filter((breakY) => breakY > minBreak && breakY <= idealEnd)
-          .pop();
-
-        const sliceEnd = breakBeforeIdeal ?? idealEnd;
-        slices.push({ start: sourceY, end: sliceEnd });
-        sourceY = sliceEnd;
-      }
-
-      const totalPages = slices.length;
-
-      slices.forEach((slice, pageIndex) => {
-        if (pageIndex > 0) pdf.addPage();
-
-        const sliceH = Math.max(1, slice.end - slice.start);
-        const pageCanvas = document.createElement("canvas");
-        pageCanvas.width = W * scale;
-        pageCanvas.height = sliceH;
-        const pCtx = pageCanvas.getContext("2d")!;
-        pCtx.imageSmoothingEnabled = true;
-        pCtx.imageSmoothingQuality = "high";
-        pCtx.drawImage(canvas, 0, slice.start, W * scale, sliceH, 0, 0, W * scale, sliceH);
-
-        const pageImg = pageCanvas.toDataURL("image/png", 1.0);
-        const sliceMm = sliceH / pxPerMm;
-        pdf.addImage(pageImg, "PNG", 0, 0, pdfW, sliceMm, undefined, "NONE");
-
-        pdf.setDrawColor(210, 214, 220);
-        pdf.setLineWidth(0.2);
-        pdf.line(12, 287.5, 198, 287.5);
-
-        pdf.setFont("helvetica", "normal");
-        pdf.setFontSize(9);
-        pdf.setTextColor(120, 125, 132);
-        pdf.text(
-          `© 2026 Government Technology Agency of Singapore  •  Page ${pageIndex + 1} of ${totalPages}`,
-          105,
-          footerY,
-          { align: "center" }
-        );
+      [c1, c2, c3].forEach((c, i) => {
+        if (i > 0) pdf.addPage();
+        const img = c.toDataURL("image/png", 1.0);
+        pdf.addImage(img, "PNG", 0, 0, pdfW, pdfH, undefined, "NONE");
       });
 
       pdf.save("AI-First-Playbook-Executive-Brief.pdf");
@@ -657,13 +548,13 @@ const PlaybookInfographic = () => {
           style={{ background: "radial-gradient(circle at top right, hsl(var(--coral) / 0.6), transparent 70%)" }} />
         <div className="relative">
           <div className="font-mono text-xs tracking-[0.2em] uppercase text-gold-dim mb-3">
-            {"\u23F1"} 3-Minute Executive Brief
+            ⏱ 3-Minute Executive Brief
           </div>
           <h3 className="font-display text-2xl md:text-3xl text-foreground mb-3">
             Playbook at a Glance
           </h3>
           <p className="font-body text-sm text-muted-foreground mb-6 max-w-xl">
-            Download a visual summary as PDF {"\u2014"} all 8 chapters, the 7 cultural non-negotiables, 90-day sprint framework, and 4 leadership asks. Designed for busy executives.
+            Download a visual summary as PDF — all 8 chapters, the 7 cultural non-negotiables, 90-day sprint framework, and how GovTech can support. Designed for busy executives.
           </p>
           <button
             onClick={download}
@@ -671,7 +562,7 @@ const PlaybookInfographic = () => {
             className="inline-flex items-center gap-2 gradient-gold-bg text-white font-mono text-xs tracking-[0.15em] uppercase px-6 py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-60"
           >
             {generating ? (
-              <><Loader2 className="w-4 h-4 animate-spin" />Generating PDF{"\u2026"}</>
+              <><Loader2 className="w-4 h-4 animate-spin" />Generating PDF…</>
             ) : (
               <><Download className="w-4 h-4" />Download Executive Brief (PDF)</>
             )}
