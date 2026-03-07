@@ -518,12 +518,12 @@ const PlaybookInfographic = () => {
       /* ── Export to PDF ── */
       const pdfW = 210;
       const pdfH = 297;
-      const pdf = new jsPDF({ orientation: "p", unit: "mm", format: "a4", compress: false, precision: 16 });
+      const pdf = new jsPDF({ orientation: "p", unit: "mm", format: "a4", compress: true });
 
       [c1, c2, c3].forEach((c, i) => {
         if (i > 0) pdf.addPage();
-        const img = c.toDataURL("image/png", 1.0);
-        pdf.addImage(img, "PNG", 0, 0, pdfW, pdfH, undefined, "NONE");
+        const img = c.toDataURL("image/jpeg", 0.85);
+        pdf.addImage(img, "JPEG", 0, 0, pdfW, pdfH, undefined, "FAST");
       });
 
       pdf.save("AI-First-Playbook-Executive-Brief.pdf");
