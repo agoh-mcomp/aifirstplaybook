@@ -571,27 +571,57 @@ const PlaybookInfographic = () => {
       trimmed.width = W * scale;
       trimmed.height = finalH * scale;
       const tCtx = trimmed.getContext("2d")!;
+      tCtx.imageSmoothingEnabled = true;
+      tCtx.imageSmoothingQuality = "high";
       tCtx.drawImage(canvas, 0, 0, W * scale, finalH * scale, 0, 0, W * scale, finalH * scale);
 
       const pdfW = 210;
       const pdfH = 297;
-      const pdf = new jsPDF("p", "mm", "a4");
+      const pdf = new jsPDF({
+        orientation: "p",
+        unit: "mm",
+        format: "a4",
+        compress: false,
+        precision: 16,
+      });
       const pxPerMm = (W * scale) / pdfW;
-      const pageHeightPx = Math.floor(pdfH * pxPerMm);
-      const totalPages = Math.ceil((finalH * scale) / pageHeightPx);
+      const nominalPageHeightPx = Math.floor(pdfH * pxPerMm);
+      const finalPxHeight = finalH * scale;
+      const breakpointsPx = [...new Set(sectionBreaks
+        .map((y) => y * scale)
+        .filter((y) => y > 0 && y < finalPxHeight)
+        .map((y) => Math.floor(y)))].sort((a, b) => a - b);
 
-      for (let page = 0; page < totalPages; page++) {
-        if (page > 0) pdf.addPage();
-        const sourceY = page * pageHeightPx;
-        const sliceH = Math.min(pageHeightPx, finalH * scale - sourceY);
+      let sourceY = 0;
+      let pageIndex = 0;
+
+      while (sourceY < finalPxHeight) {
+        if (pageIndex > 0) pdf.addPage();
+
+        const idealEnd = Math.min(sourceY + nominalPageHeightPx, finalPxHeight);
+        const minBreak = Math.min(finalPxHeight, sourceY + Math.floor(nominalPageHeightPx * 0.62));
+
+        const breakBeforeIdeal = breakpointsPx
+          .filter((breakY) => breakY > minBreak && breakY <= idealEnd)
+          .pop();
+
+        const sliceEnd = breakBeforeIdeal ?? idealEnd;
+        const sliceH = Math.max(1, sliceEnd - sourceY);
+
         const pageCanvas = document.createElement("canvas");
         pageCanvas.width = W * scale;
         pageCanvas.height = sliceH;
         const pCtx = pageCanvas.getContext("2d")!;
+        pCtx.imageSmoothingEnabled = true;
+        pCtx.imageSmoothingQuality = "high";
         pCtx.drawImage(trimmed, 0, sourceY, W * scale, sliceH, 0, 0, W * scale, sliceH);
-        const pageImg = pageCanvas.toDataURL("image/png");
-        const sliceMm = Math.min(pdfH, sliceH / pxPerMm);
-        pdf.addImage(pageImg, "PNG", 0, 0, pdfW, sliceMm, undefined, "NONE");
+
+        const pageImg = pageCanvas.toDataURL("image/png", 1.0);
+        const sliceMm = sliceH / pxPerMm;
+        pdf.addImage(pageImg, "PNG", 0, 0, pdfW, sliceMm, undefined, "SLOW");
+
+        sourceY = sliceEnd;
+        pageIndex += 1;
       }
 
       pdf.save("AI-First-Playbook-Executive-Brief.pdf");
