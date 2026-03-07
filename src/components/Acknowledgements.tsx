@@ -15,20 +15,12 @@ interface AckBlockProps {
 }
 
 const AckBlock = ({ label, names, note, delay = 0 }: AckBlockProps) => (
-  <motion.div
-    {...fadeUp}
-    transition={{ duration: 0.6, delay }}
-    className="text-center space-y-3"
-  >
+  <motion.div {...fadeUp} transition={{ duration: 0.6, delay }} className="text-center space-y-3">
     <span className="inline-block font-mono text-[11px] tracking-[0.2em] uppercase text-gold-dim bg-gold/10 border border-gold/20 px-4 py-1.5 rounded-full">
       {label}
     </span>
-    <p className="font-display text-xl md:text-2xl text-foreground leading-relaxed whitespace-pre-line">
-      {names}
-    </p>
-    <p className="font-body text-sm md:text-base text-muted-foreground italic max-w-lg mx-auto">
-      {note}
-    </p>
+    <p className="font-display text-xl md:text-2xl text-foreground leading-relaxed whitespace-pre-line">{names}</p>
+    <p className="font-body text-sm md:text-base text-muted-foreground italic max-w-lg mx-auto">{note}</p>
   </motion.div>
 );
 
@@ -40,11 +32,11 @@ const Acknowledgements = () => {
         <motion.div {...fadeUp} className="text-center space-y-6">
           <h2 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
             With Gratitude
-            <br />
-            & Deep Thanks
+            <br />& Deep Thanks
           </h2>
           <p className="font-body text-base md:text-lg text-muted-foreground italic max-w-xl mx-auto">
-            This playbook was built in the trenches — from 90 days of high energy — by a team that chose to believe something different was possible.
+            This playbook was built in the trenches from 90 days of high energy, by a team that chose to believe
+            something different was possible.
           </p>
         </motion.div>
 
@@ -78,7 +70,9 @@ const Acknowledgements = () => {
         {/* Working Group */}
         <AckBlock
           label="AI-First Working Group"
-          names={"Adrian Goh  ·  Elise Lee  ·  Bertram Lim  ·  Jackson Wong\nChen Weijun  ·  Alyssa Goh  ·  Debbie Yosh  ·  Jade Lee  ·  Nicole Goh"}
+          names={
+            "Adrian Goh  ·  Elise Lee  ·  Bertram Lim  ·  Jackson Wong\nChen Weijun  ·  Alyssa Goh  ·  Debbie Yosh  ·  Jade Lee  ·  Nicole Goh"
+          }
           note="For steering, building, and bringing the AI-First initiative to life through every sprint."
           delay={0.2}
         />
@@ -111,7 +105,8 @@ const Acknowledgements = () => {
             Our Leaders & Every SCG Officer
           </span>
           <p className="font-body text-base md:text-lg text-foreground italic max-w-xl mx-auto leading-relaxed">
-            To our leaders in SCG and to every SCG team member who raised their hand, showed up to participate in a sprint, built their first solution, and made SCG AI-First a reality.
+            To our leaders in SCG and to every SCG team member who raised their hand, showed up to participate in a
+            sprint, built their first solution, and made SCG AI-First a reality.
           </p>
         </motion.div>
       </div>
