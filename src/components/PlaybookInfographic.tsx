@@ -182,7 +182,7 @@ const PlaybookInfographic = () => {
       ctx1.fillText("Your Agency. Transformed.", W / 2, y);
 
       ctx1.fillStyle = C.textMuted;
-      ctx1.font = "400 18px 'Inter', sans-serif";
+      ctx1.font = "400 20px 'Inter', sans-serif";
       ctx1.fillText("A practical guide for leaders ready to move from AI-curious to AI-first.", W / 2, y + 42);
       ctx1.textAlign = "left";
 
@@ -272,8 +272,8 @@ const PlaybookInfographic = () => {
 
         // Insight
         ctx1.fillStyle = C.textMuted;
-        ctx1.font = "400 14px 'Inter', sans-serif";
-        wrap(ctx1, ch.insight, cx + 18, cy + 64, cardW - 36, 20, 4);
+        ctx1.font = "400 16px 'Inter', sans-serif";
+        wrap(ctx1, ch.insight, cx + 18, cy + 64, cardW - 36, 22, 4);
       });
 
       drawFooter(ctx1, W, PAGE_H, 1, totalPages);
@@ -285,7 +285,7 @@ const PlaybookInfographic = () => {
       drawSectionLabel(ctx2, W, y, "THE 7 CULTURAL NON-NEGOTIABLES");
       y += 30;
       ctx2.fillStyle = C.textMuted;
-      ctx2.font = "italic 16px 'Inter', sans-serif";
+      ctx2.font = "italic 18px 'Inter', sans-serif";
       ctx2.textAlign = "center";
       ctx2.fillText("The conditions that separate agencies that transform from those that merely experiment.", W / 2, y);
       ctx2.textAlign = "left";
@@ -344,7 +344,7 @@ const PlaybookInfographic = () => {
 
         // Description
         ctx2.fillStyle = C.textMuted;
-        ctx2.font = "400 14px 'Inter', sans-serif";
+        ctx2.font = "400 16px 'Inter', sans-serif";
         ctx2.fillText(nn.desc, nnX + 96, nnY + 58);
 
         // Example in gold box
@@ -354,8 +354,8 @@ const PlaybookInfographic = () => {
         rr(ctx2, nnX + 90, nnY + 74, nnW - 110, 42, 6); ctx2.stroke();
 
         ctx2.fillStyle = C.goldDim;
-        ctx2.font = "italic 13px 'Inter', sans-serif";
-        wrap(ctx2, nn.example, nnX + 104, nnY + 94, nnW - 140, 18, 2);
+        ctx2.font = "italic 14px 'Inter', sans-serif";
+        wrap(ctx2, nn.example, nnX + 104, nnY + 94, nnW - 140, 20, 2);
       });
 
       drawFooter(ctx2, W, PAGE_H, 2, totalPages);
@@ -416,7 +416,7 @@ const PlaybookInfographic = () => {
           ctx3.fillStyle = C.navyLight;
           ctx3.beginPath(); ctx3.arc(px + 28, ay - 4, 4, 0, Math.PI * 2); ctx3.fill();
           ctx3.fillStyle = C.textMuted;
-          ctx3.font = "400 14px 'Inter', sans-serif";
+          ctx3.font = "400 16px 'Inter', sans-serif";
           ctx3.fillText(a, px + 42, ay);
         });
 
@@ -429,8 +429,8 @@ const PlaybookInfographic = () => {
         ctx3.font = "700 11px 'JetBrains Mono', monospace";
         ctx3.fillText("→ OUTPUT", px + 24, outY + 18);
         ctx3.fillStyle = C.text;
-        ctx3.font = "italic 13px 'Inter', sans-serif";
-        wrap(ctx3, ph.output, px + 24, outY + 36, phW - 52, 16, 1);
+        ctx3.font = "italic 14px 'Inter', sans-serif";
+        wrap(ctx3, ph.output, px + 24, outY + 36, phW - 52, 18, 1);
       });
 
       // Connecting arrows
@@ -484,8 +484,8 @@ const PlaybookInfographic = () => {
         ctx3.fillText(s.title, sx + 56, sy + 38);
 
         ctx3.fillStyle = C.textMuted;
-        ctx3.font = "400 13px 'Inter', sans-serif";
-        wrap(ctx3, s.desc, sx + 56, sy + 60, supW - 76, 19, 3);
+        ctx3.font = "400 15px 'Inter', sans-serif";
+        wrap(ctx3, s.desc, sx + 56, sy + 60, supW - 76, 21, 3);
       });
 
       y += 270;
