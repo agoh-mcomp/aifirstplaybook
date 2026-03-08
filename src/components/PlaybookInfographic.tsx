@@ -28,13 +28,13 @@ const chapters = [
     num: "01",
     title: "Why Now",
     insight:
-      "The window for managed transformation is narrowing. \n What's in It for Agencies ? \n" +
+      "The window for deliberate,  managed transformation is narrowing. What's in It for Agencies ?"
       "1. Time back for meaningful work 2. A confident, capable workforce 3. Solutions built by the people who live with the problems",
   },
   {
     num: "02",
     title: "The Vision",
-    insight: "AI-First is a mindset: 'Can AI augment my thinking, speed up my work, and help me solve problems?'",
+    insight: "AI-First is a mindset: 'Can AI augment my thinking, speed up my work, and help me solve problems?' What Good Looks Like - 1. Augmented Expertise 2. User Empowerment 3. Compressed Cycle Times 4. Culture of Learning",
   },
   {
     num: "03",
