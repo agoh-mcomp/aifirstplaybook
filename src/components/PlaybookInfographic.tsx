@@ -55,7 +55,7 @@ const chapters = [
     title: "The Methodology",
     insight:
       "Three monthly sprints over 90 days. What made it work: " +
-      "1) Real problems, not exercises · 2) Protected time away from BAU · 3) Expert support on tap · 4) Progressive complexity across sprints · 5) Demo Days for peer proof points.",
+      "1) Leadership as participant, not cheerleader · 2) Start with real pain, not technology · 3) Protected time and structured space · 4) An ecosystem of support · 5) Celebrate learning, not just winning.",
   },
   {
     num: "06",
