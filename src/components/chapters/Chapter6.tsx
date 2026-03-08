@@ -26,7 +26,7 @@ const Chapter6 = () => (
         {[
           {
             check: "Leadership commitment",
-            detail: "The Head of Agency has agreed to protect sprint time and participates visibly not just endorse.",
+            detail: "The Head of Agency has agreed to protect sprint time and participates visibly — not just endorses.",
           },
           { check: "Nominated AI Lead", detail: "One DD-level (or above) who owns and champions the initiative." },
           {

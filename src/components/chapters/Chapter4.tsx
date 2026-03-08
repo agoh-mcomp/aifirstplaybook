@@ -42,7 +42,7 @@ const Chapter4 = () => (
         {
           num: "05",
           title: "Peer Proof Points as Inspiration",
-          text: 'Officers need to see people like them succeed and draw inspiration for ideas. Their peers in HR, Finance, Procurement — people who had also called themselves "not technical" showing what they built and the tangible benefits they have derived.',
+          text: 'Officers need to see people like them succeed and draw inspiration for ideas. Their peers in HR, Finance, Procurement — people who had also called themselves "not technical" — showing what they built and the tangible benefits they have derived.',
           icon: "🤝",
         },
         {
