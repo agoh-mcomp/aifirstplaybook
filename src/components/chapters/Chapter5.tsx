@@ -11,9 +11,9 @@ import aiClinicsEdmImg from "@/assets/ai-clinics-edm.jpg";
 const Chapter5 = () => (
   <ChapterContent num="Chapter 05" arc="The Guide Appears" title="The Methodology">
     <p>
-      In July 2025, GovTech's Strategy, Corporate and Governance cluster kicked off "AI-First", an initiative to move
-      from AI being something people were curious about to something they <em className="italic text-gold-dim">did</em>.
-      The premise was simple: an internal survey revealed SCG officers spent close to{" "}
+      In July 2025, GovTech's Strategy, Corporate and Governance Group kicked off "AI-First", an initiative to move from
+      AI being something people were curious about to something they <em className="italic text-gold-dim">did</em>. The
+      premise was simple: an internal survey revealed SCG officers spent close to{" "}
       <span className="text-gold">three days a week</span> on repetitive, low-value tasks.
     </p>
     <p>
