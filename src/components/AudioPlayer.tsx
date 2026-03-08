@@ -59,15 +59,18 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
 
   // Close voice menu on outside click
   useEffect(() => {
-    if (!showVoiceMenu) return;
+    if (!showVoiceMenu && !showSpeedMenu) return;
     const handler = (e: MouseEvent) => {
-      if (voiceMenuRef.current && !voiceMenuRef.current.contains(e.target as Node)) {
+      if (showVoiceMenu && voiceMenuRef.current && !voiceMenuRef.current.contains(e.target as Node)) {
         setShowVoiceMenu(false);
+      }
+      if (showSpeedMenu && speedMenuRef.current && !speedMenuRef.current.contains(e.target as Node)) {
+        setShowSpeedMenu(false);
       }
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
-  }, [showVoiceMenu]);
+  }, [showVoiceMenu, showSpeedMenu]);
 
   const selectedVoice = voices.find(v => v.voiceURI === selectedVoiceURI) || null;
 
