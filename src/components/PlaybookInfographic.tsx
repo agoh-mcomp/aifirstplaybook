@@ -63,7 +63,7 @@ const chapters = [
     title: "How Do I Start?",
     insight:
       "A practical 90-day model your agency owns. Four success tests: " +
-      "1) Ownership - playbook authored by agency · 2) Sustainability — teams continue without hand-holding · 3) Confidence — measurable shift · 4) Impact — solutions adopted beyond sprint.",
+      "1) Ownership - playbook authored by agency · 2) Sustainability - teams continue without hand-holding · 3) Confidence - measurable shift · 4) Impact - solutions adopted beyond sprint.",
   },
   {
     num: "07",
