@@ -22,7 +22,9 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [selectedVoiceURI, setSelectedVoiceURI] = useState<string>("");
   const [showVoiceMenu, setShowVoiceMenu] = useState(false);
+  const [showSpeedMenu, setShowSpeedMenu] = useState(false);
   const voiceMenuRef = useRef<HTMLDivElement>(null);
+  const speedMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!window.speechSynthesis) {
