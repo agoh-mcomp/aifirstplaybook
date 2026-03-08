@@ -74,7 +74,7 @@ const Foreword = () => {
           ))}
         </div>
 
-        <p>We've tested this. It works. GovTech is ready to walk alongside your agency but it begins with you.</p>
+        <p>We've tested this. It works. GovTech is ready to walk alongside your agency, but it begins with you.</p>
 
         <motion.p
           initial={{ opacity: 0 }}

@@ -87,7 +87,7 @@ const Chapter3 = () => (
     />
 
     <QuoteBlock
-      quote="It is easy to learn! The toughest part is breaking that inertia"
+      quote="It is easy to learn! The toughest part is breaking that inertia."
       attribution="People & Org Officer, GovTech"
     />
     <DualAudienceBlock
