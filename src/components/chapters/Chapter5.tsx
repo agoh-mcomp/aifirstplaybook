@@ -68,7 +68,7 @@ const Chapter5 = () => (
           {
             num: "04",
             title: "An ecosystem of support.",
-            text: "AI clinics, workshops, Slack channels, expert access from GovTech's CIO Office and AI Practice. Without them, teams would have hit walls and giving up.",
+            text: "AI clinics, workshops, Slack channels, expert access from GovTech's CIO Office and AI Practice. Without them, teams would have hit walls and given up.",
             icon: HandshakeIcon,
           },
           {
