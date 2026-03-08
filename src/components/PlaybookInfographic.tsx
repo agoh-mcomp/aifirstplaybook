@@ -48,7 +48,8 @@ const chapters = [
   {
     num: "04",
     title: "Cultural Prerequisites",
-    insight: "Seven non-negotiable conditions: 1) Leadership Modeling · 2) Permission to Invest Time · 3) Reward Learning & Risk · 4) Start with Problems · 5) Peer Proof Points · 6) Sustained Engagement · 7) Pragmatic Data Classification.",
+    insight:
+      "Seven non-negotiable conditions: 1) Leadership Modeling · 2) Permission to Invest Time · 3) Reward Learning & Risk · 4) Start with Problems · 5) Peer Proof Points · 6) Sustained Engagement · 7) Pragmatic Data Classification.",
   },
   {
     num: "05",
@@ -62,7 +63,7 @@ const chapters = [
     title: "How Do I Start?",
     insight:
       "A practical 90-day model your agency owns. Four success tests: " +
-      "1) Ownership — playbook authored by the agency · 2) Sustainability — officers continue without hand-holding · 3) Confidence — measurable capability shift · 4) Impact — solutions adopted beyond the sprint.",
+      "1) Ownership - playbook authored by agency · 2) Sustainability — teams continue without hand-holding · 3) Confidence — measurable shift · 4) Impact — solutions adopted beyond sprint.",
   },
   {
     num: "07",
