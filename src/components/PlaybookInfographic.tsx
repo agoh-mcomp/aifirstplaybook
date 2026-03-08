@@ -381,7 +381,7 @@ const PlaybookInfographic = () => {
       // 3 phase cards
       const phases = [
         { name: "Discovery", days: "Day 1–30", activities: ["Run discovery survey", "Identify pain points", "Map AI opportunities", "Leadership kickoff"], output: "Prioritised problem list + team formation" },
-        { name: "Build", days: "Day 31–60", activities: ["Hands-on workshops", "AI clinics & mentoring", "Prototype with real data", "Iterate with users"], output: "Working prototypes solving real problems" },
+        { name: "Build", days: "Day 31–60", activities: ["Hands-on workshops", "AI clinics & mentoring", "Build prototype and deploy", "Iterate with users"], output: "Working prototypes solving real problems" },
         { name: "Showcase", days: "Day 61–90", activities: ["Demo Day presentations", "Measure impact", "Document learnings", "Plan deployment & scale"], output: "Proven solutions + agency playbook" },
       ];
 
