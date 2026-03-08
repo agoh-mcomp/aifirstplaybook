@@ -40,7 +40,7 @@ const Chapter2 = () => (
           },
           {
             header: "Compressed Cycle Times",
-            text: "A dramatically reduced cycle time from problem to prototype to deployment from months or years, to days or hours",
+            text: "A dramatically reduced cycle time from problem to prototype to deployment — from months or years, to days or hours",
             icon: Timer,
           },
           {

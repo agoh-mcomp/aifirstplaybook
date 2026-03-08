@@ -30,7 +30,7 @@ const Chapter4 = () => (
         {
           num: "03",
           title: "Reward Learning and Risk-Taking",
-          text: "Experimentation must be celebrated even when solutions don't scale. Showcase attempts, lessons learned, and creative approaches not just finished products to signal that learning is the goal.",
+          text: "Experimentation must be celebrated even when solutions don't scale. Showcase attempts, lessons learned, and creative approaches — not just finished products — to signal that learning is the goal.",
           icon: "🏆",
         },
         {
