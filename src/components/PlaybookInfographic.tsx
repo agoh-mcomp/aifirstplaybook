@@ -452,7 +452,7 @@ const PlaybookInfographic = () => {
       y += 38;
 
       const supports = [
-        { title: "Proven Model", desc: "A tested sprint framework that has delivered 73 AI solutions across multiple agencies.", emoji: "🏗️" },
+        { title: "Proven Model", desc: "A tested sprint framework that has delivered 73 AI prototype solutions across various corporate functions (HR, Finance, Procurement etc.)", emoji: "🏗️" },
         { title: "Peer-to-Peer Support", desc: "Connect your officers with peers who've already built AI solutions in government.", emoji: "🤝" },
         { title: "Ecosystem for Scaling", desc: "Access to AI tools, platforms, and technical expertise to move from prototype to production.", emoji: "🚀" },
         { title: "Measurement Framework", desc: "Dashboards to track your agency's AI-First progress, confidence, and measurable outcomes.", emoji: "📊" },
