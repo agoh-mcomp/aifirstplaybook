@@ -88,9 +88,10 @@ const PlaybookCTA = () => {
 
         ctx.drawImage(canvas, 0, sourceY, canvas.width, sliceHeight, 0, 0, canvas.width, sliceHeight);
 
-        const pageImgData = pageCanvas.toDataURL("image/png");
+        const imgFormat = isMobile ? "JPEG" : "PNG";
+        const pageImgData = pageCanvas.toDataURL(isMobile ? "image/jpeg" : "image/png", isMobile ? 0.8 : undefined);
         const sliceHeightMm = Math.min(pageHeight, sliceHeight / pxPerMm);
-        pdf.addImage(pageImgData, "PNG", 0, 0, imgWidth, sliceHeightMm, undefined, "FAST");
+        pdf.addImage(pageImgData, imgFormat, 0, 0, imgWidth, sliceHeightMm, undefined, "FAST");
       }
 
       pdf.save("AI-First-Playbook.pdf");
