@@ -61,8 +61,8 @@ const chapters = [
     num: "06",
     title: "How Do I Start?",
     insight:
-      "A practical 90-day model your agency runs, owns, and builds the muscle to sustain. What Success Looks Like: " +
-      "1) Ownership Test — Is the agency playbook something they authored and own? · 2) Sustainability Test — Can officers keep going without GovTech holding their hand? · 3) Confidence Shift — Have officers' confidence and capability in using AI moved measurably? · 4) Impact Test — What percentage of solutions are scalable and adopted beyond the sprint?",
+      "A practical 90-day model your agency owns. Four success tests: " +
+      "1) Ownership — playbook authored by the agency · 2) Sustainability — officers continue without hand-holding · 3) Confidence — measurable capability shift · 4) Impact — solutions adopted beyond the sprint.",
   },
   {
     num: "07",
