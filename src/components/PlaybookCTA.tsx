@@ -5,6 +5,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const PlaybookCTA = () => {
   const [isGenerating, setIsGenerating] = useState(false);
+  const isMobile = useIsMobile();
 
   const handleDownloadPDF = async () => {
     setIsGenerating(true);
