@@ -142,7 +142,7 @@ const Chapter8 = () => (
         <span className="italic gradient-gold">when you do.</span>
       </h3>
       <p className="text-lg text-muted-foreground leading-relaxed mb-10 font-body max-w-xl mx-auto">
-        Every transformation begins with a single decision. Not to be perfect — but to begin. What is holding you back ?
+        Every transformation begins with a single decision. Not to be perfect — but to begin. What is holding you back?
       </p>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
