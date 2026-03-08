@@ -53,7 +53,9 @@ const chapters = [
   {
     num: "05",
     title: "The Methodology",
-    insight: "Three monthly sprints over 90 days. Real problems, protected time, expert support.",
+    insight:
+      "Three monthly sprints over 90 days. What made it work: " +
+      "1) Real problems, not exercises · 2) Protected time away from BAU · 3) Expert support on tap · 4) Progressive complexity across sprints · 5) Demo Days for peer proof points.",
   },
   {
     num: "06",
