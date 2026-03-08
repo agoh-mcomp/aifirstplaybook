@@ -33,12 +33,14 @@ const PlaybookCTA = () => {
       const contentBg = getComputedStyle(content).backgroundColor;
       const pdfBackground = contentBg === "rgba(0, 0, 0, 0)" ? "#08122e" : contentBg;
 
+      const renderScale = isMobile ? 1 : 2;
+
       const canvas = await html2canvas(content, {
-        scale: 2,
+        scale: renderScale,
         useCORS: true,
         logging: false,
         backgroundColor: pdfBackground,
-        windowWidth: content.scrollWidth,
+        windowWidth: isMobile ? 1024 : content.scrollWidth,
         windowHeight: content.scrollHeight,
         scrollX: 0,
         scrollY: 0,
