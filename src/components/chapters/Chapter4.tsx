@@ -88,13 +88,13 @@ const Chapter4 = () => (
         className="w-full h-auto object-cover"
       />
       <figcaption className="bg-surface-elevated px-4 py-3 text-center font-mono text-xs tracking-wider uppercase text-muted-foreground">
-        Human stories — Christina Lee shares how AI shifted her perspective on learning and development
+        Human stories — Christina shares how AI shifted her perspective on learning and development
       </figcaption>
     </motion.figure>
 
     <DualAudienceBlock
       leaderText="These seven prerequisites are not optional extras. They are the difference between an initiative that sticks and one that fades. Your role is to create these conditions deliberately, not hope they emerge on their own."
-      practitionerText="If you're reading this and recognising what's missing in your agency, you now have a language for it. Share this chapter with your leadership. Change starts when the conditions are right."
+      practitionerText="If you are reading this and recognising what's missing in your agency, you now have a language for it. Share this chapter with your leadership. Change starts when the conditions are right."
     />
   </ChapterContent>
 );
