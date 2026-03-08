@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FileDown, Loader2 } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const PlaybookCTA = () => {
   const [isGenerating, setIsGenerating] = useState(false);
