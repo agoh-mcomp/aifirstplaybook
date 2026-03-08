@@ -28,18 +28,22 @@ const chapters = [
     num: "01",
     title: "Why Now",
     insight:
-      "The window for deliberate,  managed transformation is narrowing. What's in It for Agencies ? " +
-      "1. Time back for meaningful work 2. A confident, capable workforce 3. Solutions built by the people who live with the problems",
+      "The window for deliberate, managed transformation is narrowing. What's in it for Agencies? " +
+      "1) Time back for meaningful work · 2) A confident, capable workforce · 3) Solutions built by the people who live with the problems.",
   },
   {
     num: "02",
     title: "The Vision",
-    insight: "AI-First is a mindset: 'Can AI augment my thinking, speed up my work, and help me solve problems?' What Good Looks Like - 1. Augmented Expertise 2. User Empowerment 3. Compressed Cycle Times 4. Culture of Learning",
+    insight:
+      "AI-First is a mindset: 'Can AI augment my thinking, speed up my work, and help me solve problems?' What Good Looks Like: " +
+      "1) Augmented Expertise · 2) User Empowerment · 3) Compressed Cycle Times · 4) Culture of Learning.",
   },
   {
     num: "03",
     title: "The Challenge",
-    insight: "Barriers are human, cultural, and structural — not technical. This is a culture change problem. 'This is extra work', 'Leaders Must Walk the Talk', 'No Trusted Peer Reference', 'Systemic Friction', 'A Playbook That Isn't Theirs', 'Deployment Gap'  ",
+    insight:
+      "Barriers are human, cultural, and structural — not technical. Six culture-change barriers: " +
+      "1) 'This is extra work' · 2) Leaders Must Walk the Talk · 3) No Trusted Peer Reference · 4) Systemic Friction · 5) A Playbook That Isn't Theirs · 6) Deployment Gap.",
   },
   {
     num: "04",
