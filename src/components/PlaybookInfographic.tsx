@@ -28,7 +28,8 @@ const chapters = [
     num: "01",
     title: "Why Now",
     insight:
-      "The window for deliberate, managed transformation is narrowing. What's in It for Agencies?\n1. Time back for meaningful work\n2. A confident, capable workforce\n3. Solutions built by the people who live with the problems",
+      "The window for deliberate,  managed transformation is narrowing. What's in It for Agencies ?"
+      "1. Time back for meaningful work 2. A confident, capable workforce 3. Solutions built by the people who live with the problems",
   },
   {
     num: "02",
@@ -38,7 +39,7 @@ const chapters = [
   {
     num: "03",
     title: "The Challenge",
-    insight: "Barriers are human, cultural, and structural — not technical. This is a culture change problem.",
+    insight: "Barriers are human, cultural, and structural — not technical. This is a culture change problem. 'This is extra work', 'Leaders Must Walk the Talk' ",
   },
   {
     num: "04",
