@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FileDown, Loader2 } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const PlaybookCTA = () => {
   const [isGenerating, setIsGenerating] = useState(false);
+  const isMobile = useIsMobile();
 
   const handleDownloadPDF = async () => {
     setIsGenerating(true);
@@ -31,12 +33,14 @@ const PlaybookCTA = () => {
       const contentBg = getComputedStyle(content).backgroundColor;
       const pdfBackground = contentBg === "rgba(0, 0, 0, 0)" ? "#08122e" : contentBg;
 
+      const renderScale = isMobile ? 1 : 2;
+
       const canvas = await html2canvas(content, {
-        scale: 2,
+        scale: renderScale,
         useCORS: true,
         logging: false,
         backgroundColor: pdfBackground,
-        windowWidth: content.scrollWidth,
+        windowWidth: isMobile ? 1024 : content.scrollWidth,
         windowHeight: content.scrollHeight,
         scrollX: 0,
         scrollY: 0,
@@ -84,9 +88,10 @@ const PlaybookCTA = () => {
 
         ctx.drawImage(canvas, 0, sourceY, canvas.width, sliceHeight, 0, 0, canvas.width, sliceHeight);
 
-        const pageImgData = pageCanvas.toDataURL("image/png");
+        const imgFormat = isMobile ? "JPEG" : "PNG";
+        const pageImgData = pageCanvas.toDataURL(isMobile ? "image/jpeg" : "image/png", isMobile ? 0.8 : undefined);
         const sliceHeightMm = Math.min(pageHeight, sliceHeight / pxPerMm);
-        pdf.addImage(pageImgData, "PNG", 0, 0, imgWidth, sliceHeightMm, undefined, "FAST");
+        pdf.addImage(pageImgData, imgFormat, 0, 0, imgWidth, sliceHeightMm, undefined, "FAST");
       }
 
       pdf.save("AI-First-Playbook.pdf");
