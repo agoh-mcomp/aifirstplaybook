@@ -44,7 +44,7 @@ const chapters = [
   {
     num: "04",
     title: "Cultural Prerequisites",
-    insight: "Seven non-negotiable conditions separate agencies that transform from those that merely experiment.",
+    insight: "Seven non-negotiable conditions: 1) Leadership Modeling · 2) Permission to Invest Time · 3) Reward Learning & Risk · 4) Start with Problems · 5) Peer Proof Points · 6) Sustained Engagement · 7) Pragmatic Data Classification.",
   },
   {
     num: "05",
