@@ -75,7 +75,7 @@ const chapters = [
     title: "Your Move",
     insight:
       "Four leadership asks: " +
-      "1) Participate — show up for sprints, learn alongside officers · 2) Protect time — shield officers from BAU so experimentation survives · 3) Nominate AI Lead — one person to drive engagement and build ownership · 4) Permission to fail — visible safety from the top unlocks real experimentation.",
+      "1) Participate - show up for sprints, learn alongside officers · 2) Protect time - shield officers from BAU · 3) Nominate AI Lead — to drive engagement and build ownership · 4) Permission to fail — unlocks real experimentation.",
   },
 ];
 
