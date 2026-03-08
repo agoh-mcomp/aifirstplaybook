@@ -23,7 +23,7 @@ const Chapter3 = () => (
         {
           label: "Leaders Must Walk the Talk",
           detail:
-            "When the Head of Agency visibly joins a sprint, builds something, and learns with the team. That is when people believe in cultural change.",
+            "When the Head of Agency visibly joins a sprint, builds something, and learns with the team — that is when people believe in cultural change.",
           icon: Eye,
           color: "var(--chart-2)",
         },
