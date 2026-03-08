@@ -285,24 +285,31 @@ const AudioPlayer = ({ chapterTitle, contentRef }: AudioPlayerProps) => {
           </Button>
         </div>
 
-        <div className="flex items-center gap-2">
-          <span className="font-mono text-xs text-muted-foreground hidden sm:inline">Speed</span>
-          <div className="flex gap-1">
-            {[0.75, 1, 1.25, 1.5, 1.75, 2].map((r) => (
-              <button
-                key={r}
-                onClick={() => changeRate(r)}
-                className={cn(
-                  "font-mono text-xs px-2 py-1 rounded-md transition-colors",
-                  rate === r
-                    ? "bg-gold/20 text-gold"
-                    : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                {r === 1 ? "1×" : `${r}×`}
-              </button>
-            ))}
-          </div>
+        <div className="relative">
+          <button
+            onClick={() => setShowSpeedMenu(!showSpeedMenu)}
+            className="flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg border border-border bg-background hover:bg-accent transition-colors"
+          >
+            <span>{rate === 1 ? "1×" : `${rate}×`}</span>
+            <ChevronDown className={cn("w-3 h-3 shrink-0 transition-transform", showSpeedMenu && "rotate-180")} />
+          </button>
+
+          {showSpeedMenu && (
+            <div ref={speedMenuRef} className="absolute right-0 bottom-full mb-1 bg-background border border-border rounded-lg shadow-lg z-50 overflow-hidden">
+              {[0.75, 1, 1.25, 1.5, 1.75, 2].map((r) => (
+                <button
+                  key={r}
+                  onClick={() => { changeRate(r); setShowSpeedMenu(false); }}
+                  className={cn(
+                    "w-full text-left px-4 py-2 font-mono text-xs hover:bg-accent transition-colors",
+                    rate === r ? "bg-gold/10 text-gold" : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {r === 1 ? "1×" : `${r}×`}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
