@@ -77,9 +77,10 @@ const Chapter7 = () => (
       <h4 className="font-display text-lg text-foreground mb-4">🎬 SCG AI-First Transformation Journey</h4>
       <div className="rounded-lg overflow-hidden border border-border aspect-video">
         <iframe
-          src="https://www.youtube.com/embed/CpjgrPZIkbI"
+          src="https://www.youtube-nocookie.com/embed/CpjgrPZIkbI?rel=0"
           title="SCG AI-First Transformation Journey and Solutions"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           className="w-full h-full"
         />
